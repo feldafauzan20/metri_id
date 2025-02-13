@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        @apply m-0 p-0 box-border;
+    }
+    body {
+        @apply font-jakarta;
+    }
+
+    html {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+@layer components {
+    .a-nav {
+        @apply text-[#359381] px-[15px] py-[6px] rounded-[20px] font-semibold hover:bg-[#359381] hover:text-white active:bg-[#359381] active:text-white;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+    .img-parallax {
+        @apply absolute top-0 left-0 w-full pointer-events-none;
+    }
+
+    .p-section2 {
+        font-size: 1em;
+        color: white;
+        font-weight: 300;
+    }
+}
