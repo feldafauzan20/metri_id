@@ -1,21 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
-    // Animasi teks hero
-    function animateHeroText() {
-        gsap.to(".textHero1", {
-            duration: 3,
-            delay: 1,
-            text: "Elevate Your Experience",
-        });
-
-        gsap.to(".textHero2", {
-            duration: 3,
-            delay: 3.5,
-            text: "with metri.",
-        });
-    }
-
     // Efek parallax untuk hero
     function parallaxEffect() {
         let text = document.getElementById("text");
@@ -51,17 +36,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         gsap.fromTo(
             "#tree",
-            { y: 400, opacity: 1 },
+            { y: window.innerHeight * 1.2, opacity: 1 }, // Mulai dari bawah layar
             {
-                y: -65,
+                y: -65, // Naik ke posisi target
                 opacity: 1,
                 duration: 4,
-                ease: "power2.out",
+                ease: "power1.out",
                 scrollTrigger: {
                     trigger: "#tree",
-                    start: "center center",
-                    end: "center 20%",
-                    scrub: true,
+                    start: "top 100%", // Animasi mulai saat elemen masuk viewport
+                    end: "+=" + window.innerHeight * 0.5, // Perjalanan lebih smooth
+                    scrub: 1,
                 },
             }
         );
@@ -77,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const stickySection = document.querySelector(".steps");
         const stickyHeight = window.innerHeight * 7;
         const cards = document.querySelectorAll(".card");
-        const countContainer = document.querySelector(".count-container");
         const totalCards = cards.length;
 
         ScrollTrigger.create({
@@ -148,7 +132,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Panggil fungsi yang sudah disusun
-    animateHeroText();
     parallaxEffect();
     animateStickyCards();
 });
