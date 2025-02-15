@@ -34,7 +34,7 @@
     </div>
   </header>
 
-  <section class="relative flex items-center justify-center min-h-screen parallax-container will-change-transform border border-red-500">
+  <section class="relative flex items-center justify-center min-h-screen parallax-container will-change-transform">
     <img src="{{ asset('images/hill1.png') }}" alt="" id="hill1" class="img-parallax" />
     <img src="{{ asset('images/hill2.png') }}" alt="" id="hill2" class="img-parallax" />
     <img src="{{ asset('images/hill3.png') }}" alt="" id="hill3" class="img-parallax" />
@@ -44,12 +44,12 @@
     <img src="{{ asset('images/leaf.png') }}" alt="" id="leaf" class="img-parallax" />
     <h2 id="text" class="absolute text-[5em] text-white font-semibold ">
       <span class="block textHero1">Elevate Your Experience</span>
-      <span class="block text-center textHero2">with metri.</span>
+      <span class="block text-center textHero2">with metri</span>
     </h2>
     <img src="{{ asset('images/plant.png') }}" alt="" id="plant" class="img-parallax" />
   </section>
 
-  <section class="relative w-full h-screen bg-white overflow-hidden steps">
+  {{-- <section class="relative w-full h-screen bg-white overflow-hidden steps">
     <div class="step-counter w-full relative flex px-[2em] flex-row m-[2em] justify-between items-center ">
       <div
         class="counter-title relative h-[150px] overflow-hidden w-full flex flex-col items-center">
@@ -145,7 +145,7 @@
       <div class="opacity-0 card empty absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform"></div>
       <div class="opacity-0 card empty"></div>
     </div>
-  </section>
+  </section> --}}
 
   {{-- cdn gsap start --}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>

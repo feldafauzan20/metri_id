@@ -3,11 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Efek parallax untuk hero
     function parallaxEffect() {
-        let text = document.getElementById("text");
-        let leaf = document.getElementById("leaf");
-        let hill1 = document.getElementById("hill1");
-        let hill4 = document.getElementById("hill4");
-        let hill5 = document.getElementById("hill5");
+        const text = document.getElementById("text");
+        const leaf = document.getElementById("leaf");
+        const hill1 = document.getElementById("hill1");
+        const hill4 = document.getElementById("hill4");
+        const hill5 = document.getElementById("hill5");
 
         window.addEventListener("scroll", () => {
             let value = window.scrollY;
@@ -34,22 +34,24 @@ document.addEventListener("DOMContentLoaded", () => {
             },
         });
 
-        gsap.fromTo(
+        // Animasi pohon menggunakan timeline
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#tree",
+                start: "top 100%",
+                end: "+=" + window.innerHeight * 0.8,
+                scrub: 1,
+            },
+        });
+
+        tl.fromTo(
             "#tree",
-            { y: window.innerHeight * 1.2, opacity: 1 }, // Mulai dari bawah layar
-            {
-                y: -65, // Naik ke posisi target
-                opacity: 1,
-                duration: 4,
-                ease: "power1.out",
-                scrollTrigger: {
-                    trigger: "#tree",
-                    start: "top 100%", // Animasi mulai saat elemen masuk viewport
-                    end: "+=" + window.innerHeight * 0.5, // Perjalanan lebih smooth
-                    scrub: 1,
-                },
-            }
-        );
+            { y: window.innerHeight * 1.2, opacity: 1 },
+            { y: -65, opacity: 1, duration: 4, ease: "power1.out" }
+        ).to("#tree", {
+            scale: 3,
+            ease: "power2.out",
+        });
     }
 
     // Animasi sticky cards dengan ScrollTrigger dan Lenis
@@ -70,9 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
             end: `+=${stickyHeight}px`,
             pin: true,
             pinSpacing: true,
-            onUpdate: (self) => {
-                positionCards(self.progress);
-            },
+            onUpdate: (self) => positionCards(self.progress),
         });
 
         const getRadius = () =>
