@@ -3,59 +3,77 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Efek parallax untuk hero
     function parallaxEffect() {
-        const text = document.getElementById("text");
-        const leaf = document.getElementById("leaf");
-        const hill1 = document.getElementById("hill1");
-        const hill4 = document.getElementById("hill4");
-        const hill5 = document.getElementById("hill5");
-
-        window.addEventListener("scroll", () => {
-            let value = window.scrollY;
-            if (value < 500) {
-                text.style.marginTop = value * 2.5 + "px";
-                leaf.style.top = value * -1.5 + "px";
-                leaf.style.left = value * 1.5 + "px";
-                hill5.style.left = value * 1.5 + "px";
-                hill4.style.left = value * -1.5 + "px";
-                hill1.style.top = value * 1 + "px";
-            }
-        });
-
-        gsap.to(".parallax-container", {
-            scale: 1.2,
-            duration: 1.5,
-            ease: "power1.out",
+        gsap.timeline({
             scrollTrigger: {
                 trigger: ".parallax-container",
                 start: "top top",
                 end: "bottom top",
-                scrub: 1,
-                pin: true,
-            },
-        });
+                scrub: 3,
+                pin: true
+            }
+        })
 
-        // Animasi pohon menggunakan timeline
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: "#tree",
-                start: "top 100%",
-                end: "+=" + window.innerHeight * 0.8,
-                scrub: 1,
-            },
-        });
+            .to(".parallax-container", {
+                scale: 1.2,
+                duration: 1.5,
+                ease: "power1.out"
+            })
 
-        tl.fromTo(
-            "#tree",
-            { y: window.innerHeight * 1.2, opacity: 1 },
-            { y: -65, opacity: 1, duration: 4, ease: "power1.out" }
-        ).to("#tree", {
-            scale: 3,
-            ease: "power2.out",
-        });
+            .to("#text", {
+                marginTop: "1250px",
+            }, "<")
+
+            .to("#leaf", {
+                top: "-750px",
+                left: "750px",
+            }, "<")
+
+            .to("#hill5", {
+                left: "750px",
+            }, "<")
+
+            .to("#hill4", {
+                left: "-750px",
+            }, "<")
+
+            .to("#hill1", {
+                top: "500px",
+            }, "<")
+
+            .fromTo("#tree", {
+                y: 500
+            }, {
+                y: -100,
+                duration: 1.5,
+                ease: "power2.out"
+            })
+
+            .to("#tree", {
+                scale: 50,
+                duration: 10,
+                ease: "power2.inOut"
+            })
+            .to("#plant", {
+                opacity: 0,
+                duration: 1,
+                ease: "power2.inOut"
+            }, "<");
     }
 
     // Animasi sticky cards dengan ScrollTrigger dan Lenis
     function animateStickyCards() {
+        gsap.from(".steps div", {
+            opacity: 0,
+            duration: 1,
+            ease: "power2.inOut",
+            scrollTrigger: {
+                trigger: ".steps",
+                start: "top top",
+                end: "bottom top",
+                scrub: 3,
+            }
+        })
+
         const lenis = new Lenis();
         lenis.on("scroll", ScrollTrigger.update);
         gsap.ticker.add((time) => lenis.raf(time * 1000));
@@ -106,32 +124,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         positionCards(0);
 
-        let currentCardIndex = 0;
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        let cardIndex = Array.from(cards).indexOf(entry.target);
-                        currentCardIndex = cardIndex;
-                        console.log(currentCardIndex);
-                        const targetY = 150 - currentCardIndex * 150;
-                        gsap.to(countContainer, {
-                            y: targetY,
-                            duration: 0.3,
-                            ease: "power1.out",
-                            overwrite: true,
-                        });
-                    }
-                });
-            },
-            { root: null, rootMargin: "0% 0%", threshold: 0.5 }
-        );
-
         cards.forEach((card) => observer.observe(card));
         window.addEventListener("resize", () => positionCards(0));
     }
 
-    // Panggil fungsi yang sudah disusun
+    // Hanya memanggil parallaxEffect, animateStickyCards akan dipanggil setelah parallax selesai
     parallaxEffect();
     animateStickyCards();
 });

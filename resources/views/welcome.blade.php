@@ -21,10 +21,10 @@
 
 <body class="bg-[#f9f9f9] min-h-screen overflow-x-hidden h-full">
   <header class="absolute top-0 left-0 w-full px-[100px] py-[30px] flex justify-start items-center z-[100]">
-      <a href="#" class="logo">
-        <img src="{{ asset('images/logo/logo-metri.png') }}" alt="" width="150" />
-      </a>
-      <div class="flex w-full justify-center">
+    <a href="#" class="logo">
+      <img src="{{ asset('images/logo/logo-metri.png') }}" alt="" width="150" />
+    </a>
+    <div class="flex justify-center w-full">
       <nav class="navigation">
         <a href="" class="active a-nav">Home</a>
         <a href="" class="a-nav">About</a>
@@ -34,7 +34,8 @@
     </div>
   </header>
 
-  <section class="relative flex items-center justify-center min-h-screen parallax-container will-change-transform">
+  <section
+    class="relative flex items-center justify-center min-h-screen overflow-hidden parallax-container will-change-transform">
     <img src="{{ asset('images/hill1.png') }}" alt="" id="hill1" class="img-parallax" />
     <img src="{{ asset('images/hill2.png') }}" alt="" id="hill2" class="img-parallax" />
     <img src="{{ asset('images/hill3.png') }}" alt="" id="hill3" class="img-parallax" />
@@ -49,16 +50,16 @@
     <img src="{{ asset('images/plant.png') }}" alt="" id="plant" class="img-parallax" />
   </section>
 
-  {{-- <section class="relative w-full h-screen bg-white overflow-hidden steps">
-    <div class="step-counter w-full relative flex px-[2em] flex-row m-[2em] justify-between items-center ">
-      <div
-        class="counter-title relative h-[150px] overflow-hidden w-full flex flex-col items-center">
+  <section class="relative w-full h-screen overflow-hidden steps bg-[#39B458]">
+    <div class="step-counter w-full relative flex px-[2em] flex-row m-[2em] justify-between items-center">
+      <div class="counter-title relative h-[150px] overflow-hidden w-full flex flex-col items-center">
         <h1
           class="w-max relative text-black font-jakarta font-normal text-xl will-change-transform text-center rounded-3xl outline outline-2 outline-[#E1E1E1] p-2 mt-2">
           Our services
         </h1>
-        <p class="text-center font-medium text-3xl pt-8">Here’s <span class="text-[#44AC60]">our services</span> that may helps</p>
-        <p class="text-center font-medium text-3xl">with ur business</p>
+        <p class="pt-8 text-3xl font-medium text-center">Here’s <span class="text-[#44AC60]">our services</span> that
+          may helps</p>
+        <p class="text-3xl font-medium text-center">with ur business</p>
       </div>
     </div>
 
@@ -71,7 +72,7 @@
         </div>
         <div class="card-content w-full h-[60px]">
           <p class="text-left text-white font-jakarta text-[16px] font-medium leading-tight">
-            ‎ 
+            ‎
           </p>
         </div>
       </div>
@@ -82,7 +83,7 @@
         </div>
         <div class="card-content w-full h-[60px]">
           <p class="text-left text-white font-jakarta text-[16px] font-medium leading-tight">
-            ‎ 
+            ‎
           </p>
         </div>
       </div>
@@ -93,7 +94,7 @@
         </div>
         <div class="card-content w-full h-[60px]">
           <p class="text-left text-white font-jakarta text-[16px] font-medium leading-tight">
-            ‎ 
+            ‎
           </p>
         </div>
       </div>
@@ -104,7 +105,7 @@
         </div>
         <div class="card-content w-full h-[60px]">
           <p class="text-left text-white font-jakarta text-[16px] font-medium leading-tight">
-            ‎ 
+            ‎
           </p>
         </div>
       </div>
@@ -115,7 +116,7 @@
         </div>
         <div class="card-content w-full h-[60px]">
           <p class="text-left text-white font-jakarta text-[16px] font-medium leading-tight">
-            ‎ 
+            ‎
           </p>
         </div>
       </div>
@@ -126,7 +127,7 @@
         </div>
         <div class="card-content w-full h-[60px]">
           <p class="text-left text-white font-jakarta text-[16px] font-medium leading-tight">
-            ‎ 
+            ‎
           </p>
         </div>
       </div>
@@ -137,15 +138,27 @@
         </div>
         <div class="card-content w-full h-[60px]">
           <p class="text-left text-white font-jakarta text-[16px] font-medium leading-tight">
-            ‎ 
+            ‎
           </p>
         </div>
       </div>
 
-      <div class="opacity-0 card empty absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform"></div>
+      <div
+        class="opacity-0 card empty absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
+      </div>
       <div class="opacity-0 card empty"></div>
     </div>
-  </section> --}}
+  </section>
+
+  <section class="relative w-full h-screen bg-gray-200">
+    <div class="relative h-[150px] overflow-hidden w-full flex flex-col items-center">
+      <h1
+        class="text-black font-jakarta font-normal text-xl text-center rounded-3xl outline outline-2 outline-[#E1E1E1] p-2 mt-2">
+        Section Ketiga
+      </h1>
+    </div>
+  </section>
+
 
   {{-- cdn gsap start --}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
