@@ -18,7 +18,7 @@
 
 @layer components {
     .a-nav {
-        @apply text-[#359381] px-[15px] py-[6px] rounded-[20px] font-semibold hover:bg-[#359381] hover:text-white active:bg-[#359381] active:text-white;
+        @apply text-black px-[15px] py-[6px] rounded-[20px] font-medium hover:bg-[#359381] hover:duration-500 hover:text-white active:bg-[#359381] active:text-white;
         text-decoration: none;
         margin: 0 10px;
     }
@@ -31,5 +31,10 @@
         font-size: 1em;
         color: white;
         font-weight: 300;
+    }
+
+    .bg-hero {
+        @apply bg-cover bg-center;
+        background-image: url("/public/images/bg-hero.png");
     }
 }

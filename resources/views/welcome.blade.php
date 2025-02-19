@@ -12,6 +12,10 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   {{-- google font end --}}
 
   {{-- my js start --}}
@@ -20,45 +24,58 @@
 </head>
 
 <body class="bg-[#f9f9f9] min-h-screen overflow-x-hidden h-full">
-  <header class="absolute top-0 left-0 w-full px-[100px] py-[30px] flex justify-start items-center z-[100]">
+  <header class="absolute top-0 left-0 w-full px-[100px] py-[30px] flex justify-evenly items-center z-[100]">
+    <div class="w-full">
       <a href="#" class="logo">
-        <img src="{{ asset('images/logo/logo-metri.png') }}" alt="" width="150" />
+        <img src="{{ asset('images/logo/logo-putih-baru.png') }}" alt="" width="150" />
       </a>
-      <div class="flex w-full justify-center">
-      <nav class="navigation">
-        <a href="" class="active a-nav">Home</a>
-        <a href="" class="a-nav">About</a>
-        <a href="" class="a-nav">Services</a>
-        <a href="" class="a-nav">Contact</a>
+    </div>
+    <div class="w-full min-h-min">
+      <nav class="navigation flex">
+        <a href="" class="active a-nav">ABOUT</a>
+        <a href="" class="a-nav">NETWORK</a>
+        <a href="" class="a-nav">NEWS</a>
+        <a href="" class="a-nav">CARRER</a>
+        <a href="" class="a-nav">CONTACT</a>
       </nav>
+    </div>
+    <div class="w-full flex justify-end">
+      <h1 class="tracking-wider font-ibm">PT. MEDIA TREN IDEA</h1>
     </div>
   </header>
 
-  <section class="relative flex items-center justify-center min-h-screen parallax-container will-change-transform">
-    <img src="{{ asset('images/hill1.png') }}" alt="" id="hill1" class="img-parallax" />
-    <img src="{{ asset('images/hill2.png') }}" alt="" id="hill2" class="img-parallax" />
-    <img src="{{ asset('images/hill3.png') }}" alt="" id="hill3" class="img-parallax" />
-    <img src="{{ asset('images/hill4.png') }}" alt="" id="hill4" class="img-parallax" />
-    <img src="{{ asset('images/hill5.png') }}" alt="" id="hill5" class="img-parallax" />
-    <img src="{{ asset('images/tree3.png') }}" alt="" id="tree" class="img-parallax" />
-    <img src="{{ asset('images/leaf.png') }}" alt="" id="leaf" class="img-parallax" />
-    <h2 id="text" class="absolute text-[5em] text-white font-semibold ">
+  <section
+    class="relative flex items-center justify-center min-h-screen overflow-hidden parallax-container will-change-transform bg-hero">
+    <img src="{{ asset('images/efek-angin.png') }}" alt="" id="efek-angin" class="img-parallax opacity-15" />
+    <img src="{{ asset('images/sun.png') }}" alt="" id="sun" class="img-parallax" />
+    <img src="{{ asset('images/gunung4.png') }}" alt="" id="gunung4" class="img-parallax" />
+    <img src="{{ asset('images/gunung3.png') }}" alt="" id="gunung3" class="img-parallax" />
+    <img src="{{ asset('images/cloud.png') }}" alt="" id="cloud" class="img-parallax" />
+    <img src="{{ asset('images/gunung2.png') }}" alt="" id="gunung2" class="img-parallax" />
+    <img src="{{ asset('images/gunung1.png') }}" alt="" id="gunung1" class="img-parallax" />
+    <img src="{{ asset('images/tanah3.png') }}" alt="" id="tanah3" class="img-parallax" />
+    <img src="{{ asset('images/tanah1.png') }}" alt="" id="tanah1" class="img-parallax" />
+    <img src="{{ asset('images/plant2.png') }}" alt="" id="plant2" class="img-parallax" />
+    <img src="{{ asset('images/tanah2.png') }}" alt="" id="tanah2" class="img-parallax" />
+    <img src="{{ asset('images/tree4.png') }}" alt="" id="tree" class="img-parallax" />
+    {{-- <img src="{{ asset('images/leaf.png') }}" alt="" id="leaf" class="img-parallax" /> --}}
+    {{-- <h2 id="text" class="absolute text-[5em] text-white font-semibold ">
       <span class="block textHero1">Elevate Your Experience</span>
       <span class="block text-center textHero2">with metri</span>
-    </h2>
-    <img src="{{ asset('images/plant.png') }}" alt="" id="plant" class="img-parallax" />
+    </h2> --}}
+    <img src="{{ asset('images/plant1.png') }}" alt="" id="plant1" class="img-parallax" />
   </section>
 
-  {{-- <section class="relative w-full h-screen bg-white overflow-hidden steps">
-    <div class="step-counter w-full relative flex px-[2em] flex-row m-[2em] justify-between items-center ">
-      <div
-        class="counter-title relative h-[150px] overflow-hidden w-full flex flex-col items-center">
+  <section class="relative w-full h-screen overflow-hidden steps bg-[#257c76]">
+    <div class="step-counter w-full relative flex px-[2em] flex-row m-[2em] justify-between items-center">
+      <div class="counter-title relative h-[150px] overflow-hidden w-full flex flex-col items-center">
         <h1
-          class="w-max relative text-black font-jakarta font-normal text-xl will-change-transform text-center rounded-3xl outline outline-2 outline-[#E1E1E1] p-2 mt-2">
+          class="w-max relative text-white font-jakarta font-normal text-xl will-change-transform text-center rounded-3xl outline outline-2 outline-[#E1E1E1] p-2 mt-2">
           Our services
         </h1>
-        <p class="text-center font-medium text-3xl pt-8">Here’s <span class="text-[#44AC60]">our services</span> that may helps</p>
-        <p class="text-center font-medium text-3xl">with ur business</p>
+        <p class="pt-8 text-3xl font-medium text-center text-white">Here’s <span class="text-[#67fbf8]">our services</span> that
+          may helps</p>
+        <p class="text-3xl font-medium text-center text-white">with ur business</p>
       </div>
     </div>
 
@@ -66,86 +83,98 @@
       class="cards absolute top-[25%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[600px] will-change-transform mt-[300px]">
       <div
         class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
-        <div class="flex-1 overflow-hidden bg-white rounded-md card-img">
+        <div class="flex-1 overflow-hidden rounded-md card-img">
           <img src="{{ asset('images/service1.png') }}" alt="" class="object-contain w-full h-full img-card" />
         </div>
         <div class="card-content w-full h-[60px]">
           <p class="text-left text-white font-jakarta text-[16px] font-medium leading-tight">
-            ‎ 
+            ‎
           </p>
         </div>
       </div>
       <div
         class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
-        <div class="flex-1 overflow-hidden bg-white rounded-md card-img">
+        <div class="flex-1 overflow-hidden rounded-md card-img">
           <img src="{{ asset('images/services2.png') }}" alt="" class="object-contain w-full h-full img-card" />
         </div>
         <div class="card-content w-full h-[60px]">
           <p class="text-left text-white font-jakarta text-[16px] font-medium leading-tight">
-            ‎ 
+            ‎
           </p>
         </div>
       </div>
       <div
         class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
-        <div class="flex-1 overflow-hidden bg-white rounded-md card-img">
+        <div class="flex-1 overflow-hidden rounded-md card-img">
           <img src="{{ asset('images/services3.png') }}" alt="" class="object-contain w-full h-full img-card" />
         </div>
         <div class="card-content w-full h-[60px]">
           <p class="text-left text-white font-jakarta text-[16px] font-medium leading-tight">
-            ‎ 
+            ‎
           </p>
         </div>
       </div>
       <div
         class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
-        <div class="flex-1 overflow-hidden bg-white rounded-md card-img">
+        <div class="flex-1 overflow-hidden rounded-md card-img">
           <img src="{{ asset('images/services2.png') }}" alt="" class="object-contain w-full h-full img-card" />
         </div>
         <div class="card-content w-full h-[60px]">
           <p class="text-left text-white font-jakarta text-[16px] font-medium leading-tight">
-            ‎ 
+            ‎
           </p>
         </div>
       </div>
       <div
         class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
-        <div class="flex-1 overflow-hidden bg-white rounded-md card-img">
+        <div class="flex-1 overflow-hidden rounded-md card-img">
           <img src="{{ asset('images/service1.png') }}" alt="" class="object-contain w-full h-full img-card" />
         </div>
         <div class="card-content w-full h-[60px]">
           <p class="text-left text-white font-jakarta text-[16px] font-medium leading-tight">
-            ‎ 
+            ‎
           </p>
         </div>
       </div>
       <div
         class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
-        <div class="flex-1 overflow-hidden bg-white rounded-md card-img">
+        <div class="flex-1 overflow-hidden rounded-md card-img">
           <img src="{{ asset('images/services3.png') }}" alt="" class="object-contain w-full h-full img-card" />
         </div>
         <div class="card-content w-full h-[60px]">
           <p class="text-left text-white font-jakarta text-[16px] font-medium leading-tight">
-            ‎ 
+            ‎
           </p>
         </div>
       </div>
       <div
         class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
-        <div class="flex-1 overflow-hidden bg-white rounded-md card-img">
+        <div class="flex-1 overflow-hidden rounded-md card-img">
           <img src="{{ asset('images/services2.png') }}" alt="" class="object-contain w-full h-full img-card" />
         </div>
         <div class="card-content w-full h-[60px]">
           <p class="text-left text-white font-jakarta text-[16px] font-medium leading-tight">
-            ‎ 
+            ‎
           </p>
         </div>
       </div>
 
-      <div class="opacity-0 card empty absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform"></div>
+      <div
+        class="opacity-0 card empty absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
+      </div>
       <div class="opacity-0 card empty"></div>
     </div>
-  </section> --}}
+  </section>
+
+  <section class="relative w-full h-screen bg-gray-200">
+    <div class="relative h-[150px] overflow-hidden w-full flex flex-col items-center">
+      <h1
+        class="text-black font-jakarta font-normal text-xl text-center rounded-3xl outline outline-2 outline-[#E1E1E1] p-2 mt-2">
+        Section Ketiga
+      </h1>
+    </div>
+  </section>
+
 
   {{-- cdn gsap start --}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
