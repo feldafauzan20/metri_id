@@ -23,7 +23,7 @@
   {{-- my js end --}}
 </head>
 
-<body class="bg-[#f9f9f9] min-h-screen overflow-x-hidden h-full">
+<body class="min-h-screen overflow-x-hidden h-full bg-[#257c76]">
   <header class="absolute top-0 left-0 w-full px-[100px] py-[30px] flex justify-evenly items-center z-[100]">
     <div class="w-full">
       <a href="#" class="logo">
@@ -166,22 +166,51 @@
     </div>
   </section>
 
-  <section class="relative w-full h-screen bg-gray-200">
-    <div class="relative h-[150px] overflow-hidden w-full flex flex-col items-center">
-      <h1
-        class="text-black font-jakarta font-normal text-xl text-center rounded-3xl outline outline-2 outline-[#E1E1E1] p-2 mt-2">
-        Section Ketiga
-      </h1>
+  <section class="bg-[#257c76] w-full">
+    <div class="container max-h-screen overflow-hidden w-full flex flex-col items-center pt-4 pb-10">
+      <div class="w-full flex flex-col items-center">
+        <p
+          class="text-white max-w-lg w-fit font-jakarta font-normal text-xl text-center rounded-3xl outline outline-2 outline-[#E1E1E1] p-2 mt-2">
+          Customer support
+        </p>
+        <h1 class="text-4xl text-white pt-8 font-semibold">Manage customer queries</h1>
+        <h1 class="text-4xl text-white font-semibold">in seconds with metri</h1>
+      </div>
+  
+      <div class="container flex justify-center items-center h-full my-10">
+        <div class="text-center mx-4">
+          <h1 class="text-4xl font-semibold text-white">99.9%</h1>
+          <p class="pt-4 text-white">Of customers said using Flinta helped them to better service clients.</p>
+        </div>
+        <div class="text-center mx-4">
+          <h1 class="text-4xl font-semibold text-white">'24</h1>
+          <p class="pt-4 text-white">Founded in 2024, we’re on a growth journey focused on innovation.</p>
+        </div>
+        <div class="text-center mx-4">
+          <h1 class="text-4xl font-semibold text-white">20+</h1>
+          <p class="pt-4 text-white">Average monthly clients since we launched in June 2023.</p>
+        </div>
+        <div class="text-center mx-4">
+          <h1 class="text-4xl font-semibold text-white">0.05+</h1>
+          <p class="pt-4 text-white">Of tickets left unresolved using metri’s advanced functionality.</p>
+        </div>
+      </div>
+
+      <div class="w-full flex flex-col items-center">
+        <h1 class="text-xl text-center text-white font-medium">Explore our Advance System Functionality and Experience the Difference</h1>
+        <h1 class="text-xl text-center text-white font-medium">with metri.</h1>
+      </div>
     </div>
   </section>
+  
 
 
-  {{-- cdn gsap start --}}
+  {{-- cdn gsap & lenis start --}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-  {{-- cdn gsap end --}}
+  {{-- cdn gsap & lenis end --}}
 </body>
 
 </html>

@@ -17,6 +17,9 @@ export default {
                 ibm: ["IBM Plex Mono"],
             },
         },
+        container: {
+            center: true,
+        },
     },
     plugins: [],
 };
