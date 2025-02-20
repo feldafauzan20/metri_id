@@ -38,17 +38,17 @@
         @apply bg-cover bg-center;
         background-image: url("/public/images/bg-hero.png");
     }
-}
 
-.animate-scroll {
-    animation: scroll 20s linear infinite;
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
+    .animate-scroll {
+        animation: scroll 20s linear infinite;
     }
-    100% {
-        transform: translateX(-50%);
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
     }
 }

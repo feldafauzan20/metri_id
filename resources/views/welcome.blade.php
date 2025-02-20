@@ -169,7 +169,7 @@
     </div>
   </section>
 
-  <section class="bg-[#257c76] w-full h-screen items-center justify-center">
+  <section class="bg-[#257c76] w-full h-screen items-center justify-center customer-support">
     <div class="container flex flex-col items-center w-full max-h-screen pt-4 pb-10 overflow-hidden">
       <div class="flex flex-col items-center w-full">
         <p
@@ -182,19 +182,19 @@
 
       <div class="container flex items-center justify-center h-full my-10">
         <div class="mx-4 text-center">
-          <h1 class="text-4xl font-semibold text-white">99.9%</h1>
+          <h1 class="text-4xl font-semibold text-white"><span class="cs-text1">99.9</span>%</h1>
           <p class="pt-4 text-white">Of customers said using Flinta helped them to better service clients.</p>
         </div>
         <div class="mx-4 text-center">
-          <h1 class="text-4xl font-semibold text-white">'24</h1>
+          <h1 class="text-4xl font-semibold text-white">'<span class="cs-text2">24</span></h1>
           <p class="pt-4 text-white">Founded in 2024, we're on a growth journey focused on innovation.</p>
         </div>
         <div class="mx-4 text-center">
-          <h1 class="text-4xl font-semibold text-white">20+</h1>
+          <h1 class="text-4xl font-semibold text-white"><span class="cs-text3">20</span>+</h1>
           <p class="pt-4 text-white">Average monthly clients since we launched in June 2023.</p>
         </div>
         <div class="mx-4 text-center">
-          <h1 class="text-4xl font-semibold text-white">0.05+</h1>
+          <h1 class="text-4xl font-semibold text-white"><span class="cs-text4">0.05</span>+</h1>
           <p class="pt-4 text-white">Of tickets left unresolved using metri's advanced functionality.</p>
         </div>
       </div>
@@ -372,14 +372,14 @@
       </div>
 
       <div class="flex flex-row justify-center gap-5 overflow-hidden">
-        <div class="p-2 border border-white rounded-full button-prev">
+        <div class="p-2 bg-gray-800 border border-gray-700 rounded-full button-prev">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-chevron-left"
             viewBox="0 0 16 16">
             <path fill-rule="evenodd"
               d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
           </svg>
         </div>
-        <div class="p-2 border border-white rounded-full button-next">
+        <div class="p-2 bg-gray-800 border border-gray-700 rounded-full button-next">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-chevron-right"
             viewBox="0 0 16 16">
             <path fill-rule="evenodd"
