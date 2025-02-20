@@ -16,6 +16,7 @@
     "dependencies": {
         "nth-check": "^2.1.1",
         "serialize-javascript": "^6.0.2",
+        "swiper": "^11.2.4",
         "vite": "^6.0.11"
     }
 }
