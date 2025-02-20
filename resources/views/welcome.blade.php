@@ -92,6 +92,7 @@
         <div class="card-content w-full h-[60px]">
           <p class="text-left text-white font-jakarta text-[16px] font-medium leading-tight">
             ‎
+            ‎
           </p>
         </div>
       </div>
@@ -102,6 +103,7 @@
         </div>
         <div class="card-content w-full h-[60px]">
           <p class="text-left text-white font-jakarta text-[16px] font-medium leading-tight">
+            ‎
             ‎
           </p>
         </div>
@@ -114,6 +116,7 @@
         <div class="card-content w-full h-[60px]">
           <p class="text-left text-white font-jakarta text-[16px] font-medium leading-tight">
             ‎
+            ‎
           </p>
         </div>
       </div>
@@ -124,6 +127,7 @@
         </div>
         <div class="card-content w-full h-[60px]">
           <p class="text-left text-white font-jakarta text-[16px] font-medium leading-tight">
+            ‎
             ‎
           </p>
         </div>
