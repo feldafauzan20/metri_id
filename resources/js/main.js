@@ -1,5 +1,5 @@
-import Swiper from 'swiper/bundle';
-import 'swiper/css/bundle';
+import Swiper from "swiper/bundle";
+import "swiper/css/bundle";
 
 document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger, TextPlugin);
@@ -25,6 +25,24 @@ document.addEventListener("DOMContentLoaded", () => {
             duration: 1.5,
             ease: "power1.out",
         })
+        .fromTo(
+            "#tree",
+            {
+                y: 500,
+            },
+            {
+                y: -50,
+                duration: 1.5,
+                ease: "power2.out",
+            }
+        )
+        .to("#tree", {
+            scale: 10,
+            duration: 5,
+            delay: 3,
+            ease: "power1.inOut",
+        })
+
         .to(
             "#tanah2",
             {
@@ -61,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Steps cards animation
     gsap.from(".steps div", {
-        opacity: 0,
+        opacity: 1,
         duration: 1,
         ease: "power2.inOut",
         scrollTrigger: {
@@ -125,9 +143,9 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollTrigger: {
             trigger: ".customer-support",
             start: "top center",
-            once: true
+            once: true,
         },
-        duration: 3
+        duration: 3,
     };
 
     // Counter 1
@@ -138,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
         value: 99.9,
         onUpdate: () => {
             element1.textContent = parseFloat(value1.value).toFixed(1);
-        }
+        },
     });
 
     // Counter 2
@@ -149,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
         value: 24,
         onUpdate: () => {
             element2.textContent = Math.round(value2.value);
-        }
+        },
     });
 
     // Counter 3
@@ -160,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
         value: 20,
         onUpdate: () => {
             element3.textContent = Math.round(value3.value);
-        }
+        },
     });
 
     // Counter 4
@@ -171,23 +189,23 @@ document.addEventListener("DOMContentLoaded", () => {
         value: 0.05,
         onUpdate: () => {
             element4.textContent = parseFloat(value4.value).toFixed(2);
-        }
+        },
     });
 
     // Swiper slider setup
-    const swiper = new Swiper('.swiper', {
-        direction: 'horizontal',
+    const swiper = new Swiper(".swiper", {
+        direction: "horizontal",
         loop: true,
         slidesPerView: 3,
         spaceBetween: 30,
         allowTouchMove: false,
     });
 
-    document.querySelector('.button-prev').addEventListener('click', () => {
+    document.querySelector(".button-prev").addEventListener("click", () => {
         swiper.slidePrev();
     });
 
-    document.querySelector('.button-next').addEventListener('click', () => {
+    document.querySelector(".button-next").addEventListener("click", () => {
         swiper.slideNext();
     });
 });
