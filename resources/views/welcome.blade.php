@@ -219,7 +219,7 @@
     <p class="px-10 text-lg font-thin text-white whitespace-nowrap">
       Our partners
     </p>
-    <div class="w-auto overflow-hidden">
+    <div class="w-auto overflow-hidden fade">
       <div class="flex flex-row animate-scroll w-max">
         <img src="{{ asset('images/logo/logo-metri-baru.png') }}" class="w-52">
         <img src="{{ asset('images/logo/logo-putih-baru.png') }}" class="w-52">
