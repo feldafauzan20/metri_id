@@ -225,22 +225,11 @@
         </video>
     </section>
 
-    <div class="relative flex flex-row items-center w-full bg-[#045F50]">
+    <div class="flex flex-row items-center w-full bg-[#045F50]">
         <p class="px-10 text-lg font-thin text-white whitespace-nowrap">
             Our partners
         </p>
-
-        <!-- Container dengan efek fade -->
-        <div class="relative w-auto overflow-hidden">
-            <!-- Efek fade kiri & kanan -->
-            <div
-                class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#045F50] to-transparent pointer-events-none">
-            </div>
-            <div
-                class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#045F50] to-transparent pointer-events-none">
-            </div>
-
-            <!-- Logo berjalan -->
+        <div class="w-auto overflow-hidden fade">
             <div class="flex flex-row animate-scroll w-max">
                 <img src="{{ asset('images/logo/logo-metri-baru.png') }}" class="w-52">
                 <img src="{{ asset('images/logo/logo-putih-baru.png') }}" class="w-52">
@@ -249,7 +238,6 @@
                 <img src="{{ asset('images/logo/logo-putih-baru.png') }}" class="w-52">
                 <img src="{{ asset('images/logo/logo-putih-baru.png') }}" class="w-52">
                 <img src="{{ asset('images/logo/logo-putih-baru.png') }}" class="w-52">
-
                 <!-- Duplikat logo untuk efek loop -->
                 <img src="{{ asset('images/logo/logo-metri-baru.png') }}" class="w-52">
                 <img src="{{ asset('images/logo/logo-putih-baru.png') }}" class="w-52">
@@ -261,7 +249,6 @@
             </div>
         </div>
     </div>
-
 
     <section class="bg-[#257c76] w-full h-screen">
         <div class="flex flex-col justify-center h-full gap-5 px-10">

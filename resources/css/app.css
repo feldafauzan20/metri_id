@@ -39,6 +39,23 @@
         background-image: url("/public/images/bg-hero.webp");
     }
 
+    .fade {
+        mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 20%,
+            black 80%,
+            transparent
+        );
+        -webkit-mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 20%,
+            black 80%,
+            transparent
+        );
+    }
+
     .animate-scroll {
         animation: scroll 20s linear infinite;
     }
