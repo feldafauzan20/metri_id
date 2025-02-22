@@ -20,62 +20,20 @@ document.addEventListener("DOMContentLoaded", () => {
             pin: true,
         },
     })
-        .to(".parallax-container", {
-            scale: 1.2,
-            duration: 1.5,
-            ease: "power1.out",
-        })
         .fromTo(
-            "#tree",
-            {
-                y: 500,
-            },
-            {
-                y: -50,
-                duration: 1.5,
-                ease: "power2.out",
-            }
+            "#sun",
+            { y: "10vh" },
+            { y: "0vh", duration: 0.5, ease: "power1.out" }
         )
-        .to("#tree", {
-            scale: 10,
-            duration: 5,
-            delay: 3,
-            ease: "power1.inOut",
-        })
-
-        .to(
-            "#tanah2",
-            {
-                left: "750px",
-            },
-            "<"
-        )
-        .to(
-            "#plant2",
-            {
-                left: "-750px",
-            },
-            "<"
-        )
-        .to(
-            "#gunung2",
-            {
-                top: "500px",
-            },
-            "<"
-        )
-        .to(
-            "#plant1",
-            {
-                left: "750px",
-            },
-            "<"
-        )
-        .to("#tree", {
-            scale: 50,
-            duration: 5,
-            ease: "power1.inOut",
-        });
+        .to("#plant1", { duration: 1, left: "50vw" }, "<")
+        .to("#plant2", { duration: 2, left: "-50vw" }, "<")
+        .to("#bird1", { duration: 3, left: "50vw" }, "<")
+        .to("#bird2", { duration: 4, left: "-50vw" }, "<")
+        .to("#tree", { scale: 5, duration: 5, ease: "power1.inOut" })
+        .to("#overlay", { opacity: 1, duration: 1, ease: "power2.inOut" }) // Fade Out
+        .to(".parallax-container", { opacity: 0, duration: 0.5 }, "-=0.5") // Hilangkan parallax
+        .to("#overlay", { opacity: 0, duration: 1, ease: "power2.inOut" }) // Fade In ke section berikutnya
+        .to(".steps", { opacity: 1, duration: 1.5, ease: "power2.out" }, "-=1"); // Tampilkan section berikutnya
 
     // Steps cards animation
     gsap.from(".steps div", {
@@ -194,11 +152,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Swiper slider setup
     const swiper = new Swiper(".swiper", {
-        direction: "horizontal",
+        slidesPerView: 5, // 5 logo per baris
+        grid: {
+            rows: 2, // 2 baris
+            fill: "row",
+        },
+        spaceBetween: 20, // Jarak antar logo
         loop: true,
-        slidesPerView: 3,
-        spaceBetween: 30,
-        allowTouchMove: false,
     });
 
     document.querySelector(".button-prev").addEventListener("click", () => {

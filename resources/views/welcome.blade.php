@@ -6,19 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
 
-    {{-- google font start --}}
+    {{-- Google Font Start --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet">
+    {{-- Google Font End --}}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    {{-- google font end --}}
 
     {{-- my js start --}}
     @vite('resources/js/main.js')
@@ -48,24 +43,12 @@
 
     <section
         class="relative flex items-center justify-center min-h-screen overflow-hidden parallax-container will-change-transform bg-hero">
-        <img src="{{ asset('images/efek-angin.webp') }}" alt="" id="efek-angin"
-            class="img-parallax opacity-15" />
         <img src="{{ asset('images/sun.webp') }}" alt="" id="sun" class="img-parallax" />
-        <img src="{{ asset('images/gunung4.webp') }}" alt="" id="gunung4" class="img-parallax" />
-        <img src="{{ asset('images/gunung3.webp') }}" alt="" id="gunung3" class="img-parallax" />
-        <img src="{{ asset('images/cloud.webp') }}" alt="" id="cloud" class="img-parallax" />
-        <img src="{{ asset('images/gunung2.webp') }}" alt="" id="gunung2" class="img-parallax" />
-        <img src="{{ asset('images/gunung1.webp') }}" alt="" id="gunung1" class="img-parallax" />
-        <img src="{{ asset('images/tanah3.webp') }}" alt="" id="tanah3" class="img-parallax" />
-        <img src="{{ asset('images/tanah1.webp') }}" alt="" id="tanah1" class="img-parallax" />
-        <img src="{{ asset('images/plant2.webp') }}" alt="" id="plant2" class="img-parallax" />
-        <img src="{{ asset('images/tanah2.webp') }}" alt="" id="tanah2" class="img-parallax" />
+        <img src="{{ asset('images/bg-showcase.webp') }}" alt="" id="" class="img-parallax" />
+        <img src="{{ asset('images/bird2.webp') }}" alt="" id="bird2" class="img-parallax" />
+        <img src="{{ asset('images/bird1.webp') }}" alt="" id="bird1" class="img-parallax" />
+        <img src="{{ asset('images/plant2(2).webp') }}" alt="" id="plant2" class="img-parallax" />
         <img src="{{ asset('images/tree4.webp') }}" alt="" id="tree" class="img-parallax" />
-        {{-- <img src="{{ asset('images/leaf.webp') }}" alt="" id="leaf" class="img-parallax" /> --}}
-        {{-- <h2 id="text" class="absolute text-[5em] text-white font-semibold ">
-      <span class="block textHero1">Elevate Your Experience</span>
-      <span class="block text-center textHero2">with metri</span>
-    </h2> --}}
         <img src="{{ asset('images/plant1.webp') }}" alt="" id="plant1" class="img-parallax" />
     </section>
 
@@ -84,37 +67,11 @@
         </div>
 
         <div
-            class="cards absolute top-[25%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[600px] will-change-transform mt-[300px]">
+            class="cards absolute top-[25%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-fit will-change-transform mt-[300px]">
             <div
                 class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
                 <div class="flex-1 overflow-hidden rounded-md card-img">
-                    <img src="{{ asset('images/service1.png') }}" alt=""
-                        class="object-contain w-full h-full img-card" />
-                </div>
-                <div class="card-content w-full h-[60px]">
-                    <p class="text-left text-white font-jakarta text-[16px] font-medium leading-tight">
-                        ‎
-                        ‎
-                    </p>
-                </div>
-            </div>
-            <div
-                class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
-                <div class="flex-1 overflow-hidden rounded-md card-img">
-                    <img src="{{ asset('images/services2.png') }}" alt=""
-                        class="object-contain w-full h-full img-card" />
-                </div>
-                <div class="card-content w-full h-[60px]">
-                    <p class="text-left text-white font-jakarta text-[16px] font-medium leading-tight">
-                        ‎
-                        ‎
-                    </p>
-                </div>
-            </div>
-            <div
-                class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
-                <div class="flex-1 overflow-hidden rounded-md card-img">
-                    <img src="{{ asset('images/services3.png') }}" alt=""
+                    <img src="{{ asset('images/service1.webp') }}" loading="lazy" alt=""
                         class="object-contain w-full h-full img-card" />
                 </div>
                 <div class="card-content w-full h-[60px]">
@@ -126,7 +83,7 @@
             <div
                 class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
                 <div class="flex-1 overflow-hidden rounded-md card-img">
-                    <img src="{{ asset('images/services2.png') }}" alt=""
+                    <img src="{{ asset('images/services2.webp') }}" loading="lazy" alt=""
                         class="object-contain w-full h-full img-card" />
                 </div>
                 <div class="card-content w-full h-[60px]">
@@ -138,7 +95,7 @@
             <div
                 class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
                 <div class="flex-1 overflow-hidden rounded-md card-img">
-                    <img src="{{ asset('images/service1.png') }}" alt=""
+                    <img src="{{ asset('images/services3.webp') }}" loading="lazy" alt=""
                         class="object-contain w-full h-full img-card" />
                 </div>
                 <div class="card-content w-full h-[60px]">
@@ -150,7 +107,7 @@
             <div
                 class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
                 <div class="flex-1 overflow-hidden rounded-md card-img">
-                    <img src="{{ asset('images/services3.png') }}" alt=""
+                    <img src="{{ asset('images/services2.webp') }}" loading="lazy" alt=""
                         class="object-contain w-full h-full img-card" />
                 </div>
                 <div class="card-content w-full h-[60px]">
@@ -162,7 +119,31 @@
             <div
                 class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
                 <div class="flex-1 overflow-hidden rounded-md card-img">
-                    <img src="{{ asset('images/services2.png') }}" alt=""
+                    <img src="{{ asset('images/service1.webp') }}" loading="lazy" alt=""
+                        class="object-contain w-full h-full img-card" />
+                </div>
+                <div class="card-content w-full h-[60px]">
+                    <p class="text-left text-white font-jakarta text-[16px] font-medium leading-tight">
+                        ‎
+                    </p>
+                </div>
+            </div>
+            <div
+                class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
+                <div class="flex-1 overflow-hidden rounded-md card-img">
+                    <img src="{{ asset('images/services3.webp') }}" loading="lazy" alt=""
+                        class="object-contain w-full h-full img-card" />
+                </div>
+                <div class="card-content w-full h-[60px]">
+                    <p class="text-left text-white font-jakarta text-[16px] font-medium leading-tight">
+                        ‎
+                    </p>
+                </div>
+            </div>
+            <div
+                class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
+                <div class="flex-1 overflow-hidden rounded-md card-img">
+                    <img src="{{ asset('images/services2.webp') }}" loading="lazy" alt=""
                         class="object-contain w-full h-full img-card" />
                 </div>
                 <div class="card-content w-full h-[60px]">
@@ -179,8 +160,11 @@
         </div>
     </section>
 
-    <section class="bg-[#257c76] w-full h-screen items-center justify-center customer-support">
-        <div class="container flex flex-col items-center w-full max-h-screen pt-4 pb-10 overflow-hidden">
+    <div id="overlay" class="fixed top-0 left-0 w-full h-full bg-[#257c76] opacity-0 pointer-events-none z-50">
+    </div>
+
+    <section class="bg-[#257c76] w-full pb-28 items-center justify-center customer-support">
+        <div class="container flex flex-col items-center w-full  pt-4 overflow-hidden">
             <div class="flex flex-col items-center w-full">
                 <p
                     class="text-white max-w-lg w-fit font-jakarta font-normal text-xl text-center rounded-3xl outline outline-2 outline-[#E1E1E1] p-2 mt-2">
@@ -219,13 +203,13 @@
         </div>
     </section>
 
-    <section class="w-full h-full">
-        <video autoplay loop muted controls>
+    <section class="w-full h-[500px] pb-10">
+        <video class="w-full h-full object-fill" autoplay loop muted poster="{{ asset('videos/placeholder.mp4') }}">
             <source src="{{ asset('videos/placeholder.mp4') }}" type="video/mp4">
         </video>
     </section>
 
-    <div class="flex flex-row items-center w-full bg-[#045F50]">
+    <div class="flex flex-row items-center w-full bg-[#257c76]">
         <p class="px-10 text-lg font-thin text-white whitespace-nowrap">
             Our partners
         </p>
@@ -260,136 +244,14 @@
             </p>
             <div class="w-full swiper">
                 <div class="swiper-wrapper">
-                    <div class="w-full swiper-slide">
-                        <div class="flex flex-row items-center gap-5">
-                            <img src="{{ asset('images/card-1.jpg') }}"
-                                class="w-20 h-20 bg-white rounded-full aspect-square">
-                            <p class="w-full text-justify text-white uppercase font-jakarta">
-                                Lorem ipsum dolor sit amet consectetur adipisicing.
-                            </p>
+                    @foreach (range(1, 60) as $i)
+                        <div class="swiper-slide flex justify-center">
+                            <div class="w-full flex justify-center">
+                                <img src="{{ asset('images/card-' . $i . '.jpg') }}"
+                                    class="w-20 h-20 bg-white rounded-full aspect-square">
+                            </div>
                         </div>
-                        <div class="flex flex-col gap-3 my-14">
-                            <p class="text-justify text-white font-jakarta">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae laboriosam et libero
-                                inventore
-                                provident nostrum possimus quidem culpa dolorum dolorem?
-                            </p>
-                            <p class="text-white font-jakarta text-end">
-                                Lorem, ipsum dolor.
-                            </p>
-                        </div>
-                        <div class="my-5 border-t-4 border-white"></div>
-                        <div class="relative">
-                            <p class="absolute bottom-0 left-0 p-5 text-xl font-bold text-white font-jakarta">
-                                VINCERE STUDIO
-                            </p>
-                            <img src="{{ asset('images/card-1.jpg') }}" class="object-cover w-full h-28 photo-card">
-                        </div>
-                    </div>
-                    <div class="w-full swiper-slide">
-                        <div class="flex flex-row items-center gap-5">
-                            <img src="{{ asset('images/card-1.jpg') }}"
-                                class="w-20 h-20 bg-white rounded-full aspect-square">
-                            <p class="w-full text-justify text-white uppercase font-jakarta">
-                                Lorem ipsum dolor sit amet consectetur adipisicing.
-                            </p>
-                        </div>
-                        <div class="flex flex-col gap-3 my-14">
-                            <p class="text-justify text-white font-jakarta">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae laboriosam et libero
-                                inventore
-                                provident nostrum possimus quidem culpa dolorum dolorem?
-                            </p>
-                            <p class="text-white font-jakarta text-end">
-                                Lorem, ipsum dolor.
-                            </p>
-                        </div>
-                        <div class="my-5 border-t-4 border-white"></div>
-                        <div class="relative">
-                            <p class="absolute bottom-0 left-0 p-5 text-xl font-bold text-white font-jakarta">
-                                VINCERE STUDIO
-                            </p>
-                            <img src="{{ asset('images/card-1.jpg') }}" class="object-cover w-full h-28 photo-card">
-                        </div>
-                    </div>
-                    <div class="w-full swiper-slide">
-                        <div class="flex flex-row items-center gap-5">
-                            <img src="{{ asset('images/card-1.jpg') }}"
-                                class="w-20 h-20 bg-white rounded-full aspect-square">
-                            <p class="w-full text-justify text-white uppercase font-jakarta">
-                                Lorem ipsum dolor sit amet consectetur adipisicing.
-                            </p>
-                        </div>
-                        <div class="flex flex-col gap-3 my-14">
-                            <p class="text-justify text-white font-jakarta">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae laboriosam et libero
-                                inventore
-                                provident nostrum possimus quidem culpa dolorum dolorem?
-                            </p>
-                            <p class="text-white font-jakarta text-end">
-                                Lorem, ipsum dolor.
-                            </p>
-                        </div>
-                        <div class="my-5 border-t-4 border-white"></div>
-                        <div class="relative">
-                            <p class="absolute bottom-0 left-0 p-5 text-xl font-bold text-white font-jakarta">
-                                VINCERE STUDIO
-                            </p>
-                            <img src="{{ asset('images/card-1.jpg') }}" class="object-cover w-full h-28 photo-card">
-                        </div>
-                    </div>
-                    <div class="w-full swiper-slide">
-                        <div class="flex flex-row items-center gap-5">
-                            <img src="{{ asset('images/card-1.jpg') }}"
-                                class="w-20 h-20 bg-white rounded-full aspect-square">
-                            <p class="w-full text-justify text-white uppercase font-jakarta">
-                                Lorem ipsum dolor sit amet consectetur adipisicing.
-                            </p>
-                        </div>
-                        <div class="flex flex-col gap-3 my-14">
-                            <p class="text-justify text-white font-jakarta">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae laboriosam et libero
-                                inventore
-                                provident nostrum possimus quidem culpa dolorum dolorem?
-                            </p>
-                            <p class="text-white font-jakarta text-end">
-                                Lorem, ipsum dolor.
-                            </p>
-                        </div>
-                        <div class="my-5 border-t-4 border-white"></div>
-                        <div class="relative">
-                            <p class="absolute bottom-0 left-0 p-5 text-xl font-bold text-white font-jakarta">
-                                VINCERE STUDIO
-                            </p>
-                            <img src="{{ asset('images/card-1.jpg') }}" class="object-cover w-full h-28 photo-card">
-                        </div>
-                    </div>
-                    <div class="w-full swiper-slide">
-                        <div class="flex flex-row items-center gap-5">
-                            <img src="{{ asset('images/card-1.jpg') }}"
-                                class="w-20 h-20 bg-white rounded-full aspect-square">
-                            <p class="w-full text-justify text-white uppercase font-jakarta">
-                                Lorem ipsum dolor sit amet consectetur adipisicing.
-                            </p>
-                        </div>
-                        <div class="flex flex-col gap-3 my-14">
-                            <p class="text-justify text-white font-jakarta">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae laboriosam et libero
-                                inventore
-                                provident nostrum possimus quidem culpa dolorum dolorem?
-                            </p>
-                            <p class="text-white font-jakarta text-end">
-                                Lorem, ipsum dolor.
-                            </p>
-                        </div>
-                        <div class="my-5 border-t-4 border-white"></div>
-                        <div class="relative">
-                            <p class="absolute bottom-0 left-0 p-5 text-xl font-bold text-white font-jakarta">
-                                VINCERE STUDIO
-                            </p>
-                            <img src="{{ asset('images/card-1.jpg') }}" class="object-cover w-full h-28 photo-card">
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
 
@@ -463,8 +325,6 @@
             </div>
         </div>
     </footer>
-
-
 
     {{-- cdn gsap & lenis start --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
