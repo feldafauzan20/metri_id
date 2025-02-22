@@ -40,13 +40,13 @@
 
   <section
     class="relative flex items-center justify-center min-h-screen overflow-hidden parallax-container will-change-transform bg-hero">
-    <img src="{{ asset('images/sun.webp') }}" alt="" id="sun" class="img-parallax" />
-    <img src="{{ asset('images/bg-showcase.webp') }}" alt="" id="" class="img-parallax" />
-    <img src="{{ asset('images/bird2.webp') }}" alt="" id="bird2" class="img-parallax" />
-    <img src="{{ asset('images/bird1.webp') }}" alt="" id="bird1" class="img-parallax" />
-    <img src="{{ asset('images/plant2(2).webp') }}" alt="" id="plant2" class="img-parallax" />
-    <img src="{{ asset('images/tree4.webp') }}" alt="" id="tree" class="img-parallax" />
-    <img src="{{ asset('images/plant1.webp') }}" alt="" id="plant1" class="img-parallax" />
+    <img src="{{ asset('images/sun.webp') }}" alt="" id="sun" class="img-parallax" loading="eager" />
+    <img src="{{ asset('images/bg-showcase.webp') }}" alt="" id="" class="img-parallax" loading="eager" />
+    <img src="{{ asset('images/bird2.webp') }}" alt="" id="bird2" class="img-parallax" loading="eager" />
+    <img src="{{ asset('images/bird1.webp') }}" alt="" id="bird1" class="img-parallax" loading="eager" />
+    <img src="{{ asset('images/plant2(2).webp') }}" alt="" id="plant2" class="img-parallax" loading="eager" />
+    <img src="{{ asset('images/tree4.webp') }}" alt="" id="tree" class="img-parallax" loading="eager" />
+    <img src="{{ asset('images/plant1.webp') }}" alt="" id="plant1" class="img-parallax" loading="eager" />
   </section>
 
   <section class="bg-[#257c76] relative w-full h-screen overflow-hidden steps -mt-10">
@@ -243,7 +243,7 @@
         <div class="swiper-wrapper">
           @foreach (range(1, 60) as $i)
           <div class="flex justify-center swiper-slide">
-            <div class="flex flex-col justify-center w-full gap-5">
+            <div class="flex flex-col items-center w-full gap-5">
               <img src="{{ asset('images/card-1.jpg') }}" class="w-20 h-20 bg-white rounded-full aspect-square">
               <img src="{{ asset('images/card-1.jpg') }}" class="w-20 h-20 bg-white rounded-full aspect-square">
             </div>
