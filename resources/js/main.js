@@ -2,7 +2,7 @@ import Swiper from "swiper/bundle";
 import "swiper/css/bundle";
 
 document.addEventListener("DOMContentLoaded", () => {
-    gsap.registerPlugin(ScrollTrigger, TextPlugin);
+    gsap.registerPlugin(ScrollTrigger);
 
     // Lenis smooth scroll setup
     const lenis = new Lenis();
