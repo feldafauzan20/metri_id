@@ -153,10 +153,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Swiper slider setup
     const swiper = new Swiper(".swiper", {
         slidesPerView: 5, // 5 logo per baris
-        grid: {
-            rows: 2, // 2 baris
-            fill: "row",
-        },
         spaceBetween: 20, // Jarak antar logo
         loop: true,
     });
