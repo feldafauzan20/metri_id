@@ -17,7 +17,7 @@
     @vite(['resources/js/main.js', 'resources/css/app.css'])
 </head>
 
-<body class="min-h-screen overflow-x-hidden h-full">
+<body class="h-full min-h-screen overflow-x-hidden">
     <header class="absolute top-0 left-0 w-full px-[100px] py-[30px] flex justify-evenly items-center z-[100]">
         <div class="w-full">
             <a href="#" class="logo">
@@ -34,7 +34,7 @@
             </nav>
         </div>
         <div class="flex justify-end w-full">
-            <h1 class="tracking-wider font-ibm text-black">PT. MEDIA TREN IDEA</h1>
+            <h1 class="tracking-wider text-black font-ibm">PT. MEDIA TREN IDEA</h1>
         </div>
     </header>
 
@@ -55,7 +55,7 @@
             loading="eager" />
     </section>
 
-    <section class=" relative w-full h-screen overflow-hidden mysteps -mt-10">
+    <section class="relative w-full h-screen -mt-10 overflow-hidden  mysteps">
         <div class="step-counter w-full relative flex px-[2em] flex-row m-[2em] justify-between items-center">
             <div class="counter-title relative h-[150px] overflow-hidden w-full flex flex-col items-center">
                 <h1
@@ -180,7 +180,7 @@
     <div id="overlay" class="fixed top-0 left-0 w-full h-full bg-[#00413D] opacity-0 pointer-events-none z-50">
     </div>
 
-    <section class=" w-full pb-28 items-center justify-center customer-support">
+    <section class="items-center justify-center w-full  pb-28 customer-support">
         <div class="container flex flex-col items-center w-full pt-4 overflow-hidden">
             <div class="flex flex-col items-center w-full">
                 <p
@@ -251,7 +251,7 @@
         </div>
     </div>
 
-    <section class=" w-full pt-10">
+    <section class="w-full pt-10 ">
         <div class="flex flex-col justify-center h-full gap-5 px-10">
             <h2 class="py-1 font-thin text-white px-7 w-max font-jakarta rounded-3xl outline outline-1">
                 Our clients
@@ -260,7 +260,7 @@
                 <p class="w-1/2 text-3xl text-white font-jakarta">
                     See what our clients have to say about partnering with us on several projects
                 </p>
-                <div class="flex flex-row justify-end gap-x-3 overflow-hidden w-1/2 items-center">
+                <div class="flex flex-row items-center justify-end w-1/2 overflow-hidden gap-x-3">
                     <button class="btn btn-circle btn-outline button-prev">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
                             class="bi bi-chevron-left" viewBox="0 0 16 16">
@@ -282,7 +282,7 @@
                     @foreach (range(1, 60) as $i)
                         <div class="flex justify-center swiper-slide">
                             <div class="flex flex-col items-center w-full gap-5">
-                                <img src="{{ asset('images/card-1.webp') }}"
+                                <img src="{{ asset('images/card-' . $i . '.webp') }}"
                                     class="w-20 h-20 bg-white rounded-full aspect-square">
                                 <img src="{{ asset('images/card-1.webp') }}"
                                     class="w-20 h-20 bg-white rounded-full aspect-square">
@@ -301,9 +301,9 @@
             <div class="w-1/2 px-2 text-4xl font-medium text-white">
                 <h2>Start your brand experience transformation now</h2>
             </div>
-            <div class="w-1/2 flex gap-x-5 items-center justify-end">
+            <div class="flex items-center justify-end w-1/2 gap-x-5">
                 <button
-                    class="btn bg-transparent w-1/3 rounded-full outline-white outline text-white font-ibm text-xl font-normal outline-2">CONTACT
+                    class="w-1/3 text-xl font-normal text-white bg-transparent rounded-full btn outline-white outline font-ibm outline-2">CONTACT
                     US</button>
                 <button
                     class="btn btn-active bg-white text-[#00413C] w-1/3 rounded-full font-ibm text-xl font-normal outline-2">CONTACT
