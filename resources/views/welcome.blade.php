@@ -284,7 +284,7 @@
                             <div class="flex flex-col items-center w-full gap-5">
                                 <img src="{{ asset('images/card-' . $i . '.webp') }}"
                                     class="w-20 h-20 bg-white rounded-full aspect-square">
-                                <img src="{{ asset('images/card-1.webp') }}"
+                                <img src="{{ asset('images/card-' . $i . '.webp') }}"
                                     class="w-20 h-20 bg-white rounded-full aspect-square">
                             </div>
                         </div>
