@@ -1,10 +1,10 @@
-import Swiper from 'swiper';
-import 'swiper/css';
+import Swiper from "swiper";
+import "swiper/css";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import Lenis from 'lenis';
+import Lenis from "lenis";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -37,15 +37,15 @@ gsap.timeline({
     .to("#overlay", { opacity: 1, duration: 1, ease: "power2.inOut" }) // Fade Out
     .to(".parallax-container", { opacity: 0, duration: 0.5 }, "-=0.5") // Hilangkan parallax
     .to("#overlay", { opacity: 0, duration: 1, ease: "power2.inOut" }) // Fade In ke section berikutnya
-    .to(".steps", { opacity: 1, duration: 1.5, ease: "power2.out" }, "-=1"); // Tampilkan section berikutnya
+    .to(".mysteps", { opacity: 1, duration: 1.5, ease: "power2.out" }, "-=1"); // Tampilkan section berikutnya
 
-// Steps cards animation
-gsap.from(".steps div", {
-    opacity: 1,
+// mysteps cards animation
+gsap.from(".mysteps div", {
+    opacity: 0,
     duration: 1,
     ease: "power2.inOut",
     scrollTrigger: {
-        trigger: ".steps",
+        trigger: ".mysteps",
         start: "top top",
         end: "bottom top",
         scrub: 3,
@@ -53,7 +53,7 @@ gsap.from(".steps div", {
 });
 
 // Sticky cards setup
-const stickySection = document.querySelector(".steps");
+const stickySection = document.querySelector(".mysteps");
 const stickyHeight = window.innerHeight * 7;
 const cards = document.querySelectorAll(".card");
 const totalCards = cards.length;
@@ -69,9 +69,7 @@ ScrollTrigger.create({
 
 // Cards positioning helper functions
 const getRadius = () =>
-    window.innerWidth < 900
-        ? window.innerWidth * 7.5
-        : window.innerWidth * 2.5;
+    window.innerWidth < 900 ? window.innerWidth * 7.5 : window.innerWidth * 2.5;
 const arcAngle = Math.PI * 0.4;
 const startAngle = Math.PI / 2 - arcAngle / 2;
 
@@ -168,4 +166,3 @@ document.querySelector(".button-prev").addEventListener("click", () => {
 document.querySelector(".button-next").addEventListener("click", () => {
     swiper.slideNext();
 });
-

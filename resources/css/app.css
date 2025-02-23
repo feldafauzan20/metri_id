@@ -8,7 +8,8 @@
         border-collapse: collapse;
     }
     body {
-        @apply font-jakarta;
+        @apply font-jakarta bg-cover bg-center;
+        background-image: url("/public/images/gradient.webp");
     }
 
     html {
