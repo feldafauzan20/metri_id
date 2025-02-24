@@ -25,11 +25,6 @@
         margin: 0 10px;
     }
 
-    .bg-hero-services {
-        @apply bg-cover bg-center;
-        background-image: url("/public/images/gradient.webp");
-    }
-
     .img-parallax {
         @apply absolute top-0 left-0 w-full pointer-events-none;
     }

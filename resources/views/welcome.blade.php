@@ -6,15 +6,15 @@
     <main class="h-full min-h-screen overflow-x-hidden">
         <section class="absolute top-0 left-0 w-full px-[100px] py-[30px] flex justify-between items-center z-[100]">
             <div>
-                <a href="#" class="logo">
+                <a href="/" class="logo">
                     <img src="{{ asset('images/logo/logo-putih-baru.webp') }}" alt="" width="150" />
                 </a>
             </div>
             <div class="min-h-min">
                 <nav class="flex navigation">
                     <a href="" class="active a-nav">ABOUT</a>
-                    <a href="" class="a-nav">COMMUNITY</a>
-                    <a href="" class="a-nav">OUR PARTNERS</a>
+                    <a href="#services" class="a-nav">OUR SERVICES</a>
+                    <a href="#partners" class="a-nav">OUR PARTNERS</a>
                     <a href="" class="a-nav">CONTACT</a>
                 </nav>
             </div>
@@ -41,7 +41,7 @@
                 loading="eager" />
         </section>
 
-        <section class="relative w-full h-screen -mt-10 overflow-hidden  mysteps">
+        <section class="relative w-full h-screen -mt-10 overflow-hidden mysteps" id="services">
             <div class="step-counter w-full relative flex px-[2em] flex-row m-[2em] justify-between items-center">
                 <div class="counter-title relative h-[150px] overflow-hidden w-full flex flex-col items-center">
                     <h2
@@ -57,7 +57,7 @@
 
             <div
                 class="cards absolute top-[25%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-fit will-change-transform mt-[300px]">
-                <a href="">
+                <a href="/metri-entertainment">
                     <div
                         class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
                         <div class="flex-1 overflow-hidden rounded-md card-img">
@@ -214,7 +214,7 @@
             </video>
         </section>
 
-        <div class="flex flex-row items-center w-full bg-[#056251]">
+        <div class="flex flex-row items-center w-full bg-[#056251]" id="partners">
             <p class="px-10 text-lg font-thin text-white whitespace-nowrap">
                 Our partners
             </p>
