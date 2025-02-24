@@ -1,4 +1,7 @@
 <x-layouts.layout>
+    @section('vite')
+        @vite(['resources/js/main.js', 'resources/css/app.css'])
+    @endsection
 
     <main class="h-full min-h-screen overflow-x-hidden">
         <section class="absolute top-0 left-0 w-full px-[100px] py-[30px] flex justify-between items-center z-[100]">

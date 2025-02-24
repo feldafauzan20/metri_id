@@ -14,7 +14,7 @@
         rel="stylesheet">
 
     {{-- JS --}}
-    @vite(['resources/js/app.js', 'resources/css/app.css'])
+    @yield('vite')
 </head>
 
 

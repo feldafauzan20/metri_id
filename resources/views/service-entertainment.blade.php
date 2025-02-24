@@ -1,6 +1,8 @@
 <x-layouts.layout>
-
-    <section class="bg-hero-services">
+    @section('vite')
+        @vite(['resources/js/service.js', 'resources/css/app.css'])
+    @endsection
+    <section class="bg-hero-services w-full h-screen">
         <header class="absolute top-0 left-0 w-full px-[100px] py-[30px] flex justify-between items-center z-[100]">
             <div>
                 <a href="#" class="logo">
