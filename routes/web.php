@@ -33,3 +33,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/metri-entertainment', function () {
+    return view('service-entertainment');
+});

@@ -26,7 +26,7 @@ gsap.timeline({
 })
     .fromTo(
         "#sun",
-        { y: "10vh" },
+        { y: "20vh" },
         { y: "0vh", duration: 0.5, ease: "power1.out" }
     )
     .to("#plant1", { duration: 1, left: "50vw" }, "<")
