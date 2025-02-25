@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\MetriDesignPost;
 
-class Controller_Design extends Controller
+class MetriDesignPostController extends Controller
 {
     public function index()
     {

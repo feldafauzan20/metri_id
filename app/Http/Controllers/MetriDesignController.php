@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MetriDesign;
 use Illuminate\Http\Request;
 
-class MetriDesignCoontroller extends Controller
+class MetriDesignController extends Controller
 {
     public function index()
     {
-        $posts = MetriDesignCoontroller::latest()->get(); // Fetch data dari Filament Model
+        $posts = MetriDesign::latest()->get(); // Fetch data dari Filament Model
 
         // Ubah link menjadi format embed untuk YouTube
         foreach ($posts as $post) {
@@ -22,4 +23,3 @@ class MetriDesignCoontroller extends Controller
         return view('index', compact('posts'));
     }
 }
-
