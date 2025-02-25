@@ -1,7 +1,11 @@
 <x-layouts.layout>
-    @section('vite')
+    <x-slot:title>
+        metri | Home
+    </x-slot:title>
+
+    <x-slot:vite>
         @vite(['resources/js/main.js', 'resources/css/app.css'])
-    @endsection
+    </x-slot:vite>
 
     <main class="h-full min-h-screen overflow-x-hidden">
         <section class="absolute top-0 left-0 w-full px-[100px] py-[30px] flex justify-between items-center z-[100]">

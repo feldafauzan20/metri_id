@@ -1,7 +1,11 @@
 <x-layouts.layout>
-    @section('vite')
+    <x-slot:title>
+        metri | Entertainment
+    </x-slot:title>
+
+    <x-slot:vite>
         @vite(['resources/js/service.js', 'resources/css/app.css'])
-    @endsection
+    </x-slot:vite>
     <main>
         <x-layouts-service.navbar-services />
 
