@@ -1,10 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Controller_Design;
+use App\Http\Controllers\DesignController;
+use App\Http\Controllers\MetriLandingPageController;
 use Esign\ConversionsApi\Facades\ConversionsApi;
 use FacebookAds\Object\ServerSide\Event;
 use FacebookAds\Object\ServerSide\UserData;
+
+
+Route::get('/', [MetriLandingPageController::class, 'index']);
+
+Route::get('/design', [DesignController::class, 'index']);
 
 // Route::get('/test-add-to-cart', function () {
 //     $userData = (new UserData())
@@ -23,13 +29,3 @@ use FacebookAds\Object\ServerSide\UserData;
 
 //     return response()->json(['message' => 'AddToCart event sent successfully']);
 // });
-
-
-
-Route::get('/design', [Controller_Design::class, 'index']);
-
-
-Route::get('/', function () {
-    return view('welcome');
-});
-

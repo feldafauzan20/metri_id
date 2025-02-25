@@ -25,39 +25,30 @@ class MetriLandingPageResource extends Resource
             ->schema([
                 Section::make('Input Data')
                     ->schema([
-                        TextInput::make('angka_1')
-                            ->label('ANGKA 1')
-                            ->numeric()
-                            ->maxLength(10),
+                        TextInput::make('counter_1')
+                            ->label('Counter 1')
+                            ->numeric(),
+                        // ->maxLength(10),
 
-                        TextInput::make('angka_2')
-                            ->label('ANGKA 2')
-                            ->numeric()
-                            ->maxLength(10),
+                        TextInput::make('counter_2')
+                            ->label('Counter 2')
+                            ->numeric(),
+                        // ->maxLength(10),
 
-                        TextInput::make('angka_3')
-                            ->label('ANGKA 3')
-                            ->numeric()
-                            ->maxLength(10),
+                        TextInput::make('counter_3')
+                            ->label('Counter 3')
+                            ->numeric(),
+                        // ->maxLength(10),
 
-                        TextInput::make('angka_4')
-                            ->label('ANGKA 4')
-                            ->numeric()
-                            ->maxLength(10),
-
-                        TextInput::make('youtube_link')
-                            ->label('YouTube Link')
-                            ->url(),
-
-                        FileUpload::make('image')
-                            ->label('Upload Image')
-                            ->image()
-                            ->directory('metri_landing_images'),
+                        TextInput::make('counter_4')
+                            ->label('Counter 4')
+                            ->numeric(),
+                        // ->maxLength(10),
 
                         FileUpload::make('video')
                             ->label('Upload Video')
                             ->directory('metri_landing_videos')
-                            ->acceptedFileTypes(['video/mp4', 'video/mov', 'video/avi']),
+                        // ->acceptedFileTypes(['video/mp4', 'video/mov', 'video/avi']),
                     ]),
             ]);
     }
