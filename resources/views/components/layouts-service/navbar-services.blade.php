@@ -49,11 +49,10 @@
     </div>
 
     <!-- Wrapper Menu -->
-    <div class="relative w-full h-full flex items-center justify-center">
+    <div class="relative w-full h-full flex items-center overflow-hidden">
         <!-- Menu utama -->
         <div id="mainMenu"
-            class="absolute flex flex-col items-center text-center transition-all duration-500 ease-in-out 
-    left-1/2 -translate-x-1/2 w-1/2">
+            class="absolute justify-center flex flex-col w-full h-full transition-all duration-500 ease-in-out transform translate-x-0 text-center">
 
             <a href="/" class="text-white hover:text-orange-200 font-bold text-6xl md:text-8xl">HOME</a>
             <a href="#" class="text-white hover:text-orange-200 font-bold text-6xl md:text-8xl">ABOUT US</a>
@@ -66,7 +65,7 @@
 
         <!-- Sub-menu services -->
         <div id="servicesDropdown"
-            class="absolute flex flex-col justify-center right-0 translate-x-full opacity-0 transition-all duration-500 ease-in-out w-fit">
+            class="absolute flex flex-col justify-center right-0 translate-x-full opacity-0 transition-all duration-500 ease-in-out w-2/5">
             <a href="#" class="text-white hover:text-orange-200 font-bold text-3xl md:text-5xl">metri
                 entertainment</a>
             <a href="#" class="text-white hover:text-orange-200 font-bold text-3xl md:text-5xl">metri film</a>

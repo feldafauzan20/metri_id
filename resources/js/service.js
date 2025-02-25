@@ -41,9 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const isHidden = servicesDropdown.classList.contains("opacity-0");
 
         if (isHidden) {
-            // Geser menu utama ke kiri
-            mainMenu.classList.remove("-translate-x-1/2");
-            mainMenu.classList.add("-translate-x-[85%]");
+            // Geser menu utama ke kiri sepenuhnya tanpa mengubah konfigurasi Tailwind
+            mainMenu.classList.add("-translate-x-[25%]");
 
             // Munculkan submenu services
             servicesDropdown.classList.remove(
@@ -52,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "pointer-events-none"
             );
             servicesDropdown.classList.add(
-                "translate-x-[-3%]",
+                "translate-x-0",
                 "opacity-100",
                 "pointer-events-auto"
             );
@@ -62,13 +61,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function hideServicesDropdown() {
-        // Kembalikan menu utama ke tengah
-        mainMenu.classList.remove("-translate-x-[85%]");
-        mainMenu.classList.add("-translate-x-1/2");
+        // Kembalikan menu utama ke posisi awal
+        mainMenu.classList.remove("-translate-x-[25%]");
 
-        // Sembunyikan submenu services & matikan interaksi
+        // Sembunyikan submenu services
         servicesDropdown.classList.remove(
-            "translate-x-[-3%]",
+            "translate-x-0",
             "opacity-100",
             "pointer-events-auto"
         );

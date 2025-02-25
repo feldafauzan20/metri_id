@@ -26,7 +26,7 @@
             </div>
 
             <!-- Sub Company -->
-            <div class="text-left">
+            <div class="text-left ">
                 <h4 class="text-lg font-semibold mb-3">SUB COMPANY</h4>
                 <ul class="text-gray-400 space-y-2">
                     <li><a href="/metri-entertainment" class="hover:text-white">metri entertainment</a></li>

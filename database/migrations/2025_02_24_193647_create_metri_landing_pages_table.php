@@ -8,12 +8,10 @@ return new class extends Migration {
     {
         Schema::create('metri_landing_pages', function (Blueprint $table) {
             $table->id();
-            $table->char('angka_1', 1);
-            $table->char('angka_2', 1);
-            $table->char('angka_3', 1);
-            $table->char('angka_4', 1);
-            $table->string('youtube_link')->nullable();
-            $table->string('image')->nullable();
+            $table->float('counter_1', 1);
+            $table->float('counter_2', 1);
+            $table->float('counter_3', 1);
+            $table->float('counter_4', 1);
             $table->string('video')->nullable();
             $table->timestamps();
         });

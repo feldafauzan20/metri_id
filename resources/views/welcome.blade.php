@@ -214,7 +214,7 @@
 
         <section class="w-full h-[500px]">
             <video class="object-fill w-full h-full" autoplay loop muted>
-                <source src="{{ Vite::asset('resources/assets/placeholder.mp4') }}" type="video/mp4">
+                <source src="{{ asset('storage/' . $video) }}" type="video/mp4">
             </video>
         </section>
 

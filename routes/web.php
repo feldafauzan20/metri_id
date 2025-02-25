@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MetriLandingPageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller_Design;
 use Esign\ConversionsApi\Facades\ConversionsApi;
@@ -29,7 +30,7 @@ use FacebookAds\Object\ServerSide\UserData;
 Route::get('/design', [Controller_Design::class, 'index']);
 
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [MetriLandingPageController::class, 'index']);
+Route::get('/metri-entertainment', function () {
+    return view('service-entertainment');
 });
-
