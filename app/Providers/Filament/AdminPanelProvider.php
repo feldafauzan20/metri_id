@@ -27,10 +27,8 @@ class AdminPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->brandName('metri')
-            ->favicon(asset('images/logo/logo-putih.png'))
-            ->darkModeBrandLogo(asset('images/logo/logo-putih.png'))
-            ->brandLogo(asset('images/logo/logo-gelap.png'))
+            ->darkModeBrandLogo(asset('images/logo-putih.png'))
+            ->brandLogo(asset('images/logo-gelap.png'))
             ->brandLogoHeight('2rem')
             ->default()
             ->id('admin')
@@ -43,9 +41,6 @@ class AdminPanelProvider extends PanelProvider
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
                 // Pages\Dashboard::class,
-            ])
-            ->plugins([
-                \BezhanSalleh\FilamentGoogleAnalytics\FilamentGoogleAnalyticsPlugin::make()
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([

@@ -3,15 +3,12 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\MetriDesignResource\Pages;
-use App\Filament\Resources\MetriDesignResource\RelationManagers;
 use App\Models\MetriDesign;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class MetriDesignResource extends Resource
 {
@@ -23,7 +20,41 @@ class MetriDesignResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('youtube_link')
+                    ->label('YouTube Link')
+                    ->required()
+                    ->url()
+                    ->placeholder('https://www.youtube.com/watch?v=example'),
+
+                Forms\Components\FileUpload::make('video')
+                    ->label('Upload Video')
+                    ->directory('videos')
+                    ->acceptedFileTypes(['video/mp4', 'video/mov', 'video/avi'])
+                    ->nullable(),
+
+                Forms\Components\FileUpload::make('photo_1')
+                    ->label('Foto 1')
+                    ->directory('photos')
+                    ->image()
+                    ->nullable(),
+
+                Forms\Components\FileUpload::make('photo_2')
+                    ->label('Foto 2')
+                    ->directory('photos')
+                    ->image()
+                    ->nullable(),
+
+                Forms\Components\FileUpload::make('photo_3')
+                    ->label('Foto 3')
+                    ->directory('photos')
+                    ->image()
+                    ->nullable(),
+
+                Forms\Components\FileUpload::make('photo_4')
+                    ->label('Foto 4')
+                    ->directory('photos')
+                    ->image()
+                    ->nullable(),
             ]);
     }
 
@@ -31,10 +62,15 @@ class MetriDesignResource extends Resource
     {
         return $table
             ->columns([
-                //
-            ])
-            ->filters([
-                //
+                Tables\Columns\TextColumn::make('youtube_link')
+                    ->label('YouTube Link')
+                    ->url(fn ($record) => $record->youtube_link, true)
+                    ->searchable(),
+
+                Tables\Columns\ImageColumn::make('photo_1')->label('Foto 1'),
+                Tables\Columns\ImageColumn::make('photo_2')->label('Foto 2'),
+                Tables\Columns\ImageColumn::make('photo_3')->label('Foto 3'),
+                Tables\Columns\ImageColumn::make('photo_4')->label('Foto 4'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -48,9 +84,7 @@ class MetriDesignResource extends Resource
 
     public static function getRelations(): array
     {
-        return [
-            //
-        ];
+        return [];
     }
 
     public static function getPages(): array
