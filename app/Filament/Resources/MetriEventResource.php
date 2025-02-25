@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class MetriEventResource extends Resource
 {
     protected static ?string $model = MetriEvent::class;
-
+    protected static ?string $navigationGroup = 'Metri Event';
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form

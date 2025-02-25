@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class MetriDigitalResource extends Resource
 {
     protected static ?string $model = MetriDigital::class;
-
+    protected static ?string $navigationGroup = 'Metri Digital';
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
