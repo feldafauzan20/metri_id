@@ -66,14 +66,18 @@
         <!-- Sub-menu services -->
         <div id="servicesDropdown"
             class="absolute flex flex-col justify-center right-0 translate-x-full opacity-0 transition-all duration-500 ease-in-out w-2/5">
-            <a href="#" class="text-white hover:text-orange-200 font-bold text-3xl md:text-5xl">metri
+            <a href="/metri-entertainment" class="text-white hover:text-orange-200 font-bold text-3xl md:text-5xl">metri
                 entertainment</a>
-            <a href="#" class="text-white hover:text-orange-200 font-bold text-3xl md:text-5xl">metri film</a>
-            <a href="#" class="text-white hover:text-orange-200 font-bold text-3xl md:text-5xl">metri post</a>
-            <a href="#" class="text-white hover:text-orange-200 font-bold text-3xl md:text-5xl">tang ting</a>
-            <a href="#" class="text-white hover:text-orange-200 font-bold text-3xl md:text-5xl">metri event</a>
-            <a href="#" class="text-white hover:text-orange-200 font-bold text-3xl md:text-5xl">metri digital</a>
-            <a href="#" class="text-white hover:text-orange-200 font-bold text-3xl md:text-5xl">metri design</a>
+            <a href="/metri-film" class="text-white hover:text-orange-200 font-bold text-3xl md:text-5xl">metri film</a>
+            <a href="/metri-post" class="text-white hover:text-orange-200 font-bold text-3xl md:text-5xl">metri post</a>
+            <a href="/metri-tang-ting" class="text-white hover:text-orange-200 font-bold text-3xl md:text-5xl">tang
+                ting</a>
+            <a href="/metri-event" class="text-white hover:text-orange-200 font-bold text-3xl md:text-5xl">metri
+                event</a>
+            <a href="/metri-digital" class="text-white hover:text-orange-200 font-bold text-3xl md:text-5xl">metri
+                digital</a>
+            <a href="/metri-design" class="text-white hover:text-orange-200 font-bold text-3xl md:text-5xl">metri
+                design</a>
         </div>
     </div>
 

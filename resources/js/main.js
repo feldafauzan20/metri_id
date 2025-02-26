@@ -24,6 +24,7 @@ gsap.timeline({
         pin: true,
     },
 })
+    .to("#scroll", { opacity: 0, duration: 0.5, ease: "power1.out" })
     .fromTo(
         "#sun",
         { y: "20vh" },

@@ -43,7 +43,16 @@
                 loading="eager" />
             <img src="{{ asset('images/plant1.webp') }}" alt="" id="plant1" class="img-parallax"
                 loading="eager" />
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center" id="scroll">
+                <p class="text-white text-lg font-semibold tracking-wide pb-2 animate-bounce">Scroll</p>
+                <div class="w-8 h-12 border-2 border-white rounded-full flex items-start justify-center relative">
+                    <div class="w-1 h-5 bg-white rounded-full"></div>
+                </div>
+            </div>
         </section>
+
 
         <section class="relative w-full h-screen -mt-10 overflow-hidden mysteps" id="services">
             <div class="step-counter w-full relative flex px-[2em] flex-row m-[2em] justify-between items-center">
@@ -75,7 +84,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="">
+                <a href="/metri-design">
                     <div
                         class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
                         <div class="flex-1 overflow-hidden rounded-md card-img">
@@ -89,7 +98,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="">
+                <a href="/metri-digital">
                     <div
                         class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
                         <div class="flex-1 overflow-hidden rounded-md card-img">
@@ -103,7 +112,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="">
+                <a href="/metri-film">
                     <div
                         class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
                         <div class="flex-1 overflow-hidden rounded-md card-img">
@@ -117,7 +126,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="">
+                <a href="/metri-post">
                     <div
                         class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
                         <div class="flex-1 overflow-hidden rounded-md card-img">
@@ -131,7 +140,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="">
+                <a href="/metri-tang-ting">
                     <div
                         class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
                         <div class="flex-1 overflow-hidden rounded-md card-img">
@@ -145,7 +154,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="">
+                <a href="/metri-event">
                     <div
                         class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
                         <div class="flex-1 overflow-hidden rounded-md card-img">
@@ -212,7 +221,7 @@
             </div>
         </section>
 
-        <section class="w-full h-[500px]">
+        <section class="w-full h-full">
             <video class="object-fill w-full h-full" autoplay loop muted>
                 <source src="{{ asset('storage/' . $video) }}" type="video/mp4">
             </video>

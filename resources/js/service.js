@@ -42,7 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (isHidden) {
             // Geser menu utama ke kiri sepenuhnya tanpa mengubah konfigurasi Tailwind
-            mainMenu.classList.add("-translate-x-[25%]");
+            mainMenu.classList.remove("translate-x-0");
+            mainMenu.classList.add("-translate-x-1/4");
 
             // Munculkan submenu services
             servicesDropdown.classList.remove(
@@ -62,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function hideServicesDropdown() {
         // Kembalikan menu utama ke posisi awal
-        mainMenu.classList.remove("-translate-x-[25%]");
+        mainMenu.classList.remove("-translate-x-1/4");
 
         // Sembunyikan submenu services
         servicesDropdown.classList.remove(

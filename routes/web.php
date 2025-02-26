@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MetriDesignController;
 use App\Http\Controllers\MetriLandingPageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller_Design;
@@ -27,10 +28,28 @@ use FacebookAds\Object\ServerSide\UserData;
 
 
 
-Route::get('/design', [Controller_Design::class, 'index']);
+Route::get('/design', [MetriDesignController::class, 'index']);
 
 
 Route::get('/', [MetriLandingPageController::class, 'index']);
 Route::get('/metri-entertainment', function () {
     return view('service-entertainment');
+});
+Route::get('/metri-design', function () {
+    return view('service-design');
+});
+Route::get('/metri-film', function () {
+    return view('service-film');
+});
+Route::get('/metri-digital', function () {
+    return view('service-digital');
+});
+Route::get('/metri-post', function () {
+    return view('service-post');
+});
+Route::get('/metri-tang-ting', function () {
+    return view('service-tang-ting');
+});
+Route::get('/metri-event', function () {
+    return view('service-event');
 });
