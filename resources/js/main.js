@@ -69,10 +69,17 @@ ScrollTrigger.create({
 });
 
 // Cards positioning helper functions
-const getRadius = () =>
-    window.innerWidth < 900 ? window.innerWidth * 7.5 : window.innerWidth * 2.5;
+const getRadius = () => {
+    // Radius yang konsisten berdasarkan viewport height
+    return window.innerHeight * 3;
+};
+
+// Sudut arc yang konsisten
 const arcAngle = Math.PI * 0.6;
 const startAngle = Math.PI / 2 - arcAngle / 2;
+
+// Jarak antar card yang konsisten
+const cardSpacing = arcAngle / (totalCards - 1);
 
 function positionCards(progress = 0) {
     const radius = getRadius();
@@ -80,9 +87,8 @@ function positionCards(progress = 0) {
     const adjustedProgress = (progress * totalTravel - 1) * 0.75;
 
     cards.forEach((card, i) => {
-        const normalizedProgress = (totalCards - 1 - i) / totalCards;
-        const cardProgress = normalizedProgress + adjustedProgress;
-        const angle = startAngle + arcAngle * cardProgress;
+        // Menggunakan cardSpacing untuk jarak yang konsisten
+        const angle = startAngle + cardSpacing * i + (arcAngle * adjustedProgress);
         const x = Math.cos(angle) * radius;
         const y = Math.sin(angle) * radius;
         const rotation = (angle - Math.PI / 2) * (180 / Math.PI);
@@ -92,6 +98,7 @@ function positionCards(progress = 0) {
             y: -y + radius,
             rotation: -rotation,
             transformOrigin: "center center",
+            scale: 1 // Memastikan skala tetap konsisten
         });
     });
 }
