@@ -30,7 +30,7 @@ gsap.timeline({
         { y: "20vh" },
         { y: "-3vh", duration: 0.5, ease: "power1.out" }
     )
-    .to("#plant1", { duration: 1, left: "50vw" }, "<")
+    .to("#plant1", { duration: 1, left: "70vw" }, "<")
     .to("#plant2", { duration: 2, left: "-50vw" }, "<")
     .to("#bird1", { duration: 3, left: "50vw" }, "<")
     .to("#bird2", { duration: 4, left: "-50vw" }, "<")
@@ -81,10 +81,23 @@ const startAngle = Math.PI / 2 - arcAngle / 2;
 // Jarak antar card yang konsisten
 const cardSpacing = arcAngle / (totalCards - 1);
 
+function getCardSize() {
+    // Ukuran kartu responsif berdasarkan tinggi viewport
+    const baseHeight = window.innerHeight * 0.7; // 60% dari tinggi viewport
+    const aspectRatio = 500 / 550; // Mempertahankan aspect ratio asli
+    const width = baseHeight * aspectRatio;
+
+    return {
+        width: width,
+        height: baseHeight,
+    };
+}
+
 function positionCards(progress = 0) {
     const radius = getRadius();
     const totalTravel = 1 + totalCards / 7.5;
     const adjustedProgress = (progress * totalTravel - 1) * 0.75;
+    const cardSize = getCardSize();
 
     cards.forEach((card, i) => {
         // Menggunakan cardSpacing untuk jarak yang konsisten
@@ -99,13 +112,20 @@ function positionCards(progress = 0) {
             y: -y + radius,
             rotation: -rotation,
             transformOrigin: "center center",
+            width: cardSize.width,
+            height: cardSize.height,
             scale: 1, // Memastikan skala tetap konsisten
         });
     });
 }
 
+// Inisialisasi posisi kartu
 positionCards(0);
-window.addEventListener("resize", () => positionCards(0));
+
+// Update saat window diresize
+window.addEventListener("resize", () => {
+    positionCards(0);
+});
 
 // Animation counter
 const counterConfig = {
