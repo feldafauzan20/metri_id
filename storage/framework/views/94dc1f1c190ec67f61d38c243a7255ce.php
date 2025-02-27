@@ -1,0 +1,1 @@
+components.layouts-main.footer<?php /**PATH E:\laragon\www\metri_id\storage\framework\views/f929377cd4d7882a3b67aa661e37303f.blade.php ENDPATH**/ ?>
