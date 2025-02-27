@@ -30,12 +30,12 @@
                 <h4 class="text-lg font-semibold mb-3">SUB COMPANY</h4>
                 <ul class="text-gray-400 space-y-2">
                     <li><a href="/metri-entertainment" class="hover:text-white">metri entertainment</a></li>
-                    <li><a href="#" class="hover:text-white">metri film</a></li>
-                    <li><a href="#" class="hover:text-white">metri post</a></li>
-                    <li><a href="#" class="hover:text-white">tang ting</a></li>
-                    <li><a href="#" class="hover:text-white">metri event</a></li>
-                    <li><a href="#" class="hover:text-white">metri digital</a></li>
-                    <li><a href="#" class="hover:text-white">metri design</a></li>
+                    <li><a href="/metri-film" class="hover:text-white">metri film</a></li>
+                    <li><a href="/metri-post" class="hover:text-white">metri post</a></li>
+                    <li><a href="/metri-tang-ting" class="hover:text-white">tang ting</a></li>
+                    <li><a href="/metri-event" class="hover:text-white">metri event</a></li>
+                    <li><a href="/metri-digital" class="hover:text-white">metri digital</a></li>
+                    <li><a href="/metri-design" class="hover:text-white">metri design</a></li>
                 </ul>
             </div>
         </div>
@@ -45,7 +45,7 @@
             <p class="text-gray-400 text-sm">© 2024 Metri. All Rights Reserved.</p>
             <div class="flex space-x-4">
                 <!-- Facebook -->
-                <a href="#"
+                <a href="https://www.facebook.com/metri.id/" target="_blank"
                     class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-500 hover:border-white">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 hover:text-white"
                         viewBox="0 0 24 24" fill="currentColor">
@@ -55,7 +55,7 @@
                 </a>
 
                 <!-- X (Twitter) -->
-                <a href="#"
+                <a href="#" target="_blank"
                     class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-500 hover:border-white">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 hover:text-white"
                         viewBox="0 0 24 24" fill="currentColor">
@@ -64,7 +64,7 @@
                 </a>
 
                 <!-- Instagram (Terbaru) -->
-                <a href="#"
+                <a href="https://www.instagram.com/metri_id/" target="_blank"
                     class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-500 hover:border-white">
                     <svg class="w-5 h-5 text-gray-400 hover:text-white" viewBox="0 0 24 24" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -79,7 +79,8 @@
 
 
                 <!-- LinkedIn -->
-                <a href="#"
+                <a href="https://www.linkedin.com/company/pt-media-tren-idea-metri-id/?originalSubdomain=id"
+                    target="_blank"
                     class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-500 hover:border-white">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 hover:text-white"
                         viewBox="0 0 24 24" fill="currentColor">

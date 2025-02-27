@@ -1,6 +1,6 @@
 <x-layouts.layout>
     <x-slot:title>
-        metri | entertainment
+        metri | tang-ting
     </x-slot:title>
 
     <x-slot:vite>
@@ -14,8 +14,8 @@
             <div class="hero min-h-screen">
                 <div class="hero-content text-center">
                     <div class="w-full flex flex-col items-center">
-                        <a href=""><img src="{{ asset('images/logo/logo-metri-entertainment.webp') }}"
-                                alt="" width="300"></a>
+                        <a href=""><img src="{{ asset('images/logo/logo-tang-ting.webp') }}" alt=""
+                                width="300"></a>
                         <h2 class="py-6 text-5xl text-white">
                             Tailored to Your Needs to Enhance Digital Products
                         </h2>
