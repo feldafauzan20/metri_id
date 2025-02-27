@@ -43,9 +43,9 @@
                 loading="eager" />
             <img src="{{ asset('images/plant1.webp') }}" alt="" id="plant1" class="img-parallax"
                 loading="eager" />
-            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center" id="scroll">
-                <p class="text-white text-XS font-medium font-ibm tracking-wide pb-2 animate-bounce">SCROLL</p>
-                <div class="w-8 h-12 border-2 border-white rounded-full flex items-start justify-center relative">
+            <div class="absolute flex flex-col items-center -translate-x-1/2 bottom-10 left-1/2" id="scroll">
+                <p class="pb-2 font-medium tracking-wide text-white text-XS font-ibm animate-bounce">SCROLL</p>
+                <div class="relative flex items-start justify-center w-8 h-12 border-2 border-white rounded-full">
                     <div class="w-1 h-5 bg-white rounded-full"></div>
                 </div>
             </div>
@@ -70,7 +70,7 @@
                 <a href="/metri-entertainment">
                     <div
                         class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
-                        <div class="flex-1 overflow-hidden rounded-md card-img">
+                        <div class="flex-1 overflow-hidden rounded-md card-img h-[60vh]">
                             <img src="{{ asset('images/service1.webp') }}" loading="lazy" alt=""
                                 class="object-contain w-full h-full img-card" />
                         </div>
@@ -176,7 +176,7 @@
         <div id="overlay" class="fixed top-0 left-0 w-full h-full bg-[#00413D] opacity-0 pointer-events-none z-50">
         </div>
 
-        <section class="items-center justify-center w-full  pb-28 customer-support">
+        <section class="items-center justify-center w-full pb-28 customer-support">
             <div class="container flex flex-col items-center w-full pt-4 overflow-hidden">
                 <div class="flex flex-col items-center w-full">
                     <p
@@ -251,10 +251,10 @@
         </div>
 
         <section class="w-full pt-10 ">
-            <div class="flex flex-col justify-centerh-full gap-5 px-10">
+            <div class="flex flex-col gap-5 px-10 justify-centerh-full">
 
                 <div class="flex w-full">
-                    <div class="w-full flex items-center">
+                    <div class="flex items-center w-full">
                         <h2 class="py-1 font-thin text-white px-7 w-max font-jakarta rounded-3xl outline outline-1">
                             Our Clients
                         </h2>
@@ -302,7 +302,7 @@
                 </div>
                 <div class="flex items-center justify-end w-1/2 gap-x-5">
                     <button
-                        class="w-1/3 text-xl font-normal text-white bg-transparent rounded-full btn outline-white outline font-ibm outline-2 transition-all duration-300 ease-in-out hover:text-black hover:border-white hover:bg-white">CONTACT
+                        class="w-1/3 text-xl font-normal text-white transition-all duration-300 ease-in-out bg-transparent rounded-full btn outline-white outline font-ibm outline-2 hover:text-black hover:border-white hover:bg-white">CONTACT
                         US</button>
                     <button
                         class="w-1/3 text-xl font-normal text-[#00413D] bg-white outline-white outline outline-2 rounded-full btn font-ibm hover:text-white transition-all duration-300 ease-in-out  hover:border-white hover:bg-[#022C29]
@@ -315,7 +315,7 @@
     </main>
 
     <div id="toTopBtn"
-        class="fixed bottom-5 right-5 bg-gray-800 text-white px-4 py-2 rounded-full shadow-lg opacity-0 transition-opacity duration-300 hover:bg-gray-700">
+        class="fixed px-4 py-2 text-white transition-opacity duration-300 bg-gray-800 rounded-full shadow-lg opacity-0 bottom-5 right-5 hover:bg-gray-700">
         ↑
     </div>
 
