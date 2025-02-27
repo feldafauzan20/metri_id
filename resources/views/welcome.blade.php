@@ -43,10 +43,8 @@
                 loading="eager" />
             <img src="{{ asset('images/plant1.webp') }}" alt="" id="plant1" class="img-parallax"
                 loading="eager" />
-
-            <!-- Scroll Indicator -->
             <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center" id="scroll">
-                <p class="text-white text-lg font-semibold tracking-wide pb-2 animate-bounce">Scroll</p>
+                <p class="text-white text-XS font-medium font-ibm tracking-wide pb-2 animate-bounce">SCROLL</p>
                 <div class="w-8 h-12 border-2 border-white rounded-full flex items-start justify-center relative">
                     <div class="w-1 h-5 bg-white rounded-full"></div>
                 </div>
@@ -59,12 +57,11 @@
                 <div class="counter-title relative h-[150px] overflow-hidden w-full flex flex-col items-center">
                     <h2
                         class="w-max relative text-white font-jakarta font-normal text-xl will-change-transform text-center rounded-3xl outline outline-2 outline-[#E1E1E1] p-2 mt-2">
-                        Our services
+                        Our Services
                     </h2>
-                    <p class="pt-8 text-3xl font-medium text-center text-white">Here's <span class="text-[#67fbf8]">our
-                            services</span> that
-                        may helps</p>
-                    <p class="text-3xl font-medium text-center text-white">with ur business</p>
+                    <p class="pt-8 text-3xl font-medium text-center text-white">Craft, build, grow, and develop your
+                        brand and business
+                    <p class="text-3xl font-medium text-center text-white">with our 360 services.</p>
                 </div>
             </div>
 
@@ -184,10 +181,11 @@
                 <div class="flex flex-col items-center w-full">
                     <p
                         class="text-white max-w-lg w-fit font-jakarta font-normal text-xl text-center rounded-3xl outline outline-2 outline-[#E1E1E1] p-2 mt-2">
-                        Customer support
+                        Customer Support
                     </p>
-                    <h2 class="pt-8 text-4xl font-semibold text-white">Manage customer queries</h2>
-                    <h2 class="text-4xl font-semibold text-white">in seconds with metri</h2>
+                    <h2 class="pt-8 text-4xl font-semibold text-white">Contact us at hello@metri.id for any inquiry
+                    </h2>
+                    <h2 class="text-4xl font-semibold text-white">regarding our 360 services.</h2>
                 </div>
 
                 <div class="container flex items-center justify-center h-full my-10">
@@ -229,7 +227,7 @@
 
         <div class="flex flex-row items-center w-full bg-[#056251]" id="partners">
             <p class="px-10 text-lg font-thin text-white whitespace-nowrap">
-                Our partners
+                Our Partners
             </p>
             <div class="w-auto overflow-hidden fade">
                 <div class="flex flex-row animate-scroll w-max">
@@ -253,15 +251,15 @@
         </div>
 
         <section class="w-full pt-10 ">
-            <div class="flex flex-col justify-center h-full gap-5 px-10">
-                <h2 class="py-1 font-thin text-white px-7 w-max font-jakarta rounded-3xl outline outline-1">
-                    Our clients
-                </h2>
+            <div class="flex flex-col justify-centerh-full gap-5 px-10">
+
                 <div class="flex w-full">
-                    <p class="w-1/2 text-3xl text-white font-jakarta">
-                        See what our clients have to say about partnering with us on several projects
-                    </p>
-                    <div class="flex flex-row items-center justify-end w-1/2 overflow-hidden gap-x-3">
+                    <div class="w-full flex items-center">
+                        <h2 class="py-1 font-thin text-white px-7 w-max font-jakarta rounded-3xl outline outline-1">
+                            Our Clients
+                        </h2>
+                    </div>
+                    <div class="flex flex-row items-center justify-end w-full overflow-hidden gap-x-3">
                         <button class="btn btn-circle btn-outline button-prev">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
                                 class="bi bi-chevron-left" viewBox="0 0 16 16">
@@ -300,18 +298,25 @@
         <section class="w-full" id="contact">
             <div class="flex w-full p-7">
                 <div class="w-1/2 px-2 text-4xl font-medium text-white">
-                    <h2>Start your brand experience transformation now</h2>
+                    <h2>Transform your brand and business with our 360 services.</h2>
                 </div>
                 <div class="flex items-center justify-end w-1/2 gap-x-5">
                     <button
-                        class="w-1/3 text-xl font-normal text-white bg-transparent rounded-full btn outline-white outline font-ibm outline-2 hover:outline-1">CONTACT
+                        class="w-1/3 text-xl font-normal text-white bg-transparent rounded-full btn outline-white outline font-ibm outline-2 transition-all duration-300 ease-in-out hover:text-black hover:border-white hover:bg-white">CONTACT
                         US</button>
                     <button
-                        class="w-1/3 text-xl font-normal text-[#00413D] bg-white rounded-full btn font-ibm hover:text-white">CONTACT
+                        class="w-1/3 text-xl font-normal text-[#00413D] bg-white outline-white outline outline-2 rounded-full btn font-ibm hover:text-white transition-all duration-300 ease-in-out  hover:border-white hover:bg-[#022C29]
+">CONTACT
                         US</button>
                 </div>
             </div>
 
         </section>
     </main>
+
+    <div id="toTopBtn"
+        class="fixed bottom-5 right-5 bg-gray-800 text-white px-4 py-2 rounded-full shadow-lg opacity-0 transition-opacity duration-300 hover:bg-gray-700">
+        ↑
+    </div>
+
 </x-layouts.layout>

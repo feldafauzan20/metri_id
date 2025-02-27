@@ -71,7 +71,7 @@ ScrollTrigger.create({
 // Cards positioning helper functions
 const getRadius = () =>
     window.innerWidth < 900 ? window.innerWidth * 7.5 : window.innerWidth * 2.5;
-const arcAngle = Math.PI * 0.4;
+const arcAngle = Math.PI * 0.6;
 const startAngle = Math.PI / 2 - arcAngle / 2;
 
 function positionCards(progress = 0) {
@@ -109,54 +109,32 @@ const counterConfig = {
     duration: 3,
 };
 
-// Counter 1
-const element1 = document.querySelector(".cs-text1");
-const value1 = { value: 0 };
-gsap.to(value1, {
-    ...counterConfig,
-    value: 99.9,
-    onUpdate: () => {
-        element1.textContent = parseFloat(value1.value).toFixed(1);
-    },
-});
+// Counter animations
+const counterElements = [
+    { selector: ".cs-text1", value: 99.9, decimals: 1 },
+    { selector: ".cs-text2", value: 24, decimals: 0 },
+    { selector: ".cs-text3", value: 20, decimals: 0 },
+    { selector: ".cs-text4", value: 0.05, decimals: 2 },
+];
 
-// Counter 2
-const element2 = document.querySelector(".cs-text2");
-const value2 = { value: 0 };
-gsap.to(value2, {
-    ...counterConfig,
-    value: 24,
-    onUpdate: () => {
-        element2.textContent = Math.round(value2.value);
-    },
-});
-
-// Counter 3
-const element3 = document.querySelector(".cs-text3");
-const value3 = { value: 0 };
-gsap.to(value3, {
-    ...counterConfig,
-    value: 20,
-    onUpdate: () => {
-        element3.textContent = Math.round(value3.value);
-    },
-});
-
-// Counter 4
-const element4 = document.querySelector(".cs-text4");
-const value4 = { value: 0 };
-gsap.to(value4, {
-    ...counterConfig,
-    value: 0.05,
-    onUpdate: () => {
-        element4.textContent = parseFloat(value4.value).toFixed(2);
-    },
+counterElements.forEach(({ selector, value, decimals }) => {
+    const element = document.querySelector(selector);
+    const counterValue = { value: 0 };
+    gsap.to(counterValue, {
+        ...counterConfig,
+        value: value,
+        onUpdate: () => {
+            element.textContent = parseFloat(counterValue.value).toFixed(
+                decimals
+            );
+        },
+    });
 });
 
 // Swiper slider setup
 const swiper = new Swiper(".swiper", {
-    slidesPerView: 5, // 5 logo per baris
-    spaceBetween: 20, // Jarak antar logo
+    slidesPerView: 5,
+    spaceBetween: 20,
     loop: true,
 });
 
@@ -166,4 +144,39 @@ document.querySelector(".button-prev").addEventListener("click", () => {
 
 document.querySelector(".button-next").addEventListener("click", () => {
     swiper.slideNext();
+});
+
+// === To Top Button Feature ===
+const toTopBtn = document.createElement("button");
+toTopBtn.id = "toTopBtn";
+toTopBtn.textContent = "↑";
+toTopBtn.style.cssText = `
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1000;
+`;
+document.body.appendChild(toTopBtn);
+
+// Handle scroll event
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        toTopBtn.style.opacity = "1";
+    } else {
+        toTopBtn.style.opacity = "0";
+    }
+});
+
+// Scroll to top on click
+toTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
 });
