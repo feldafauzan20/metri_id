@@ -28,7 +28,7 @@ gsap.timeline({
     .fromTo(
         "#sun",
         { y: "20vh" },
-        { y: "0vh", duration: 0.5, ease: "power1.out" }
+        { y: "-3vh", duration: 0.5, ease: "power1.out" }
     )
     .to("#plant1", { duration: 1, left: "50vw" }, "<")
     .to("#plant2", { duration: 2, left: "-50vw" }, "<")
@@ -88,7 +88,8 @@ function positionCards(progress = 0) {
 
     cards.forEach((card, i) => {
         // Menggunakan cardSpacing untuk jarak yang konsisten
-        const angle = startAngle + cardSpacing * i + (arcAngle * adjustedProgress);
+        const angle =
+            startAngle + cardSpacing * i + arcAngle * adjustedProgress;
         const x = Math.cos(angle) * radius;
         const y = Math.sin(angle) * radius;
         const rotation = (angle - Math.PI / 2) * (180 / Math.PI);
@@ -98,7 +99,7 @@ function positionCards(progress = 0) {
             y: -y + radius,
             rotation: -rotation,
             transformOrigin: "center center",
-            scale: 1 // Memastikan skala tetap konsisten
+            scale: 1, // Memastikan skala tetap konsisten
         });
     });
 }
