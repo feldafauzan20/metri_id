@@ -6,12 +6,20 @@ use App\Filament\Resources\MetriDigitalPostResource\Pages;
 use App\Filament\Resources\MetriDigitalPostResource\RelationManagers;
 use App\Models\MetriDigitalPost;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Forms\Get;
+use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ImageColumn;
+use Illuminate\Support\Str;
 
 class MetriDigitalPostResource extends Resource
 {

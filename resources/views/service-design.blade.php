@@ -45,7 +45,7 @@
         {{-- Video start --}}
         <section class="w-full" id="video">
             <video class="object-cover w-full h-full" autoplay loop muted>
-                <source src="{{ Vite::asset('resources/assets/placeholder.mp4') }}" type="video/mp4">
+                <source src="{{ asset('storage/' . $video) }}" type="video/mp4">
             </video>
         </section>
         {{-- Video end --}}
@@ -69,19 +69,19 @@
             <h2 class="text-center text-4xl text-white">Seamless adoption in omni-channels</h2>
 
             <div class="grid grid-cols-4 gap-4 mx-auto py-20">
-                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" alt="Airplane"
+                <img src="{{ asset('storage/' . $photo_1) }}" alt="Airplane"
                     class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg">
 
-                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" alt="Mountain"
+                <img src="{{ asset('storage/' . $photo_2) }}" alt="Mountain"
                     class="col-span-1 row-span-1 w-full h-full object-cover rounded-lg">
 
-                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" alt="Piano"
+                <img src="{{ asset('storage/' . $photo_3) }}" alt="Piano"
                     class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg">
 
-                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" alt="Sunset"
+                <img src="{{ asset('storage/' . $photo_4) }}" alt="Sunset"
                     class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg">
 
-                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" alt="Portrait"
+                <img src="{{ asset('storage/' . $photo_5) }}" alt="Portrait"
                     class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg">
             </div>
 

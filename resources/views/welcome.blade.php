@@ -15,11 +15,26 @@
                 </a>
             </div>
             <div class="min-h-min">
-                <nav class="flex navigation">
-                    <a href="" class="active a-nav">ABOUT</a>
-                    <a href="#services" class="a-nav">OUR SERVICES</a>
+                <nav class="flex navigation relative">
+                    <a href="" class="a-nav">ABOUT</a>
+                    <div class="relative group">
+                        <a href="#services" class="a-nav h-full flex items-center">OUR SERVICES</a>
+                        <div class="absolute left-0 top-full mt-0 hidden group-hover:block  bg-[#359381] bg-opacity-50 backdrop-blur-md shadow-lg rounded-lg w-48">
+                            <ul class="py-2">
+                                <li><a href="/metri-entertainment" class="block px-4 py-2 hover:backdrop-blur-lg text-white">metri entertainment</a></li>
+                                <li><a href="/metri-design" class="block px-4 py-2 hover:backdrop-blur-lg text-white">metri design</a></li>
+                                <li><a href="/metri-digital" class="block px-4 py-2 hover:backdrop-blur-lg text-white">metri digital</a></li>
+                                <li><a href="/metri-film" class="block px-4 py-2 hover:backdrop-blur-lg text-white">metri film</a></li>
+                                <li><a href="/metri-post" class="block px-4 py-2 hover:backdrop-blur-lg text-white">metri post</a></li>
+                                <li><a href="/metri-tang-ting" class="block px-4 py-2 hover:backdrop-blur-lg text-white">tang ting</a></li>
+                                <li><a href="/metri-event" class="block px-4 py-2 hover:backdrop-blur-lg text-white">metri event</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    
                     <a href="#partners" class="a-nav">OUR PARTNERS</a>
-                    <a href="" class="a-nav">CONTACT</a>
+                    <a href="#contact" class="a-nav">CONTACT</a>
                 </nav>
             </div>
             <div class="flex justify-end">

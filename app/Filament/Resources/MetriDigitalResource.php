@@ -24,26 +24,46 @@ class MetriDigitalResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('youtube_link')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('video')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('photo_1')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('photo_2')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('photo_3')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('photo_4')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('photo_5')
-                    ->maxLength(255)
-                    ->default(null),
+                    ->label('YouTube Link')
+                    ->nullable()
+                    ->url()
+                    ->placeholder('https://www.youtube.com/watch?v=example'),
+
+                Forms\Components\FileUpload::make('video')
+                    ->label('Upload Video')
+                    ->directory('videos')
+                    ->acceptedFileTypes(['video/mp4', 'video/mov', 'video/avi'])
+                    ->nullable(),
+
+                Forms\Components\FileUpload::make('photo_1')
+                    ->label('Foto 1')
+                    ->directory('photos')
+                    ->image()
+                    ->nullable(),
+
+                Forms\Components\FileUpload::make('photo_2')
+                    ->label('Foto 2')
+                    ->directory('photos')
+                    ->image()
+                    ->nullable(),
+
+                Forms\Components\FileUpload::make('photo_3')
+                    ->label('Foto 3')
+                    ->directory('photos')
+                    ->image()
+                    ->nullable(),
+
+                Forms\Components\FileUpload::make('photo_4')
+                    ->label('Foto 4')
+                    ->directory('photos')
+                    ->image()
+                    ->nullable(),
+
+                Forms\Components\FileUpload::make('photo_5')
+                    ->label('Foto 5')
+                    ->directory('photos')
+                    ->image()
+                    ->nullable(),
             ]);
     }
 
@@ -52,30 +72,15 @@ class MetriDigitalResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('youtube_link')
+                    ->label('YouTube Link')
+                    ->url(fn ($record) => $record->youtube_link, true)
                     ->searchable(),
-                Tables\Columns\TextColumn::make('video')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('photo_1')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('photo_2')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('photo_3')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('photo_4')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('photo_5')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-            ])
-            ->filters([
-                //
+
+                Tables\Columns\ImageColumn::make('photo_1')->label('Foto 1'),
+                Tables\Columns\ImageColumn::make('photo_2')->label('Foto 2'),
+                Tables\Columns\ImageColumn::make('photo_3')->label('Foto 3'),
+                Tables\Columns\ImageColumn::make('photo_4')->label('Foto 4'),
+                Tables\Columns\ImageColumn::make('photo_5')->label('Foto 5'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -89,10 +94,9 @@ class MetriDigitalResource extends Resource
 
     public static function getRelations(): array
     {
-        return [
-            //
-        ];
+        return [];
     }
+
 
     public static function getPages(): array
     {
