@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MetriEventPost;
 use Illuminate\Http\Request;
 
 class MetriEventPostController extends Controller
