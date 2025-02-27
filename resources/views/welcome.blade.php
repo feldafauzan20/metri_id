@@ -183,25 +183,30 @@
 
                 <div class="container flex items-center justify-center h-full my-10">
                     <div class="mx-4 text-center">
-                        <h2 class="text-4xl font-semibold text-white"><span class="cs-text1">‎</span>%</h2>
-                        <p class="pt-4 text-white">Of customers said using Flinta helped them to better service
-                            clients.
-                        </p>
+                        <h2 class="text-4xl font-semibold text-white">
+                            <span class="cs-text1" data-value="{{ $counter_1 }}">0</span>%
+                        </h2>
+                        <p class="pt-4 text-white">Of customers said using Flinta helped them to better service clients.</p>
                     </div>
                     <div class="mx-4 text-center">
-                        <h2 class="text-4xl font-semibold text-white">'<span class="cs-text2">‎</span></h2>
-                        <p class="pt-4 text-white">Founded in 2024, we're on a growth journey focused on innovation.
-                        </p>
+                        <h2 class="text-4xl font-semibold text-white">
+                            <span class="cs-text2" data-value="{{ $counter_2 }}">0</span>
+                        </h2>
+                        <p class="pt-4 text-white">Founded in 2024, we're on a growth journey focused on innovation.</p>
                     </div>
                     <div class="mx-4 text-center">
-                        <h2 class="text-4xl font-semibold text-white"><span class="cs-text3">‎</span>+</h2>
+                        <h2 class="text-4xl font-semibold text-white">
+                            <span class="cs-text3" data-value="{{ $counter_3 }}">0</span>+
+                        </h2>
                         <p class="pt-4 text-white">Average monthly clients since we launched in June 2023.</p>
                     </div>
                     <div class="mx-4 text-center">
-                        <h2 class="text-4xl font-semibold text-white"><span class="cs-text4">‎</span>+</h2>
+                        <h2 class="text-4xl font-semibold text-white">
+                            <span class="cs-text4" data-value="{{ $counter_4 }}">0</span>+
+                        </h2>
                         <p class="pt-4 text-white">Of tickets left unresolved using metri's advanced functionality.</p>
                     </div>
-                </div>
+                </div>                
 
                 <div class="flex flex-col items-center w-full">
                     <h2 class="text-xl font-medium text-center text-white">Explore our Advance System Functionality and
@@ -213,10 +218,10 @@
         </section>
 
         <section class="w-full h-[500px]">
-            <video class="object-fill w-full h-full" autoplay loop muted>
+            <video class="object-fill w-full h-full" autoplay loop playsinline muted>
                 <source src="{{ asset('storage/' . $video) }}" type="video/mp4">
             </video>
-        </section>
+        </section>        
 
         <div class="flex flex-row items-center w-full bg-[#056251]" id="partners">
             <p class="px-10 text-lg font-thin text-white whitespace-nowrap">

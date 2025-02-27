@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+
 use App\Filament\Resources\MetriDesignResource\Pages;
 use App\Models\MetriDesign;
 use Filament\Forms;
@@ -13,8 +14,8 @@ use Filament\Tables\Table;
 class MetriDesignResource extends Resource
 {
     protected static ?string $model = MetriDesign::class;
-
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = 'Metri Design';
+    protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
     public static function form(Form $form): Form
     {
@@ -22,7 +23,7 @@ class MetriDesignResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('youtube_link')
                     ->label('YouTube Link')
-                    ->required()
+                    ->nullable()
                     ->url()
                     ->placeholder('https://www.youtube.com/watch?v=example'),
 
@@ -55,6 +56,12 @@ class MetriDesignResource extends Resource
                     ->directory('photos')
                     ->image()
                     ->nullable(),
+
+                Forms\Components\FileUpload::make('photo_5')
+                    ->label('Foto 5')
+                    ->directory('photos')
+                    ->image()
+                    ->nullable(),
             ]);
     }
 
@@ -71,6 +78,7 @@ class MetriDesignResource extends Resource
                 Tables\Columns\ImageColumn::make('photo_2')->label('Foto 2'),
                 Tables\Columns\ImageColumn::make('photo_3')->label('Foto 3'),
                 Tables\Columns\ImageColumn::make('photo_4')->label('Foto 4'),
+                Tables\Columns\ImageColumn::make('photo_5')->label('Foto 5'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

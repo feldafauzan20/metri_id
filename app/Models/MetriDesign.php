@@ -16,5 +16,6 @@ class MetriDesign extends Model
         'photo_2',
         'photo_3',
         'photo_4',
+        'photo_5',
     ];
 }

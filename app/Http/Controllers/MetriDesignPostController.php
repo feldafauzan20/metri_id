@@ -8,9 +8,7 @@ use App\Models\MetriDesignPost;
 class MetriDesignPostController extends Controller
 {
     public function index()
-    {
-        $posts = MetriDesignPost::latest()->get(); // Fetch data dari Filament Model
-
+    {   
         // Ubah link menjadi format embed untuk YouTube
         foreach ($posts as $post) {
             if (!empty($post->link) && preg_match('/(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]+)/', $post->link, $matches)) {
@@ -19,7 +17,26 @@ class MetriDesignPostController extends Controller
                 $post->embed_link = null; // Jika bukan YouTube, kosongkan
             }
         }
+        // Ambil data terbaru dari database
+        $data = MetriDesignPost::latest()->first([
+            'youtube_link',
+            'video',
+            'photo_1',
+            'photo_2',
+            'photo_3',
+            'photo_4',
+            'photo_5',
+        ]);
 
-        return view('index', compact('posts'));
+        // Kirim ke view dengan nilai default jika null
+        return view('metri-design-post', [
+            'youtube_link' => $data->youtube_link ?? null,
+            'video'        => $data->video ?? null,
+            'photo_1'      => $data->photo_1 ?? null,
+            'photo_2'      => $data->photo_2 ?? null,
+            'photo_3'      => $data->photo_3 ?? null,
+            'photo_4'      => $data->photo_4 ?? null,
+            'photo_5'      => $data->photo_5 ?? null,
+        ]);
     }
 }

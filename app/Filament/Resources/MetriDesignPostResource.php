@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+
 use App\Filament\Resources\MetriDesignPostResource\Pages;
 use App\Models\MetriDesignPost;
 use Filament\Forms;
@@ -75,6 +76,13 @@ class MetriDesignPostResource extends Resource
                 ->label('Foto/Video 4')
                 ->nullable(),
 
+            FileUpload::make('gambar_5')
+                ->directory('metri_design_posts')
+            
+                ->label('Foto/Video 5')
+                ->nullable(),
+
+
             TextInput::make('link')->url()->nullable(),
         ]);
     }
@@ -94,6 +102,7 @@ class MetriDesignPostResource extends Resource
                 ImageColumn::make('gambar_2')->label('GAMBAR 2'),
                 ImageColumn::make('gambar_3')->label('GAMBAR 3'),
                 ImageColumn::make('gambar_4')->label('GAMBAR 4'),
+                ImageColumn::make('gambar_5')->label('GAMBAR 5'),
     
                 TextColumn::make('concept')->label('Concept')->limit(50),
                 TextColumn::make('objective')->label('Objective')->limit(50),

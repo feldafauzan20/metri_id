@@ -11,13 +11,14 @@ return new class extends Migration {
             $table->string('gambar_2')->nullable()->after('gambar_1');
             $table->string('gambar_3')->nullable()->after('gambar_2');
             $table->string('gambar_4')->nullable()->after('gambar_3');
+            $table->string('gambar_5')->nullable()->after('gambar_4');
         });
     }
 
     public function down()
     {
         Schema::table('metri_design_posts', function (Blueprint $table) {
-            $table->dropColumn(['gambar_1', 'gambar_2', 'gambar_3', 'gambar_4']);
+            $table->dropColumn(['gambar_1', 'gambar_2', 'gambar_3', 'gambar_4', 'gambar_5']);
         });
     }
 };

@@ -108,49 +108,29 @@ const counterConfig = {
     duration: 3,
 };
 
-// Counter 1
-const element1 = document.querySelector(".cs-text1");
-const value1 = { value: 0 };
-gsap.to(value1, {
-    ...counterConfig,
-    value: 99.9,
-    onUpdate: () => {
-        element1.textContent = parseFloat(value1.value).toFixed(1);
-    },
-});
+function animateCounter(selector) {
+    const element = document.querySelector(selector);
+    if (!element) return;
 
-// Counter 2
-const element2 = document.querySelector(".cs-text2");
-const value2 = { value: 0 };
-gsap.to(value2, {
-    ...counterConfig,
-    value: 24,
-    onUpdate: () => {
-        element2.textContent = Math.round(value2.value);
-    },
-});
+    const finalValue = parseInt(element.dataset.value) || 0; // Pastikan angka bulat
+    const value = { value: 0 };
 
-// Counter 3
-const element3 = document.querySelector(".cs-text3");
-const value3 = { value: 0 };
-gsap.to(value3, {
-    ...counterConfig,
-    value: 20,
-    onUpdate: () => {
-        element3.textContent = Math.round(value3.value);
-    },
-});
+    gsap.to(value, {
+        duration: 2,
+        ease: "power1.out",
+        value: finalValue,
+        onUpdate: () => {
+            element.textContent = Math.round(value.value); // Hanya angka bulat
+        }
+    });
+}
 
-// Counter 4
-const element4 = document.querySelector(".cs-text4");
-const value4 = { value: 0 };
-gsap.to(value4, {
-    ...counterConfig,
-    value: 0.05,
-    onUpdate: () => {
-        element4.textContent = parseFloat(value4.value).toFixed(2);
-    },
-});
+// Panggil fungsi untuk setiap counter
+animateCounter(".cs-text1");
+animateCounter(".cs-text2");
+animateCounter(".cs-text3");
+animateCounter(".cs-text4");
+
 
 // Swiper slider setup
 const swiper = new Swiper(".swiper", {
