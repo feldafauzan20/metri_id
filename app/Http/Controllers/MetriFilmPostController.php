@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MetriFilmPost;
 use Illuminate\Http\Request;
 
-class MetriFimPostController extends Controller
+class MetriFilmPostController extends Controller
 {
     public function index()
     {   
@@ -14,7 +15,7 @@ class MetriFimPostController extends Controller
             $embed_link = 'https://www.youtube.com/embed/' . $matches[1];
         }
         // Ambil data terbaru dari database
-        $data = MMetriFilmPost::latest()->first([
+        $data = MetriFilmPost::latest()->first([
             'youtube_link',
             'video',
             'photo_1',

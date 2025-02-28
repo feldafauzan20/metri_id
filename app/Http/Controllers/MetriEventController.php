@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MetriEvent;
 use Illuminate\Http\Request;
 
 class MetriEventController extends Controller
@@ -24,6 +25,6 @@ class MetriEventController extends Controller
         $photo_5 = MetriEvent::latest()->value('photo_5');
 
         // Kirim ke view
-        return view('metri-event', compact('youtube_link', 'video', 'photo_1', 'photo_2', 'photo_3', 'photo_4', 'photo_5'));
+        return view('service-event', compact('youtube_link', 'video', 'photo_1', 'photo_2', 'photo_3', 'photo_4', 'photo_5'));
     }
 }

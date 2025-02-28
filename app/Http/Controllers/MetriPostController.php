@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MetriPost;
 use Illuminate\Http\Request;
 
 class MetriPostController extends Controller
@@ -24,6 +25,6 @@ class MetriPostController extends Controller
         $photo_5 = MetriPost::latest()->value('photo_5');
 
         // Kirim ke view
-        return view('metri-post', compact('youtube_link', 'video', 'photo_1', 'photo_2', 'photo_3', 'photo_4', 'photo_5'));
+        return view('service-post', compact('youtube_link', 'video', 'photo_1', 'photo_2', 'photo_3', 'photo_4', 'photo_5'));
     }
 }

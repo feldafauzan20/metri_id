@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MetriFilmEquipment;
 use Illuminate\Http\Request;
 
 class MetriFilmEquipmentController extends Controller
@@ -24,6 +25,6 @@ class MetriFilmEquipmentController extends Controller
         $photo_5 = MetriFilmEquipment::latest()->value('photo_5');
 
         // Kirim ke view
-        return view('metri-film-equipment', compact('youtube_link', 'video', 'photo_1', 'photo_2', 'photo_3', 'photo_4', 'photo_5'));
+        return view('service-tang-ting', compact('youtube_link', 'video', 'photo_1', 'photo_2', 'photo_3', 'photo_4', 'photo_5'));
     }
 }
