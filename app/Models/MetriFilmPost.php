@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
-class MetriFimPost extends Model
+class MetriFilmPost extends Model
 {
     use HasFactory;
 
@@ -22,7 +23,8 @@ class MetriFimPost extends Model
         'concept', 
         'objective',
         'challenge', 
-        'results', 
+        'results',
+        'image', 
         'gambar_1', 
         'gambar_2',
         'gambar_3', 

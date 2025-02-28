@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\MetriDigitalPostResource\Pages;
 use App\Filament\Resources\MetriDigitalPostResource\RelationManagers;
 use App\Models\MetriDigitalPost;
+use App\Models\Project;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
@@ -42,7 +43,7 @@ class MetriDigitalPostResource extends Resource
                 ->required()
                 ->maxLength(255)
                 ->unique(ignoreRecord: true)
-                ->readonly(),
+                ->disabled(),
 
             RichEditor::make('content')->required(),
 
@@ -57,30 +58,35 @@ class MetriDigitalPostResource extends Resource
             RichEditor::make('results')->label('Results'),
 
             // Input foto/video (tanpa `video()`)
+            FileUpload::make('image')
+            ->directory(directory: 'metri_digital_posts')
+            ->label('Headline Image')
+            ->nullable(),
+
             FileUpload::make('gambar_1')
-                ->directory('metri_design_posts')
+                ->directory('metri_digital_posts')
             
-                ->label('Foto/Video 1')
+                ->label('Foto 1')
                 ->nullable(),
 
             FileUpload::make('gambar_2')
-                ->directory('metri_design_posts')
+                ->directory('metri_digital_posts')
             
                 ->nullable(),
 
             FileUpload::make('gambar_3')
-                ->directory('metri_design_posts')
+                ->directory('metri_digital_posts')
             
                 ->nullable(),
 
             FileUpload::make('gambar_4')
-                ->directory('metri_design_posts')
+                ->directory('metri_digital_posts')
             
                 ->label('Foto/Video 4')
                 ->nullable(),
 
             FileUpload::make('gambar_5')
-                ->directory('metri_design_posts')
+                ->directory('metri_digital_posts')
             
                 ->label('Foto/Video 5')
                 ->nullable(),
@@ -101,11 +107,12 @@ class MetriDigitalPostResource extends Resource
                 TextColumn::make('category')->label('Category')->sortable()->searchable(),
                 TextColumn::make('industry')->label('Industry')->sortable()->searchable(),
                 
-                ImageColumn::make('gambar_1')->label('GAMBAR 1'),
-                ImageColumn::make('gambar_2')->label('GAMBAR 2'),
-                ImageColumn::make('gambar_3')->label('GAMBAR 3'),
-                ImageColumn::make('gambar_4')->label('GAMBAR 4'),
-                ImageColumn::make('gambar_5')->label('GAMBAR 5'),
+                ImageColumn::make('image')->label('Headline Image'),
+                ImageColumn::make('gambar_1')->label('PHOTO 1'),
+                ImageColumn::make('gambar_2')->label('PHOTO 2'),
+                ImageColumn::make('gambar_3')->label('PHOTO 3'),
+                ImageColumn::make('gambar_4')->label('PHOTO 4'),
+                ImageColumn::make('gambar_5')->label('PHOTO 5'),
     
                 TextColumn::make('concept')->label('Concept')->limit(50),
                 TextColumn::make('objective')->label('Objective')->limit(50),
@@ -119,6 +126,21 @@ class MetriDigitalPostResource extends Resource
             ->filters([]);
     }
 
+    protected static function boot()
+    {
+        parent::boot();
+    
+        static::created(function ($post) {
+            Project::create([
+                'title' => $post->title,
+                'description' => $post->content,
+                'image' => $post->image,
+                'service_type' => 'metri digital',
+                'service_id' => $post->id,
+                'created_at' => $post->created_at,
+            ]);
+        });
+    }
     public static function getPages(): array
     {
         return [
