@@ -266,26 +266,39 @@
             <p class="px-10 text-lg font-thin text-white whitespace-nowrap">
                 Our Partners
             </p>
-            <div class="w-auto overflow-hidden fade">
-                <div class="flex flex-row animate-scroll w-max">
-                    <img src="{{ asset('images/logo/logo-metri-baru.png') }}" class="w-52">
-                    <img src="{{ asset('images/logo/logo-putih-baru.png') }}" class="w-52">
-                    <img src="{{ asset('images/logo/logo-putih-baru.png') }}" class="w-52">
-                    <img src="{{ asset('images/logo/logo-putih-baru.png') }}" class="w-52">
-                    <img src="{{ asset('images/logo/logo-putih-baru.png') }}" class="w-52">
-                    <img src="{{ asset('images/logo/logo-putih-baru.png') }}" class="w-52">
-                    <img src="{{ asset('images/logo/logo-putih-baru.png') }}" class="w-52">
-                    <!-- Duplikat logo untuk efek loop -->
-                    <img src="{{ asset('images/logo/logo-metri-baru.png') }}" class="w-52">
-                    <img src="{{ asset('images/logo/logo-putih-baru.png') }}" class="w-52">
-                    <img src="{{ asset('images/logo/logo-putih-baru.png') }}" class="w-52">
-                    <img src="{{ asset('images/logo/logo-putih-baru.png') }}" class="w-52">
-                    <img src="{{ asset('images/logo/logo-putih-baru.png') }}" class="w-52">
-                    <img src="{{ asset('images/logo/logo-putih-baru.png') }}" class="w-52">
-                    <img src="{{ asset('images/logo/logo-putih-baru.png') }}" class="w-52">
+            <div class="w-auto overflow-hidden fade bg-white rounded-lg">
+                <div class="flex flex-row items-center animate-scroll w-max gap-6 py-3">
+                    <!-- 12 gambar unik -->
+                    <img src="{{ asset('images/partners/partner1.webp') }}" class="w-52 h-24 object-contain">
+                    <img src="{{ asset('images/partners/partner2.webp') }}" class="w-52 h-24 object-contain">
+                    <img src="{{ asset('images/partners/partner3.webp') }}" class="w-52 h-24 object-contain">
+                    <img src="{{ asset('images/partners/partner4.webp') }}" class="w-52 h-24 object-contain">
+                    <img src="{{ asset('images/partners/partner5.webp') }}" class="w-52 h-24 object-contain">
+                    <img src="{{ asset('images/partners/partner6.webp') }}" class="w-52 h-24 object-contain">
+                    <img src="{{ asset('images/partners/partner7.webp') }}" class="w-52 h-24 object-contain">
+                    <img src="{{ asset('images/partners/partner8.webp') }}" class="w-52 h-24 object-contain">
+                    <img src="{{ asset('images/partners/partner9.webp') }}" class="w-52 h-24 object-contain">
+                    <img src="{{ asset('images/partners/partner10.webp') }}" class="w-52 h-24 object-contain">
+                    <img src="{{ asset('images/partners/partner11.webp') }}" class="w-52 h-24 object-contain">
+                    <img src="{{ asset('images/partners/partner12.webp') }}" class="w-52 h-24 object-contain">
+
+                    <!-- Duplikat untuk efek loop -->
+                    <img src="{{ asset('images/partners/partner1.webp') }}" class="w-52 h-24 object-contain">
+                    <img src="{{ asset('images/partners/partner2.webp') }}" class="w-52 h-24 object-contain">
+                    <img src="{{ asset('images/partners/partner3.webp') }}" class="w-52 h-24 object-contain">
+                    <img src="{{ asset('images/partners/partner4.webp') }}" class="w-52 h-24 object-contain">
+                    <img src="{{ asset('images/partners/partner5.webp') }}" class="w-52 h-24 object-contain">
+                    <img src="{{ asset('images/partners/partner6.webp') }}" class="w-52 h-24 object-contain">
+                    <img src="{{ asset('images/partners/partner7.webp') }}" class="w-52 h-24 object-contain">
+                    <img src="{{ asset('images/partners/partner8.webp') }}" class="w-52 h-24 object-contain">
+                    <img src="{{ asset('images/partners/partner9.webp') }}" class="w-52 h-24 object-contain">
+                    <img src="{{ asset('images/partners/partner10.webp') }}" class="w-52 h-24 object-contain">
+                    <img src="{{ asset('images/partners/partner11.webp') }}" class="w-52 h-24 object-contain">
+                    <img src="{{ asset('images/partners/partner12.webp') }}" class="w-52 h-24 object-contain">
                 </div>
             </div>
         </div>
+
 
         <section class="w-full pt-10 ">
             <div class="flex flex-col gap-5 px-10 justify-centerh-full">
@@ -312,20 +325,27 @@
                         </button>
                     </div>
                 </div>
-                <div class="w-full swiper">
-                    <div class="swiper-wrapper my-14">
-                        @foreach (range(1, 60) as $i)
-                            <div class="flex justify-center swiper-slide">
-                                <div class="flex flex-col items-center w-full gap-5">
-                                    <img src="{{ asset('images/service2.webp') }}"
-                                        class="w-20 h-20 bg-white rounded-full aspect-square">
-                                    <img src="{{ asset('images/service2.webp') }}"
-                                        class="w-20 h-20 bg-white rounded-full aspect-square">
+                <div class="w-full swiper bg-white backdrop-blur-2xl shadow-lg border border-white/50  rounded-lg">
+                    <div class="swiper-wrapper my-10 p-3">
+                        @foreach (array_chunk(range(1, 21), 11) as $group)
+                            <div class="swiper-slide flex justify-center items-center h-[300px]">
+                                <div class="grid grid-cols-5 gap-6 place-items-center">
+                                    @foreach ($group as $i)
+                                        <img src="{{ asset('images/clients/client-' . $i . '.webp') }}"
+                                            class="w-28 h-28 object-contain">
+                                    @endforeach
                                 </div>
                             </div>
                         @endforeach
                     </div>
                 </div>
+
+
+
+
+
+
+
 
 
             </div>

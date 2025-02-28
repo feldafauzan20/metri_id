@@ -15,8 +15,8 @@
                 <div class="hero-content text-center">
                     <div class="w-full flex flex-col items-center">
                         <a href=""><img src="{{ asset('images/logo/logo-metri-event.webp') }}" alt=""
-                                width="300"></a>
-                        <h2 class="py-6 text-5xl text-white">
+                                width="600"></a>
+                        <h2 class="text-5xl text-white pb-4">
                             Tailored to Your Needs to Enhance Digital Products
                         </h2>
                         <div class="w-3/4 text-base text-white">
