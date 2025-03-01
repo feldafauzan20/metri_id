@@ -1,84 +1,84 @@
 document.addEventListener("DOMContentLoaded", () => {
     const menuBtn = document.getElementById("menuBtn");
     const menuDropdown = document.getElementById("menuDropdown");
+    const mainMenu = document.getElementById("mainMenu");
     const closeMenuBtn = document.getElementById("closeMenuBtn");
     const servicesBtn = document.getElementById("servicesBtn");
     const servicesDropdown = document.getElementById("servicesDropdown");
-    const mainMenu = document.getElementById("mainMenu");
+    const backToMenu = document.getElementById("backToMenu");
 
-    function toggleMenu() {
-        const isHidden = menuDropdown.classList.contains("opacity-0");
-
-        if (isHidden) {
-            menuDropdown.classList.remove(
-                "opacity-0",
-                "-translate-y-full",
-                "pointer-events-none"
-            );
-            menuDropdown.classList.add(
-                "opacity-100",
-                "translate-y-0",
-                "pointer-events-auto"
-            );
-        } else {
-            menuDropdown.classList.remove(
-                "opacity-100",
-                "translate-y-0",
-                "pointer-events-auto"
-            );
-            menuDropdown.classList.add(
-                "opacity-0",
-                "-translate-y-full",
-                "pointer-events-none"
-            );
-
-            // Reset submenu saat menu utama ditutup
-            hideServicesDropdown();
-        }
-    }
-
-    function toggleServices() {
-        const isHidden = servicesDropdown.classList.contains("opacity-0");
-
-        if (isHidden) {
-            // Geser menu utama ke kiri sepenuhnya tanpa mengubah konfigurasi Tailwind
-            mainMenu.classList.remove("translate-x-0");
-            mainMenu.classList.add("-translate-x-1/4");
-
-            // Munculkan submenu services
-            servicesDropdown.classList.remove(
-                "translate-x-full",
-                "opacity-0",
-                "pointer-events-none"
-            );
-            servicesDropdown.classList.add(
-                "translate-x-0",
-                "opacity-100",
-                "pointer-events-auto"
-            );
-        } else {
-            hideServicesDropdown();
-        }
-    }
-
-    function hideServicesDropdown() {
-        // Kembalikan menu utama ke posisi awal
-        mainMenu.classList.remove("-translate-x-1/4");
-
-        // Sembunyikan submenu services
-        servicesDropdown.classList.remove(
-            "translate-x-0",
-            "opacity-100",
-            "pointer-events-auto"
-        );
-        servicesDropdown.classList.add(
-            "translate-x-full",
+    function openMenu() {
+        menuDropdown.classList.remove(
             "opacity-0",
+            "-translate-y-full",
             "pointer-events-none"
         );
+        menuDropdown.classList.add(
+            "opacity-100",
+            "translate-y-0",
+            "pointer-events-auto"
+        );
+
+        // Pastikan menu utama terlihat dan submenu tersembunyi saat pertama kali dibuka
+        mainMenu.classList.remove("hidden");
+        servicesDropdown.classList.add("hidden");
+
+        // Pastikan submenu juga dalam keadaan opacity 0 ketika baru membuka menu utama
+        servicesDropdown.classList.remove("opacity-100", "pointer-events-auto");
+        servicesDropdown.classList.add("opacity-0", "pointer-events-none");
     }
 
-    menuBtn.addEventListener("click", toggleMenu);
-    closeMenuBtn.addEventListener("click", toggleMenu);
-    servicesBtn.addEventListener("click", toggleServices);
+    function closeMenu() {
+        menuDropdown.classList.add(
+            "opacity-0",
+            "-translate-y-full",
+            "pointer-events-none"
+        );
+        menuDropdown.classList.remove(
+            "opacity-100",
+            "translate-y-0",
+            "pointer-events-auto"
+        );
+
+        // Reset semua submenu saat menu utama ditutup
+        mainMenu.classList.remove("hidden");
+        servicesDropdown.classList.add("hidden");
+
+        // Pastikan submenu juga dalam keadaan opacity 0 saat menu utama ditutup
+        servicesDropdown.classList.remove("opacity-100", "pointer-events-auto");
+        servicesDropdown.classList.add("opacity-0", "pointer-events-none");
+    }
+
+    function openServices() {
+        mainMenu.classList.add("hidden"); // Sembunyikan menu utama
+        servicesDropdown.classList.remove("hidden"); // Tampilkan submenu
+
+        // Gunakan opacity agar transisi lebih smooth
+        setTimeout(() => {
+            servicesDropdown.classList.add(
+                "opacity-100",
+                "pointer-events-auto"
+            );
+            servicesDropdown.classList.remove(
+                "opacity-0",
+                "pointer-events-none"
+            );
+        }, 50); // Delay kecil untuk menghindari animasi yang tidak smooth
+    }
+
+    function backToMainMenu() {
+        servicesDropdown.classList.remove("opacity-100", "pointer-events-auto");
+        servicesDropdown.classList.add("opacity-0", "pointer-events-none");
+
+        setTimeout(() => {
+            servicesDropdown.classList.add("hidden");
+            mainMenu.classList.remove("hidden");
+        }, 500); // Delay ini harus sesuai dengan transition CSS (500ms)
+    }
+
+    // Event Listeners
+    menuBtn.addEventListener("click", openMenu);
+    closeMenuBtn.addEventListener("click", closeMenu);
+    servicesBtn.addEventListener("click", openServices);
+    backToMenu.addEventListener("click", backToMainMenu);
 });

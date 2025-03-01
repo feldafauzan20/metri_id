@@ -43,13 +43,8 @@
                 <div class="hero-content text-center">
                     <div class="w-full flex flex-col items-center">
                         <a href=""><img src="<?php echo e(asset('images/logo/logo-tang-ting.webp')); ?>" alt=""
-<<<<<<< HEAD
-                                width="300"></a>
-                        <h2 class="py-6 text-5xl text-white">
-=======
                                 width="600"></a>
                         <h2 class="text-5xl text-white pb-4">
->>>>>>> fe-dev
                             Tailored to Your Needs to Enhance Digital Products
                         </h2>
                         <div class="w-3/4 text-base text-white">
@@ -78,11 +73,7 @@
         
         <section class="w-full" id="video">
             <video class="object-cover w-full h-full" autoplay loop muted>
-<<<<<<< HEAD
-                <source src="<?php echo e(Vite::asset('resources/assets/placeholder.mp4')); ?>" type="video/mp4">
-=======
                 <source src="<?php echo e(asset('storage/' . $video)); ?>" type="video/mp4">
->>>>>>> fe-dev
             </video>
         </section>
         
@@ -106,21 +97,6 @@
             <h2 class="text-center text-4xl text-white">Seamless adoption in omni-channels</h2>
 
             <div class="grid grid-cols-4 gap-4 mx-auto py-20">
-<<<<<<< HEAD
-                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" alt="Airplane"
-                    class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg">
-
-                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" alt="Mountain"
-                    class="col-span-1 row-span-1 w-full h-full object-cover rounded-lg">
-
-                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" alt="Piano"
-                    class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg">
-
-                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" alt="Sunset"
-                    class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg">
-
-                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" alt="Portrait"
-=======
                 <img src="<?php echo e(asset('storage/' . $photo_1)); ?>" alt="Airplane"
                     class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg">
 
@@ -134,7 +110,6 @@
                     class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg">
 
                 <img src="<?php echo e(asset('storage/' . $photo_5)); ?>" alt="Portrait"
->>>>>>> fe-dev
                     class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg">
             </div>
 

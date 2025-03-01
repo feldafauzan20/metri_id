@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\MetriPost;
-use App\Models\MetriPost;
 use Illuminate\Http\Request;
 
 class MetriPostController extends Controller

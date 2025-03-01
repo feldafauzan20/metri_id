@@ -1,48 +1,20 @@
-<?php if (isset($component)) { $__componentOriginalf2b16bc3883246ba4659aff94e382522 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginalf2b16bc3883246ba4659aff94e382522 = $attributes; } ?>
-<?php $component = App\View\Components\Layouts\Layout::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('layouts.layout'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
-<?php $attributes = $attributes->except(\App\View\Components\Layouts\Layout::ignoredParameterNames()); ?>
-<?php endif; ?>
-<?php $component->withAttributes([]); ?>
-     <?php $__env->slot('title', null, []); ?> 
-        metri | film
-     <?php $__env->endSlot(); ?>
+<x-layouts.layout>
+    <x-slot:title>
+        metri | tang-ting
+    </x-slot:title>
 
-     <?php $__env->slot('vite', null, []); ?> 
-        <?php echo app('Illuminate\Foundation\Vite')(['resources/js/service.js', 'resources/css/app.css']); ?>
-     <?php $__env->endSlot(); ?>
+    <x-slot:vite>
+        @vite(['resources/js/service.js', 'resources/css/app.css'])
+    </x-slot:vite>
     <main>
-        <?php if (isset($component)) { $__componentOriginalf554860691b0db475faae1a0c55e5119 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginalf554860691b0db475faae1a0c55e5119 = $attributes; } ?>
-<?php $component = App\View\Components\LayoutsService\NavbarServices::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('layouts-service.navbar-services'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
-<?php $attributes = $attributes->except(\App\View\Components\LayoutsService\NavbarServices::ignoredParameterNames()); ?>
-<?php endif; ?>
-<?php $component->withAttributes([]); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginalf554860691b0db475faae1a0c55e5119)): ?>
-<?php $attributes = $__attributesOriginalf554860691b0db475faae1a0c55e5119; ?>
-<?php unset($__attributesOriginalf554860691b0db475faae1a0c55e5119); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalf554860691b0db475faae1a0c55e5119)): ?>
-<?php $component = $__componentOriginalf554860691b0db475faae1a0c55e5119; ?>
-<?php unset($__componentOriginalf554860691b0db475faae1a0c55e5119); ?>
-<?php endif; ?>
+        <x-layouts-service.navbar-services />
 
-        
+        {{-- HERO START --}}
         <section>
             <div class="hero min-h-screen">
                 <div class="hero-content text-center">
                     <div class="w-full flex flex-col items-center">
-                        <a href=""><img src="<?php echo e(asset('images/logo/logo-metri-film.webp')); ?>" alt=""
+                        <a href=""><img src="{{ asset('images/logo/logo-tang-ting.webp') }}" alt=""
                                 width="600"></a>
                         <h2 class="text-5xl text-white pb-4">
                             Tailored to Your Needs to Enhance Digital Products
@@ -68,17 +40,17 @@
                 </div>
             </div>
         </section>
-        
+        {{-- HERO END --}}
 
-        
+        {{-- Video start --}}
         <section class="w-full" id="video">
             <video class="object-cover w-full h-full" autoplay loop muted>
-                <source src="<?php echo e(asset('storage/' . $video)); ?>" type="video/mp4">
+                <source src="{{ asset('storage/' . $video) }}" type="video/mp4">
             </video>
         </section>
-        
+        {{-- Video end --}}
 
-        
+        {{-- TAGLINE START --}}
         <section class="container py-20">
             <div class="w-[60%]">
                 <h2 class="text-4xl text-white">A fusion of form and function in customer’s daily life</h2>
@@ -90,33 +62,33 @@
                     daily routines with intuitive interfaces and visually pleasing designs.</p>
             </div>
         </section>
-        
+        {{-- TAGLINE END --}}
 
-        
+        {{-- PORTO START --}}
         <section class="container">
             <h2 class="text-center text-4xl text-white">Seamless adoption in omni-channels</h2>
 
             <div class="grid grid-cols-4 gap-4 mx-auto py-20">
-                <img src="<?php echo e(asset('storage/' . $photo_1)); ?>" alt="Airplane"
+                <img src="{{ asset('storage/' . $photo_1) }}" alt="Airplane"
                     class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg">
 
-                <img src="<?php echo e(asset('storage/' . $photo_2)); ?>" alt="Mountain"
+                <img src="{{ asset('storage/' . $photo_2) }}" alt="Mountain"
                     class="col-span-1 row-span-1 w-full h-full object-cover rounded-lg">
 
-                <img src="<?php echo e(asset('storage/' . $photo_3)); ?>" alt="Piano"
+                <img src="{{ asset('storage/' . $photo_3) }}" alt="Piano"
                     class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg">
 
-                <img src="<?php echo e(asset('storage/' . $photo_4)); ?>" alt="Sunset"
+                <img src="{{ asset('storage/' . $photo_4) }}" alt="Sunset"
                     class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg">
 
-                <img src="<?php echo e(asset('storage/' . $photo_5)); ?>" alt="Portrait"
+                <img src="{{ asset('storage/' . $photo_5) }}" alt="Portrait"
                     class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg">
             </div>
 
         </section>
-        
+        {{-- PORTO END --}}
 
-        
+        {{-- COMPANY EXCELLENCE START --}}
         <section class="container flex">
             <div class="w-[60%] h-full flex items-center px-4">
                 <h2 class="text-4xl text-white font-normal">10+ Years proven formula for exceptional entertainment</h2>
@@ -143,9 +115,9 @@
                 </div>
             </div>
         </section>
-        
+        {{-- COMPANY EXCELLENCE END --}}
 
-        
+        {{-- PROJECT START --}}
         <section class="container mx-auto my-32 px-4">
             <h2 class="text-4xl text-white mb-10">Discover Latest Case Studies</h2>
 
@@ -214,31 +186,12 @@
                 </div>
             </div>
         </section>
-        
+        {{-- PROJECT END --}}
 
-        
-        <?php if (isset($component)) { $__componentOriginalba2f26e1a9ff9a4266405ba1ab7d3ee9 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginalba2f26e1a9ff9a4266405ba1ab7d3ee9 = $attributes; } ?>
-<?php $component = App\View\Components\Layouts\ContactForm::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('layouts.contact-form'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
-<?php $attributes = $attributes->except(\App\View\Components\Layouts\ContactForm::ignoredParameterNames()); ?>
-<?php endif; ?>
-<?php $component->withAttributes([]); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginalba2f26e1a9ff9a4266405ba1ab7d3ee9)): ?>
-<?php $attributes = $__attributesOriginalba2f26e1a9ff9a4266405ba1ab7d3ee9; ?>
-<?php unset($__attributesOriginalba2f26e1a9ff9a4266405ba1ab7d3ee9); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalba2f26e1a9ff9a4266405ba1ab7d3ee9)): ?>
-<?php $component = $__componentOriginalba2f26e1a9ff9a4266405ba1ab7d3ee9; ?>
-<?php unset($__componentOriginalba2f26e1a9ff9a4266405ba1ab7d3ee9); ?>
-<?php endif; ?>
+        {{-- CONTACT FORM START --}}
+        <x-layouts.contact-form />
 
-        
+        {{-- CONTACT FORM END --}}
 
 
 
@@ -246,14 +199,4 @@
 
 
     </main>
- <?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginalf2b16bc3883246ba4659aff94e382522)): ?>
-<?php $attributes = $__attributesOriginalf2b16bc3883246ba4659aff94e382522; ?>
-<?php unset($__attributesOriginalf2b16bc3883246ba4659aff94e382522); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalf2b16bc3883246ba4659aff94e382522)): ?>
-<?php $component = $__componentOriginalf2b16bc3883246ba4659aff94e382522; ?>
-<?php unset($__componentOriginalf2b16bc3883246ba4659aff94e382522); ?>
-<?php endif; ?>
-<?php /**PATH E:\laragon\www\metri_id\resources\views/service-film.blade.php ENDPATH**/ ?>
+</x-layouts.layout>

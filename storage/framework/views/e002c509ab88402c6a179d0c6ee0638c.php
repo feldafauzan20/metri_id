@@ -45,8 +45,6 @@
                     class="w-full bg-transparent border-b border-white focus:outline-none focus:border-gray-300 transition duration-300 py-2 h-20"></textarea>
             </div>
 
-<<<<<<< HEAD
-=======
             <!-- Checkbox Options -->
             <div>
                 <label class="block uppercase text-sm tracking-wider mb-2">Which metri service do you need assistance
@@ -115,7 +113,6 @@
 
 
 
->>>>>>> fe-dev
             <!-- Checkbox -->
             <div class="flex items-center space-x-2">
                 <input type="checkbox" id="agree" class="w-4 h-4 border-gray-400 bg-transparent">

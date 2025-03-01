@@ -26,7 +26,7 @@ class MetriFilmEquipmentController extends Controller
         }
 
         // Kirim ke view dengan nilai default jika null
-        return view('service-tang-ing', [
+        return view('service-tang-ting', [
             'youtube_link' => $embed_link ?? null,
             'image'        => $data->image ?? null,
             'video'        => $data->video ?? null,
