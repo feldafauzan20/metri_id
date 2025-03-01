@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class MetriPostPost extends Model
 {
@@ -22,7 +23,8 @@ class MetriPostPost extends Model
         'concept', 
         'objective',
         'challenge', 
-        'results', 
+        'results',
+        'image', 
         'gambar_1', 
         'gambar_2',
         'gambar_3', 

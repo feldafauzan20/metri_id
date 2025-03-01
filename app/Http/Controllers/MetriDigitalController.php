@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\MetriDigital;
 use Illuminate\Http\Request;
 
-
-
 class MetriDigitalController extends Controller
 {
     public function index()

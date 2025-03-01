@@ -3,28 +3,39 @@
 namespace App\Http\Controllers;
 
 use App\Models\MetriPost;
+use App\Models\MetriPost;
 use Illuminate\Http\Request;
 
 class MetriPostController extends Controller
 {
     public function index()
     {
+        // Ambil data terbaru dari database
+        $data = MetriPost::latest()->first([
+            'youtube_link',
+            'video',
+            'photo_1',
+            'photo_2',
+            'photo_3',
+            'photo_4',
+            'photo_5',
+        ]);
+
         // Konversi link YouTube menjadi embed link (jika ada)
         $embed_link = null;
-        if (!empty($data->link) && preg_match('/(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]+)/', $data->link, $matches)) {
+        if (!empty($data->youtube_link) && preg_match('/(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]+)/', $data->youtube_link, $matches)) {
             $embed_link = 'https://www.youtube.com/embed/' . $matches[1];
         }
-        
-        // Ambil data terbaru dari database
-        $youtube_link = MetriPost::latest()->value('youtube_link');
-        $video = MetriPost::latest()->value('video');
-        $photo_1 = MetriPost::latest()->value('photo_1');
-        $photo_2 = MetriPost::latest()->value('photo_2');
-        $photo_3 = MetriPost::latest()->value('photo_3');
-        $photo_4 = MetriPost::latest()->value('photo_4');
-        $photo_5 = MetriPost::latest()->value('photo_5');
 
-        // Kirim ke view
-        return view('service-post', compact('youtube_link', 'video', 'photo_1', 'photo_2', 'photo_3', 'photo_4', 'photo_5'));
+        // Kirim ke view dengan nilai default jika null
+        return view('service-post', [
+            'youtube_link' => $embed_link ?? null,
+            'video'        => $data->video ?? null,
+            'photo_1'      => $data->photo_1 ?? null,
+            'photo_2'      => $data->photo_2 ?? null,
+            'photo_3'      => $data->photo_3 ?? null,
+            'photo_4'      => $data->photo_4 ?? null,
+            'photo_5'      => $data->photo_5 ?? null,
+        ]);
     }
 }

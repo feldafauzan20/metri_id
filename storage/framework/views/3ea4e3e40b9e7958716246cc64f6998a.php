@@ -27,6 +27,7 @@
                 <nav class="flex navigation relative">
                     <a href="" class="a-nav">ABOUT</a>
                     <div class="relative group">
+<<<<<<< HEAD
                         <a href="#services" class="text-black h-full flex items-center gap-2">
                             OUR SERVICES
                             <svg class="w-4 h-4 transition-transform group-hover:rotate-180"
@@ -57,6 +58,23 @@
                             </ul>
                         </div>
                     </div>
+=======
+                        <a href="#services" class="a-nav h-full flex items-center">OUR SERVICES</a>
+                        <div class="absolute left-0 top-full mt-0 hidden group-hover:block  bg-[#359381] bg-opacity-50 backdrop-blur-md shadow-lg rounded-lg w-48">
+                            <ul class="py-2">
+                                <li><a href="/metri-entertainment" class="block px-4 py-2 hover:backdrop-blur-lg text-white">metri entertainment</a></li>
+                                <li><a href="/metri-design" class="block px-4 py-2 hover:backdrop-blur-lg text-white">metri design</a></li>
+                                <li><a href="/metri-digital" class="block px-4 py-2 hover:backdrop-blur-lg text-white">metri digital</a></li>
+                                <li><a href="/metri-film" class="block px-4 py-2 hover:backdrop-blur-lg text-white">metri film</a></li>
+                                <li><a href="/metri-post" class="block px-4 py-2 hover:backdrop-blur-lg text-white">metri post</a></li>
+                                <li><a href="/metri-tang-ting" class="block px-4 py-2 hover:backdrop-blur-lg text-white">tang ting</a></li>
+                                <li><a href="/metri-event" class="block px-4 py-2 hover:backdrop-blur-lg text-white">metri event</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    
+>>>>>>> be-dev
                     <a href="#partners" class="a-nav">OUR PARTNERS</a>
                     <a href="#contact" class="a-nav">CONTACT</a>
                 </nav>
@@ -232,15 +250,23 @@
                         <h2 class="text-4xl font-semibold text-white">
                             <span class="cs-text1" data-value="<?php echo e($counter_1); ?>">0</span>%
                         </h2>
+<<<<<<< HEAD
                         <p class="pt-4 text-white">Of customers said using Flinta helped them to better service
                             clients.</p>
+=======
+                        <p class="pt-4 text-white">Of customers said using Flinta helped them to better service clients.</p>
+>>>>>>> be-dev
                     </div>
                     <div class="mx-4 text-center">
                         <h2 class="text-4xl font-semibold text-white">
                             <span class="cs-text2" data-value="<?php echo e($counter_2); ?>">0</span>
                         </h2>
+<<<<<<< HEAD
                         <p class="pt-4 text-white">Founded in 2024, we're on a growth journey focused on innovation.
                         </p>
+=======
+                        <p class="pt-4 text-white">Founded in 2024, we're on a growth journey focused on innovation.</p>
+>>>>>>> be-dev
                     </div>
                     <div class="mx-4 text-center">
                         <h2 class="text-4xl font-semibold text-white">
@@ -254,7 +280,11 @@
                         </h2>
                         <p class="pt-4 text-white">Of tickets left unresolved using metri's advanced functionality.</p>
                     </div>
+<<<<<<< HEAD
                 </div>
+=======
+                </div>                
+>>>>>>> be-dev
 
                 <div class="flex flex-col items-center w-full">
                     <h2 class="text-xl font-medium text-center text-white">Explore our Advance System Functionality and
@@ -269,12 +299,17 @@
             <video class="object-fill w-full h-full" autoplay loop muted>
                 <source src="<?php echo e(asset('storage/' . $video)); ?>" type="video/mp4">
             </video>
+<<<<<<< HEAD
         </section>
+=======
+        </section>        
+>>>>>>> be-dev
 
         <div class="flex flex-row items-center w-full bg-[#056251]" id="partners">
             <p class="px-10 text-lg font-thin text-white whitespace-nowrap">
                 Our Partners
             </p>
+<<<<<<< HEAD
             <div class="w-auto overflow-hidden fade bg-white rounded-lg">
                 <div class="flex flex-row items-center animate-scroll w-max gap-6 py-3">
                     <!-- 12 gambar unik -->
@@ -304,13 +339,38 @@
                     <img src="<?php echo e(asset('images/partners/partner10.webp')); ?>" class="w-52 h-24 object-contain">
                     <img src="<?php echo e(asset('images/partners/partner11.webp')); ?>" class="w-52 h-24 object-contain">
                     <img src="<?php echo e(asset('images/partners/partner12.webp')); ?>" class="w-52 h-24 object-contain">
+=======
+            <div class="w-auto overflow-hidden fade">
+                <div class="flex flex-row animate-scroll w-max">
+                    <img src="<?php echo e(asset('images/logo/logo-metri-baru.png')); ?>" class="w-52">
+                    <img src="<?php echo e(asset('images/logo/logo-putih-baru.png')); ?>" class="w-52">
+                    <img src="<?php echo e(asset('images/logo/logo-putih-baru.png')); ?>" class="w-52">
+                    <img src="<?php echo e(asset('images/logo/logo-putih-baru.png')); ?>" class="w-52">
+                    <img src="<?php echo e(asset('images/logo/logo-putih-baru.png')); ?>" class="w-52">
+                    <img src="<?php echo e(asset('images/logo/logo-putih-baru.png')); ?>" class="w-52">
+                    <img src="<?php echo e(asset('images/logo/logo-putih-baru.png')); ?>" class="w-52">
+                    <!-- Duplikat logo untuk efek loop -->
+                    <img src="<?php echo e(asset('images/logo/logo-metri-baru.png')); ?>" class="w-52">
+                    <img src="<?php echo e(asset('images/logo/logo-putih-baru.png')); ?>" class="w-52">
+                    <img src="<?php echo e(asset('images/logo/logo-putih-baru.png')); ?>" class="w-52">
+                    <img src="<?php echo e(asset('images/logo/logo-putih-baru.png')); ?>" class="w-52">
+                    <img src="<?php echo e(asset('images/logo/logo-putih-baru.png')); ?>" class="w-52">
+                    <img src="<?php echo e(asset('images/logo/logo-putih-baru.png')); ?>" class="w-52">
+                    <img src="<?php echo e(asset('images/logo/logo-putih-baru.png')); ?>" class="w-52">
+>>>>>>> be-dev
                 </div>
             </div>
         </div>
 
+<<<<<<< HEAD
 
         <section class="w-full pt-10 ">
             <div class="flex flex-col gap-5 px-10 justify-centerh-full">
+=======
+        <section class="w-full pt-10 ">
+            <div class="flex flex-col gap-5 px-10 justify-centerh-full">
+
+>>>>>>> be-dev
                 <div class="flex w-full">
                     <div class="flex items-center w-full">
                         <h2 class="py-1 font-thin text-white px-7 w-max font-jakarta rounded-3xl outline outline-1">
@@ -334,6 +394,7 @@
                         </button>
                     </div>
                 </div>
+<<<<<<< HEAD
                 <div class="w-full swiper bg-white backdrop-blur-2xl shadow-lg border border-white/50  rounded-lg">
                     <div class="swiper-wrapper my-10 p-3">
                         <?php $__currentLoopData = array_chunk(range(1, 21), 11); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $group): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -343,6 +404,17 @@
                                         <img src="<?php echo e(asset('images/clients/client-' . $i . '.webp')); ?>"
                                             class="w-28 h-28 object-contain">
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+=======
+                <div class="w-full swiper">
+                    <div class="swiper-wrapper my-14">
+                        <?php $__currentLoopData = range(1, 60); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $i): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <div class="flex justify-center swiper-slide">
+                                <div class="flex flex-col items-center w-full gap-5">
+                                    <img src="<?php echo e(asset('images/service2.webp')); ?>"
+                                        class="w-20 h-20 bg-white rounded-full aspect-square">
+                                    <img src="<?php echo e(asset('images/service2.webp')); ?>"
+                                        class="w-20 h-20 bg-white rounded-full aspect-square">
+>>>>>>> be-dev
                                 </div>
                             </div>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -350,6 +422,7 @@
                 </div>
 
 
+<<<<<<< HEAD
 
 
 
@@ -357,6 +430,8 @@
 
 
 
+=======
+>>>>>>> be-dev
             </div>
         </section>
 

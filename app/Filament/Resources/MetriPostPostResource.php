@@ -14,6 +14,15 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Get;
+use Filament\Forms\Set;
+use Illuminate\Support\Str;
+use App\Models\Project;
+
 
 class MetriPostPostResource extends Resource
 {
@@ -37,7 +46,7 @@ class MetriPostPostResource extends Resource
                 ->required()
                 ->maxLength(255)
                 ->unique(ignoreRecord: true)
-                ->readonly(),
+                ->disabled(),
 
             RichEditor::make('content')->required(),
 
@@ -52,30 +61,35 @@ class MetriPostPostResource extends Resource
             RichEditor::make('results')->label('Results'),
 
             // Input foto/video (tanpa `video()`)
+            FileUpload::make('image')
+            ->directory('metri_post_posts')
+            ->label('Headline Image')
+            ->nullable(),
+
             FileUpload::make('gambar_1')
-                ->directory('metri_design_posts')
+                ->directory('metri_post_posts')
             
-                ->label('Foto/Video 1')
+                ->label('Foto 1')
                 ->nullable(),
 
             FileUpload::make('gambar_2')
-                ->directory('metri_design_posts')
+                ->directory('metri_post_posts')
             
                 ->nullable(),
 
             FileUpload::make('gambar_3')
-                ->directory('metri_design_posts')
+                ->directory('metri_post_posts')
             
                 ->nullable(),
 
             FileUpload::make('gambar_4')
-                ->directory('metri_design_posts')
+                ->directory('metri_post_posts')
             
                 ->label('Foto/Video 4')
                 ->nullable(),
 
             FileUpload::make('gambar_5')
-                ->directory('metri_design_posts')
+                ->directory('metri_post_posts')
             
                 ->label('Foto/Video 5')
                 ->nullable(),
@@ -96,11 +110,12 @@ class MetriPostPostResource extends Resource
                 TextColumn::make('category')->label('Category')->sortable()->searchable(),
                 TextColumn::make('industry')->label('Industry')->sortable()->searchable(),
                 
-                ImageColumn::make('gambar_1')->label('GAMBAR 1'),
-                ImageColumn::make('gambar_2')->label('GAMBAR 2'),
-                ImageColumn::make('gambar_3')->label('GAMBAR 3'),
-                ImageColumn::make('gambar_4')->label('GAMBAR 4'),
-                ImageColumn::make('gambar_5')->label('GAMBAR 5'),
+                ImageColumn::make('image')->label('Headline Image'),
+                ImageColumn::make('gambar_1')->label('PHOTO 1'),
+                ImageColumn::make('gambar_2')->label('PHOTO 2'),
+                ImageColumn::make('gambar_3')->label('PHOTO 3'),
+                ImageColumn::make('gambar_4')->label('PHOTO 4'),
+                ImageColumn::make('gambar_5')->label('PHOTO 5'),
     
                 TextColumn::make('concept')->label('Concept')->limit(50),
                 TextColumn::make('objective')->label('Objective')->limit(50),
@@ -113,7 +128,21 @@ class MetriPostPostResource extends Resource
             ])
             ->filters([]);
     }
-
+    protected static function boot()
+    {
+        parent::boot();
+    
+        static::created(function ($post) {
+            Project::create([
+                'title' => $post->title,
+                'description' => $post->content,
+                'image' => $post->image,
+                'service_type' => 'metri post',
+                'service_id' => $post->id,
+                'created_at' => $post->created_at,
+            ]);
+        });
+    }
     public static function getPages(): array
     {
         return [

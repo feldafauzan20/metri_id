@@ -4,7 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\MetriEntertaimentPostResource\Pages;
 use App\Filament\Resources\MetriEntertaimentPostResource\RelationManagers;
-use App\Models\MetriEntertaimentPost;
+use App\Models\MetriEntertainmentPost;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -14,10 +14,17 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
+use Illuminate\Support\Str;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Get;
+use Filament\Forms\Set;
+use App\Models\Project;
 
 class MetriEntertaimentPostResource extends Resource
 {
-    protected static ?string $model = MetriEntertaimentPost::class;
+    protected static ?string $model = MetriEntertainmentPost::class;
     protected static ?string $navigationGroup = 'Metri Entertainment';
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -36,7 +43,7 @@ class MetriEntertaimentPostResource extends Resource
                 ->required()
                 ->maxLength(255)
                 ->unique(ignoreRecord: true)
-                ->readonly(),
+                ->disabled(),
 
             RichEditor::make('content')->required(),
 
@@ -51,30 +58,35 @@ class MetriEntertaimentPostResource extends Resource
             RichEditor::make('results')->label('Results'),
 
             // Input foto/video (tanpa `video()`)
+            FileUpload::make('image')
+            ->directory('metri_entertainment_posts')
+            ->label('Headline Image')
+            ->nullable(),
+
             FileUpload::make('gambar_1')
-                ->directory('metri_design_posts')
+                ->directory('metri_entertainment_posts')
             
-                ->label('Foto/Video 1')
+                ->label('Foto 1')
                 ->nullable(),
 
             FileUpload::make('gambar_2')
-                ->directory('metri_design_posts')
+                ->directory('metri_entertainment_posts')
             
                 ->nullable(),
 
             FileUpload::make('gambar_3')
-                ->directory('metri_design_posts')
+                ->directory('metri_entertainment_posts')
             
                 ->nullable(),
 
             FileUpload::make('gambar_4')
-                ->directory('metri_design_posts')
+                ->directory('metri_entertainment_posts')
             
                 ->label('Foto/Video 4')
                 ->nullable(),
 
             FileUpload::make('gambar_5')
-                ->directory('metri_design_posts')
+                ->directory('metri_entertainment_posts')
             
                 ->label('Foto/Video 5')
                 ->nullable(),
@@ -95,11 +107,12 @@ class MetriEntertaimentPostResource extends Resource
                 TextColumn::make('category')->label('Category')->sortable()->searchable(),
                 TextColumn::make('industry')->label('Industry')->sortable()->searchable(),
                 
-                ImageColumn::make('gambar_1')->label('GAMBAR 1'),
-                ImageColumn::make('gambar_2')->label('GAMBAR 2'),
-                ImageColumn::make('gambar_3')->label('GAMBAR 3'),
-                ImageColumn::make('gambar_4')->label('GAMBAR 4'),
-                ImageColumn::make('gambar_5')->label('GAMBAR 5'),
+                ImageColumn::make('image')->label('Headline Image'),
+                ImageColumn::make('gambar_1')->label('PHOTO 1'),
+                ImageColumn::make('gambar_2')->label('PHOTO 2'),
+                ImageColumn::make('gambar_3')->label('PHOTO 3'),
+                ImageColumn::make('gambar_4')->label('PHOTO 4'),
+                ImageColumn::make('gambar_5')->label('PHOTO 5'),
     
                 TextColumn::make('concept')->label('Concept')->limit(50),
                 TextColumn::make('objective')->label('Objective')->limit(50),
@@ -113,6 +126,21 @@ class MetriEntertaimentPostResource extends Resource
             ->filters([]);
     }
 
+    protected static function boot()
+    {
+        parent::boot();
+    
+        static::created(function ($post) {
+            Project::create([
+                'title' => $post->title,
+                'description' => $post->content,
+                'image' => $post->image,
+                'service_type' => 'metri entertainment',
+                'service_id' => $post->id,
+                'created_at' => $post->created_at,
+            ]);
+        });
+    }
     public static function getPages(): array
     {
         return [
