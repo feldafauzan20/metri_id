@@ -45,6 +45,77 @@
                     class="w-full bg-transparent border-b border-white focus:outline-none focus:border-gray-300 transition duration-300 py-2 h-20"></textarea>
             </div>
 
+<<<<<<< HEAD
+=======
+            <!-- Checkbox Options -->
+            <div>
+                <label class="block uppercase text-sm tracking-wider mb-2">Which metri service do you need assistance
+                    with?</label>
+                <span class="text-[#cbd5e1e3]">You can select multiple options. Feel free to choose all that
+                    apply!</span>
+                <div class="flex flex-wrap gap-3 mt-2">
+                    <label
+                        class="group flex items-center space-x-2 backdrop-blur-md bg-white/20 px-4 py-2 rounded-md cursor-pointer transition-all duration-300 ease-in-out hover:bg-white/30 active:scale-95">
+                        <input type="checkbox" class="hidden peer" name="service" value="service1">
+                        <span
+                            class="group-hover:scale-105 peer-checked:text-white peer-checked:font-bold peer-checked:bg-[#F45353] peer-checked:bg-opacity-80 peer-checked:px-3 peer-checked:py-1 peer-checked:rounded-md transition-all duration-300">metri
+                            entertainment</span>
+                    </label>
+
+                    <label
+                        class="group flex items-center space-x-2 backdrop-blur-md bg-white/20 px-4 py-2 rounded-md cursor-pointer transition-all duration-300 ease-in-out hover:bg-white/30 active:scale-95">
+                        <input type="checkbox" class="hidden peer" name="service" value="service2">
+                        <span
+                            class="group-hover:scale-105 peer-checked:text-white peer-checked:font-bold peer-checked:bg-[#3C7AD3] peer-checked:bg-opacity-80 peer-checked:px-3 peer-checked:py-1 peer-checked:rounded-md transition-all duration-300">metri
+                            design</span>
+                    </label>
+
+                    <label
+                        class="group flex items-center space-x-2 backdrop-blur-md bg-white/20 px-4 py-2 rounded-md cursor-pointer transition-all duration-300 ease-in-out hover:bg-white/30 active:scale-95">
+                        <input type="checkbox" class="hidden peer" name="service" value="service3">
+                        <span
+                            class="group-hover:scale-105 peer-checked:text-white peer-checked:font-bold peer-checked:bg-[#44AC60] peer-checked:bg-opacity-80 peer-checked:px-3 peer-checked:py-1 peer-checked:rounded-md transition-all duration-300">metri
+                            digital</span>
+                    </label>
+
+                    <label
+                        class="group flex items-center space-x-2 backdrop-blur-md bg-white/20 px-4 py-2 rounded-md cursor-pointer transition-all duration-300 ease-in-out hover:bg-white/30 active:scale-95">
+                        <input type="checkbox" class="hidden peer" name="service" value="service4">
+                        <span
+                            class="group-hover:scale-105 peer-checked:text-white peer-checked:font-bold peer-checked:bg-[#db4d4d] peer-checked:bg-opacity-80 peer-checked:px-3 peer-checked:py-1 peer-checked:rounded-md transition-all duration-300">metri
+                            event</span>
+                    </label>
+
+                    <label
+                        class="group flex items-center space-x-2 backdrop-blur-md bg-white/20 px-4 py-2 rounded-md cursor-pointer transition-all duration-300 ease-in-out hover:bg-white/30 active:scale-95">
+                        <input type="checkbox" class="hidden peer" name="service" value="service5">
+                        <span
+                            class="group-hover:scale-105 peer-checked:text-white peer-checked:font-bold peer-checked:bg-cyan-500 peer-checked:bg-opacity-80 peer-checked:px-3 peer-checked:py-1 peer-checked:rounded-md transition-all duration-300">metri
+                            film</span>
+                    </label>
+
+                    <label
+                        class="group flex items-center space-x-2 backdrop-blur-md bg-white/20 px-4 py-2 rounded-md cursor-pointer transition-all duration-300 ease-in-out hover:bg-white/30 active:scale-95">
+                        <input type="checkbox" class="hidden peer" name="service" value="service6">
+                        <span
+                            class="group-hover:scale-105 peer-checked:text-white peer-checked:font-bold peer-checked:bg-[#d7bd38] peer-checked:bg-opacity-80 peer-checked:px-3 peer-checked:py-1 peer-checked:rounded-md transition-all duration-300">tang
+                            ting</span>
+                    </label>
+
+                    <label
+                        class="group flex items-center space-x-2 backdrop-blur-md bg-white/20 px-4 py-2 rounded-md cursor-pointer transition-all duration-300 ease-in-out hover:bg-white/30 active:scale-95">
+                        <input type="checkbox" class="hidden peer" name="service" value="service7">
+                        <span
+                            class="group-hover:scale-105 peer-checked:text-white peer-checked:font-bold peer-checked:bg-[#F7931E] peer-checked:bg-opacity-80 peer-checked:px-3 peer-checked:py-1 peer-checked:rounded-md transition-all duration-300">metri
+                            post</span>
+                    </label>
+                </div>
+            </div>
+
+
+
+
+>>>>>>> fe-dev
             <!-- Checkbox -->
             <div class="flex items-center space-x-2">
                 <input type="checkbox" id="agree" class="w-4 h-4 border-gray-400 bg-transparent">

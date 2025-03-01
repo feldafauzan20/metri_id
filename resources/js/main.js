@@ -150,7 +150,7 @@ function animateCounter(selector) {
         value: finalValue,
         onUpdate: () => {
             element.textContent = Math.round(value.value); // Hanya angka bulat
-        }
+        },
     });
 }
 
@@ -160,11 +160,17 @@ animateCounter(".cs-text2");
 animateCounter(".cs-text3");
 animateCounter(".cs-text4");
 
-
 // Swiper slider setup
 const swiper = new Swiper(".swiper", {
-    slidesPerView: 5,
-    spaceBetween: 20,
+    slidesPerView: 1,
+    grid: {
+        rows: 2, // Membuat dua baris dalam satu slide
+    },
+    spaceBetween: 10,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
     loop: true,
 });
 

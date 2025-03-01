@@ -2,7 +2,11 @@
 
 use App\Http\Controllers\MetriDesignController;
 use App\Http\Controllers\MetriDigitalController;
+use App\Http\Controllers\MetriEntertaimentController;
+use App\Http\Controllers\MetriEventController;
+use App\Http\Controllers\MetriFilmEquipmentController;
 use App\Http\Controllers\MetriLandingPageController;
+use App\Http\Controllers\MetriPostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller_Design;
 use App\Http\Controllers\MetriFilmController;
@@ -35,18 +39,10 @@ Route::get('/design', [MetriDesignController::class, 'index']);
 
 
 Route::get('/', [MetriLandingPageController::class, 'index']);
-Route::get('/metri-entertainment', function () {
-    return view('service-entertainment');
-});
+Route::get('/metri-entertainment', [MetriEntertaimentController::class, 'index']);
 Route::get('/metri-design', [MetriDesignController::class,'index']);
 Route::get('/metri-film', [MetriFilmController::class,'index']);
 Route::get('/metri-digital', [MetriDigitalController::class, 'index']);
-Route::get('/metri-post', function () {
-    return view('service-post');
-});
-Route::get('/metri-tang-ting', function () {
-    return view('service-tang-ting');
-});
-Route::get('/metri-event', function () {
-    return view('service-event');
-});
+Route::get('/metri-post', [MetriPostController::class, 'index']);
+Route::get('/metri-tang-ting', [MetriFilmEquipmentController::class, 'index']);
+Route::get('/metri-event', [MetriEventController::class, 'index']);
