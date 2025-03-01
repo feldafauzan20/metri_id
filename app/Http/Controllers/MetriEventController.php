@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\MetriEvent;
 use Illuminate\Http\Request;
-use App\Models\MetriEvent;
 class MetriEventController extends Controller
 {
     public function index()
