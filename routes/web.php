@@ -49,3 +49,7 @@ Route::get('/metri-digital', [MetriDigitalController::class, 'index']);
 Route::get('/metri-post', [MetriPostController::class, 'index']);
 Route::get('/metri-tang-ting', [MetriFilmEquipmentController::class, 'index']);
 Route::get('/metri-event', [MetriEventController::class, 'index']);
+
+Route::get('/contact', function() {
+    return view('contact');
+});

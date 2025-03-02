@@ -357,13 +357,13 @@
                     <h2>Transform your brand and business with our 360 services.</h2>
                 </div>
                 <div class="flex items-center justify-end w-1/2 gap-x-5">
-                    <button
+                    <a href="/contact"
                         class="w-1/3 text-xl font-normal text-white transition-all duration-300 ease-in-out bg-transparent rounded-full btn outline-white outline font-ibm outline-2 hover:text-black hover:border-white hover:bg-white">CONTACT
-                        US</button>
-                    <button
+                        US</a>
+                    <a href="/contact"
                         class="w-1/3 text-xl font-normal text-[#00413D] bg-white outline-white outline outline-2 rounded-full btn font-ibm hover:text-white transition-all duration-300 ease-in-out  hover:border-white hover:bg-[#022C29]
 ">CONTACT
-                        US</button>
+                        US</a>
                 </div>
             </div>
 

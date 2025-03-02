@@ -15,10 +15,10 @@
             </div>
 
             <!-- Contact Us Button -->
-            <button
+            <a href="/contact"
                 class="text-sm sm:text-lg md:text-xl font-normal text-white bg-transparent rounded-full py-1 px-5 sm:px-7 border border-white outline-none hover:bg-white hover:text-black transition-all duration-300">
                 CONTACT US
-            </button>
+            </a>
         </header>
     </div>
 
@@ -44,7 +44,7 @@
             </button>
 
             <!-- Contact Us di kanan -->
-            <a href=""
+            <a href="/contact"
                 class="text-white border-2 border-white px-4 sm:px-6 py-1 sm:py-2 rounded-full transition-all duration-300 hover:bg-white hover:text-black">
                 CONTACT US
             </a>
