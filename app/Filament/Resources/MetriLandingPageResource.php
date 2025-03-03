@@ -26,21 +26,21 @@ class MetriLandingPageResource extends Resource
             ->schema([
                 Section::make('Input Data')
                     ->schema([
-                        TextInput::make('counter_1')
-                            ->label('Counter 1')
-                            ->maxLength(10), // Bisa input karakter dan angka
+                        // TextInput::make('counter_1')
+                        //     ->label('Counter 1')
+                        //     ->maxLength(10),
     
-                        TextInput::make('counter_2')
-                            ->label('Counter 2')
-                            ->maxLength(10),
+                        // TextInput::make('counter_2')
+                        //     ->label('Counter 2')
+                        //     ->maxLength(10),
     
-                        TextInput::make('counter_3')
-                            ->label('Counter 3')
-                            ->maxLength(10),
+                        // TextInput::make('counter_3')
+                        //     ->label('Counter 3')
+                        //     ->maxLength(10),
     
-                        TextInput::make('counter_4')
-                            ->label('Counter 4')
-                            ->maxLength(10),
+                        // TextInput::make('counter_4')
+                        //     ->label('Counter 4')
+                        //     ->maxLength(10),
     
                         FileUpload::make('video')
                             ->label('Upload Video')
@@ -55,10 +55,10 @@ class MetriLandingPageResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('counter_1')->label('COUNTER 1'),
-                Tables\Columns\TextColumn::make('counter_2')->label('COUNTER 2'),
-                Tables\Columns\TextColumn::make('counter_3')->label('COUNTER 3'),
-                Tables\Columns\TextColumn::make('counter_4')->label('COUNTER 4'),
+                // Tables\Columns\TextColumn::make('counter_1')->label('COUNTER 1'),
+                // Tables\Columns\TextColumn::make('counter_2')->label('COUNTER 2'),
+                // Tables\Columns\TextColumn::make('counter_3')->label('COUNTER 3'),
+                // Tables\Columns\TextColumn::make('counter_4')->label('COUNTER 4'),
                 // Tables\Columns\TextColumn::make('youtube_link')->label('YouTube Link')->limit(30),
                 // Tables\Columns\ImageColumn::make('image')->label('Image'),
                 Tables\Columns\TextColumn::make('video')->label('Video')->limit(30),
