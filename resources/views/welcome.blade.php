@@ -16,7 +16,7 @@
             </div>
             <div class="min-h-min">
                 <nav class="flex navigation relative">
-                    <a href="" class="a-nav">ABOUT</a>
+                    <a href="/about" class="a-nav">ABOUT</a>
                     <div class="relative group">
                         <a href="#services" class="text-black h-full flex items-center gap-2">
                             OUR SERVICES
@@ -80,7 +80,6 @@
                 </div>
             </div>
         </section>
-
 
         <section class="relative w-full h-screen -mt-10 overflow-hidden mysteps" id="services">
             <div class="step-counter w-full relative flex px-[2em] flex-row m-[2em] justify-between items-center">
@@ -206,9 +205,10 @@
         <div id="overlay" class="fixed top-0 left-0 w-full h-full bg-[#00413D] opacity-0 pointer-events-none z-50">
         </div>
 
-        <section class="items-center justify-center w-full pb-28 customer-support">
-            <div class="container flex flex-col items-center w-full pt-4 overflow-hidden">
-                <div class="flex flex-col items-center w-full">
+        <section class="items-center justify-center w-full pb-28 customer-support h-[450px] md:h-[600px]">
+            <div class="container flex flex-col items-center justify-center  w-full pt-4 h-full overflow-hidden">
+                <div
+                    class="flex flex-col items-center w-full h-fit rounded-2xl py-20 bg-[#00413D]/30 backdrop-blur-3xl">
                     <p
                         class="text-white max-w-lg w-fit font-jakarta font-normal text-xl text-center rounded-3xl outline outline-2 outline-[#E1E1E1] p-2 mt-2">
                         Customer Support
@@ -218,43 +218,9 @@
                     <h2 class="text-4xl font-semibold text-white">regarding our 360 services.</h2>
                 </div>
 
-                <div class="container flex items-center justify-center h-full my-10">
-                    <div class="mx-4 text-center">
-                        <h2 class="text-4xl font-semibold text-white">
-                            <span class="cs-text1" data-value="{{ $counter_1 }}">0</span>%
-                        </h2>
-                        <p class="pt-4 text-white">Of customers said using Flinta helped them to better service
-                            clients.</p>
-                    </div>
-                    <div class="mx-4 text-center">
-                        <h2 class="text-4xl font-semibold text-white">
-                            <span class="cs-text2" data-value="{{ $counter_2 }}">0</span>
-                        </h2>
-                        <p class="pt-4 text-white">Founded in 2024, we're on a growth journey focused on innovation.
-                        </p>
-                    </div>
-                    <div class="mx-4 text-center">
-                        <h2 class="text-4xl font-semibold text-white">
-                            <span class="cs-text3" data-value="{{ $counter_3 }}">0</span>+
-                        </h2>
-                        <p class="pt-4 text-white">Average monthly clients since we launched in June 2023.</p>
-                    </div>
-                    <div class="mx-4 text-center">
-                        <h2 class="text-4xl font-semibold text-white">
-                            <span class="cs-text4" data-value="{{ $counter_4 }}">0</span>+
-                        </h2>
-                        <p class="pt-4 text-white">Of tickets left unresolved using metri's advanced functionality.</p>
-                    </div>
-                </div>
-
-                <div class="flex flex-col items-center w-full">
-                    <h2 class="text-xl font-medium text-center text-white">Explore our Advance System Functionality and
-                        Experience
-                        the Difference</h2>
-                    <h2 class="text-xl font-medium text-center text-white">with metri.</h2>
-                </div>
             </div>
         </section>
+
 
         <section class="w-full h-full">
             <video class="object-fill w-full h-full" autoplay loop muted>
@@ -301,7 +267,7 @@
 
 
         <section class="w-full pt-10 ">
-            <div class="flex flex-col gap-5 px-10 justify-centerh-full">
+            <div class="flex flex-col gap-5 px-10 justify-center h-full">
                 <div class="flex w-full">
                     <div class="flex items-center w-full">
                         <h2 class="py-1 font-thin text-white px-7 w-max font-jakarta rounded-3xl outline outline-1">
@@ -339,15 +305,6 @@
                         @endforeach
                     </div>
                 </div>
-
-
-
-
-
-
-
-
-
             </div>
         </section>
 

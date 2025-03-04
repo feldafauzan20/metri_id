@@ -20,7 +20,7 @@
                 <h4 class="text-lg font-semibold mb-3">QUICK LINK</h4>
                 <ul class="text-gray-400 space-y-2">
                     <li><a href="/" class="hover:text-white">Home</a></li>
-                    <li><a href="#" class="hover:text-white">About Us</a></li>
+                    <li><a href="/about" class="hover:text-white">About Us</a></li>
                     <li><a href="/contact" class="hover:text-white">Contact Us</a></li>
                 </ul>
             </div>

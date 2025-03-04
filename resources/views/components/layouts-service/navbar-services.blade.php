@@ -1,4 +1,4 @@
-<nav class="fixed top-0 left-0 w-full bg-[#00413D] z-50">
+<nav id="navbar" class="fixed top-0 left-0 w-full bg-transparent z-50 transition-all duration-300">
 
     <div class="container">
         <header class="flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4">
@@ -58,14 +58,14 @@
 
                 <a href="/"
                     class="text-white hover:text-orange-200 font-bold text-4xl sm:text-5xl md:text-8xl">HOME</a>
-                <a href="#"
+                <a href="/about"
                     class="text-white hover:text-orange-200 font-bold text-4xl sm:text-5xl md:text-8xl">ABOUT
                     US</a>
                 <button id="servicesBtn"
                     class="text-white hover:text-orange-200 font-bold text-4xl sm:text-5xl md:text-8xl focus:outline-none">
                     OUR SERVICES
                 </button>
-                <a href="#"
+                <a href="/contact"
                     class="text-white hover:text-orange-200 font-bold text-4xl sm:text-5xl md:text-8xl">CONTACT</a>
             </div>
 
@@ -99,8 +99,11 @@
                 <div class="absolute bottom-6 w-full text-center text-white text-xs sm:text-sm font-light">
                     <p>©2025 METRI DESIGN</p>
                     <div class="mt-2 flex justify-center space-x-4">
-                        <a href="#" class="hover:text-orange-200 transition">INSTAGRAM ↗</a>
-                        <a href="#" class="hover:text-orange-200 transition">LINKEDIN ↗</a>
+                        <a href="https://www.instagram.com/metri_id/" class="hover:text-orange-200 transition">INSTAGRAM
+                            ↗</a>
+                        <a href="https://www.linkedin.com/company/pt-media-tren-idea-metri-id/?originalSubdomain=id"
+                            class="hover:text-orange-200 transition">LINKEDIN ↗</a>
+                        <a href="#" class="hover:text-orange-200 transition">X ↗</a>
                     </div>
                 </div>
             </div>
@@ -111,9 +114,10 @@
         <div class="absolute bottom-6 w-full px-4 sm:px-6 flex justify-between text-white text-xs sm:text-sm">
             <p>&copy;2025 METRI DESIGN</p>
             <div class="flex gap-3 sm:gap-4">
-                <a href="#" class="hover:text-gray-300">INSTAGRAM</a>
-                <a href="#" class="hover:text-gray-300">LINKEDIN</a>
-                <a href="#" class="hover:text-gray-300">X</a>
+                <a href="https://www.instagram.com/metri_id/" class="hover:text-gray-300">INSTAGRAM ↗</a>
+                <a href="https://www.linkedin.com/company/pt-media-tren-idea-metri-id/?originalSubdomain=id"
+                    class="hover:text-gray-300">LINKEDIN ↗</a>
+                <a href="#" class="hover:text-gray-300">X ↗</a>
             </div>
         </div>
     </div>
