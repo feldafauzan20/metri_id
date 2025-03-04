@@ -73,7 +73,7 @@
                 class="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center bg-gradient-to-r from-[#00332E] to-[#00413D] opacity-0 pointer-events-none transition-all duration-500 ease-in-out z-50">
 
                 <div
-                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-4 sm:gap-y-6 text-center text-white text-base sm:text-lg md:text-2xl font-light">
+                    class="grid grid-cols-1 sm:grid-cols-2  md:mx-3 md:grid-cols-3 gap-x-8 gap-y-4 sm:gap-y-10 text-center text-white text-base sm:text-lg md:text-2xl font-light">
                     <a href="/metri-entertainment" class="hover:text-orange-200 transition">metri entertainment</a>
                     <a href="/metri-film" class="hover:text-orange-200 transition">metri film</a>
                     <a href="/metri-post" class="hover:text-orange-200 transition">metri post</a>

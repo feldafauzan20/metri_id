@@ -61,3 +61,7 @@ Route::get('/about', function() {
 Route::get('/detail', function() {
     return view( 'detail');
 });
+
+Route::get('/gallery', function() {
+    return view( 'gallery');
+});

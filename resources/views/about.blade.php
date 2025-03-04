@@ -185,7 +185,6 @@
                 </a>
             </div>
         </section>
-
         {{-- Start your brand end --}}
 
     </main>

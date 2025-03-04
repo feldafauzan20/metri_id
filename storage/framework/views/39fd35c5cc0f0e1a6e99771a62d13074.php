@@ -1,15 +1,43 @@
-<x-layouts.layout>
-    <x-slot:title>
+<?php if (isset($component)) { $__componentOriginalf2b16bc3883246ba4659aff94e382522 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginalf2b16bc3883246ba4659aff94e382522 = $attributes; } ?>
+<?php $component = App\View\Components\Layouts\Layout::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('layouts.layout'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\App\View\Components\Layouts\Layout::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+     <?php $__env->slot('title', null, []); ?> 
         metri | detail
-    </x-slot:title>
+     <?php $__env->endSlot(); ?>
 
-    <x-slot:vite>
-        @vite(['resources/js/service.js', 'resources/css/app.css'])
-    </x-slot:vite>
+     <?php $__env->slot('vite', null, []); ?> 
+        <?php echo app('Illuminate\Foundation\Vite')(['resources/js/service.js', 'resources/css/app.css']); ?>
+     <?php $__env->endSlot(); ?>
     <main class="overflow-x-hidden">
-        <x-layouts-service.navbar-services />
+        <?php if (isset($component)) { $__componentOriginalf554860691b0db475faae1a0c55e5119 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginalf554860691b0db475faae1a0c55e5119 = $attributes; } ?>
+<?php $component = App\View\Components\LayoutsService\NavbarServices::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('layouts-service.navbar-services'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\App\View\Components\LayoutsService\NavbarServices::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginalf554860691b0db475faae1a0c55e5119)): ?>
+<?php $attributes = $__attributesOriginalf554860691b0db475faae1a0c55e5119; ?>
+<?php unset($__attributesOriginalf554860691b0db475faae1a0c55e5119); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalf554860691b0db475faae1a0c55e5119)): ?>
+<?php $component = $__componentOriginalf554860691b0db475faae1a0c55e5119; ?>
+<?php unset($__componentOriginalf554860691b0db475faae1a0c55e5119); ?>
+<?php endif; ?>
 
-        {{-- HERO START --}}
+        
         <section class="relative min-h-screen flex items-center justify-center text-white">
             <div class="w-full h-screen flex flex-col md:flex-row md:container md:mx-auto md:gap-8 mx-4">
                 <!-- Bagian Kiri -->
@@ -39,17 +67,17 @@
                 </div>
             </div>
         </section>
-        {{-- HERO END --}}
+        
 
-        {{-- Video start --}}
+        
         <section class="w-full h-full" id="video">
             <video class="object-cover w-full px-4 lg:px-0 h-full" autoplay loop muted>
-                <source src="{{ Vite::asset('resources/assets/placeholder.mp4') }}" type="video/mp4">
+                <source src="<?php echo e(Vite::asset('resources/assets/placeholder.mp4')); ?>" type="video/mp4">
             </video>
         </section>
-        {{-- Video end --}}
+        
 
-        {{-- Concept start --}}
+        
         <section class="w-full h-full lg:container">
             <div class="w-full h-full py-10 px-4">
                 <div class="md:flex md:w-full md:justify-center">
@@ -77,17 +105,17 @@
                 </div>
             </div>
         </section>
-        {{-- Concept end --}}
+        
 
-        {{-- img1 start --}}
+        
         <section>
             <div class="w-full px-4">
-                <img src="{{ asset('images/img-detail.webp') }}" alt="" class="object-cover rounded-md w-full">
+                <img src="<?php echo e(asset('images/img-detail.webp')); ?>" alt="" class="object-cover rounded-md w-full">
             </div>
         </section>
-        {{-- img1 end --}}
+        
 
-        {{-- Objective start --}}
+        
         <section class="w-full h-full lg:container">
             <div class="w-full h-full md:flex py-10 px-4">
                 <div class="md:w-1/2  md:mt-3">
@@ -110,12 +138,12 @@
                 </div>
             </div>
         </section>
-        {{-- Objective end --}}
+        
 
 
         <hr class="mx-2 my-5 lg:mx-8">
 
-        {{-- Challenge start --}}
+        
         <section class="w-full h-full lg:container">
             <div class="w-full h-full md:flex py-10 px-4">
                 <div class="md:w-1/2  md:mt-3">
@@ -136,17 +164,17 @@
                 </div>
             </div>
         </section>
-        {{-- Challenge end --}}
+        
 
-        {{-- img2 start --}}
+        
         <section>
             <div class="w-full px-4">
-                <img src="{{ asset('images/img-detail2.webp') }}" alt="" class="object-cover rounded-md w-full">
+                <img src="<?php echo e(asset('images/img-detail2.webp')); ?>" alt="" class="object-cover rounded-md w-full">
             </div>
         </section>
-        {{-- img2 end --}}
+        
 
-        {{-- Results start --}}
+        
         <section class="w-full h-full lg:container">
             <div class="w-full h-full  py-10 px-4">
                 <div class="md:w-full md:flex md:justify-center">
@@ -168,9 +196,9 @@
                 </div>
             </div>
         </section>
-        {{-- Results end --}}
+        
 
-        {{-- Start your brand start --}}
+        
         <section class="mx-4  md:my-0 md:mt-5 lg:flex lg:container h-full mt-6 items-center justify-between">
             <!-- Bagian Teks -->
             <div class="w-3/4 md:w-1/2 lg:overflow-hidden text-white font-medium">
@@ -192,8 +220,18 @@
             </div>
         </section>
 
-        {{-- Start your brand end --}}
+        
 
 
     </main>
-</x-layouts.layout>
+ <?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginalf2b16bc3883246ba4659aff94e382522)): ?>
+<?php $attributes = $__attributesOriginalf2b16bc3883246ba4659aff94e382522; ?>
+<?php unset($__attributesOriginalf2b16bc3883246ba4659aff94e382522); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalf2b16bc3883246ba4659aff94e382522)): ?>
+<?php $component = $__componentOriginalf2b16bc3883246ba4659aff94e382522; ?>
+<?php unset($__componentOriginalf2b16bc3883246ba4659aff94e382522); ?>
+<?php endif; ?>
+<?php /**PATH E:\laragon\www\metri_id\resources\views/detail.blade.php ENDPATH**/ ?>
