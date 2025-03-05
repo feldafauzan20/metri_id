@@ -24,6 +24,7 @@ class MetriFilmPost extends Model
         'objective',
         'challenge', 
         'results',
+        'video', 
         'image', 
         'gambar_1', 
         'gambar_2',

@@ -35,6 +35,7 @@ class MetriDigitalPostResource extends Resource
                 ->required()
                 ->maxLength(255)
                 ->reactive()
+                ->debounce(500)
                 ->afterStateUpdated(fn (Get $get, Set $set) => 
                     $set('slug', Str::slug($get('title')))
                 ),
@@ -58,37 +59,39 @@ class MetriDigitalPostResource extends Resource
             RichEditor::make('results')->label('Results'),
 
             // Input foto/video (tanpa `video()`)
+            FileUpload::make('video')
+            ->directory('metri_digital_posts')
+            ->label('video')
+            ->nullable(),
+
             FileUpload::make('image')
-            ->directory(directory: 'metri_digital_posts')
+            ->directory('metri_digital_posts')
             ->label('Headline Image')
             ->nullable(),
 
             FileUpload::make('gambar_1')
                 ->directory('metri_digital_posts')
-            
                 ->label('Foto 1')
                 ->nullable(),
 
             FileUpload::make('gambar_2')
                 ->directory('metri_digital_posts')
-            
+                ->label('Foto 2')
                 ->nullable(),
 
             FileUpload::make('gambar_3')
                 ->directory('metri_digital_posts')
-            
+                ->label(label: 'Foto 3')
                 ->nullable(),
 
             FileUpload::make('gambar_4')
                 ->directory('metri_digital_posts')
-            
-                ->label('Foto/Video 4')
+                ->label('Foto 4')
                 ->nullable(),
 
             FileUpload::make('gambar_5')
-                ->directory('metri_digital_posts')
-            
-                ->label('Foto/Video 5')
+                ->directory('metri_design_posts')
+                ->label('Foto 5')
                 ->nullable(),
 
 
@@ -107,6 +110,7 @@ class MetriDigitalPostResource extends Resource
                 TextColumn::make('category')->label('Category')->sortable()->searchable(),
                 TextColumn::make('industry')->label('Industry')->sortable()->searchable(),
                 
+                ImageColumn::make('video')->label('Video'),
                 ImageColumn::make('image')->label('Headline Image'),
                 ImageColumn::make('gambar_1')->label('PHOTO 1'),
                 ImageColumn::make('gambar_2')->label('PHOTO 2'),

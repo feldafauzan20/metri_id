@@ -14,6 +14,10 @@ use FacebookAds\Object\ServerSide\UserData;
 use App\Http\Controllers\ProjectGalleryController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProjectController;
+
+Route::get('/projects/{slug}', [ProjectController::class, 'show'])->name('detail');
+
 
 
 Route::get('/contact', function () {
@@ -47,6 +51,7 @@ Route::post('/contact', [ContactController::class, 'submit'])->name('contact.sub
 
 
 Route::get('/gallery', [ProjectGalleryController::class, 'index'])->name('gallery');
+
 
 
 Route::get('/design', [MetriDesignController::class, 'index']);

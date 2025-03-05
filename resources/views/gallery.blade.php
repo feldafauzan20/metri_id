@@ -68,10 +68,11 @@
                                         {{ Str::limit($project->content, 80) }}
                                     </h3>
 
-                                    <a 
+                                    <a href="{{ route('detail', ['slug' => $project->slug]) }}"
                                         class="px-4 py-2 mt-2 text-white transition-all duration-300 bg-white bg-opacity-50 rounded-lg opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 font-ibm hover:bg-gray-500">
                                         VIEW PROJECT
-                                    </a>
+                                    </a>                                    
+
                                 </div>
                             </div>
                         </div>

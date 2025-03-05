@@ -19,6 +19,9 @@ export default {
         },
         container: {
             center: true,
+            screens: {
+                lg: "1280px", // Memaksa semua browser mengikuti 1280px
+            },
         },
     },
     plugins: [require("daisyui")],

@@ -44,8 +44,13 @@ class ProjectGalleryController extends Controller
                     $projects = array_merge($projects, $data);
                 }
             }
+            
         }
     
         return view('gallery', compact('projects', 'filter'));
     }
+
+   
+    
+
 }
