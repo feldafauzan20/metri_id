@@ -19,7 +19,7 @@ class ContactMail extends Mailable
 
     public function build()
     {
-        return $this->subject('New Contact Form Submission :' . e($this->data['name'] ?? 'N/A'))
+        return $this->subject('New Contact Form Submission: ' . e($this->data['name'] ?? 'N/A'))
                     ->view('emails.contact-mail')
                     ->with('data', $this->data);
     }

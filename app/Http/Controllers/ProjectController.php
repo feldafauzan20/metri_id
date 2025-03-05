@@ -21,4 +21,6 @@ class ProjectController extends Controller
 
         return view('detail', compact('project', 'images1', 'images2', 'videos'));
     }
+
+    
 }

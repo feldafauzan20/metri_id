@@ -1,17 +1,26 @@
-<x-layouts.layout>
-    <x-slot:title>
+<?php if (isset($component)) { $__componentOriginalf2b16bc3883246ba4659aff94e382522 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginalf2b16bc3883246ba4659aff94e382522 = $attributes; } ?>
+<?php $component = App\View\Components\Layouts\Layout::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('layouts.layout'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\App\View\Components\Layouts\Layout::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+     <?php $__env->slot('title', null, []); ?> 
         metri | Home
-    </x-slot:title>
+     <?php $__env->endSlot(); ?>
 
-    <x-slot:vite>
-        @vite(['resources/js/main.js', 'resources/css/app.css'])
-    </x-slot:vite>
+     <?php $__env->slot('vite', null, []); ?> 
+        <?php echo app('Illuminate\Foundation\Vite')(['resources/js/main.js', 'resources/css/app.css']); ?>
+     <?php $__env->endSlot(); ?>
 
     <main class="h-full min-h-screen overflow-x-hidden">
         <section class="absolute top-0 left-0 w-full px-[100px] py-[30px] flex justify-between items-center z-[100]">
             <div>
                 <a href="/" class="logo">
-                    <img src="{{ asset('images/logo/logo-putih-baru.webp') }}" alt="" width="150" />
+                    <img src="<?php echo e(asset('images/logo/logo-putih-baru.webp')); ?>" alt="" width="150" />
                 </a>
             </div>
             <div class="min-h-min">
@@ -60,19 +69,19 @@
 
         <section
             class="relative flex items-center justify-center min-h-screen overflow-hidden parallax-container will-change-transform bg-hero">
-            <img src="{{ asset('images/sun.webp') }}" alt="" id="sun" class="img-parallax"
+            <img src="<?php echo e(asset('images/sun.webp')); ?>" alt="" id="sun" class="img-parallax"
                 loading="eager" />
-            <img src="{{ asset('images/bg-showcase.webp') }}" alt="" id="" class="img-parallax"
+            <img src="<?php echo e(asset('images/bg-showcase.webp')); ?>" alt="" id="" class="img-parallax"
                 loading="eager" />
-            <img src="{{ asset('images/bird2.webp') }}" alt="" id="bird2" class="img-parallax"
+            <img src="<?php echo e(asset('images/bird2.webp')); ?>" alt="" id="bird2" class="img-parallax"
                 loading="eager" />
-            <img src="{{ asset('images/bird1.webp') }}" alt="" id="bird1" class="img-parallax"
+            <img src="<?php echo e(asset('images/bird1.webp')); ?>" alt="" id="bird1" class="img-parallax"
                 loading="eager" />
-            <img src="{{ asset('images/plant2(2).webp') }}" alt="" id="plant2" class="img-parallax"
+            <img src="<?php echo e(asset('images/plant2(2).webp')); ?>" alt="" id="plant2" class="img-parallax"
                 loading="eager" />
-            <img src="{{ asset('images/tree4.webp') }}" alt="" id="tree" class="img-parallax"
+            <img src="<?php echo e(asset('images/tree4.webp')); ?>" alt="" id="tree" class="img-parallax"
                 loading="eager" />
-            <img src="{{ asset('images/plant1.webp') }}" alt="" id="plant1" class="img-parallax"
+            <img src="<?php echo e(asset('images/plant1.webp')); ?>" alt="" id="plant1" class="img-parallax"
                 loading="eager" />
             <div class="absolute flex flex-col items-center -translate-x-1/2 bottom-10 left-1/2" id="scroll">
                 <p class="pb-2 font-medium tracking-wide text-white text-XS font-ibm animate-bounce">SCROLL</p>
@@ -102,7 +111,7 @@
                     <div
                         class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
                         <div class="flex-1 overflow-hidden rounded-md card-img h-[60vh]">
-                            <img src="{{ asset('images/service1.webp') }}" loading="lazy" alt=""
+                            <img src="<?php echo e(asset('images/service1.webp')); ?>" loading="lazy" alt=""
                                 class="object-contain w-full h-full img-card" />
                         </div>
                         <div class="card-content w-full h-[60px]">
@@ -116,7 +125,7 @@
                     <div
                         class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
                         <div class="flex-1 overflow-hidden rounded-md card-img">
-                            <img src="{{ asset('images/service2.webp') }}" loading="lazy" alt=""
+                            <img src="<?php echo e(asset('images/service2.webp')); ?>" loading="lazy" alt=""
                                 class="object-contain w-full h-full img-card" />
                         </div>
                         <div class="card-content w-full h-[60px]">
@@ -130,7 +139,7 @@
                     <div
                         class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
                         <div class="flex-1 overflow-hidden rounded-md card-img">
-                            <img src="{{ asset('images/service3.webp') }}" loading="lazy" alt=""
+                            <img src="<?php echo e(asset('images/service3.webp')); ?>" loading="lazy" alt=""
                                 class="object-contain w-full h-full img-card" />
                         </div>
                         <div class="card-content w-full h-[60px]">
@@ -144,7 +153,7 @@
                     <div
                         class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
                         <div class="flex-1 overflow-hidden rounded-md card-img">
-                            <img src="{{ asset('images/service4.webp') }}" loading="lazy" alt=""
+                            <img src="<?php echo e(asset('images/service4.webp')); ?>" loading="lazy" alt=""
                                 class="object-contain w-full h-full img-card" />
                         </div>
                         <div class="card-content w-full h-[60px]">
@@ -158,7 +167,7 @@
                     <div
                         class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
                         <div class="flex-1 overflow-hidden rounded-md card-img">
-                            <img src="{{ asset('images/service5.webp') }}" loading="lazy" alt=""
+                            <img src="<?php echo e(asset('images/service5.webp')); ?>" loading="lazy" alt=""
                                 class="object-contain w-full h-full img-card" />
                         </div>
                         <div class="card-content w-full h-[60px]">
@@ -172,7 +181,7 @@
                     <div
                         class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
                         <div class="flex-1 overflow-hidden rounded-md card-img">
-                            <img src="{{ asset('images/service6.webp') }}" loading="lazy" alt=""
+                            <img src="<?php echo e(asset('images/service6.webp')); ?>" loading="lazy" alt=""
                                 class="object-contain w-full h-full img-card" />
                         </div>
                         <div class="card-content w-full h-[60px]">
@@ -186,7 +195,7 @@
                     <div
                         class="card absolute w-[500px] h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
                         <div class="flex-1 overflow-hidden rounded-md card-img">
-                            <img src="{{ asset('images/service7.webp') }}" loading="lazy" alt=""
+                            <img src="<?php echo e(asset('images/service7.webp')); ?>" loading="lazy" alt=""
                                 class="object-contain w-full h-full img-card" />
                         </div>
                         <div class="card-content w-full h-[60px]">
@@ -222,27 +231,27 @@
                 <div class="container flex items-center justify-center h-full my-10">
                     <div class="mx-4 text-center">
                         <h2 class="text-4xl font-semibold text-white">
-                            <span class="cs-text1" data-value="{{ $counter_1 }}">0</span>%
+                            <span class="cs-text1" data-value="<?php echo e($counter_1); ?>">0</span>%
                         </h2>
                         <p class="pt-4 text-white">Of customers said using Flinta helped them to better service
                             clients.</p>
                     </div>
                     <div class="mx-4 text-center">
                         <h2 class="text-4xl font-semibold text-white">
-                            <span class="cs-text2" data-value="{{ $counter_2 }}">0</span>
+                            <span class="cs-text2" data-value="<?php echo e($counter_2); ?>">0</span>
                         </h2>
                         <p class="pt-4 text-white">Founded in 2024, we're on a growth journey focused on innovation.
                         </p>
                     </div>
                     <div class="mx-4 text-center">
                         <h2 class="text-4xl font-semibold text-white">
-                            <span class="cs-text3" data-value="{{ $counter_3 }}">0</span>+
+                            <span class="cs-text3" data-value="<?php echo e($counter_3); ?>">0</span>+
                         </h2>
                         <p class="pt-4 text-white">Average monthly clients since we launched in June 2023.</p>
                     </div>
                     <div class="mx-4 text-center">
                         <h2 class="text-4xl font-semibold text-white">
-                            <span class="cs-text4" data-value="{{ $counter_4 }}">0</span>+
+                            <span class="cs-text4" data-value="<?php echo e($counter_4); ?>">0</span>+
                         </h2>
                         <p class="pt-4 text-white">Of tickets left unresolved using metri's advanced functionality.</p>
                     </div>
@@ -259,7 +268,7 @@
 
         <section class="w-full h-full">
             <video class="object-fill w-full h-full" autoplay loop muted>
-                <source src="{{ asset('storage/' . $video) }}" type="video/mp4">
+                <source src="<?php echo e(asset('storage/' . $video)); ?>" type="video/mp4">
             </video>
         </section>
 
@@ -270,32 +279,32 @@
             <div class="w-auto overflow-hidden fade bg-white rounded-lg">
                 <div class="flex flex-row items-center animate-scroll w-max gap-6 py-3">
                     <!-- 12 gambar unik -->
-                    <img src="{{ asset('images/partners/partner1.webp') }}" class="w-52 h-24 object-contain">
-                    <img src="{{ asset('images/partners/partner2.webp') }}" class="w-52 h-24 object-contain">
-                    <img src="{{ asset('images/partners/partner3.webp') }}" class="w-52 h-24 object-contain">
-                    <img src="{{ asset('images/partners/partner4.webp') }}" class="w-52 h-24 object-contain">
-                    <img src="{{ asset('images/partners/partner5.webp') }}" class="w-52 h-24 object-contain">
-                    <img src="{{ asset('images/partners/partner6.webp') }}" class="w-52 h-24 object-contain">
-                    <img src="{{ asset('images/partners/partner7.webp') }}" class="w-52 h-24 object-contain">
-                    <img src="{{ asset('images/partners/partner8.webp') }}" class="w-52 h-24 object-contain">
-                    <img src="{{ asset('images/partners/partner9.webp') }}" class="w-52 h-24 object-contain">
-                    <img src="{{ asset('images/partners/partner10.webp') }}" class="w-52 h-24 object-contain">
-                    <img src="{{ asset('images/partners/partner11.webp') }}" class="w-52 h-24 object-contain">
-                    <img src="{{ asset('images/partners/partner12.webp') }}" class="w-52 h-24 object-contain">
+                    <img src="<?php echo e(asset('images/partners/partner1.webp')); ?>" class="w-52 h-24 object-contain">
+                    <img src="<?php echo e(asset('images/partners/partner2.webp')); ?>" class="w-52 h-24 object-contain">
+                    <img src="<?php echo e(asset('images/partners/partner3.webp')); ?>" class="w-52 h-24 object-contain">
+                    <img src="<?php echo e(asset('images/partners/partner4.webp')); ?>" class="w-52 h-24 object-contain">
+                    <img src="<?php echo e(asset('images/partners/partner5.webp')); ?>" class="w-52 h-24 object-contain">
+                    <img src="<?php echo e(asset('images/partners/partner6.webp')); ?>" class="w-52 h-24 object-contain">
+                    <img src="<?php echo e(asset('images/partners/partner7.webp')); ?>" class="w-52 h-24 object-contain">
+                    <img src="<?php echo e(asset('images/partners/partner8.webp')); ?>" class="w-52 h-24 object-contain">
+                    <img src="<?php echo e(asset('images/partners/partner9.webp')); ?>" class="w-52 h-24 object-contain">
+                    <img src="<?php echo e(asset('images/partners/partner10.webp')); ?>" class="w-52 h-24 object-contain">
+                    <img src="<?php echo e(asset('images/partners/partner11.webp')); ?>" class="w-52 h-24 object-contain">
+                    <img src="<?php echo e(asset('images/partners/partner12.webp')); ?>" class="w-52 h-24 object-contain">
 
                     <!-- Duplikat untuk efek loop -->
-                    <img src="{{ asset('images/partners/partner1.webp') }}" class="w-52 h-24 object-contain">
-                    <img src="{{ asset('images/partners/partner2.webp') }}" class="w-52 h-24 object-contain">
-                    <img src="{{ asset('images/partners/partner3.webp') }}" class="w-52 h-24 object-contain">
-                    <img src="{{ asset('images/partners/partner4.webp') }}" class="w-52 h-24 object-contain">
-                    <img src="{{ asset('images/partners/partner5.webp') }}" class="w-52 h-24 object-contain">
-                    <img src="{{ asset('images/partners/partner6.webp') }}" class="w-52 h-24 object-contain">
-                    <img src="{{ asset('images/partners/partner7.webp') }}" class="w-52 h-24 object-contain">
-                    <img src="{{ asset('images/partners/partner8.webp') }}" class="w-52 h-24 object-contain">
-                    <img src="{{ asset('images/partners/partner9.webp') }}" class="w-52 h-24 object-contain">
-                    <img src="{{ asset('images/partners/partner10.webp') }}" class="w-52 h-24 object-contain">
-                    <img src="{{ asset('images/partners/partner11.webp') }}" class="w-52 h-24 object-contain">
-                    <img src="{{ asset('images/partners/partner12.webp') }}" class="w-52 h-24 object-contain">
+                    <img src="<?php echo e(asset('images/partners/partner1.webp')); ?>" class="w-52 h-24 object-contain">
+                    <img src="<?php echo e(asset('images/partners/partner2.webp')); ?>" class="w-52 h-24 object-contain">
+                    <img src="<?php echo e(asset('images/partners/partner3.webp')); ?>" class="w-52 h-24 object-contain">
+                    <img src="<?php echo e(asset('images/partners/partner4.webp')); ?>" class="w-52 h-24 object-contain">
+                    <img src="<?php echo e(asset('images/partners/partner5.webp')); ?>" class="w-52 h-24 object-contain">
+                    <img src="<?php echo e(asset('images/partners/partner6.webp')); ?>" class="w-52 h-24 object-contain">
+                    <img src="<?php echo e(asset('images/partners/partner7.webp')); ?>" class="w-52 h-24 object-contain">
+                    <img src="<?php echo e(asset('images/partners/partner8.webp')); ?>" class="w-52 h-24 object-contain">
+                    <img src="<?php echo e(asset('images/partners/partner9.webp')); ?>" class="w-52 h-24 object-contain">
+                    <img src="<?php echo e(asset('images/partners/partner10.webp')); ?>" class="w-52 h-24 object-contain">
+                    <img src="<?php echo e(asset('images/partners/partner11.webp')); ?>" class="w-52 h-24 object-contain">
+                    <img src="<?php echo e(asset('images/partners/partner12.webp')); ?>" class="w-52 h-24 object-contain">
                 </div>
             </div>
         </div>
@@ -328,16 +337,16 @@
                 </div>
                 <div class="w-full swiper bg-white backdrop-blur-2xl shadow-lg border border-white/50  rounded-lg">
                     <div class="swiper-wrapper my-10 p-3">
-                        @foreach (array_chunk(range(1, 21), 11) as $group)
+                        <?php $__currentLoopData = array_chunk(range(1, 21), 11); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $group): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="swiper-slide flex justify-center items-center h-[300px]">
                                 <div class="grid grid-cols-5 gap-6 place-items-center">
-                                    @foreach ($group as $i)
-                                        <img src="{{ asset('images/clients/client-' . $i . '.webp') }}"
+                                    <?php $__currentLoopData = $group; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $i): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <img src="<?php echo e(asset('images/clients/client-' . $i . '.webp')); ?>"
                                             class="w-28 h-28 object-contain">
-                                    @endforeach
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </div>
                             </div>
-                        @endforeach
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>
                 </div>
 
@@ -376,4 +385,14 @@
         ↑
     </div>
 
-</x-layouts.layout>
+ <?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginalf2b16bc3883246ba4659aff94e382522)): ?>
+<?php $attributes = $__attributesOriginalf2b16bc3883246ba4659aff94e382522; ?>
+<?php unset($__attributesOriginalf2b16bc3883246ba4659aff94e382522); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalf2b16bc3883246ba4659aff94e382522)): ?>
+<?php $component = $__componentOriginalf2b16bc3883246ba4659aff94e382522; ?>
+<?php unset($__componentOriginalf2b16bc3883246ba4659aff94e382522); ?>
+<?php endif; ?>
+<?php /**PATH C:\xampp\htdocs\metri_id\resources\views/welcome.blade.php ENDPATH**/ ?>

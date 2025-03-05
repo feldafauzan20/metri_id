@@ -50,30 +50,28 @@
                     @endforeach
                 </div>
             </div>
+            <!-- Grid Projects -->
+            <div class="grid grid-cols-1 gap-6 mx-4 md:mx-8 mt-8 md:grid-cols-2 lg:grid-cols-3">
+                @isset($projectsPaginated)
+                    @forelse ($projectsPaginated as $project)
+                        <div class="relative overflow-hidden rounded-lg h-96 flex flex-col bg-gray-900 group">
+                            <!-- Image -->
+                            <div class="w-full h-2/3">
+                                <img src="{{ asset('storage/' . $project->image) }}" 
+                                    alt="{{ $project->title }}" 
+                                    class="object-cover w-full h-full rounded-t-lg aspect-[4/3]">
+                            </div>
 
-            <div class="grid grid-flow-row-dense grid-cols-1 gap-6 mx-4 md:mx-8 mt-8 md:grid-cols-2 lg:grid-cols-3">
-                @isset($projects)
-                    @forelse ($projects as $project)
-                        <div class="relative overflow-hidden rounded-lg h-96 group">
-                            <img src="{{ asset('storage/' . $project->image) }}" 
-                                alt="{{ $project->title }}" 
-                                class="object-cover w-full h-full rounded-lg"
-                                onload="this.naturalWidth > this.naturalHeight && this.parentElement.classList.add('col-span-2')">
-
-                            <!-- Overlay -->
-                            <div class="absolute bottom-0 left-0 right-0 p-4 text-white bg-gradient-to-t from-black/60 to-transparent">
-                                <div class="flex flex-col items-start transition-all duration-300 translate-y-0 lg:translate-y-10 lg:group-hover:translate-y-0">
-                                    <p class="text-2xl font-medium text-center text-white">{{ $project->title }}</p>
-                                    <h3 class="text-white text-[10px] font-extralight">
-                                        {{ Str::limit($project->content, 80) }}
-                                    </h3>
-
-                                    <a href="{{ route('detail', ['slug' => $project->slug]) }}"
-                                        class="px-4 py-2 mt-2 text-white transition-all duration-300 bg-white bg-opacity-50 rounded-lg opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 font-ibm hover:bg-gray-500">
-                                        VIEW PROJECT
-                                    </a>                                    
-
-                                </div>
+                            <!-- Overlay & Content -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-100"></div>
+                            
+                            <div class="p-2.5 absolute bottom-0 left-0 right-0">
+                                <h2 class="text-lg font-semibold text-white">{{ $project->title }}</h2>
+                                <p class="text-sm text-gray-300">{{ Str::limit(strip_tags($project->content), 80) }}</p>
+                                <a href="{{ route('detail', ['slug' => $project->slug]) }}"
+                                    class="inline-block px-4 py-2 mt-3 text-sm text-white transition bg-white bg-opacity-20 rounded-lg hover:bg-gray-500">
+                                    VIEW PROJECT
+                                </a>
                             </div>
                         </div>
                     @empty
@@ -81,6 +79,28 @@
                     @endforelse
                 @endisset
             </div>
+
+            <!-- Pagination -->
+            @if ($projectsPaginated->lastPage() > 1)
+                <div class="flex flex-col items-center mt-8 space-y-2">
+                    <!-- Tombol Pagination -->
+                    <div>
+                        {!! $projectsPaginated->links('pagination::tailwind') !!}
+                    </div>
+
+                    <!-- Info Pagination -->
+                    <p class="text-sm text-gray-400 text-center pt-2">
+                        Showing 
+                        <span class="font-semibold">{{ $projectsPaginated->firstItem() }}</span> 
+                        to 
+                        <span class="font-semibold">{{ $projectsPaginated->lastItem() }}</span> 
+                        of 
+                        <span class="font-semibold">{{ $projectsPaginated->total() }}</span> 
+                        results
+                    </p>
+                </div>
+            @endif
+
         </section>
     </main>
 </x-layouts.layout>
