@@ -43,17 +43,13 @@
                 <div class="hero-content text-center">
                     <div class="w-full flex flex-col items-center">
                         <a href=""><img src="<?php echo e(asset('images/logo/logo-metri-film.webp')); ?>" alt=""
-                                width="600"></a>
-                        <h2 class="text-5xl text-white pb-4">
+                                class="w-[300px] lg:w-[600px]"></a>
+                        <h2 class="lg:text-5xl text-2xl md:text-3xl text-white pb-4">
                             Tailored to Your Needs to Enhance Digital Products
                         </h2>
-                        <div class="w-3/4 text-base text-white">
-                            <p>We prioritize understanding user needs to create products that are efficient and
-                                enjoyable.
-                                Our
-                                goal is to exceed expectations with captivating visuals, seamless navigation, and
-                                optimal
-                                usability.</p>
+                        <div class="w-full md:w-11/12 text-sm md:text-base text-white">
+                            <p>We craft, build, grow, and develop your brand and business with our 360 services. If you
+                                have any inquiry about our 360 services, don't hesitate to reach out to us.</p>
                         </div>
                         <div class="w-full justify-center text-base flex text-white py-6 font-ibm font-medium">
                             <div class="flex items-center">
@@ -79,24 +75,22 @@
         
 
         
-        <section class="container py-20">
-            <div class="w-[60%]">
-                <h2 class="text-4xl text-white">A fusion of form and function in customer’s daily life</h2>
-                <p class="pt-5 text-white text-base">We ensures products seamlessly integrate into users’ lives. Form
-                    evokes
-                    emotions and
-                    aesthetic
-                    appeal, while function ensures efficiency and usability. Together, they create products that enhance
-                    daily routines with intuitive interfaces and visually pleasing designs.</p>
+        <section class="container lg:py-20 pt-5">
+            <div class="lg:w-[60%] mx-4">
+                <h2 class="lg:text-4xl md:text-2xl text-lg text-white">A Fusion of Form and Function in Customers’ Needs
+                </h2>
+                <p class="lg:pt-5 pt-2 text-white text-sm md:text-base font-extralight">We ensures products seamlessly
+                    integrate into
+                    users’
+                    needs. Form
+                    evokes emotions and aesthetic appeal, while function ensures efficiency and usability.</p>
             </div>
         </section>
         
 
         
         <section class="container">
-            <h2 class="text-center text-4xl text-white">Seamless adoption in omni-channels</h2>
-
-            <div class="grid grid-cols-4 gap-4 mx-auto py-20">
+            <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-4 lg:mx-auto mx-4 lg:py-20 py-10">
                 <img src="<?php echo e(asset('storage/' . $photo_1)); ?>" alt="Airplane"
                     class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg">
 
@@ -117,54 +111,20 @@
         
 
         
-        <section class="container flex">
-            <div class="w-[60%] h-full flex items-center px-4">
-                <h2 class="text-4xl text-white font-normal">10+ Years proven formula for exceptional entertainment</h2>
-            </div>
-            <div class="w-3/4 grid grid-cols-2 gap-x-7 gap-y-10">
-                <div class="">
-                    <h3 class="text-white text-xl">Tailored to Goals</h3>
-                    <p>Various styles tailored to your brand's unique identity and target audience.</p>
-                </div>
-                <div class="">
-                    <h3 class="text-white text-xl">Differentiation</h3>
-                    <p>Stand out from competitors with visually stunning designs and intuitive user experiences that
-                        leave a lasting impression.</p>
-                </div>
-                <div class="">
-                    <h3 class="text-white text-xl">Tailored to Goals</h3>
-                    <p>Engaging interfaces that captivate users, keeping them invested and increasing interaction rates.
-                    </p>
-                </div>
-                <div class="">
-                    <h3 class="text-white text-xl">Boosted Conversion</h3>
-                    <p>Optimized user journeys and streamlined interfaces lead to higher conversion rates and increased
-                        revenue.</p>
-                </div>
-            </div>
-        </section>
-        
-
-        
-        <section class="container mx-auto my-32 px-4">
-            <h2 class="text-4xl text-white mb-10">Discover Latest Case Studies</h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <section class="container mx-auto mt-14 px-4 md:px-7">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:auto-rows-fr">
                 <!-- Card 1 -->
                 <div class="relative group overflow-hidden rounded-lg">
                     <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
                         alt="Project Image" class="w-full h-auto object-cover rounded-lg">
-
-                    <!-- Overlay -->
                     <div
                         class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-white">
                         <div
-                            class="flex flex-col items-start transition-all duration-300 translate-y-10 group-hover:translate-y-0">
-                            <p class="text-xs">Brand Ipsum</p>
-                            <h3 class="text-lg font-semibold">Project Ipsum</h3>
-
+                            class="flex flex-col items-start transition-all duration-300 translate-y-0 lg:translate-y-10 lg:group-hover:translate-y-0">
+                            <p class="text-center text-white text-xs font-medium">Brand Ipsum</p>
+                            <h3 class="text-white text-2xl font-extralight">Ipsum Ad</h3>
                             <a href=""
-                                class="opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white bg-opacity-50 px-4 py-2 mt-2 rounded-lg font-ibm text-white hover:bg-gray-500">
+                                class="opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 bg-white bg-opacity-50 px-4 py-2 mt-2 rounded-lg font-ibm text-white hover:bg-gray-500">
                                 VIEW PROJECT
                             </a>
                         </div>
@@ -175,17 +135,14 @@
                 <div class="relative group overflow-hidden rounded-lg">
                     <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
                         alt="Project Image" class="w-full h-auto object-cover rounded-lg">
-
-                    <!-- Overlay -->
                     <div
                         class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-white">
                         <div
-                            class="flex flex-col items-start transition-all duration-300 translate-y-10 group-hover:translate-y-0">
-                            <p class="text-xs">Brand Ipsum</p>
-                            <h3 class="text-lg font-semibold">Project Ipsum</h3>
-
+                            class="flex flex-col items-start transition-all duration-300 translate-y-0 lg:translate-y-10 lg:group-hover:translate-y-0">
+                            <p class="text-center text-white text-xs font-medium">Brand Ipsum</p>
+                            <h3 class="text-white text-2xl font-extralight">Ipsum Ad</h3>
                             <a href=""
-                                class="opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white bg-opacity-50 px-4 py-2 mt-2 rounded-lg font-ibm text-white hover:bg-gray-500">
+                                class="opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 bg-white bg-opacity-50 px-4 py-2 mt-2 rounded-lg font-ibm text-white hover:bg-gray-500">
                                 VIEW PROJECT
                             </a>
                         </div>
@@ -196,23 +153,21 @@
                 <div class="relative group overflow-hidden rounded-lg">
                     <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
                         alt="Project Image" class="w-full h-auto object-cover rounded-lg">
-
-                    <!-- Overlay -->
                     <div
                         class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-white">
                         <div
-                            class="flex flex-col items-start transition-all duration-300 translate-y-10 group-hover:translate-y-0">
-                            <p class="text-xs">Brand Ipsum</p>
-                            <h3 class="text-lg font-semibold">Project Ipsum</h3>
-
+                            class="flex flex-col items-start transition-all duration-300 translate-y-0 lg:translate-y-10 lg:group-hover:translate-y-0">
+                            <p class="text-center text-white text-xs font-medium">Brand Ipsum</p>
+                            <h3 class="text-white text-2xl font-extralight">Ipsum Ad</h3>
                             <a href=""
-                                class="opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white bg-opacity-50 px-4 py-2 mt-2 rounded-lg font-ibm text-white hover:bg-gray-500">
+                                class="opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 bg-white bg-opacity-50 px-4 py-2 mt-2 rounded-lg font-ibm text-white hover:bg-gray-500">
                                 VIEW PROJECT
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
+
         </section>
         
 

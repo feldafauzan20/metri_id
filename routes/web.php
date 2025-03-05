@@ -8,11 +8,11 @@ use App\Http\Controllers\MetriFilmEquipmentController;
 use App\Http\Controllers\MetriLandingPageController;
 use App\Http\Controllers\MetriPostController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Controller_Design;
 use App\Http\Controllers\MetriFilmController;
 use Esign\ConversionsApi\Facades\ConversionsApi;
 use FacebookAds\Object\ServerSide\Event;
 use FacebookAds\Object\ServerSide\UserData;
+use App\Http\Controllers\ProjectGalleryController;
 
 
 // Route::get('/test-add-to-cart', function () {
@@ -35,6 +35,9 @@ use FacebookAds\Object\ServerSide\UserData;
 
 
 
+Route::get('/projects-gallery', [ProjectGalleryController::class, 'index']);
+
+
 Route::get('/design', [MetriDesignController::class, 'index']);
 
 
@@ -46,3 +49,19 @@ Route::get('/metri-digital', [MetriDigitalController::class, 'index']);
 Route::get('/metri-post', [MetriPostController::class, 'index']);
 Route::get('/metri-tang-ting', [MetriFilmEquipmentController::class, 'index']);
 Route::get('/metri-event', [MetriEventController::class, 'index']);
+
+Route::get('/contact', function() {
+    return view('contact');
+});
+
+Route::get('/about', function() {
+    return view( 'about');
+});
+
+Route::get('/detail', function() {
+    return view( 'detail');
+});
+
+Route::get('/gallery', function() {
+    return view( 'gallery');
+});

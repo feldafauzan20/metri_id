@@ -40,6 +40,11 @@
         background-image: url("/public/images/bg-hero.webp");
     }
 
+    .bg-about {
+        @apply bg-cover bg-center;
+        background-image: url("/public/images/bg-about.webp");
+    }
+
     .fade {
         mask-image: linear-gradient(
             to right,

@@ -59,6 +59,12 @@ return [
             'throw' => false,
             'report' => false,
         ],
+        
+        'user' => [
+            'driver' => 'local',
+            'root' => public_path('uploads/user'),
+            'url' => env('APP_URL').'/uploads/user',
+        ],
 
     ],
 

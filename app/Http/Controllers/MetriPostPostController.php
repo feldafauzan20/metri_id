@@ -3,19 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\MetriPostPost;
 
 class MetriPostPostController extends Controller
 {
     public function index()
-    {   
-        // Konversi link YouTube menjadi embed link (jika ada)
-        $embed_link = null;
-        if (!empty($data->link) && preg_match('/(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]+)/', $data->link, $matches)) {
-            $embed_link = 'https://www.youtube.com/embed/' . $matches[1];
-        }
+    {
         // Ambil data terbaru dari database
         $data = MetriPostPost::latest()->first([
             'youtube_link',
+            'image',
             'video',
             'photo_1',
             'photo_2',
@@ -24,9 +21,16 @@ class MetriPostPostController extends Controller
             'photo_5',
         ]);
 
+        // Konversi link YouTube menjadi embed link (jika ada)
+        $embed_link = null;
+        if (!empty($data->youtube_link) && preg_match('/(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]+)/', $data->youtube_link, $matches)) {
+            $embed_link = 'https://www.youtube.com/embed/' . $matches[1];
+        }
+
         // Kirim ke view dengan nilai default jika null
-        return view('metri-post-post', [
-            'youtube_link' => $data->youtube_link ?? null,
+        return view('detail-post', [
+            'youtube_link' => $embed_link ?? null,
+            'image'        => $data->image ?? null,
             'video'        => $data->video ?? null,
             'photo_1'      => $data->photo_1 ?? null,
             'photo_2'      => $data->photo_2 ?? null,
