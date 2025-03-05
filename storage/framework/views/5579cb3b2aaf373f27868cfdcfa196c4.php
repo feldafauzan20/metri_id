@@ -4,7 +4,8 @@
         <header class="flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4">
             <!-- Logo -->
             <a href="#" class="logo">
-                <img src="<?php echo e(asset('images/logo/logo-putih-baru.webp')); ?>" alt="Logo" class="w-24 sm:w-32 md:w-40">
+                <img src="<?php echo e(asset('images/logo/logo-putih-baru.webp')); ?>" alt="Logo"
+                    class="w-24 sm:w-32 md:w-40">
             </a>
 
             <!-- Menu Button -->
@@ -23,8 +24,7 @@
     </div>
 
     <!-- Menu Dropdown -->
-    <div id="menuDropdown"
-        class="fixed inset-0 z-40 bg-[#00413D] opacity-0 -translate-y-full transition-all duration-500 ease-in-out pointer-events-none flex flex-col items-center justify-center
+    <div id="menuDropdown" class="fixed inset-0 z-40 bg-[#00413D] opacity-0 -translate-y-full transition-all duration-500 ease-in-out pointer-events-none flex flex-col items-center justify-center
         bg-[radial-gradient(circle,_rgba(255,255,255,0.2)_0%,_rgba(0,65,61,1)_70%)]">
 
         <!-- Header dalam Menu -->
@@ -44,8 +44,8 @@
             </button>
 
             <!-- Contact Us di kanan -->
-            <a href="/contact"
-                class="text-white border-2 border-white px-4 sm:px-6 py-1 sm:py-2 rounded-full transition-all duration-300 hover:bg-white hover:text-black">
+            <a href="/contact" class="text-white border-2 border-white px-4 sm:px-6 py-1 sm:py-2 rounded-full transition-all
+                duration-300 hover:bg-white hover:text-black">
                 CONTACT US
             </a>
         </div>
@@ -56,16 +56,15 @@
             <div id="mainMenu"
                 class="absolute flex flex-col justify-center items-center w-full h-full transition-all duration-500 ease-in-out text-center gap-4 sm:gap-6">
 
-                <a href="/"
-                    class="text-white hover:text-orange-200 font-bold text-4xl sm:text-5xl md:text-8xl">HOME</a>
-                <a href="/about"
+                <a href="/" class="text-white hover:text-orange-200 font-bold text-4xl sm:text-5xl md:text-8xl">HOME</a>
+                <a href="/about">
                     class="text-white hover:text-orange-200 font-bold text-4xl sm:text-5xl md:text-8xl">ABOUT
                     US</a>
                 <button id="servicesBtn"
                     class="text-white hover:text-orange-200 font-bold text-4xl sm:text-5xl md:text-8xl focus:outline-none">
                     OUR SERVICES
                 </button>
-                <a href="/contact"
+                <a href="/contact">
                     class="text-white hover:text-orange-200 font-bold text-4xl sm:text-5xl md:text-8xl">CONTACT</a>
             </div>
 
@@ -74,6 +73,10 @@
 
                 <div
                     class="grid grid-cols-1 sm:grid-cols-2  md:mx-3 md:grid-cols-3 gap-x-8 gap-y-4 sm:gap-y-10 text-center text-white text-base sm:text-lg md:text-2xl font-light">
+                    =======
+                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-4 sm:gap-y-6 text-center
+                    text-white text-base sm:text-lg md:text-2xl font-light">
+                    >
                     <a href="/metri-entertainment" class="hover:text-orange-200 transition">metri entertainment</a>
                     <a href="/metri-film" class="hover:text-orange-200 transition">metri film</a>
                     <a href="/metri-post" class="hover:text-orange-200 transition">metri post</a>
@@ -104,6 +107,9 @@
                         <a href="https://www.linkedin.com/company/pt-media-tren-idea-metri-id/?originalSubdomain=id"
                             class="hover:text-orange-200 transition">LINKEDIN ↗</a>
                         <a href="#" class="hover:text-orange-200 transition">X ↗</a>
+                        <a href="#" class="hover:text-orange-200 transition">INSTAGRAM ↗</a>
+                        <a href="#" class="hover:text-orange-200 transition">LINKEDIN ↗</a>
+
                     </div>
                 </div>
             </div>
@@ -118,6 +124,9 @@
                 <a href="https://www.linkedin.com/company/pt-media-tren-idea-metri-id/?originalSubdomain=id"
                     class="hover:text-gray-300">LINKEDIN ↗</a>
                 <a href="#" class="hover:text-gray-300">X ↗</a>
+                <a href="#" class="hover:text-gray-300">INSTAGRAM</a>
+                <a href="#" class="hover:text-gray-300">LINKEDIN</a>
+                <a href="#" class="hover:text-gray-300">X</a>
             </div>
         </div>
     </div>
