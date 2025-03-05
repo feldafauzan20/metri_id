@@ -53,24 +53,30 @@
                 <div class="flex flex-row mb-4 flex-wrap gap-2">
                     <?php
                         $services = [
-                            'metri entertainment',
-                            'metri events',
-                            'metri film',
-                            'metri post',
-                            'tang ting',
-                            'metri digital',
-                            'metri design',
+                            'metri_design_posts' => 'Metri Design',
+                            'metri_digital_posts' => 'Metri Digital',
+                            'metri_entertainment_posts' => 'Metri Entertainment',
+                            'metri_event_posts' => 'Metri Events',
+                            'metri_film_equipment_posts' => 'Tang Ting',
+                            'metri_film_posts' => 'Metri Film',
+                            'metri_post_posts' => 'Metri Post',
                         ];
                     ?>
-                    <div
-                        class="px-4 py-1 bg-white rounded-lg text-[#00413D] hover:bg-[#195350] hover:text-white transition-all duration-300 cursor-pointer">
-                        <p>All Projects</p>
-                    </div>
-                    <?php $__currentLoopData = $services; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $service): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <div
-                            class="px-4 py-1 bg-white/10 backdrop-blur-lg rounded-lg hover:bg-white hover:text-[#00413D] transition-all duration-300 cursor-pointer">
-                            <p><?php echo e($service); ?></p>
-                        </div>
+
+                    <!-- Tombol Semua Projects -->
+                    <a href="<?php echo e(route('gallery')); ?>"
+                        class="px-4 py-1 rounded-lg transition-all duration-300 cursor-pointer 
+                            <?php echo e(request('filter') ? 'bg-white/10 text-white' : 'bg-white text-[#00413D]'); ?>">
+                        All Projects
+                    </a>
+
+                    <?php $__currentLoopData = $services; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $name): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <a href="<?php echo e(route('gallery', ['filter' => $key])); ?>"
+                            class="px-4 py-1 rounded-lg transition-all duration-300 cursor-pointer 
+                                <?php echo e(request('filter') == $key ? 'bg-white text-[#00413D]' : 'bg-white/10 text-white'); ?>">
+                            <?php echo e($name); ?>
+
+                        </a>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             </div>
