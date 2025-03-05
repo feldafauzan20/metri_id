@@ -40,8 +40,8 @@ class ProjectGalleryController extends Controller
                 $projects = array_merge($projects, $data->toArray());
             }
         }
-
-        // Mengembalikan data dalam bentuk JSON atau view
-        return response()->json($projects);
+        
+        return view('gallery', ['projects' => $projects]);
+        
     }
 }

@@ -50,6 +50,7 @@
                     </div>
                     <a href="#partners" class="a-nav">OUR PARTNERS</a>
                     <a href="#contact" class="a-nav">CONTACT</a>
+                    <a href="/gallery" class="a-nav">GALLERY</a>
                 </nav>
             </div>
             <div class="flex justify-end">
