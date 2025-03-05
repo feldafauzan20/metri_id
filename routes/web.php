@@ -46,7 +46,7 @@ Route::post('/contact', [ContactController::class, 'submit'])->name('contact.sub
 
 
 
-Route::get('/projects-gallery', [ProjectGalleryController::class, 'index']);
+Route::get('/gallery', [ProjectGalleryController::class, 'index'])->name('gallery');
 
 
 Route::get('/design', [MetriDesignController::class, 'index']);
