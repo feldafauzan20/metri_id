@@ -29,6 +29,7 @@ class ProjectGalleryController extends Controller
                     ->select(
                         'id',
                         'title',
+                        'slug',
                         'content',
                         DB::raw("'$table' as service_type"), // Menyimpan nama tabel sebagai service_type
                         'image as image',

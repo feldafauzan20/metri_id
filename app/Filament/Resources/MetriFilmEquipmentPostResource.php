@@ -132,6 +132,7 @@ class MetriFilmEquipmentPostResource extends Resource
         static::created(function ($post) {
             Project::create([
                 'title' => $post->title,
+                'slug' => $post->slug,
                 'description' => $post->content,
                 'image' => $post->image,
                 'service_type' => 'tang-ting',
