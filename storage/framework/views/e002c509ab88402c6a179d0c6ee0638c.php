@@ -161,4 +161,5 @@
             }, 500);
         });
     });
-</script><?php /**PATH E:\laragon\www\metri_id\resources\views/components/layouts/contact-form.blade.php ENDPATH**/ ?>
+</script>
+<?php /**PATH E:\laragon\www\metri_id\resources\views/components/layouts/contact-form.blade.php ENDPATH**/ ?>
