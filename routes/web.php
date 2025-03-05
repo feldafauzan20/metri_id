@@ -7,12 +7,23 @@ use App\Http\Controllers\MetriEventController;
 use App\Http\Controllers\MetriFilmEquipmentController;
 use App\Http\Controllers\MetriLandingPageController;
 use App\Http\Controllers\MetriPostController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MetriFilmController;
 use Esign\ConversionsApi\Facades\ConversionsApi;
 use FacebookAds\Object\ServerSide\Event;
 use FacebookAds\Object\ServerSide\UserData;
 use App\Http\Controllers\ProjectGalleryController;
+use App\Http\Controllers\ContactController;
+use Illuminate\Support\Facades\Route;
+
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact.form');
+
+Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
+
+
+
 
 
 // Route::get('/test-add-to-cart', function () {

@@ -3,100 +3,82 @@
         <!-- Left Side -->
         <div class="w-full md:w-2/5">
             <!-- Contact Form Button -->
-            <div class="flex justify-center md:justify-start">
-                <a href="#" class="border border-white px-6 py-2 rounded-full text-white mb-4 text-sm md:text-base">
-                    Contact Form
-                </a>
-            </div>
+            <a href="" class="border border-white px-6 py-2 rounded-full text-white mb-4">
+                Contact form
+            </a>
+            <!-- Title -->
         </div>
 
         <!-- Right Side: Form -->
-        <form class="w-full md:w-3/5 space-y-6">
-            <h2 class="text-lg md:text-xl font-light text-center md:text-left">
+        <form action="<?php echo e(route('contact.submit')); ?>" method="POST" class="space-y-6 w-full">
+            <?php echo csrf_field(); ?>
+
+            <h2 class="text-xl font-light">
                 We’d love to hear from you! Whether you have a question about our services, need assistance with
                 a project, or just want to say hello, feel free to reach out.
             </h2>
 
-            <!-- Form Fields -->
-            <div class="space-y-4">
-                <div>
-                    <label class="block uppercase text-xs md:text-sm tracking-wider mb-2">NAME</label>
-                    <input type="text"
-                        class="w-full bg-transparent border-b border-white focus:outline-none focus:border-gray-300 transition duration-300 py-2 text-sm">
-                </div>
-
-                <div>
-                    <label class="block uppercase text-xs md:text-sm tracking-wider mb-2">EMAIL</label>
-                    <input type="email"
-                        class="w-full bg-transparent border-b border-white focus:outline-none focus:border-gray-300 transition duration-300 py-2 text-sm">
-                </div>
-
-                <div>
-                    <label class="block uppercase text-xs md:text-sm tracking-wider mb-2">PHONE NUMBER</label>
-                    <input type="number"
-                        class="w-full bg-transparent border-b border-white focus:outline-none focus:border-gray-300 transition duration-300 py-2 text-sm">
-                </div>
-
-                <div>
-                    <label class="block uppercase text-xs md:text-sm tracking-wider mb-2">MESSAGE</label>
-                    <textarea
-                        class="w-full bg-transparent border-b border-white focus:outline-none focus:border-gray-300 transition duration-300 py-2 text-sm h-24"></textarea>
-                </div>
-            </div>
-
-            <!-- Checkbox Options -->
+            <!-- Name -->
             <div>
-                <label class="block uppercase text-xs md:text-sm tracking-wider mb-2">Which metri service do you need
-                    assistance with?</label>
-                <span class="text-[#cbd5e1e3] text-xs md:text-sm">You can select multiple options. Feel free to choose
-                    all that apply!</span>
-                <div class="flex flex-wrap gap-2 mt-2">
-                    <label
-                        class="group flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-md cursor-pointer hover:bg-white/30 transition-all duration-300">
-                        <input type="checkbox" class="hidden peer">
-                        <span class="peer-checked:bg-[#F45353] peer-checked:text-white px-3 py-1 rounded-md">metri
-                            entertainment</span>
-                    </label>
-                    <label
-                        class="group flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-md cursor-pointer hover:bg-white/30 transition-all duration-300">
-                        <input type="checkbox" class="hidden peer">
-                        <span class="peer-checked:bg-[#3C7AD3] peer-checked:text-white px-3 py-1 rounded-md">metri
-                            design</span>
-                    </label>
-                    <label
-                        class="group flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-md cursor-pointer hover:bg-white/30 transition-all duration-300">
-                        <input type="checkbox" class="hidden peer">
-                        <span class="peer-checked:bg-[#44AC60] peer-checked:text-white px-3 py-1 rounded-md">metri
-                            digital</span>
-                    </label>
-                    <label
-                        class="group flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-md cursor-pointer hover:bg-white/30 transition-all duration-300">
-                        <input type="checkbox" class="hidden peer">
-                        <span class="peer-checked:bg-[#db4d4d] peer-checked:text-white px-3 py-1 rounded-md">metri
-                            event</span>
-                    </label>
-                    <label
-                        class="group flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-md cursor-pointer hover:bg-white/30 transition-all duration-300">
-                        <input type="checkbox" class="hidden peer">
-                        <span class="peer-checked:bg-[#F5D63F] peer-checked:text-white px-3 py-1 rounded-md">tang
-                            ting</span>
-                    </label>
-                    <label
-                        class="group flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-md cursor-pointer hover:bg-white/30 transition-all duration-300">
-                        <input type="checkbox" class="hidden peer">
-                        <span class="peer-checked:bg-[#F7931E] peer-checked:text-white px-3 py-1 rounded-md">metri
-                            post</span>
-                    </label>
-                    <label
-                        class="group flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-md cursor-pointer hover:bg-white/30 transition-all duration-300">
-                        <input type="checkbox" class="hidden peer">
-                        <span class="peer-checked:bg-cyan-400 peer-checked:text-white px-3 py-1 rounded-md">metri
-                            film</span>
-                    </label>
+                <label class="block uppercase text-sm tracking-wider mb-2">NAME</label>
+                <input type="text" name="name"
+                    class="w-full bg-transparent border-b border-white focus:outline-none focus:border-gray-300 transition duration-300 py-2"
+                    required>
+            </div>
+
+            <!-- Email -->
+            <div>
+                <label class="block uppercase text-sm tracking-wider mb-2">EMAIL</label>
+                <input type="email" name="email"
+                    class="w-full bg-transparent border-b border-white focus:outline-none focus:border-gray-300 transition duration-300 py-2"
+                    required>
+            </div>
+
+            <!-- Phone Number -->
+            <div>
+                <label class="block uppercase text-sm tracking-wider mb-2">PHONE NUMBER</label>
+                <input type="tel" name="phone"
+                    class="w-full bg-transparent border-b border-white focus:outline-none focus:border-gray-300 transition duration-300 py-2">
+            </div>
+
+            <!-- Message -->
+            <div>
+                <label class="block uppercase text-sm tracking-wider mb-2">MESSAGE</label>
+                <textarea name="message"
+                    class="w-full bg-transparent border-b border-white focus:outline-none focus:border-gray-300 transition duration-300 py-2 h-20"
+                    required></textarea>
+            </div>
+
+            <div>
+                <label class="block uppercase text-sm tracking-wider mb-2">Which Metri service do you need assistance
+                    with?</label>
+                <span class="text-[#cbd5e1e3]">You can select multiple options. Feel free to choose all that
+                    apply!</span>
+                <div class="flex flex-wrap gap-3 mt-2">
+                    <?php $__currentLoopData = [
+        'metri entertainment' => '#F45353',
+        'metri design' => '#3C7AD3',
+        'metri digital' => '#44AC60',
+        'metri event' => '#db4d4d',
+        'metri film' => '#06B6D4',
+        'tang ting' => '#d7bd38',
+        'metri post' => '#F7931E',
+    ]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $service => $color): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <label
+                            class="group flex items-center space-x-2 backdrop-blur-md bg-white/20 px-4 py-2 rounded-md cursor-pointer transition-all duration-300 ease-in-out hover:bg-white/30 active:scale-95">
+                            <input type="checkbox" class="hidden peer" name="services[]" value="<?php echo e($service); ?>">
+                            <span
+                                class="group-hover:scale-105 peer-checked:text-white peer-checked:font-bold peer-checked:px-3 peer-checked:py-1 peer-checked:rounded-md transition-all duration-300"
+                                data-color="<?php echo e($color); ?>">
+                                <?php echo e($service); ?>
+
+                            </span>
+                        </label>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             </div>
 
-            <!-- Agreement Checkbox -->
+            <!-- Checkbox -->
             <div class="flex items-center space-x-2">
                 <input type="checkbox" id="agree" class="w-4 h-4 border-gray-400 bg-transparent">
                 <label for="agree" class="text-xs md:text-sm">By submitting, you agree to the use of your
@@ -104,7 +86,8 @@
             </div>
 
             <!-- Submit Button -->
-            <button type="submit" class="flex items-center space-x-2 group text-sm md:text-base">
+            <button type="submit" id="submitBtn"
+                class="flex items-center space-x-2 group text-gray-400 opacity-50 cursor-not-allowed" disabled>
                 <span class="border-b border-white group-hover:border-gray-300 transition duration-300">Send
                     message</span>
                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -113,7 +96,69 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                 </svg>
             </button>
+
+            <!-- Notifikasi sukses -->
+            <div role="alert" id="successMessage" class="alert alert-success hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current text-white"
+                    fill="none" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="text-white">Email sent successfully!</span>
+            </div>
         </form>
     </div>
 </section>
-<?php /**PATH E:\laragon\www\metri_id\resources\views/components/layouts/contact-form.blade.php ENDPATH**/ ?>
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll("input[type='checkbox']").forEach((checkbox) => {
+            checkbox.addEventListener("change", function() {
+                let label = this.closest("label").querySelector("span");
+                if (this.checked) {
+                    label.style.backgroundColor = label.getAttribute("data-color");
+                } else {
+                    label.style.backgroundColor = "transparent";
+                }
+            });
+        });
+    });
+</script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const agreeCheckbox = document.getElementById("agree");
+        const submitBtn = document.getElementById("submitBtn");
+        const form = document.querySelector("form");
+        const successMessage = document.getElementById("successMessage");
+
+        // Enable/disable submit button based on checkbox state
+        agreeCheckbox.addEventListener("change", function() {
+            if (agreeCheckbox.checked) {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove("cursor-not-allowed", "opacity-50", "text-gray-400");
+                submitBtn.classList.add("cursor-pointer", "text-white");
+            } else {
+                submitBtn.disabled = true;
+                submitBtn.classList.add("cursor-not-allowed", "opacity-50", "text-gray-400");
+                submitBtn.classList.remove("cursor-pointer", "text-white");
+            }
+        });
+
+        // Handle form submission
+        form.addEventListener("submit", function() {
+            submitBtn.disabled = true; // Mencegah double submit
+            submitBtn.classList.add("cursor-not-allowed", "opacity-50");
+
+            // Tampilkan notifikasi sukses setelah submit berhasil
+            setTimeout(() => {
+                successMessage.classList.remove("hidden");
+                successMessage.classList.add("block");
+            }, 500);
+        });
+    });
+</script><?php /**PATH E:\laragon\www\metri_id\resources\views/components/layouts/contact-form.blade.php ENDPATH**/ ?>
