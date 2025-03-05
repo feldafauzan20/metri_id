@@ -211,4 +211,4 @@
 <?php $component = $__componentOriginalf2b16bc3883246ba4659aff94e382522; ?>
 <?php unset($__componentOriginalf2b16bc3883246ba4659aff94e382522); ?>
 <?php endif; ?>
-<?php /**PATH E:\laragon\www\metri_id\resources\views/service-entertainment.blade.php ENDPATH**/ ?>
+<?php /**PATH E:\laragon\www\metri_id\resources\views\service-entertainment.blade.php ENDPATH**/ ?>

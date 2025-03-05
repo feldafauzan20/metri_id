@@ -9,7 +9,7 @@
 <?php endif; ?>
 <?php $component->withAttributes([]); ?>
      <?php $__env->slot('title', null, []); ?> 
-        metri | entertainment
+        metri | tang-ting
      <?php $__env->endSlot(); ?>
 
      <?php $__env->slot('vite', null, []); ?> 
@@ -42,8 +42,8 @@
             <div class="hero min-h-screen">
                 <div class="hero-content text-center">
                     <div class="w-full flex flex-col items-center">
-                        <a href=""><img src="<?php echo e(asset('images/logo/logo-metri-entertainment.webp')); ?>"
-                                alt="" class="w-[300px] lg:w-[600px]"></a>
+                        <a href=""><img src="<?php echo e(asset('images/logo/logo-tang-ting.webp')); ?>" alt=""
+                                class="w-[300px] lg:w-[600px]"></a>
                         <h2 class="lg:text-5xl text-2xl md:text-3xl text-white pb-4">
                             Tailored to Your Needs to Enhance Digital Products
                         </h2>
@@ -211,4 +211,4 @@
 <?php $component = $__componentOriginalf2b16bc3883246ba4659aff94e382522; ?>
 <?php unset($__componentOriginalf2b16bc3883246ba4659aff94e382522); ?>
 <?php endif; ?>
-<?php /**PATH E:\laragon\www\metri_id\resources\views/service-entertainment.blade.php ENDPATH**/ ?>
+<?php /**PATH E:\laragon\www\metri_id\resources\views/service-tang-ting.blade.php ENDPATH**/ ?>

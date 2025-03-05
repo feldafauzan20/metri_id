@@ -122,4 +122,4 @@
         </div>
     </div>
 </nav>
-<?php /**PATH E:\laragon\www\metri_id\resources\views/components/layouts-service/navbar-services.blade.php ENDPATH**/ ?>
+<?php /**PATH E:\laragon\www\metri_id\resources\views\components\layouts-service\navbar-services.blade.php ENDPATH**/ ?>
