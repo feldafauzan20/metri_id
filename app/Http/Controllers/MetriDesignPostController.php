@@ -28,7 +28,7 @@ class MetriDesignPostController extends Controller
         }
 
         // Kirim ke view dengan nilai default jika null
-        return view('deetail-design', [
+        return view('detail-design', [
             'youtube_link' => $embed_link ?? null,
             'image'        => $data->image ?? null,
             'video'        => $data->video ?? null,

@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
+use App\Models\MetriEntertainmentPost;
 
 class ProjectGalleryController extends Controller
 {
@@ -60,5 +61,49 @@ class ProjectGalleryController extends Controller
 
         return view('gallery', compact('projectsPaginated', 'filter'));
     }
+
+    public function film()
+    {
+        $projects = DB::table('metri_film_posts')->latest()->take(3)->get();
+        return view('service-film', compact('projects'));
+    }
+    
+    public function entertainment()
+    {
+        $projects = DB::table('metri_entertainment_posts')->latest()->take(3)->get();
+        return view('service-entertainment', compact('projects'));
+    }
+    
+    public function design()
+    {
+        $projects = DB::table('metri_design_posts')->latest()->take(3)->get();
+        return view('service-design', compact('projects'));
+    }
+    
+    public function digital()
+    {
+        $projects = DB::table('metri_digital_posts')->latest()->take(3)->get();
+        return view('service-digital', compact('projects'));
+    }
+    
+    public function event()
+    {
+        $projects = DB::table('metri_event_posts')->latest()->take(3)->get();
+        return view('service-event', compact('projects'));
+    }
+    
+    public function filmEquipment()
+    {
+        $projects = DB::table('metri_film_equipment_posts')->latest()->take(3)->get();
+        return view('service-tang-ting', compact('projects'));
+    }
+    
+    public function postProduction()
+    {
+        $projects = DB::table('metri_post_posts')->latest()->take(3)->get();
+        return view('service-post', compact('projects'));
+    }
+    
+    
 }
 

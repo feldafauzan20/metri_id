@@ -82,20 +82,20 @@ class MetriPostPostResource extends Resource
                 ->label('Foto 2')
                 ->nullable(),
 
-            FileUpload::make('gambar_3')
-                ->directory('metri_post_posts')
-                ->label(label: 'Foto 3')
-                ->nullable(),
+            // FileUpload::make('gambar_3')
+            //     ->directory('metri_post_posts')
+            //     ->label(label: 'Foto 3')
+            //     ->nullable(),
 
-            FileUpload::make('gambar_4')
-                ->directory('metri_post_posts')
-                ->label('Foto 4')
-                ->nullable(),
+            // FileUpload::make('gambar_4')
+            //     ->directory('metri_post_posts')
+            //     ->label('Foto 4')
+            //     ->nullable(),
 
-            FileUpload::make('gambar_5')
-                ->directory('metri_post_posts')
-                ->label('Foto 5')
-                ->nullable(),
+            // FileUpload::make('gambar_5')
+            //     ->directory('metri_post_posts')
+            //     ->label('Foto 5')
+            //     ->nullable(),
 
 
             TextInput::make('link')->url()->nullable(),
@@ -117,9 +117,9 @@ class MetriPostPostResource extends Resource
                 ImageColumn::make('image')->label('Headline Image'),
                 ImageColumn::make('gambar_1')->label('PHOTO 1'),
                 ImageColumn::make('gambar_2')->label('PHOTO 2'),
-                ImageColumn::make('gambar_3')->label('PHOTO 3'),
-                ImageColumn::make('gambar_4')->label('PHOTO 4'),
-                ImageColumn::make('gambar_5')->label('PHOTO 5'),
+                // ImageColumn::make('gambar_3')->label('PHOTO 3'),
+                // ImageColumn::make('gambar_4')->label('PHOTO 4'),
+                // ImageColumn::make('gambar_5')->label('PHOTO 5'),
     
                 TextColumn::make('concept')->label('Concept')->limit(50),
                 TextColumn::make('objective')->label('Objective')->limit(50),
