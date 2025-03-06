@@ -239,6 +239,7 @@ const hamburger = document.querySelector("#hamburger");
 const navMenu = document.querySelector("#nav-menu");
 const ourServicesBtn = document.querySelector("#our-services-btn");
 const servicesMenu = document.querySelector("#services-menu");
+const serviceDropdownSimbol = document.querySelector("#dropdownSimbol");
 
 // Toggle Navbar (Mobile)
 hamburger.addEventListener("click", function () {
@@ -249,6 +250,7 @@ hamburger.addEventListener("click", function () {
 // Toggle Our Services (Mobile)
 ourServicesBtn.addEventListener("click", function () {
     if (window.innerWidth < 1024) {
+        serviceDropdownSimbol.classList.toggle("rotate-180");
         servicesMenu.classList.toggle("hidden");
     }
 });

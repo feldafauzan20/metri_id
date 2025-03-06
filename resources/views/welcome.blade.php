@@ -34,7 +34,7 @@
                     <hr class="mx-4">
                     <li class="group">
                         <a href="/about"
-                            class="block px-4 py-2 hover:bg-[#359381] lg:hover:bg-[#359381] lg:hover:text-white ">ABOUT</a>
+                            class="block px-4 py-2 hover:bg-[#359381] lg:hover:bg-[#359381] lg:hover:text-white lg:rounded-lg">ABOUT</a>
                     </li>
 
                     <!-- Our Services -->
@@ -42,7 +42,7 @@
                         <button id="our-services-btn"
                             class="flex items-center justify-start gap-2 w-full lg:w-auto px-4 py-2 hover:backdrop-blur-lg lg:hover:backdrop-blur-none">
                             OUR SERVICES
-                            <svg class="w-4 h-4 transition-transform lg:group-hover:rotate-180"
+                            <svg class="w-4 h-4 transition-transform lg:group-hover:rotate-180" id="dropdownSimbol"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -52,7 +52,7 @@
 
                         <!-- List of Services -->
                         <ul id="services-menu"
-                            class="hidden lg:absolute mx-2 py-2 rounded-lg lg:left-0 bg-[#359381] lg:top-full lg:bg-[#359381] lg:bg-opacity-50  lg:backdrop-blur-md lg:shadow-lg lg:rounded-lg lg:w-48 space-y-2 text-white
+                            class="hidden lg:absolute mx-2 py-2 my-2 lg:my-0 rounded-lg lg:left-0 bg-[#359381] lg:top-full lg:bg-[#359381] lg:bg-opacity-50  lg:backdrop-blur-md lg:shadow-lg lg:rounded-lg lg:w-48 space-y-2 text-white
                             lg:group-hover:block">
 
                             <li><a href="/metri-entertainment"
@@ -77,14 +77,14 @@
                     </li>
 
                     <li class="group"><a href="#partners"
-                            class="block px-4 py-2 hover:bg-[#359381] lg:hover:bg-[#359381] lg:hover:text-white">OUR
+                            class="block px-4 py-2 hover:bg-[#359381] lg:hover:bg-[#359381] lg:rounded-lg lg:hover:text-white">OUR
                             PARTNERS</a>
                     </li>
                     <li class="group"><a href="#contact"
-                            class="block px-4 py-2 hover:bg-[#359381] lg:hover:bg-[#359381] lg:hover:text-white">CONTACT</a>
+                            class="block px-4 py-2 hover:bg-[#359381] lg:hover:bg-[#359381] lg:rounded-lg lg:hover:text-white">CONTACT</a>
                     </li>
                     <li class="group"><a href="/gallery"
-                            class="block px-4 py-2 hover:bg-[#359381] lg:hover:bg-[#359381] rounded-b-lg lg:hover:text-white">GALLERY</a>
+                            class="block px-4 py-2 hover:bg-[#359381] lg:hover:bg-[#359381] rounded-b-lg lg:rounded-lg lg:hover:text-white">GALLERY</a>
                     </li>
                 </ul>
             </nav>
