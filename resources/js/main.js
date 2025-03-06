@@ -15,30 +15,48 @@ gsap.ticker.add((time) => lenis.raf(time * 1000));
 gsap.ticker.lagSmoothing(0);
 
 // Parallax animation
-gsap.timeline({
-    scrollTrigger: {
-        trigger: ".parallax-container",
-        start: "top top",
-        end: "500% top",
-        scrub: 3,
-        pin: true,
-    },
-})
-    .to("#scroll", { opacity: 0, duration: 0.5, ease: "power1.out" })
-    .fromTo(
-        "#sun",
-        { y: "20vh" },
-        { y: "-3vh", duration: 0.5, ease: "power1.out" }
-    )
-    .to("#plant1", { duration: 1, left: "70vw" }, "<")
-    .to("#plant2", { duration: 2, left: "-50vw" }, "<")
-    .to("#bird1", { duration: 3, left: "50vw" }, "<")
-    .to("#bird2", { duration: 4, left: "-50vw" }, "<")
-    .to("#tree", { scale: 5, duration: 5, ease: "power1.inOut" })
-    .to("#overlay", { opacity: 1, duration: 1, ease: "power2.inOut" }) // Fade Out
-    .to(".parallax-container", { opacity: 0, duration: 0.5 }, "-=0.5") // Hilangkan parallax
-    .to("#overlay", { opacity: 0, duration: 1, ease: "power2.inOut" }) // Fade In ke section berikutnya
-    .to(".mysteps", { opacity: 1, duration: 1.5, ease: "power2.out" }, "-=1"); // Tampilkan section berikutnya
+if (window.innerWidth >= 1024) {
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".parallax-container",
+            start: "top top",
+            end: "500% top",
+            scrub: 3,
+            pin: true,
+        },
+    })
+        .to("#scroll", { opacity: 0, duration: 0.5, ease: "power1.out" })
+        .fromTo(
+            "#sun",
+            { y: "20vh" },
+            { y: "-3vh", duration: 0.5, ease: "power1.out" }
+        )
+        .to("#plant1", { duration: 1, left: "70vw" }, "<")
+        .to("#plant2", { duration: 2, left: "-50vw" }, "<")
+        .to("#bird1", { duration: 3, left: "50vw" }, "<")
+        .to("#bird2", { duration: 4, left: "-50vw" }, "<")
+        .to("#tree", { scale: 5, duration: 5, ease: "power1.inOut" })
+        .to("#overlay", { opacity: 1, duration: 1, ease: "power2.inOut" }) // Fade Out
+        .to(".parallax-container", { opacity: 0, duration: 0.5 }, "-=0.5") // Hilangkan parallax
+        .to("#overlay", { opacity: 0, duration: 1, ease: "power2.inOut" }) // Fade In ke section berikutnya
+        .to(
+            ".mysteps",
+            { opacity: 1, duration: 1.5, ease: "power2.out" },
+            "-=1"
+        );
+} else {
+    // Ambil elemen dengan class bg-hero
+    const bgHero = document.querySelector(".bg-hero");
+
+    if (bgHero) {
+        bgHero.classList.remove("bg-hero");
+
+        const imgParallax = bgHero.querySelectorAll("img");
+        imgParallax.forEach((img) => img.remove());
+
+        bgHero.classList.add("bg-hero1");
+    }
+}
 
 // mysteps cards animation
 gsap.from(".mysteps div", {
@@ -215,4 +233,30 @@ window.addEventListener("scroll", () => {
 // Scroll to top on click
 toTopBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+const hamburger = document.querySelector("#hamburger");
+const navMenu = document.querySelector("#nav-menu");
+const ourServicesBtn = document.querySelector("#our-services-btn");
+const servicesMenu = document.querySelector("#services-menu");
+
+// Toggle Navbar (Mobile)
+hamburger.addEventListener("click", function () {
+    this.classList.toggle("hamburger-active");
+    navMenu.classList.toggle("hidden");
+});
+
+// Toggle Our Services (Mobile)
+ourServicesBtn.addEventListener("click", function () {
+    if (window.innerWidth < 1024) {
+        servicesMenu.classList.toggle("hidden");
+    }
+});
+
+// Klik di luar akan menutup menu
+document.addEventListener("click", function (e) {
+    if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+        navMenu.classList.add("hidden");
+        hamburger.classList.remove("hamburger-active");
+    }
 });

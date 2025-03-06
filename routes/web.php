@@ -70,6 +70,10 @@ Route::get('/about', function() {
     return view( 'about');
 });
 
-Route::get('/gallery', [ProjectGalleryController::class, 'index'])->name('gallery');
+Route::get('/detail', function() {
+    return view( 'detail');
+});
+
+// Route::get('/gallery', [ProjectGalleryController::class, 'index'])->name('gallery');
 
 Route::get('/gallery/{service_type}', [ProjectController::class, 'show'])->name('gallery.detail');
