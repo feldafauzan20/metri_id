@@ -7,9 +7,8 @@ use Illuminate\Support\Facades\DB;
 
 class ProjectGalleryController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        // Daftar semua tabel yang ingin diambil datanya
         $tables = [
             'metri_design_posts',
             'metri_digital_posts',
@@ -19,11 +18,11 @@ class ProjectGalleryController extends Controller
             'metri_film_posts',
             'metri_post_posts',
         ];
-
+    
+        $filter = $request->query('filter'); // Ambil query string filter dari URL
         $projects = [];
-
+    
         foreach ($tables as $table) {
-            // Cek apakah tabel benar-benar ada di database
             if (DB::getSchemaBuilder()->hasTable($table)) {
                 $data = DB::table($table)
                     ->select(
@@ -31,17 +30,22 @@ class ProjectGalleryController extends Controller
                         'title',
                         'slug',
                         'content',
-                        DB::raw("'$table' as service_type"), // Menyimpan nama tabel sebagai service_type
-                        'image as image',
+                        DB::raw("'$table' as service_type"),
+                        'image',
                         'created_at'
-                    )
-                    ->get();
-                
-                $projects = array_merge($projects, $data->toArray());
+                    );
+    
+                if ($filter && $filter === $table) {
+                    $data = $data->get()->toArray(); // Ambil hanya data yang sesuai dengan filter
+                    $projects = array_merge($projects, $data);
+                    break; // Jika filter diterapkan, hentikan loop
+                } elseif (!$filter) {
+                    $data = $data->get()->toArray();
+                    $projects = array_merge($projects, $data);
+                }
             }
         }
-
-        // Mengembalikan data dalam bentuk JSON atau view
-        return response()->json($projects);
+    
+        return view('gallery', compact('projects', 'filter'));
     }
 }

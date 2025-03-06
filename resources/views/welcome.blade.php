@@ -8,57 +8,97 @@
     </x-slot:vite>
 
     <main class="h-full min-h-screen overflow-x-hidden">
-        <section class="absolute top-0 left-0 w-full px-[100px] py-[30px] flex justify-between items-center z-[100]">
+        <header class="absolute top-0 left-0 w-full px-6 md:px-10 pt-4 flex justify-between items-center z-[100]">
+            <!-- Logo -->
             <div>
                 <a href="/" class="logo">
-                    <img src="{{ asset('images/logo/logo-putih-baru.webp') }}" alt="" width="150" />
+                    <img src="{{ asset('images/logo/logo-putih-baru.webp') }}" alt=""
+                        class="w-[150px] lg:w-[300px]" />
                 </a>
             </div>
-            <div class="min-h-min">
-                <nav class="flex navigation relative">
-                    <a href="/about" class="a-nav">ABOUT</a>
-                    <div class="relative group">
-                        <a class="text-black h-full flex items-center gap-2">
+
+            <!-- Hamburger Button -->
+            <button id="hamburger" type="button" class="lg:hidden relative z-50">
+                <span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
+                <span class="hamburger-line transition duration-300 ease-in-out"></span>
+                <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
+            </button>
+
+            <!-- Navbar -->
+            <nav id="nav-menu"
+                class="hidden absolute lg:relative top-full left-0 w-full lg:flex lg:justify-center  rounded-lg py-5 text-white lg:bg-transparent lg:shadow-none lg:w-full lg:rounded-none px-4 lg:px-0">
+                <ul
+                    class="block lg:flex lg:space-x-6 lg:max-w-4xl lg:w-full lg:justify-center lg:text-black bg-[#359381] bg-opacity-50 backdrop-blur-md shadow-lg lg:bg-transparent rounded-lg lg:rounded-none lg:backdrop-blur-none lg:shadow-none">
+                    <p class="text-center py-2 tracking-wider text-white md:text-base font-ibm lg:hidden">PT. MEDIA TREN
+                        IDEA</p>
+                    <hr class="mx-4">
+                    <li class="group">
+                        <a href="/about"
+                            class="block px-4 py-2 hover:bg-[#359381] lg:hover:bg-[#359381] lg:hover:text-white lg:rounded-lg">ABOUT</a>
+                    </li>
+
+                    <!-- Our Services -->
+                    <li class="relative group">
+                        <button id="our-services-btn"
+                            class="flex items-center justify-start gap-2 w-full lg:w-auto px-4 py-2 hover:backdrop-blur-lg lg:hover:backdrop-blur-none">
                             OUR SERVICES
-                            <svg class="w-4 h-4 transition-transform group-hover:rotate-180"
+                            <svg class="w-4 h-4 transition-transform lg:group-hover:rotate-180" id="dropdownSimbol"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M19 9l-7 7-7-7" />
                             </svg>
-                        </a>
-                        <div
-                            class="absolute left-0 top-full mt-0 hidden group-hover:block bg-[#359381] bg-opacity-50 backdrop-blur-md shadow-lg rounded-lg w-48">
-                            <ul class="py-2">
-                                <li><a href="/metri-entertainment"
-                                        class="block px-4 py-2 hover:backdrop-blur-lg text-white">metri
-                                        entertainment</a></li>
-                                <li><a href="/metri-design"
-                                        class="block px-4 py-2 hover:backdrop-blur-lg text-white">metri design</a></li>
-                                <li><a href="/metri-digital"
-                                        class="block px-4 py-2 hover:backdrop-blur-lg text-white">metri digital</a></li>
-                                <li><a href="/metri-film"
-                                        class="block px-4 py-2 hover:backdrop-blur-lg text-white">metri film</a></li>
-                                <li><a href="/metri-post"
-                                        class="block px-4 py-2 hover:backdrop-blur-lg text-white">metri post</a></li>
-                                <li><a href="/metri-tang-ting"
-                                        class="block px-4 py-2 hover:backdrop-blur-lg text-white">tang ting</a></li>
-                                <li><a href="/metri-event"
-                                        class="block px-4 py-2 hover:backdrop-blur-lg text-white">metri event</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <a href="#partners" class="a-nav">OUR PARTNERS</a>
-                    <a href="#contact" class="a-nav">CONTACT</a>
-                </nav>
+                        </button>
+
+                        <!-- List of Services -->
+                        <ul id="services-menu"
+                            class="hidden lg:absolute mx-2 py-2 my-2 lg:my-0 rounded-lg lg:left-0 bg-[#359381] lg:top-full lg:bg-[#359381] lg:bg-opacity-50  lg:backdrop-blur-md lg:shadow-lg lg:rounded-lg lg:w-48 space-y-2 text-white
+                            lg:group-hover:block">
+
+                            <li><a href="/metri-entertainment"
+                                    class="block px-4 py-1 hover:bg-white hover:text-[#359381]">metri
+                                    entertainment</a></li>
+                            <li><a href="/metri-design"
+                                    class="block px-4 py-1 hover:bg-white hover:text-[#359381]">metri
+                                    design</a></li>
+                            <li><a href="/metri-digital"
+                                    class="block px-4 py-1 hover:bg-white hover:text-[#359381]">metri
+                                    digital</a></li>
+                            <li><a href="/metri-film" class="block px-4 py-1 hover:bg-white hover:text-[#359381]">metri
+                                    film</a></li>
+                            <li><a href="/metri-post" class="block px-4 py-1 hover:bg-white hover:text-[#359381]">metri
+                                    post</a></li>
+                            <li><a href="/metri-tang-ting"
+                                    class="block px-4 py-1 hover:bg-white hover:text-[#359381]">tang
+                                    ting</a></li>
+                            <li><a href="/metri-event" class="block px-4 py-1 hover:bg-white hover:text-[#359381]">metri
+                                    event</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="group"><a href="#partners"
+                            class="block px-4 py-2 hover:bg-[#359381] lg:hover:bg-[#359381] lg:rounded-lg lg:hover:text-white">OUR
+                            PARTNERS</a>
+                    </li>
+                    <li class="group"><a href="#contact"
+                            class="block px-4 py-2 hover:bg-[#359381] lg:hover:bg-[#359381] lg:rounded-lg lg:hover:text-white">CONTACT</a>
+                    </li>
+                    <li class="group"><a href="/gallery"
+                            class="block px-4 py-2 hover:bg-[#359381] lg:hover:bg-[#359381] rounded-b-lg lg:rounded-lg lg:hover:text-white">GALLERY</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Nama Perusahaan -->
+            <div class="hidden lg:block text-center lg:w-1/5 lg:ml-auto lg:items-center lg:justify-end">
+                <h1 class="tracking-wider text-black md:text-base text-xs font-ibm">PT. MEDIA TREN IDEA</h1>
             </div>
-            <div class="flex justify-end">
-                <h1 class="tracking-wider text-black font-ibm">PT. MEDIA TREN IDEA</h1>
-            </div>
-        </section>
+
+        </header>
+
 
         <section
-            class="relative flex items-center justify-center min-h-screen overflow-hidden parallax-container will-change-transform bg-hero">
+            class="relative flex items-center justify-center min-h-screen overflow-hidden bg-hero parallax-container will-change-transform">
             <img src="{{ asset('images/sun.webp') }}" alt="" id="sun" class="img-parallax"
                 loading="eager" />
             <img src="{{ asset('images/bg-showcase.webp') }}" alt="" id="" class="img-parallax"
@@ -67,19 +107,20 @@
                 loading="eager" />
             <img src="{{ asset('images/bird1.webp') }}" alt="" id="bird1" class="img-parallax"
                 loading="eager" />
-            <img src="{{ asset('images/plant2(2).webp') }}" alt="" id="plant2" class="img-parallax"
+            <img src="{{ asset('images/plant2.webp') }}" alt="" id="plant2" class="img-parallax"
                 loading="eager" />
             <img src="{{ asset('images/tree4.webp') }}" alt="" id="tree" class="img-parallax"
                 loading="eager" />
             <img src="{{ asset('images/plant1.webp') }}" alt="" id="plant1" class="img-parallax"
                 loading="eager" />
-            <div class="absolute flex flex-col items-center -translate-x-1/2 bottom-10 left-1/2" id="scroll">
-                <p class="pb-2 font-medium tracking-wide text-white text-XS font-ibm animate-bounce">SCROLL</p>
+            <div class="absolute flex flex-col items-center bottom-10 left-1/2 -translate-x-1/2" id="scroll">
+                <p class="pb-2 font-medium tracking-wide text-white text-xs font-ibm animate-bounce">SCROLL</p>
                 <div class="relative flex items-start justify-center w-8 h-12 border-2 border-white rounded-full">
                     <div class="w-1 h-5 bg-white rounded-full"></div>
                 </div>
             </div>
         </section>
+
 
         <section class="relative w-full h-screen -mt-10 overflow-hidden mysteps" id="services">
             <div class="step-counter w-full relative flex px-[2em] flex-row m-[2em] justify-between items-center">

@@ -8,6 +8,7 @@ use App\Http\Controllers\MetriFilmEquipmentController;
 use App\Http\Controllers\MetriLandingPageController;
 use App\Http\Controllers\MetriPostController;
 use App\Http\Controllers\MetriFilmController;
+use App\Http\Controllers\ProjectController;
 use Esign\ConversionsApi\Facades\ConversionsApi;
 use FacebookAds\Object\ServerSide\Event;
 use FacebookAds\Object\ServerSide\UserData;
@@ -46,7 +47,7 @@ Route::post('/contact', [ContactController::class, 'submit'])->name('contact.sub
 
 
 
-Route::get('/projects-gallery', [ProjectGalleryController::class, 'index']);
+Route::get('/gallery', [ProjectGalleryController::class, 'index'])->name('gallery');
 
 
 Route::get('/design', [MetriDesignController::class, 'index']);
@@ -73,6 +74,6 @@ Route::get('/detail', function() {
     return view( 'detail');
 });
 
-Route::get('/gallery', function() {
-    return view( 'gallery');
-});
+// Route::get('/gallery', [ProjectGalleryController::class, 'index'])->name('gallery');
+
+Route::get('/gallery/{service_type}', [ProjectController::class, 'show'])->name('gallery.detail');

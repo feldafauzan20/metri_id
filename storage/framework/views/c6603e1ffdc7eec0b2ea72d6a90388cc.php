@@ -1,2 +1,0 @@
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo e($gtmId); ?>"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><?php /**PATH E:\laragon\www\metri_id\vendor\esign\laravel-conversions-api\resources\views\components\google-tag-manager-body.blade.php ENDPATH**/ ?>
