@@ -1,4 +1,5 @@
-<footer class="relative text-white py-12 overflow-hidden flex justify-center items-center h-screen">
+<footer
+    class="relative bg-[#124F45] lg:bg-transparent text-white py-12 overflow-hidden flex justify-center items-center h-screen">
     <!-- Tree Background -->
     <img src="{{ asset('images/tree-footer.webp') }}" alt="" id="tree-footer"
         class="absolute bottom-0 left-0 w-full max-w-none h-auto" loading="lazy" />

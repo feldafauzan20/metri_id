@@ -25,6 +25,10 @@
         margin: 0 10px;
     }
 
+    .card {
+        will-change: transform;
+    }
+
     .hamburger-line {
         @apply w-[30px] h-[2px] my-2 block bg-[#359381] transition-all duration-300;
     }

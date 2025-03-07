@@ -73,7 +73,7 @@ gsap.from(".mysteps div", {
 
 // Sticky cards setup
 const stickySection = document.querySelector(".mysteps");
-const stickyHeight = window.innerHeight * 7;
+const stickyHeight = window.innerHeight * 7; // Tambah sedikit agar animasi tidak terlalu pendek
 const cards = document.querySelectorAll(".card");
 const totalCards = cards.length;
 
@@ -87,26 +87,20 @@ ScrollTrigger.create({
 });
 
 // Cards positioning helper functions
-const getRadius = () => {
-    // Radius yang konsisten berdasarkan viewport height
-    return window.innerHeight * 3;
-};
+const getRadius = () => window.innerHeight * 2.5;
 
-// Sudut arc yang konsisten
 const arcAngle = Math.PI * 0.6;
 const startAngle = Math.PI / 2 - arcAngle / 2;
 
-// Jarak antar card yang konsisten
-const cardSpacing = arcAngle / (totalCards - 1);
+const getCardSpacing = () => arcAngle / Math.max(3, totalCards - 1);
 
 function getCardSize() {
-    // Ukuran kartu responsif berdasarkan tinggi viewport
-    const baseHeight = window.innerHeight * 0.7; // 60% dari tinggi viewport
-    const aspectRatio = 500 / 550; // Mempertahankan aspect ratio asli
+    const baseHeight = window.innerHeight * 0.65;
+    const aspectRatio = 500 / 550;
     const width = baseHeight * aspectRatio;
 
     return {
-        width: width,
+        width: Math.min(width, 400),
         height: baseHeight,
     };
 }
@@ -116,9 +110,9 @@ function positionCards(progress = 0) {
     const totalTravel = 1 + totalCards / 7.5;
     const adjustedProgress = (progress * totalTravel - 1) * 0.75;
     const cardSize = getCardSize();
+    const cardSpacing = getCardSpacing();
 
     cards.forEach((card, i) => {
-        // Menggunakan cardSpacing untuk jarak yang konsisten
         const angle =
             startAngle + cardSpacing * i + arcAngle * adjustedProgress;
         const x = Math.cos(angle) * radius;
@@ -132,7 +126,7 @@ function positionCards(progress = 0) {
             transformOrigin: "center center",
             width: cardSize.width,
             height: cardSize.height,
-            scale: 1, // Memastikan skala tetap konsisten
+            scale: 1,
         });
     });
 }
@@ -141,9 +135,7 @@ function positionCards(progress = 0) {
 positionCards(0);
 
 // Update saat window diresize
-window.addEventListener("resize", () => {
-    positionCards(0);
-});
+window.addEventListener("resize", () => positionCards(0));
 
 // Animation counter
 const counterConfig = {
