@@ -101,8 +101,8 @@
             class="relative flex items-center justify-center min-h-screen overflow-hidden bg-hero parallax-container will-change-transform">
             <img src="{{ asset('images/sun.webp') }}" alt="" id="sun" class="img-parallax"
                 loading="eager" />
-            <img src="{{ asset('images/bg-showcase.webp') }}" alt="" id="" class="img-parallax"
-                loading="eager" />
+            <img src="{{ asset('images/bg-showcase.webp') }}" alt="" id=""
+                class="img-parallax h-[105%]" loading="eager" />
             <img src="{{ asset('images/bird2.webp') }}" alt="" id="bird2" class="img-parallax"
                 loading="eager" />
             <img src="{{ asset('images/bird1.webp') }}" alt="" id="bird1" class="img-parallax"
@@ -174,8 +174,7 @@
         <section
             class="items-center bg-[#124F45] lg:bg-transparent justify-center w-full pb-28 customer-support h-[450px] md:h-[600px]">
             <div class="container flex flex-col items-center justify-center  w-full pt-4 h-full overflow-hidden">
-                <div
-                    class="flex flex-col items-center w-full h-fit rounded-2xl py-20 bg-[#00413D]/30 backdrop-blur-3xl">
+                <div class="flex flex-col items-center w-full h-fit rounded-2xl py-20">
                     <p
                         class="text-white max-w-lg w-fit font-jakarta font-normal text-xl md:text-2xl text-center rounded-3xl outline outline-2 outline-[#E1E1E1] p-2 mt-2">
                         Customer Support
