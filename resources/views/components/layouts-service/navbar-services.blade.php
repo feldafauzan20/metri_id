@@ -67,6 +67,8 @@
                 </button>
                 <a href="/contact"
                     class="text-white hover:text-orange-200 font-bold text-4xl sm:text-5xl md:text-8xl">CONTACT</a>
+                <a href="/gallery"
+                    class="text-white hover:text-orange-200 font-bold text-4xl sm:text-5xl md:text-8xl">GALLERY</a>
             </div>
 
             <div id="servicesDropdown"
