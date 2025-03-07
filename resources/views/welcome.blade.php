@@ -18,7 +18,7 @@
                 <nav class="flex navigation relative">
                     <a href="/about" class="a-nav">ABOUT</a>
                     <div class="relative group">
-                        <a href="#services" class="text-black h-full flex items-center gap-2">
+                        <a  class="text-black h-full flex items-center gap-2">
                             OUR SERVICES
                             <svg class="w-4 h-4 transition-transform group-hover:rotate-180"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -50,6 +50,7 @@
                     </div>
                     <a href="#partners" class="a-nav">OUR PARTNERS</a>
                     <a href="#contact" class="a-nav">CONTACT</a>
+                    <a href="/gallery" class="a-nav">GALLERY</a>
                 </nav>
             </div>
             <div class="flex justify-end">

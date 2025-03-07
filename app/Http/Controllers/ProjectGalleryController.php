@@ -1,15 +1,16 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Collection;
+use App\Models\MetriEntertainmentPost;
 
 class ProjectGalleryController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        // Daftar semua tabel yang ingin diambil datanya
         $tables = [
             'metri_design_posts',
             'metri_digital_posts',
@@ -19,28 +20,90 @@ class ProjectGalleryController extends Controller
             'metri_film_posts',
             'metri_post_posts',
         ];
-
-        $projects = [];
-
+    
+        $filter = $request->query('filter'); // Ambil query filter dari URL
+        $projects = collect(); // Gunakan Collection kosong untuk menampung hasil
+    
         foreach ($tables as $table) {
-            // Cek apakah tabel benar-benar ada di database
             if (DB::getSchemaBuilder()->hasTable($table)) {
-                $data = DB::table($table)
+                $query = DB::table($table)
                     ->select(
                         'id',
                         'title',
+                        'slug',
                         'content',
-                        DB::raw("'$table' as service_type"), // Menyimpan nama tabel sebagai service_type
-                        'image as image',
+                        DB::raw("'$table' as service_type"),
+                        'image',
                         'created_at'
-                    )
-                    ->get();
-                
-                $projects = array_merge($projects, $data->toArray());
+                    );
+
+                if ($filter && $filter === $table) {
+                    $projects = $query->get(); // Ambil hanya data yang sesuai filter
+                    break; // Hentikan loop jika filter diterapkan
+                } elseif (!$filter) {
+                    $projects = $projects->merge($query->get()); // Gabungkan semua data
+                }
             }
         }
 
-        // Mengembalikan data dalam bentuk JSON atau view
-        return response()->json($projects);
+         // Pagination
+    $currentPage = LengthAwarePaginator::resolveCurrentPage();
+    $perPage = 9; // 3x3 Grid
+    $pagedData = $projects->slice(($currentPage - 1) * $perPage, $perPage)->values();
+
+    $projectsPaginated = new LengthAwarePaginator(
+        $pagedData,
+        $projects->count(),
+        $perPage,
+        $currentPage,
+        ['path' => request()->url(), 'query' => request()->query()]
+    );
+
+        return view('gallery', compact('projectsPaginated', 'filter'));
     }
+
+    public function film()
+    {
+        $projects = DB::table('metri_film_posts')->latest()->take(3)->get();
+        return view('service-film', compact('projects'));
+    }
+    
+    public function entertainment()
+    {
+        $projects = DB::table('metri_entertainment_posts')->latest()->take(3)->get();
+        return view('service-entertainment', compact('projects'));
+    }
+    
+    public function design()
+    {
+        $projects = DB::table('metri_design_posts')->latest()->take(3)->get();
+        return view('service-design', compact('projects'));
+    }
+    
+    public function digital()
+    {
+        $projects = DB::table('metri_digital_posts')->latest()->take(3)->get();
+        return view('service-digital', compact('projects'));
+    }
+    
+    public function event()
+    {
+        $projects = DB::table('metri_event_posts')->latest()->take(3)->get();
+        return view('service-event', compact('projects'));
+    }
+    
+    public function filmEquipment()
+    {
+        $projects = DB::table('metri_film_equipment_posts')->latest()->take(3)->get();
+        return view('service-tang-ting', compact('projects'));
+    }
+    
+    public function postProduction()
+    {
+        $projects = DB::table('metri_post_posts')->latest()->take(3)->get();
+        return view('service-post', compact('projects'));
+    }
+    
+    
 }
+

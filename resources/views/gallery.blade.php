@@ -14,9 +14,7 @@
             <div class="mx-4 md:mx-8">
                 <div class="flex flex-col gap-4">
                     <h2 class="text-3xl md:text-4xl text-white">Gallery</h2>
-                    <p class="text-lg text-white md:text-xl">A series of project and campaigns that we have worked on for
-                        various
-                        brands and clients.</p>
+                    <p class="text-lg text-white md:text-xl">A series of project and campaigns that we have worked on for various brands and clients.</p>
                 </div>
             </div>
         </section>
@@ -24,115 +22,75 @@
         <section class="flex flex-col w-full lg:container">
             <div class="mx-4 md:mx-8">
                 <div class="flex flex-row mb-4 flex-wrap gap-2">
-                    <div
-                        class="px-4 py-1 bg-white rounded-lg text-[#00413D] hover:bg-[#195350] hover:text-white transition-all duration-300 cursor-pointer">
-                        <p>All Projects</p>
-                    </div>
-                    <div
-                        class="px-4 py-1 bg-white/10 backdrop-blur-lg rounded-lg hover:bg-white hover:text-[#00413D] transition-all duration-300 cursor-pointer">
-                        <p>metri entertainment</p>
-                    </div>
-                    <div
-                        class="px-4 py-1 bg-white/10 backdrop-blur-lg rounded-lg hover:bg-white hover:text-[#00413D] transition-all duration-300 cursor-pointer">
-                        <p>metri events</p>
-                    </div>
-                    <div
-                        class="px-4 py-1 bg-white/10 backdrop-blur-lg rounded-lg hover:bg-white hover:text-[#00413D] transition-all duration-300 cursor-pointer">
-                        <p>metri film</p>
-                    </div>
-                    <div
-                        class="px-4 py-1 bg-white/10 backdrop-blur-lg rounded-lg hover:bg-white hover:text-[#00413D] transition-all duration-300 cursor-pointer">
-                        <p>metri post</p>
-                    </div>
-                    <div
-                        class="px-4 py-1 bg-white/10 backdrop-blur-lg rounded-lg hover:bg-white hover:text-[#00413D] transition-all duration-300 cursor-pointer">
-                        <p>tang ting</p>
-                    </div>
-                    <div
-                        class="px-4 py-1 bg-white/10 backdrop-blur-lg rounded-lg hover:bg-white hover:text-[#00413D] transition-all duration-300 cursor-pointer">
-                        <p>metri digital</p>
-                    </div>
-                    <div
-                        class="px-4 py-1 bg-white/10 backdrop-blur-lg rounded-lg hover:bg-white hover:text-[#00413D] transition-all duration-300 cursor-pointer">
-                        <p>metri design</p>
-                    </div>
+                    @php
+                        $services = [
+                            'metri_design_posts' => 'Metri Design',
+                            'metri_digital_posts' => 'Metri Digital',
+                            'metri_entertainment_posts' => 'Metri Entertainment',
+                            'metri_event_posts' => 'Metri Events',
+                            'metri_film_equipment_posts' => 'Tang Ting',
+                            'metri_film_posts' => 'Metri Film',
+                            'metri_post_posts' => 'Metri Post'
+                        ];
+                    @endphp
+            
+                    <a href="{{ route('gallery') }}" 
+                        class="px-4 py-1 rounded-lg transition-all duration-300 cursor-pointer 
+                            {{ request('filter') ? 'bg-white/10 text-white' : 'bg-white text-[#00413D]' }}">
+                        All Projects
+                    </a>
+            
+                    @foreach ($services as $key => $name)
+                        <a href="{{ route('gallery', ['filter' => $key]) }}" 
+                            class="px-4 py-1 rounded-lg transition-all duration-300 cursor-pointer 
+                                {{ request('filter') == $key ? 'bg-white text-[#00413D]' : 'bg-white/10 text-white' }}">
+                            {{ $name }}
+                        </a>
+                    @endforeach
                 </div>
             </div>
 
-            <div class="grid grid-flow-row-dense grid-cols-1 gap-6 mx-4 md:mx-8 mt-8 md:grid-cols-2 lg:grid-cols-3">
-                @for ($i = 0; $i < 10; $i++)
-                    <div class="relative overflow-hidden rounded-lg h-96 group">
-                        <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                            alt="Project Image" class="object-cover w-full h-full rounded-lg"
-                            onload="this.naturalWidth > this.naturalHeight && this.parentElement.classList.add('col-span-2')">
+            <div class="grid grid-cols-1 gap-6 mx-4 md:mx-8 mt-8 md:grid-cols-2 lg:grid-cols-3">
+                @isset($projectsPaginated)
+                    @forelse ($projectsPaginated as $project)
+                        <div class="relative overflow-hidden rounded-lg h-96 group">
+                            <img src="{{ asset('storage/' . $project->image) }}" 
+                                alt="{{ $project->title }}" 
+                                class="object-cover w-full h-full rounded-lg">
 
-                        <!-- Overlay -->
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-4 text-white bg-gradient-to-t from-black/60 to-transparent">
-                            <div
-                                class="flex flex-col items-start transition-all duration-300 translate-y-0 lg:translate-y-10 lg:group-hover:translate-y-0">
-                                <p class="text-2xl font-medium text-center text-white">BEHIND THE STUDIO</p>
-                                <h3 class="text-white text-[10px] font-extralight">A dynamic space where imagination
-                                    knows
-                                    no
-                                    bounds and experimentation is celebrated.</h3>
-
-                                <a href=""
-                                    class="px-4 py-2 mt-2 text-white transition-all duration-300 bg-white bg-opacity-50 rounded-lg opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 font-ibm hover:bg-gray-500">
-                                    VIEW PROJECT
-                                </a>
+                            <div class="absolute bottom-0 left-0 right-0 p-4 text-white bg-gradient-to-t from-black/60 to-transparent">
+                                <div class="flex flex-col items-start transition-all duration-300 translate-y-0 lg:translate-y-10 lg:group-hover:translate-y-0">
+                                    <p class="text-2xl font-medium text-center text-white">{{ $project->title }}</p>
+                                    <h3 class="text-white text-[10px] font-extralight">{{ Str::limit($project->content, 80) }}</h3>
+                                    <a href="{{ route('detail', ['slug' => $project->slug]) }}"
+                                        class="px-4 py-2 mt-2 text-white transition-all duration-300 bg-white bg-opacity-50 rounded-lg opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 font-ibm hover:bg-gray-500">
+                                        VIEW PROJECT
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="relative overflow-hidden rounded-lg h-96 group">
-                        <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                            alt="Project Image" class="object-cover w-full h-full rounded-lg"
-                            onload="this.naturalWidth > this.naturalHeight && this.parentElement.classList.add('col-span-2')">
-
-                        <!-- Overlay -->
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-4 text-white bg-gradient-to-t from-black/60 to-transparent">
-                            <div
-                                class="flex flex-col items-start transition-all duration-300 translate-y-0 lg:translate-y-10 lg:group-hover:translate-y-0">
-                                <p class="text-2xl font-medium text-center text-white">BEHIND THE STUDIO</p>
-                                <h3 class="text-white text-[10px] font-extralight">A dynamic space where imagination
-                                    knows
-                                    no
-                                    bounds and experimentation is celebrated.</h3>
-
-                                <a href=""
-                                    class="px-4 py-2 mt-2 text-white transition-all duration-300 bg-white bg-opacity-50 rounded-lg opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 font-ibm hover:bg-gray-500">
-                                    VIEW PROJECT
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    {{-- <div class="relative overflow-hidden rounded-lg h-96 group">
-                        <img src="https://download.havecamerawilltravel.com/sample-images/webp/webp-example.webp"
-                            alt="Project Image" class="object-cover w-full h-full rounded-lg"
-                            onload="this.naturalWidth > this.naturalHeight && this.parentElement.classList.add('col-span-2')">
-
-                        <!-- Overlay -->
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-4 text-white bg-gradient-to-t from-black/60 to-transparent">
-                            <div
-                                class="flex flex-col items-start transition-all duration-300 translate-y-0 lg:translate-y-10 lg:group-hover:translate-y-0">
-                                <p class="text-2xl font-medium text-center text-white">BEHIND THE STUDIO</p>
-                                <h3 class="text-white text-[10px] font-extralight">A dynamic space where imagination
-                                    knows
-                                    no
-                                    bounds and experimentation is celebrated.</h3>
-
-                                <a href=""
-                                    class="px-4 py-2 mt-2 text-white transition-all duration-300 bg-white bg-opacity-50 rounded-lg opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 font-ibm hover:bg-gray-500">
-                                    ABOUT US
-                                </a>
-                            </div>
-                        </div>
-                    </div> --}}
-                @endfor
-
+                    @empty
+                        <p class="text-white text-center col-span-3">No projects available.</p>
+                    @endforelse
+                @endisset
             </div>
+
+            @if ($projectsPaginated->lastPage() > 1)
+                <div class="flex flex-col items-center mt-8 space-y-2">
+                    <div>
+                        {!! $projectsPaginated->links('pagination::tailwind') !!}
+                    </div>
+                    <p class="text-sm text-gray-400 text-center pt-2">
+                        Showing 
+                        <span class="font-semibold">{{ $projectsPaginated->firstItem() }}</span> 
+                        to 
+                        <span class="font-semibold">{{ $projectsPaginated->lastItem() }}</span> 
+                        of 
+                        <span class="font-semibold">{{ $projectsPaginated->total() }}</span> 
+                        results
+                    </p>
+                </div>
+            @endif
         </section>
     </main>
 </x-layouts.layout>
