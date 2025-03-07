@@ -10,8 +10,8 @@
     <main class="overflow-x-hidden">
         <x-layouts-service.navbar-services />
 
-        <section class="flex flex-col justify-center w-full min-h-screen lg:container">
-            <div class="mx-4 md:mx-8">
+        <section class="flex flex-col justify-center w-full h-full my-40 lg:container">
+            <div class="mx-4 md:mx-8 h-full">
                 <div class="flex flex-col gap-4">
                     <h2 class="text-3xl md:text-4xl text-white">Gallery</h2>
                     <p class="text-lg text-white md:text-xl">A series of project and campaigns that we have worked on for various brands and clients.</p>
@@ -24,13 +24,13 @@
                 <div class="flex flex-row mb-4 flex-wrap gap-2">
                     @php
                         $services = [
-                            'metri_design_posts' => 'Metri Design',
-                            'metri_digital_posts' => 'Metri Digital',
-                            'metri_entertainment_posts' => 'Metri Entertainment',
-                            'metri_event_posts' => 'Metri Events',
-                            'metri_film_equipment_posts' => 'Tang Ting',
-                            'metri_film_posts' => 'Metri Film',
-                            'metri_post_posts' => 'Metri Post'
+                            'metri_design_posts' => 'metri design',
+                            'metri_digital_posts' => 'metri digital',
+                            'metri_entertainment_posts' => 'metri entertainment',
+                            'metri_event_posts' => 'metri events',
+                            'metri_film_equipment_posts' => 'tang ting',
+                            'metri_film_posts' => 'metri film',
+                            'metri_post_posts' => 'metri post'
                         ];
                     @endphp
             
@@ -61,8 +61,8 @@
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-white bg-gradient-to-t from-black/60 to-transparent">
                                 <div class="flex flex-col items-start transition-all duration-300 translate-y-0 lg:translate-y-10 lg:group-hover:translate-y-0">
                                     <p class="text-2xl font-medium text-center text-white">{{ $project->title }}</p>
-                                    <h3 class="text-white text-[10px] font-extralight">
-                                        {{ strip_tags(Str::limit($project->content, 80)) }}
+                                    <h3 class="text-white text-[10px] md:text-base font-extralight">
+                                        {{ strip_tags(Str::limit($project->content, 40)) }}
                                     </h3>                                    
                                     <a href="{{ route('detail', ['slug' => $project->slug]) }}"
                                         class="px-4 py-2 mt-2 text-white transition-all duration-300 bg-white bg-opacity-50 rounded-lg opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 font-ibm hover:bg-gray-500">

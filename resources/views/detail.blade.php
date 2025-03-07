@@ -10,8 +10,8 @@
         <x-layouts-service.navbar-services />
 
         {{-- HERO START --}}
-        <section class="relative min-h-screen flex items-center justify-center text-white">
-            <div class="w-full h-screen flex flex-col md:flex-row md:container md:mx-auto md:gap-8 mx-4">
+        <section class="relative h-full my-40 flex md:my-48 lg:min-h-[50rem] lg:my-0 items-center justify-center text-white">
+            <div class="w-full h-full flex flex-col md:flex-row md:container md:mx-auto md:gap-8 mx-4">
                 <!-- Bagian Kiri -->
                 <div class="md:w-1/2 h-1/2 md:h-full flex items-end md:items-center p-6">
                     <h2 class="text-2xl font-light md:text-4xl">{{ $project->title }}</h2>

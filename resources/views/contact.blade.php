@@ -10,11 +10,11 @@
         <x-layouts-service.navbar-services />
 
         {{-- HERO START --}}
-        <section class="relative min-h-screen w-full flex flex-col justify-center">
+        <section class="relative lg:min-h-[30rem] md:min-h-0 h-full my-40 lg:my-0 m w-full flex flex-col justify-center">
             <div class="md:block md:container md:w-full md:mx-28">
 
                 <div
-                    class="w-[348px] md:w-[727px] h-[94px] md:h-[133px] flex flex-col justify-start items-start gap-2 mx-4">
+                    class="w-[348px] md:w-[727px] h-[94px] md:h-[133px] flex flex-col justify-start items-center gap-2 mx-4">
                     <h2 class="self-stretch text-white text-2xl md:text-4xl font-normal">Hello, we are metri</h2>
                     <p class="self-stretch text-white text-[10px] font-normal block md:w-[547px] md:text-base">
                         We craft, build, grow, and develop your brand and business with our 360 services.
@@ -23,7 +23,7 @@
                 </div>
             </div>
 
-            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+            <div class="hidden absolute bottom-6 left-1/2 -translate-x-1/2 lg:flex flex-col items-center justify-end gap-2">
                 <span
                     class="text-white text-[10px] md:text-xs lg:text-xl font-medium font-ibm animate-bounce">SCROLL</span>
                 <div data-svg-wrapper class="relative ">
@@ -44,6 +44,7 @@
 
         {{-- Video start --}}
         <section class="w-full" id="video">
+            
             <video class="object-cover w-full h-full" autoplay loop muted>
                 <source src="{{ Vite::asset('resources/assets/placeholder.mp4') }}" type="video/mp4">
             </video>
