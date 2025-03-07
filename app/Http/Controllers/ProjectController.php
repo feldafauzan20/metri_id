@@ -2,25 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Models\Project;
-
 
 class ProjectController extends Controller
 {
-    public function index()
+    public function show($slug)
     {
-        $projects = Project::all();
-        return view('gallery', compact('projects'));
-    }
+        $project = Project::where('slug', $slug)->firstOrFail();
 
-    public function show($type, $slug)
-    {
-        $project = Project::where('service_type', $type)->where('slug', $slug)->firstOrFail();
-    
+        // Mengambil semua gambar dan video yang ada
+        $images1 = explode(',' , $project->gambar_1);
+
+        $images2 = explode(',' , $project->gambar_2);
+
+
         $videos = explode(',', $project->video);
 
-    
-        return view('detail', compact('project', 'videos'));
+        return view('detail', compact('project', 'images1', 'images2', 'videos'));
     }
+
     
 }

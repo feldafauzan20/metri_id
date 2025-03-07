@@ -64,10 +64,7 @@
                                     <h3 class="text-white text-[10px] font-extralight">
                                         {{ strip_tags(Str::limit($project->content, 80)) }}
                                     </h3>                                    
-                                    <a href="{{ route('detail', [
-                                        'type' => $project->service_type,
-                                        'slug' => $project->slug
-                                    ]) }}"
+                                    <a href="{{ route('detail', ['slug' => $project->slug]) }}"
                                         class="px-4 py-2 mt-2 text-white transition-all duration-300 bg-white bg-opacity-50 rounded-lg opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 font-ibm hover:bg-gray-500">
                                         VIEW PROJECT
                                     </a>
