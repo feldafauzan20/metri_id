@@ -1,49 +1,52 @@
-<footer class="relative text-white py-12 overflow-hidden flex justify-center items-center h-screen">
+<footer
+    class="relative bg-[#124F45] lg:bg-transparent text-white py-12 overflow-hidden flex justify-center items-center h-screen">
     <!-- Tree Background -->
     <img src="{{ asset('images/tree-footer.webp') }}" alt="" id="tree-footer"
         class="absolute bottom-0 left-0 w-full max-w-none h-auto" loading="lazy" />
 
     <div class="container mx-auto px-8 relative z-10 flex flex-col justify-center items-center text-center">
-        <div class="flex flex-wrap justify-between gap-8 w-full">
-            <!-- Logo & Description -->
-            <div class="max-w-sm text-left">
-                <img src="{{ asset('images/logo/logo-putih-baru.webp') }}" alt="metri Logo" width="150">
-                <p class="text-sm text-gray-400">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus dolorum, sit distinctio
-                    perferendis cumque, praesentium inventore aliquid consequuntur aliquam modi quibusdam vel suscipit
-                    possimus tempora
-                </p>
-            </div>
+        <div class="w-full flex flex-col lg:flex-row lg:h-1/2 lg:items-end">
+            <div class="flex flex-col md:flex-row md:justify-between w-full gap-8">
+                <!-- Logo & Description -->
+                <div class="text-left md:w-1/3">
+                    <img src="{{ asset('images/logo/logo-putih-baru2.webp') }}" alt="metri Logo"
+                        class="w-[150px] md:w-[160px] lg:w-[170px]">
+                    <p class="text-sm text-white font-normal mt-2">Let's Collaborate</p>
+                </div>
 
-            <!-- Quick Links -->
-            <div class="text-left">
-                <h4 class="text-lg font-semibold mb-3">QUICK LINK</h4>
-                <ul class="text-gray-400 space-y-2">
-                    <li><a href="/" class="hover:text-white">Home</a></li>
-                    <li><a href="/about" class="hover:text-white">About Us</a></li>
-                    <li><a href="/contact" class="hover:text-white">Contact Us</a></li>
-                </ul>
-            </div>
+                <!-- Quick Links -->
+                <div class="text-left md:w-1/3">
+                    <h4 class="text-lg font-semibold mb-3">QUICK LINK</h4>
+                    <ul class="text-gray-400 flex gap-6 md:flex-col">
+                        <li><a href="/" class="hover:text-white">Home</a></li>
+                        <li><a href="/about" class="hover:text-white">About Us</a></li>
+                        <li><a href="/contact" class="hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
 
-            <!-- Sub Company -->
-            <div class="text-left ">
-                <h4 class="text-lg font-semibold mb-3">SUB COMPANY</h4>
-                <ul class="text-gray-400 space-y-2">
-                    <li><a href="/metri-entertainment" class="hover:text-white">metri entertainment</a></li>
-                    <li><a href="/metri-film" class="hover:text-white">metri film</a></li>
-                    <li><a href="/metri-post" class="hover:text-white">metri post</a></li>
-                    <li><a href="/metri-tang-ting" class="hover:text-white">tang ting</a></li>
-                    <li><a href="/metri-event" class="hover:text-white">metri event</a></li>
-                    <li><a href="/metri-digital" class="hover:text-white">metri digital</a></li>
-                    <li><a href="/metri-design" class="hover:text-white">metri design</a></li>
-                </ul>
+                <!-- Sub Company -->
+                <div class="text-left md:w-1/3">
+                    <h4 class="text-lg font-semibold mb-3">SUB COMPANY</h4>
+                    <ul class="text-gray-400 flex gap-6 flex-wrap lg:grid lg:grid-cols-2">
+                        <li><a href="/metri-entertainment" class="hover:text-white">metri entertainment</a></li>
+                        <li><a href="/metri-film" class="hover:text-white">metri film</a></li>
+                        <li><a href="/metri-post" class="hover:text-white">metri post</a></li>
+                        <li><a href="/metri-tang-ting" class="hover:text-white">tang ting</a></li>
+                        <li><a href="/metri-event" class="hover:text-white">metri event</a></li>
+                        <li><a href="/metri-digital" class="hover:text-white">metri digital</a></li>
+                        <li><a href="/metri-design" class="hover:text-white">metri design</a></li>
+                    </ul>
+                    <ul>
+
+                    </ul>
+                </div>
             </div>
         </div>
 
         <!-- Copyright & Social Icons -->
-        <div class="mt-10 border-t border-white pt-6 flex justify-between items-center w-full">
-            <p class="text-gray-400 text-sm">© 2024 Metri. All Rights Reserved.</p>
-            <div class="flex space-x-4">
+        <div class="w-full flex items-center mt-10 border-t border-white pt-6">
+            <p class="text-gray-400 text-sm block w-full text-start">© 2025 metri All Rights Reserved.</p>
+            <div class="flex space-x-4 justify-end w-fit">
                 <!-- Facebook -->
                 <a href="https://www.facebook.com/metri.id/" target="_blank"
                     class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-500 hover:border-white">
@@ -88,6 +91,7 @@
                             d="M21 21h-4v-6c0-1.3-.7-2-1.7-2s-2.3.8-2.3 2v6H9V9h4v1.5A4.6 4.6 0 0117 9c2.8 0 4 1.7 4 4.9V21zM5 21H1V9h4v12zM3 7A2 2 0 113 3a2 2 0 010 4z" />
                     </svg>
                 </a>
+
             </div>
         </div>
     </div>

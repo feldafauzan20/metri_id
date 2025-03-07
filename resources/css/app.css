@@ -25,6 +25,26 @@
         margin: 0 10px;
     }
 
+    .card {
+        will-change: transform;
+    }
+
+    .hamburger-line {
+        @apply w-[30px] h-[2px] my-2 block bg-[#359381] transition-all duration-300;
+    }
+
+    .hamburger-active > span:nth-child(1) {
+        @apply rotate-45;
+    }
+
+    .hamburger-active > span:nth-child(3) {
+        @apply -rotate-45;
+    }
+
+    .hamburger-active > span:nth-child(2) {
+        @apply scale-0;
+    }
+
     .img-parallax {
         @apply absolute top-0 left-0 w-full pointer-events-none;
     }
@@ -85,6 +105,15 @@
         }
         100% {
             transform: translateX(-50%);
+        }
+    }
+}
+
+@layer utilities {
+    @media (max-width: 1024px) {
+        .bg-hero1 {
+            @apply bg-cover bg-center;
+            background-image: url("/public/images/bg-hero1.webp");
         }
     }
 }

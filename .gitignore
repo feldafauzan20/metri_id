@@ -25,3 +25,6 @@ storage/framework/cache/*
 storage/framework/views/*
 storage/framework/sessions/*
 storage/app/analytics/service-account-credentials.json
+storage/framework/cache/*
+storage/framework/views/*
+storage/framework/sessions/*
