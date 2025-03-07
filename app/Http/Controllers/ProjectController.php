@@ -16,6 +16,11 @@ class ProjectController extends Controller
     public function show($type, $slug)
     {
         $project = Project::where('service_type', $type)->where('slug', $slug)->firstOrFail();
-        return view('detail', data: compact('project'));
+    
+        $videos = explode(',', $project->video);
+
+    
+        return view('detail', compact('project', 'videos'));
     }
+    
 }
