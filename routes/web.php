@@ -15,6 +15,14 @@ use FacebookAds\Object\ServerSide\UserData;
 use App\Http\Controllers\ProjectGalleryController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\AboutController;
+
+Route::get('/about', [AboutController::class, 'index'])->name('about');
+
+
+Route::get('/contact_us', [ContactUsController::class, 'index'])->name('contact_us');
+
 
 Route::get('/projects/{slug}', [ProjectController::class, 'show'])->name('detail');
 

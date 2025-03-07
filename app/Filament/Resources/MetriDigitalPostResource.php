@@ -103,7 +103,7 @@ class MetriDigitalPostResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('title')->sortable()->searchable(),
-                TextColumn::make('slug')->sortable()->searchable(),
+                // TextColumn::make('slug')->sortable()->searchable(),
                 
                 TextColumn::make('client_name')->label('Nama Client')->sortable()->searchable(),
                 TextColumn::make('year')->label('Year')->sortable()->searchable(),
