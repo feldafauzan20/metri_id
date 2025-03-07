@@ -15,7 +15,7 @@
                 </div>
 
                 <!-- Quick Links -->
-                <div class="text-left md:w-1/3">
+                <div class="text-left md:w-1/3"> 
                     <h4 class="text-lg font-semibold mb-3">QUICK LINK</h4>
                     <ul class="text-gray-400 flex gap-6 md:flex-col">
                         <li><a href="/" class="hover:text-white">Home</a></li>
