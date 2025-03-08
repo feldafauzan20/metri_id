@@ -56,14 +56,14 @@
 
 
         {{-- Who are we start --}}
-        <section class="w-full h-full mx-4 lg:container">
+        <section class="w-full h-full mx-4 lg:px-4 lg:container">
             <div class="w-full h-full pt-10 pb-4">
                 <p
                     class="text-white w-fit h-full font-jakarta font-normal text-lg text-center rounded-[50px] outline outline-2 outline-[#E1E1E1] py-2 px-5">
                     Who Are We?
                 </p>
             </div>
-            <div class="w-full md:w-4/5 pr-4 lg:w-1/2">
+            <div class="w-full md:w-4/5 pr-6 lg:w-1/2">
                 <p class="text-white text-[10px] font-normal md:text-base lg:text-lg">We are people with experience in
                     the creative
                     field,
@@ -82,7 +82,7 @@
         </div>
 
         {{-- Brand Values start --}}
-        <section class="md:mx-4 lg:container lg:mx-auto lg:mt-9 lg:w-full lg:h-full">
+        <section class="md:mx-4 lg:px-4 lg:container lg:mx-auto lg:mt-9 lg:w-full lg:h-full">
             <div class="w-full lg:h-full py-4 flex justify-center md:justify-start ">
                 <p
                     class="text-white w-fit h-full font-jakarta font-normal text-lg lg:text-xl text-center rounded-[50px] outline outline-2 outline-[#E1E1E1] py-[5px] px-[14px]">
@@ -170,7 +170,7 @@
         {{-- Brand Values end --}}
 
         {{-- Start your brand start --}}
-        <section class="mx-4 md:flex my-5 md:my-0 md:mt-5 lg:container h-full mt-14 items-center justify-between">
+        <section class="mx-4 md:flex my-5 md:my-0 md:mt-5 lg:px-4 lg:container h-full mt-14 items-center justify-between">
             <div class="w-3/4 md:w-1/2 lg:overflow-hidden  text-white font-medium">
                 <h2 class="md:text-xl lg:text-4xl">Start your brand experience transformation now</h2>
             </div>

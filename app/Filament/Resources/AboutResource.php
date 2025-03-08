@@ -8,6 +8,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Filament\Tables\Columns;
 
 class AboutResource extends Resource
 {
@@ -21,9 +22,8 @@ class AboutResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('title'),
-                Forms\Components\Textarea::make('description'),
                 Forms\Components\FileUpload::make('photo_1')->label('Video'),
-                Forms\Components\FileUpload::make('photo_2')->image()->label('Photo'),
+                Forms\Components\FileUpload::make('photo_2')->label('Photo'),
             ]);
     }
 
@@ -33,7 +33,7 @@ class AboutResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('title')->sortable()->searchable(),
                 Tables\Columns\ImageColumn::make('photo_1')->label('Video'),
-                Tables\Columns\ImageColumn::make('photo_2')->image()->label('Photo'),
+                Tables\Columns\ImageColumn::make('photo_2')->label('Photo'),
             ])
             ->filters([])
             ->actions([
