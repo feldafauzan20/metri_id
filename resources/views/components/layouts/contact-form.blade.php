@@ -4,7 +4,7 @@
         <div class="w-full md:w-2/5">
             <!-- Contact Form Button -->
             <a href="" class="border border-white px-6 py-2 rounded-full text-white mb-4">
-                Contact form
+                Contact Form
             </a>
             <!-- Title -->
         </div>
@@ -14,8 +14,8 @@
             @csrf
 
             <h2 class="text-xl font-light">
-                We’d love to hear from you! Whether you have a question about our services, need assistance with
-                a project, or just want to say hello, feel free to reach out.
+                We’d love to hear it from you. If you have any inquiry about our 360 services, don’t hesitate to reach
+                out to us.
             </h2>
 
             <!-- Name -->

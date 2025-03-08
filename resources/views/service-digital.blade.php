@@ -16,12 +16,12 @@
                     <div class="w-full flex flex-col items-center">
                         <a href=""><img src="{{ asset('images/logo/logo-metri-digital.webp') }}" alt=""
                                 class="w-[300px] lg:w-[600px]"></a>
-                        <h2 class="lg:text-5xl text-2xl md:text-3xl text-white pb-4">
-                            Tailored to Your Needs to Enhance Digital Products
+                        <h2 class="lg:text-5xl text-2xl md:text-3xl font-bold text-white pb-4">
+                            Grow and Develop Your Brand Visibility and Digital Presence with Our Meticulous Method
                         </h2>
                         <div class="w-full md:w-11/12 text-sm md:text-base text-white">
-                            <p>We craft, build, grow, and develop your brand and business with our 360 services. If you
-                                have any inquiry about our 360 services, don't hesitate to reach out to us.</p>
+                            <p>With the right digital marketing strategy, we enhance your brand's digital presence and
+                                visibility in the online community.</p>
                         </div>
                         <div class="w-full justify-center text-base flex text-white py-6 font-ibm font-medium">
                             <div class="flex items-center">
@@ -47,7 +47,7 @@
         {{-- Video end --}}
 
         {{-- TAGLINE START --}}
-        <section class="container lg:py-20 pt-5">
+        {{-- <section class="container lg:py-20 pt-5">
             <div class="lg:w-[60%] mx-4">
                 <h2 class="lg:text-4xl md:text-2xl text-lg text-white">A Fusion of Form and Function in Customers’ Needs
                 </h2>
@@ -57,7 +57,7 @@
                     needs. Form
                     evokes emotions and aesthetic appeal, while function ensures efficiency and usability.</p>
             </div>
-        </section>
+        </section> --}}
         {{-- TAGLINE END --}}
 
         {{-- PORTO START --}}

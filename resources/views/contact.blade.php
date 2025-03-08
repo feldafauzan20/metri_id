@@ -23,7 +23,8 @@
                 </div>
             </div>
 
-            <div class="hidden absolute bottom-6 left-1/2 -translate-x-1/2 lg:flex flex-col items-center justify-end gap-2">
+            <div
+                class="hidden absolute bottom-6 left-1/2 -translate-x-1/2 lg:flex flex-col items-center justify-end gap-2">
                 <span
                     class="text-white text-[10px] md:text-xs lg:text-xl font-medium font-ibm animate-bounce">SCROLL</span>
                 <div data-svg-wrapper class="relative ">
@@ -44,7 +45,7 @@
 
         {{-- Video start --}}
         <section class="w-full" id="video">
-            
+
             <video class="object-cover w-full h-full" autoplay loop muted>
                 <source src="{{ Vite::asset('resources/assets/placeholder.mp4') }}" type="video/mp4">
             </video>
@@ -98,7 +99,7 @@
             {{-- EMAIL START --}}
             <section class="w-full mx-4 pb-6 pt-12 lg:pt-8">
                 <div class=" flex flex-col">
-                    <h2 class="text-white text-2xl font-semibold pb-3">EMAIL</h2>
+                    <h2 class="text-white text-2xl font-semibold pb-3">E-MAIL</h2>
                     <div
                         class="w-48 text-white text-[10px] font-medium font-['Plus Jakarta Sans'] uppercase leading-snug">
                         <p>hello@metri.id</p>
