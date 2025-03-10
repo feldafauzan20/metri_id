@@ -15,7 +15,7 @@
                 </div>
 
                 <!-- Quick Links -->
-                <div class="text-left md:w-1/3"> 
+                <div class="text-left md:w-1/3">
                     <h4 class="text-lg font-semibold mb-3">QUICK LINK</h4>
                     <ul class="text-gray-400 flex gap-6 md:flex-col">
                         <li><a href="/" class="hover:text-white">Home</a></li>
@@ -48,7 +48,7 @@
             <p class="text-gray-400 text-sm block w-full text-start">© 2025 metri All Rights Reserved.</p>
             <div class="flex space-x-4 justify-end w-fit">
                 <!-- Facebook -->
-                <a href="https://www.facebook.com/metri.id/" target="_blank"
+                <a href="https://web.facebook.com/metri.id/" target="_blank"
                     class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-500 hover:border-white">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 hover:text-white"
                         viewBox="0 0 24 24" fill="currentColor">
@@ -58,7 +58,7 @@
                 </a>
 
                 <!-- X (Twitter) -->
-                <a href="#" target="_blank"
+                <a href="https://x.com/metri_id/" target="_blank"
                     class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-500 hover:border-white">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 hover:text-white"
                         viewBox="0 0 24 24" fill="currentColor">

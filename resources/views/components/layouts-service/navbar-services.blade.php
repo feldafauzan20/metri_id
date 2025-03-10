@@ -103,9 +103,9 @@
                     <div class="mt-2 flex justify-center space-x-4">
                         <a href="https://www.instagram.com/metri_id/" class="hover:text-orange-200 transition">INSTAGRAM
                             ↗</a>
-                        <a href="https://www.linkedin.com/company/pt-media-tren-idea-metri-id/?originalSubdomain=id"
+                        <a href="https://www.linkedin.com/company/pt-media-tren-idea-metri-id/"
                             class="hover:text-orange-200 transition">LINKEDIN ↗</a>
-                        <a href="#" class="hover:text-orange-200 transition">X ↗</a>
+                        <a href="https://x.com/metri_id/" class="hover:text-orange-200 transition">X ↗</a>
                     </div>
                 </div>
             </div>
@@ -117,9 +117,9 @@
             <p>&copy;2025 METRI DESIGN</p>
             <div class="flex gap-3 sm:gap-4">
                 <a href="https://www.instagram.com/metri_id/" class="hover:text-gray-300">INSTAGRAM ↗</a>
-                <a href="https://www.linkedin.com/company/pt-media-tren-idea-metri-id/?originalSubdomain=id"
+                <a href="https://www.linkedin.com/company/pt-media-tren-idea-metri-id/"
                     class="hover:text-gray-300">LINKEDIN ↗</a>
-                <a href="#" class="hover:text-gray-300">X ↗</a>
+                <a href="https://x.com/metri_id/" class="hover:text-gray-300">X ↗</a>
             </div>
         </div>
     </div>
