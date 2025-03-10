@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\MetriEvent;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 class MetriEventController extends Controller
 {
     public function index()
@@ -25,6 +27,9 @@ class MetriEventController extends Controller
             $embed_link = 'https://www.youtube.com/embed/' . $matches[1];
         }
 
+        // Ambil 3 project terbaru dari tabel metri_event_posts
+        $projects = DB::table('metri_event_posts')->latest()->take(3)->get();
+
         // Kirim ke view dengan nilai default jika null
         return view('service-event', [
             'youtube_link' => $embed_link ?? null,
@@ -34,6 +39,7 @@ class MetriEventController extends Controller
             'photo_3'      => $data->photo_3 ?? null,
             'photo_4'      => $data->photo_4 ?? null,
             'photo_5'      => $data->photo_5 ?? null,
+            'projects'     => $projects, // Pastikan projects dikirim dengan key yang benar
         ]);
     }
 }

@@ -18,21 +18,20 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\AboutController;
 
-Route::get('/about', [AboutController::class, 'index'])->name('about');
 
-Route::get('/contact_us', [ContactUsController::class, 'index'])->name('contact_us');
+Route::get('/gallery', [ProjectGalleryController::class, 'index'])->name('gallery.index');
+
+Route::get('/contact', [ContactUsController::class, 'index'])->name('contact.index');
+
+Route::get('/about', [AboutController::class, 'index']);
 
 Route::get('/projects/{slug}', [ProjectController::class, 'show'])->name('detail');
 
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact.form');
+// Route::get('/contact', function () {
+//     return view('contact');
+// })->name('contact.form');
 
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
-
-
-
-
 
 // Route::get('/test-add-to-cart', function () {
 //     $userData = (new UserData())
@@ -56,11 +55,6 @@ Route::post('/contact', [ContactController::class, 'submit'])->name('contact.sub
 
 Route::get('/gallery', [ProjectGalleryController::class, 'index'])->name('gallery');
 
-
-
-Route::get('/design', [MetriDesignController::class, 'index']);
-
-
 Route::get('/', [MetriLandingPageController::class, 'index']);
 Route::get('/metri-entertainment', [MetriEntertaimentController::class, 'index']);
 Route::get('/metri-design', [MetriDesignController::class,'index']);
@@ -70,13 +64,8 @@ Route::get('/metri-post', [MetriPostController::class, 'index']);
 Route::get('/metri-tang-ting', [MetriFilmEquipmentController::class, 'index']);
 Route::get('/metri-event', [MetriEventController::class, 'index']);
 
-Route::get('/contact', function() {
-    return view('contact');
-});
+Route::get('/contact_US', [ContactUsController::class, 'index'])->name('contact_US');
 
-Route::get('/about', function() {
-    return view( 'about');
-});
 
 Route::get('/detail', function() {
     return view( 'detail');

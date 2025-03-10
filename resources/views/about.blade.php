@@ -10,14 +10,13 @@
         <x-layouts-service.navbar-services />
 
         {{-- HERO START --}}
-        <section class="relative min-h-screen w-full flex flex-col justify-center bg-black">
+        @foreach ($videos as $video)
+        <section class="relative min-h-screen w-full flex flex-col justify-center">
         <!-- Video Background -->
-        @if (!empty($video))
             <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover">
                 <source src="{{ asset('storage/' . $video) }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-        @endif
     
    <!-- Overlay (Opsional, untuk efek gelap) -->
             <div class="absolute top-0 left-0 w-full h-full bg-black/40"></div>
@@ -54,10 +53,12 @@
                 </div>
             </div>
         </section>
+        @endforeach
         {{-- HERO END --}}
 
 
         {{-- Who are we start --}}
+        @foreach ($photos_2 as $photo)
         <section class="w-full h-full mx-4 lg:px-4 lg:container">
             <div class="w-full h-full pt-10 pb-4">
                 <p
@@ -72,10 +73,8 @@
                     production house, post-production, and media for over a decade. Now, we are forming Metri to turn
                     your ideas into reality.</p>
             </div>
-            @if (!empty($photo_2))
-            <img src="{{ asset('storage/' . $photo_2) }}" alt="About Image" class="object-cover rounded-sm">
-            @endif
-        
+            <img src="{{ asset('storage/' . $photo) }}" alt="About Image" class="object-cover rounded-sm">
+            @endforeach
         
         </section>
         {{-- Who are we end --}}

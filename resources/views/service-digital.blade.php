@@ -82,66 +82,27 @@
         </section>
         {{-- PORTO END --}}
 
-        {{-- PROJECT START --}}
-        <section class="container mx-auto mt-14 px-4 md:px-7">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:auto-rows-fr">
-                <!-- Card 1 -->
-                <div class="relative group overflow-hidden rounded-lg">
-                    <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                        alt="Project Image" class="w-full h-auto object-cover rounded-lg">
-                    <div
-                        class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-white">
-                        <div
-                            class="flex flex-col items-start transition-all duration-300 translate-y-0 lg:translate-y-10 lg:group-hover:translate-y-0">
-                            <p class="text-center text-white text-xs font-medium">Brand Ipsum</p>
-                            <h3 class="text-white text-2xl font-extralight">Ipsum Ad</h3>
-                            <a href=""
-                                class="opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 bg-white bg-opacity-50 px-4 py-2 mt-2 rounded-lg font-ibm text-white hover:bg-gray-500">
-                                VIEW PROJECT
-                            </a>
-                        </div>
+              {{-- PROJECT START --}}
+              <section class="container mx-auto mt-14 px-4 md:px-7">
+                @if(isset($projects) && $projects->isNotEmpty())
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:auto-rows-fr bg-orange-600">
+                        @foreach ($projects as $project)
+                            <div class="card">
+                                <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}">
+                                <h3>{{ $project->title }}</h3>
+                                <p>{{ Str::limit($project->content, 100) }}</p>
+                                <a href="{{ url('/projects/' . $project->slug) }}">Read More</a>
+                            </div>
+                        @endforeach
                     </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="relative group overflow-hidden rounded-lg">
-                    <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                        alt="Project Image" class="w-full h-auto object-cover rounded-lg">
-                    <div
-                        class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-white">
-                        <div
-                            class="flex flex-col items-start transition-all duration-300 translate-y-0 lg:translate-y-10 lg:group-hover:translate-y-0">
-                            <p class="text-center text-white text-xs font-medium">Brand Ipsum</p>
-                            <h3 class="text-white text-2xl font-extralight">Ipsum Ad</h3>
-                            <a href=""
-                                class="opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 bg-white bg-opacity-50 px-4 py-2 mt-2 rounded-lg font-ibm text-white hover:bg-gray-500">
-                                VIEW PROJECT
-                            </a>
-                        </div>
+                @else
+                    {{-- Menengahkan teks secara vertikal & horizontal --}}
+                    <div class="flex justify-center items-center h-[300px] md:h-[400px]">
+                        <p class="text-center text-white text-lg font-semibold">Tidak ada project tersedia.</p>
                     </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="relative group overflow-hidden rounded-lg">
-                    <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                        alt="Project Image" class="w-full h-auto object-cover rounded-lg">
-                    <div
-                        class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-white">
-                        <div
-                            class="flex flex-col items-start transition-all duration-300 translate-y-0 lg:translate-y-10 lg:group-hover:translate-y-0">
-                            <p class="text-center text-white text-xs font-medium">Brand Ipsum</p>
-                            <h3 class="text-white text-2xl font-extralight">Ipsum Ad</h3>
-                            <a href=""
-                                class="opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 bg-white bg-opacity-50 px-4 py-2 mt-2 rounded-lg font-ibm text-white hover:bg-gray-500">
-                                VIEW PROJECT
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-        {{-- PROJECT END --}}
+                @endif
+            </section>
+            {{-- PROJECT END --}}
 
         {{-- CONTACT FORM START --}}
         <x-layouts.contact-form />

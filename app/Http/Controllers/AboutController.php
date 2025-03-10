@@ -11,10 +11,14 @@ class AboutController extends Controller
     {
         $data = About::latest()->first();
 
-        $video = $data['video'] ?? null;
-        $photo_2 = $data['photo_2'] ?? null;
+        $photos_2 = explode(',' , $data->photo_2);
 
-        return view('about', compact('video', 'photo_2'));
+
+        $videos = explode(',', $data->video);
+
+        return view('about', compact('videos', 'photos_2'));
+        
+
         
     }
 }

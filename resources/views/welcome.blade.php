@@ -321,7 +321,7 @@
                             class="flex items-center justify-center w-1/2 md:w-1/2 text-base md:text-lg font-normal text-white transition-all duration-300 ease-in-out bg-transparent rounded-full btn outline-white outline font-ibm outline-2 hover:text-black hover:border-white hover:bg-white">
                             CONTACT US
                         </a>
-                        <a href="/contact"
+                        <a href="https://wa.me/622138815156" target="_blank"
                             class="flex items-center justify-center w-1/2 md:w-1/2 text-base md:text-lg font-normal text-[#00413D] bg-white outline-white outline outline-2 rounded-full btn font-ibm hover:text-white transition-all duration-300 ease-in-out hover:border-white hover:bg-[#022C29]">
                             WHATSAPP US
                         </a>

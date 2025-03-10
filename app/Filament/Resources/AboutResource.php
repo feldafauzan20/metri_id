@@ -22,7 +22,7 @@ class AboutResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('title'),
-                Forms\Components\FileUpload::make(name: 'video')->label('Video'),
+                Forms\Components\FileUpload::make( 'video')->label('Video') ,
                 Forms\Components\FileUpload::make('photo_2')->label('Photo'),
             ]);
     }

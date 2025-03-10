@@ -42,13 +42,24 @@
 
         {{-- HERO END --}}
 
-
         {{-- Video start --}}
         <section class="w-full" id="video">
+            @if(!empty($video) || !empty($youtube_link))
+                @foreach($youtube_link as $link)
+                    {{-- Tampilkan Video YouTube --}}
+                    <iframe class="w-full h-[500px] pb-10 object-contain" src="{{ $link }}" frameborder="0" allowfullscreen></iframe>
+                @endforeach
 
-            <video class="object-cover w-full h-full" autoplay loop muted>
-                <source src="{{ Vite::asset('resources/assets/placeholder.mp4') }}" type="video/mp4">
-            </video>
+                @foreach($video as $vid)
+                    {{-- Tampilkan Video dari Database --}}
+                    <video class="object-cover w-full h-full" autoplay loop muted>
+                        <source src="{{ asset('storage/' . $vid) }}" type="video/mp4">
+                    </video>
+                @endforeach
+            @else
+                {{-- Jika tidak ada video di database, tampilkan placeholder --}}
+                <p class="text-center text-gray-400">Tidak ada video tersedia.</p>
+            @endif
         </section>
         {{-- Video end --}}
 
@@ -135,7 +146,7 @@
                                 no
                                 bounds and experimentation is celebrated.</h3>
 
-                            <a href=""
+                            <a href="/about"
                                 class="opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 bg-white bg-opacity-50 px-4 py-2 mt-2 rounded-lg font-ibm text-white hover:bg-gray-500">
                                 ABOUT US
                             </a>
@@ -157,7 +168,7 @@
                             <h3 class="text-white text-[10px] font-extralight">A collective of visionary creators
                                 dedicated to shaping the future through design.</h3>
 
-                            <a href=""
+                            <a href="/#services"
                                 class="opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 bg-white bg-opacity-50 px-4 py-2 mt-2 rounded-lg font-ibm text-white hover:bg-gray-500">
                                 OUR SERVICES
                             </a>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\MetriFilmEquipment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MetriFilmEquipmentController extends Controller
 {
@@ -25,16 +26,19 @@ class MetriFilmEquipmentController extends Controller
             $embed_link = 'https://www.youtube.com/embed/' . $matches[1];
         }
 
+        // Ambil 3 project terbaru dari tabel metri_film_posts
+        $projects = DB::table('metri_film_equipment_posts')->latest()->take(3)->get();
+
         // Kirim ke view dengan nilai default jika null
         return view('service-tang-ting', [
             'youtube_link' => $embed_link ?? null,
-            'image'        => $data->image ?? null,
             'video'        => $data->video ?? null,
             'photo_1'      => $data->photo_1 ?? null,
             'photo_2'      => $data->photo_2 ?? null,
             'photo_3'      => $data->photo_3 ?? null,
             'photo_4'      => $data->photo_4 ?? null,
             'photo_5'      => $data->photo_5 ?? null,
+            'projects'     => $projects, // Pastikan projects dikirim dengan key yang benar
         ]);
     }
 }

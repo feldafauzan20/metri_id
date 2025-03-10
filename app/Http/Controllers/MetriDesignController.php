@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MetriDesign;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\MetriDesign;
 
 class MetriDesignController extends Controller
 {
     public function index()
     {        
-        // Ambil data terbaru dari database
+        // Ambil data terbaru dari tabel MetriDesign
         $data = MetriDesign::latest()->first([
             'youtube_link',
             'video',
@@ -26,15 +27,19 @@ class MetriDesignController extends Controller
             $embed_link = 'https://www.youtube.com/embed/' . $matches[1];
         }
 
-        // Kirim ke view dengan nilai default jika null
+        // Ambil 3 project terbaru dari tabel metri_design_posts
+        $projects = DB::table('metri_design_posts')->latest()->take(3)->get();
+
+        // Kirim data ke view
         return view('service-design', [
-            'youtube_link' => $embed_link ?? null,
+            'youtube_link' => $embed_link,
             'video'        => $data->video ?? null,
             'photo_1'      => $data->photo_1 ?? null,
             'photo_2'      => $data->photo_2 ?? null,
             'photo_3'      => $data->photo_3 ?? null,
             'photo_4'      => $data->photo_4 ?? null,
             'photo_5'      => $data->photo_5 ?? null,
+            'projects'     => $projects, // Pastikan projects dikirim dengan key yang benar
         ]);
     }
 }
