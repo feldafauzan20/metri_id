@@ -20,13 +20,9 @@ use App\Http\Controllers\AboutController;
 
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 
-
 Route::get('/contact_us', [ContactUsController::class, 'index'])->name('contact_us');
 
-
 Route::get('/projects/{slug}', [ProjectController::class, 'show'])->name('detail');
-
-
 
 Route::get('/contact', function () {
     return view('contact');

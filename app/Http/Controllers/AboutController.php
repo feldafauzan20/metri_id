@@ -9,7 +9,13 @@ class AboutController extends Controller
 {
     public function index()
     {
-        $about = About::first(); // Ambil data pertama dari tabel About
-        return view('about', compact('about'));
+        $data = About::latest()->first();
+
+        $video = $data['video'] ?? null;
+        $photo_2 = $data['photo_2'] ?? null;
+
+        return view('about', compact('video', 'photo_2'));
+        
     }
 }
+
