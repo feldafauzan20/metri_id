@@ -52,7 +52,7 @@
 
                 @foreach($video as $vid)
                     {{-- Tampilkan Video dari Database --}}
-                    <video class="object-cover w-full h-full" autoplay loop muted>
+                    <video class="object-cover w-full h-full" autoplay loop playsinline muted>
                         <source src="{{ asset('storage/' . $vid) }}" type="video/mp4">
                     </video>
                 @endforeach
@@ -63,20 +63,20 @@
         </section>
         {{-- Video end --}}
 
-        <div class="md:grid md:grid-cols-2 lg:grid-cols-4">
+        <div class="md:grid md:grid-cols-2 lg:grid-cols-4 lg:pl-64">
             {{-- SOCIAL START --}}
             <section class="w-full mx-4 py-8">
                 <div class=" flex flex-col">
-                    <h2 class="text-white text-2xl font-semibold pb-3">SOCIAL</h2>
+                    <h2 class="text-white text-2xl lg:text-4xl font-semibold pb-3">SOCIAL</h2>
                     <div class=" flex-col justify-start items-start gap-2 inline-flex">
-                        <a href=""
-                            class="self-stretch text-white text-[10px] font-normal font-['Plus Jakarta Sans']">INSTAGRAM</a>
-                        <a href=""
-                            class="self-stretch text-white text-[10px] font-normal font-['Plus Jakarta Sans']">LINKEDIN</a>
-                        <a href=""
-                            class="self-stretch text-white text-[10px] font-normal font-['Plus Jakarta Sans']">X</a>
-                        <a href=""
-                            class="self-stretch text-white text-[10px] font-normal font-['Plus Jakarta Sans']">Facebook</a>
+                        <a href="https://www.instagram.com/metri_id/" target="_blank"
+                            class="self-stretch text-white text-[10px] lg:text-sm font-normal font-['Plus Jakarta Sans']">INSTAGRAM</a>
+                        <a href="https://www.linkedin.com/company/pt-media-tren-idea-metri-id/" target="_blank"
+                            class="self-stretch text-white text-[10px] lg:text-sm font-normal font-['Plus Jakarta Sans']">LINKEDIN</a>
+                        <a href="https://x.com/metri_id/" target="_blank"
+                            class="self-stretch text-white text-[10px] lg:text-sm font-normal font-['Plus Jakarta Sans']">X</a>
+                        <a href="https://web.facebook.com/metri.id/" target="_blank"
+                            class="self-stretch text-white text-[10px] lg:text-sm font-normal font-['Plus Jakarta Sans']">Facebook</a>
                     </div>
                 </div>
             </section>
@@ -85,9 +85,9 @@
             {{-- LOCATION START --}}
             <section class="w-full mx-4 pb-6 pt-12 md:pt-8">
                 <div class=" flex flex-col">
-                    <h2 class="text-white text-2xl font-semibold pb-3">LOCATION</h2>
+                    <h2 class="text-white text-2xl lg:text-4xl  font-semibold pb-3">LOCATION</h2>
                     <div
-                        class="w-48 text-white text-[10px] font-medium font-['Plus Jakarta Sans'] uppercase leading-snug">
+                        class="w-48 text-white text-[10px] lg:text-sm font-medium font-['Plus Jakarta Sans'] uppercase leading-snug">
                         Jl. Potlot I No.14, Duren Tiga, Kec. Pancoran, Kota Jakarta Selatan, Daerah Khusus Ibukota
                         Jakarta
                         12760</div>
@@ -98,9 +98,9 @@
             {{-- PHONE START --}}
             <section class="w-full mx-4 pb-6 pt-12 lg:pt-8">
                 <div class=" flex flex-col">
-                    <h2 class="text-white text-2xl font-semibold pb-3">PHONE</h2>
+                    <h2 class="text-white text-2xl lg:text-4xl font-semibold pb-3">PHONE</h2>
                     <div
-                        class="w-48 text-white text-[10px] font-medium font-['Plus Jakarta Sans'] uppercase leading-snug">
+                        class="w-48 text-white text-[10px] lg:text-sm font-medium font-['Plus Jakarta Sans'] uppercase leading-snug">
                         <p>idn + 62 212-781-4039</p>
                     </div>
                 </div>
@@ -108,20 +108,18 @@
             {{-- PHONE END --}}
 
             {{-- EMAIL START --}}
-            <section class="w-full mx-4 pb-6 pt-12 lg:pt-8">
+            <section class="w-full mx-4 lg:mx-0 pb-6 pt-12 lg:pt-8">
                 <div class=" flex flex-col">
-                    <h2 class="text-white text-2xl font-semibold pb-3">E-MAIL</h2>
-                    <div
-                        class="w-48 text-white text-[10px] font-medium font-['Plus Jakarta Sans'] uppercase leading-snug">
-                        <p>hello@metri.id</p>
-                    </div>
+                    <h2 class="text-white text-2xl lg:text-4xl font-semibold pb-3">E-MAIL</h2>
+                    <p class="text-white text-[10px] lg:text-sm font-medium font-['Plus Jakarta Sans'] uppercase leading-snug">hello@metri.id</p>
+
                 </div>
             </section>
             {{-- EMAIL END --}}
         </div>
 
 
-        <hr class="mx-2">
+        <hr class="mx-2 lg:my-10">
 
         {{-- CONTACT FORM START --}}
         <x-layouts.contact-form />
@@ -129,12 +127,12 @@
         {{-- CONTACT FORM END --}}
 
         {{-- PROJECT START --}}
-        <section class="container mx-auto mt-14 px-4 md:px-7">
+        <section class=" mt-14 px-4 md:px-7">
             <div class="grid grid-cols-1 md:flex md:justify-center gap-6">
                 <!-- Card 1 -->
                 <div class="relative group overflow-hidden rounded-lg">
                     <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                        alt="Project Image" class="w-full h-auto object-cover rounded-lg">
+                        alt="Project Image" class="w-[880px] h-auto object-contain rounded-lg">
 
                     <!-- Overlay -->
                     <div
@@ -142,7 +140,7 @@
                         <div
                             class="flex flex-col items-start transition-all duration-300 translate-y-0 lg:translate-y-10 lg:group-hover:translate-y-0">
                             <p class="text-center text-white text-2xl font-medium">BEHIND THE STUDIO</p>
-                            <h3 class="text-white text-[10px] font-extralight">A dynamic space where imagination knows
+                            <h3 class="text-white text-[10px] md:text-sm font-extralight">A dynamic space where imagination knows
                                 no
                                 bounds and experimentation is celebrated.</h3>
 
@@ -165,7 +163,7 @@
                         <div
                             class="flex flex-col items-start transition-all duration-300 translate-y-0 lg:translate-y-10 lg:group-hover:translate-y-0">
                             <p class="text-center text-white text-2xl font-medium">CASE STUDIES</p>
-                            <h3 class="text-white text-[10px] font-extralight">A collective of visionary creators
+                            <h3 class="text-white text-[10px] md:text-sm font-extralight">A collective of visionary creators
                                 dedicated to shaping the future through design.</h3>
 
                             <a href="/#services"

@@ -40,25 +40,30 @@
 
         {{-- Video start --}}
         <section class="w-full" id="video">
-            <video class="object-cover w-full h-full" autoplay loop muted>
-                <source src="{{ asset('storage/' . $video) }}" type="video/mp4">
-            </video>
+            @if((is_array($video) && !empty($video)) || (is_array($youtube_link) && !empty($youtube_link)))
+                @if(is_array($youtube_link))
+                    @foreach($youtube_link as $link)
+                        {{-- Tampilkan Video YouTube --}}
+                        <iframe class="w-full h-[500px] pb-10 object-contain" src="{{ $link }}" frameborder="0" allowfullscreen></iframe>
+                    @endforeach
+                @endif
+
+                @if(is_array($video))
+                    @foreach($video as $vid)
+                        {{-- Tampilkan Video dari Database --}}
+                        <video class="object-cover w-full h-full" autoplay loop playsinline muted>
+                            <source src="{{ asset('storage/' . $vid) }}" type="video/mp4">
+                        </video>
+                    @endforeach
+                @endif
+            @else
+                {{-- Jika tidak ada video di database, tampilkan placeholder --}}
+                <p class="text-center text-gray-400">Tidak ada video tersedia.</p>
+            @endif
         </section>
         {{-- Video end --}}
 
-        {{-- TAGLINE START --}}
-        {{-- <section class="container lg:py-20 pt-5">
-            <div class="lg:w-[60%] mx-4">
-                <h2 class="lg:text-4xl md:text-2xl text-lg text-white">A Fusion of Form and Function in Customers’ Needs
-                </h2>
-                <p class="lg:pt-5 pt-2 text-white text-sm md:text-base font-extralight">We ensures products seamlessly
-                    integrate into
-                    users’
-                    needs. Form
-                    evokes emotions and aesthetic appeal, while function ensures efficiency and usability.</p>
-            </div>
-        </section> --}}
-        {{-- TAGLINE END --}}
+
 
         {{-- PORTO START --}}
         <section class="container">
