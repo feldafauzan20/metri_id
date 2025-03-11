@@ -99,7 +99,9 @@
                         <div class="absolute bottom-0 left-0 right-0 p-4 text-white bg-gradient-to-t from-black/60 to-transparent">
                             <div class="flex flex-col items-start transition-all duration-300 translate-y-0 lg:translate-y-10 lg:group-hover:translate-y-0">
                                 <p class="text-2xl font-medium text-center text-white">{{ $project->title }}</p>
-                                <h3 class="text-white text-[10px] font-extralight">{{ Str::limit($project->content, 80) }}</h3>
+                                <h3 class="text-white text-[10px] font-extralight">
+                                    {{ Str::limit(strip_tags($project->content), 80) }}
+                                </h3>
                                 <a href="{{ route('detail', ['slug' => $project->slug]) }}"
                                     class="px-4 py-2 mt-2 text-white transition-all duration-300 bg-white bg-opacity-50 rounded-lg opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 font-ibm hover:bg-gray-500">
                                     VIEW PROJECT

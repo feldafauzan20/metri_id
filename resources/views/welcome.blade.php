@@ -216,13 +216,23 @@
             </div>
         </section>
 
-
-        <section class="w-full h-full" aria-label="Featured video">
-            <video class="object-fill w-full h-full" autoplay loop muted playsinline aria-label="metri showcase video">
-                <source src="{{ asset('storage/' . $video) }}" type="video/mp4">
-                <p>Your browser does not support the video tag. Please update your browser to view this content.</p>
-            </video>
+        {{-- Video start --}}
+        <section class="w-full" id="video">
+            @if(!empty($youtube_links) || !empty($videos))
+            @foreach($youtube_links as $link)
+                <iframe class="w-full h-[500px] pb-10 object-contain" src="{{ $link }}" frameborder="0" allowfullscreen></iframe>
+            @endforeach
+        
+            @foreach($videos as $vid)
+                <video class="object-cover w-full h-full" autoplay loop playsinline muted>
+                    <source src="{{ asset('storage/' . $vid) }}" type="video/mp4">
+                </video>
+            @endforeach
+        @else
+            <p class="text-center text-gray-400">Tidak ada video tersedia.</p>
+        @endif        
         </section>
+        {{-- Video end --}}
 
         <div class="flex flex-row items-center w-full bg-[#056251] overflow-hidden" id="partners" aria-label="Our Partners">
             <p class="px-4 md:px-10 text-base md:text-lg font-thin text-white whitespace-nowrap">
@@ -385,7 +395,7 @@
                 "@type": "PostalAddress",
                 "addressCountry": "ID"
             },
-            "description": "metri provides 360 creative services including entertainment, design, digital marketing, film production, post-production, and event management for businesses and brands.",
+            "description": "metri provides 360 creative services including entertainment, design, digital marketing, film production, post, and event management for businesses and brands.",
             "service": [
                 {
                     "@type": "Service",
