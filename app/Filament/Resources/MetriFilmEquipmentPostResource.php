@@ -25,7 +25,9 @@ use App\Models\Project;
 class MetriFilmEquipmentPostResource extends Resource
 {
     protected static ?string $model = MetriFilmEquipmentPost::class;
-    protected static ?string $navigationGroup = 'Metri Film Equipment';
+    protected static ?string $navigationGroup = 'tang-ting';
+
+    protected static ?string $navigationLabel = 'tang-ting Posts';
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Forms\Form $form): Forms\Form

@@ -17,7 +17,8 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class MetriFilmEquipmentResource extends Resource
 {
     protected static ?string $model = MetriFilmEquipment::class;
-    protected static ?string $navigationGroup = 'Metri Film Equipment';
+    protected static ?string $navigationGroup = 'tang-ting';
+    protected static ?string $navigationLabel = 'tang-ting';
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
     public static function form(Form $form): Form

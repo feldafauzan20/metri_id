@@ -60,7 +60,7 @@
 
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-white bg-gradient-to-t from-black/60 to-transparent">
                                 <div class="flex flex-col items-start transition-all duration-300 translate-y-0 lg:translate-y-10 lg:group-hover:translate-y-0">
-                                    <p class="text-2xl font-medium text-center text-white">{{ $project->title }}</p>
+                                    <p class="text-2xl font-medium text-white">{{ $project->title }}</p>
                                     <h3 class="text-white text-[10px] md:text-base font-extralight">
                                         {{ strip_tags(Str::limit($project->content, 40)) }}
                                     </h3>                                    
