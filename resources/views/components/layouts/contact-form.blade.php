@@ -3,7 +3,7 @@
         <!-- Left Side -->
         <div class="w-full md:w-2/5">
             <!-- Contact Form Button -->
-            <a href="" class="border border-white px-6 py-2 rounded-full text-white mb-4">
+            <a class="border border-white px-6 py-2 rounded-full text-white mb-4">
                 Contact Form
             </a>
             <!-- Title -->

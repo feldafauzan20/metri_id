@@ -79,7 +79,7 @@
         <section class="w-full h-full lg:container">
             <div class="w-full h-full py-20 px-4">
                 <div class="md:flex md:w-full md:justify-center">
-                    <a href="#"
+                    <a 
                         class="border border-white px-6 py-2 rounded-full md:text-center text-white mb-4 text-sm md:text-lg lg:text-xl">
                         Concept
                     </a>
@@ -110,7 +110,7 @@
         <section class="w-full h-full lg:container">
             <div class="w-full h-full md:flex py-20 px-4">
                 <div class="md:w-1/2  md:mt-3">
-                    <a href="#"
+                    <a
                         class="border border-white px-6 py-2 rounded-full text-white mb-4 text-sm md:text-lg lg:text-xl">
                         Objective
                     </a>
@@ -131,7 +131,7 @@
         <section class="w-full h-full lg:container">
             <div class="w-full h-full md:flex py-20 px-4">
                 <div class="md:w-1/2  md:mt-3">
-                    <a href="#"
+                    <a 
                         class="border border-white px-6 py-2 rounded-full text-white mb-4 text-sm md:text-lg lg:text-xl">
                         Challenge
                     </a>
@@ -159,7 +159,7 @@
         <section class="w-full h-full lg:container">
             <div class="w-full h-full  py-10 px-4">
                 <div class="md:w-full md:flex md:justify-center">
-                    <a href="#"
+                    <a 
                         class="border border-white px-6 py-2 md:px-10 rounded-full text-white mb-4 md:mb-0 text-sm md:text-lg lg:text-xl">
                         Results
                     </a>
@@ -186,11 +186,11 @@
 
             <!-- Bagian Tombol -->
             <div class="flex  items-center gap-4  md:gap-2 lg:w-1/2 lg:max-w-screen-xl">
-                <a href="/contact"
+                <a wire:navigate target="_self" href="/contact"
                     class="mt-3 md:mt-5 text-xs lg:text-base font-normal text-white transition-all duration-300 ease-in-out bg-transparent border-2 border-white rounded-full py-2 px-16 md:w-3/4 text-center font-ibm hover:text-black hover:bg-white">
                     CONTACT US
                 </a>
-                <a href="/contact"
+                <a wire:navigate target="_self" href="/contact"
                     class="mt-3 md:mt-5 text-xs lg:text-base font-normal text-[#00413D] bg-white border-2 border-white rounded-full py-2 px-16 md:w-3/4 text-center font-ibm transition-all duration-300 ease-in-out hover:text-white hover:bg-[#022C29]">
                     WHATSAPP US
                 </a>

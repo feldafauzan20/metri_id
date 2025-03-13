@@ -14,7 +14,7 @@
             <div class="hero min-h-screen">
                 <div class="hero-content text-center">
                     <div class="w-full flex flex-col items-center">
-                        <a href=""><img src="{{ asset('images/logo/logo-metri-event.webp') }}" alt=""
+                        <a wire:navigate href="" target="_self"><img src="{{ asset('images/logo/logo-metri-event.webp') }}" alt=""
                                 class="w-[300px] lg:w-[600px]"></a>
                         <h2 class="lg:text-5xl text-2xl md:text-3xl font-bold text-white pb-4">
                             Craft and Build Your Event Whilst Focusing on The Message of the Event
@@ -27,7 +27,7 @@
                             <div class="flex items-center">
                                 <p class="px-4">LEARN MORE</p>
                             </div>
-                            <a href="#video"
+                            <a wire:navigate href="#video"
                                 class="w-12 h-12 flex items-center justify-center border-2 border-white rounded-full text-white hover:bg-white hover:text-gray-600 transition-all duration-300 ease-in-out">
                                 <i class="fas fa-arrow-down text-lg"></i>
                             </a>
@@ -89,20 +89,33 @@
 
         {{-- PROJECT START --}}
         <section class="container mx-auto my-32 px-4">
+            <div class="w-full px-4 md:px-8 lg:flex lg:justify-end">
+
+                <a wire:navigate href="/gallery" target="_self"
+                class="flex items-center space-x-2 group text-white">
+                <span class=" group-hover:border-gray-300 transition duration-300">See more...</span>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4 group-hover:translate-x-1 transition duration-300" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+            </div>
+
             <div class="grid grid-cols-1 gap-6 mx-4 md:mx-8 mt-8 md:grid-cols-2 lg:grid-cols-3">
                 @forelse ($projects as $project)
                     <div class="relative overflow-hidden rounded-lg h-96 group">
                         <img src="{{ asset('storage/' . $project->image) }}" 
                             alt="{{ $project->title }}" 
                             class="object-cover w-full h-full rounded-lg">
-        
+
                         <div class="absolute bottom-0 left-0 right-0 p-4 text-white bg-gradient-to-t from-black/60 to-transparent">
                             <div class="flex flex-col items-start transition-all duration-300 translate-y-0 lg:translate-y-10 lg:group-hover:translate-y-0">
                                 <p class="text-2xl font-medium text-center text-white">{{ $project->title }}</p>
                                 <h3 class="text-white text-[10px] font-extralight">
                                     {{ Str::limit(strip_tags($project->content), 80) }}
                                 </h3>
-                                <a href="{{ route('detail', ['slug' => $project->slug]) }}"
+                                <a wire:navigate href="{{ route('detail', ['slug' => $project->slug]) }}" target="_self"
                                     class="px-4 py-2 mt-2 text-white transition-all duration-300 bg-white bg-opacity-50 rounded-lg opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 font-ibm hover:bg-gray-500">
                                     VIEW PROJECT
                                 </a>

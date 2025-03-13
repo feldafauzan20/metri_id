@@ -69,13 +69,13 @@
                 <div class=" flex flex-col">
                     <h2 class="text-white text-2xl lg:text-4xl font-semibold pb-3">SOCIAL</h2>
                     <div class=" flex-col justify-start items-start gap-2 inline-flex">
-                        <a href="https://www.instagram.com/metri_id/" target="_blank"
+                        <a wire:navigate target="_self" href="https://www.instagram.com/metri_id/" target="_blank"
                             class="self-stretch text-white text-[10px] lg:text-sm font-normal font-['Plus Jakarta Sans']">INSTAGRAM</a>
-                        <a href="https://www.linkedin.com/company/pt-media-tren-idea-metri-id/" target="_blank"
+                        <a wire:navigate target="_self" href="https://www.linkedin.com/company/pt-media-tren-idea-metri-id/" target="_blank"
                             class="self-stretch text-white text-[10px] lg:text-sm font-normal font-['Plus Jakarta Sans']">LINKEDIN</a>
-                        <a href="https://x.com/metri_id/" target="_blank"
+                        <a wire:navigate target="_self" href="https://x.com/metri_id/" target="_blank"
                             class="self-stretch text-white text-[10px] lg:text-sm font-normal font-['Plus Jakarta Sans']">X</a>
-                        <a href="https://web.facebook.com/metri.id/" target="_blank"
+                        <a wire:navigate target="_self" href="https://web.facebook.com/metri.id/" target="_blank"
                             class="self-stretch text-white text-[10px] lg:text-sm font-normal font-['Plus Jakarta Sans']">Facebook</a>
                     </div>
                 </div>
@@ -131,8 +131,8 @@
             <div class="grid grid-cols-1 md:flex md:justify-center gap-6">
                 <!-- Card 1 -->
                 <div class="relative group overflow-hidden rounded-lg">
-                    <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                        alt="Project Image" class="w-[880px] h-auto object-contain rounded-lg">
+                    <img src="{{ asset('images/Group-131.png') }}"
+                        alt="Project Image" class="w-full h-full relative object-cover rounded-lg">
 
                     <!-- Overlay -->
                     <div
@@ -144,7 +144,7 @@
                                 no
                                 bounds and experimentation is celebrated.</h3>
 
-                            <a href="/about"
+                            <a wire:navigate target="_self" href="/about"
                                 class="opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 bg-white bg-opacity-50 px-4 py-2 mt-2 rounded-lg font-ibm text-white hover:bg-gray-500">
                                 ABOUT US
                             </a>
@@ -154,8 +154,8 @@
 
                 <!-- Card 2 -->
                 <div class="relative group overflow-hidden rounded-lg">
-                    <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                        alt="Project Image" class="w-full h-auto object-cover rounded-lg">
+                    <img src="{{ asset('images/Group-132.png') }}"
+                        alt="Project Image" class="w-full h-full object-cover rounded-lg">
 
                     <!-- Overlay -->
                     <div
@@ -166,7 +166,7 @@
                             <h3 class="text-white text-[10px] md:text-sm font-extralight">A collective of visionary creators
                                 dedicated to shaping the future through design.</h3>
 
-                            <a href="/#services"
+                            <a wire:navigate target="_self" href="/#services"
                                 class="opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 bg-white bg-opacity-50 px-4 py-2 mt-2 rounded-lg font-ibm text-white hover:bg-gray-500">
                                 OUR SERVICES
                             </a>

@@ -67,13 +67,13 @@
                 </p>
             </div>
             <div class="w-full md:w-4/5 pr-6 lg:w-1/2">
-                <p class="text-white text-[10px] font-normal md:text-base lg:text-lg">We are people with experience in
+                <p class="text-white text-[10px] font-normal md:text-base lg:text-lg pb-5">We are people with experience in
                     the creative
                     field,
                     production house, post-production, and media for over a decade. Now, we are forming Metri to turn
                     your ideas into reality.</p>
             </div>
-            <img src="{{ asset('storage/' . $photo) }}" alt="About Image" class="object-cover rounded-sm">
+                <img src="{{ asset('storage/' . $photo) }}" alt="About Image" class="object-cover rounded-sm w-full pr-8">
             @endforeach
         
         </section>
@@ -178,11 +178,11 @@
                 <h2 class="md:text-xl lg:text-4xl">Start your brand experience transformation now</h2>
             </div>
             <div class="flex md:w-1/2 md:justify-end gap-4">
-                <a href="/contact"
+                <a wire:navigate target="_self" href="/contact"
                     class="mt-3 text-xs lg:text-base font-normal text-white transition-all duration-300 ease-in-out bg-transparent border-2 border-white rounded-full py-2 px-8 font-ibm hover:text-black hover:bg-white">
                     CONTACT US
                 </a>
-                <a href="/contact"
+                <a wire:navigate target="_self" href="/contact"
                     class="mt-3 text-xs lg:text-base font-normal text-[#00413D] bg-white border-2 border-white rounded-full py-2 px-8 font-ibm transition-all duration-300 ease-in-out hover:text-white hover:bg-[#022C29]">
                     WHATSAPP US
                 </a>

@@ -13,7 +13,6 @@ class AboutController extends Controller
 
         $photos_2 = explode(',' , $data->photo_2);
 
-
         $videos = explode(',', $data->video);
 
         return view('about', compact('videos', 'photos_2'));

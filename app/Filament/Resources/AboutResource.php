@@ -21,7 +21,6 @@ class AboutResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('title'),
                 Forms\Components\FileUpload::make( 'video')->label('Video') ,
                 Forms\Components\FileUpload::make('photo_2')->label('Photo'),
             ]);
@@ -31,7 +30,6 @@ class AboutResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title')->sortable()->searchable(),
                 Tables\Columns\ImageColumn::make('video')->label('Video'),
                 Tables\Columns\ImageColumn::make('photo_2')->label('Photo'),
             ])

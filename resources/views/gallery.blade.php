@@ -34,14 +34,14 @@
                         ];
                     @endphp
             
-                    <a href="{{ route('gallery') }}" 
+                    <a wire:navigate target="_self" href="{{ route('gallery') }}" 
                         class="px-4 py-1 rounded-lg transition-all duration-300 cursor-pointer 
                             {{ request('filter') ? 'bg-white/10 text-white' : 'bg-white text-[#00413D]' }}">
                         All Projects
                     </a>
             
                     @foreach ($services as $key => $name)
-                        <a href="{{ route('gallery', ['filter' => $key]) }}" 
+                        <a wire:navigate target="_self" href="{{ route('gallery', ['filter' => $key]) }}" 
                             class="px-4 py-1 rounded-lg transition-all duration-300 cursor-pointer 
                                 {{ request('filter') == $key ? 'bg-white text-[#00413D]' : 'bg-white/10 text-white' }}">
                             {{ $name }}
@@ -64,7 +64,7 @@
                                     <h3 class="text-white text-[10px] md:text-base font-extralight">
                                         {{ strip_tags(Str::limit($project->content, 40)) }}
                                     </h3>                                    
-                                    <a href="{{ route('detail', ['slug' => $project->slug]) }}"
+                                    <a target="_self" wire:navigate href="{{ route('detail', ['slug' => $project->slug]) }}"
                                         class="px-4 py-2 mt-2 text-white transition-all duration-300 bg-white bg-opacity-50 rounded-lg opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 font-ibm hover:bg-gray-500">
                                         VIEW PROJECT
                                     </a>

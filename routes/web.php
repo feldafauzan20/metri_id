@@ -9,9 +9,6 @@ use App\Http\Controllers\MetriLandingPageController;
 use App\Http\Controllers\MetriPostController;
 use App\Http\Controllers\MetriFilmController;
 use App\Http\Controllers\ProjectController;
-use Esign\ConversionsApi\Facades\ConversionsApi;
-use FacebookAds\Object\ServerSide\Event;
-use FacebookAds\Object\ServerSide\UserData;
 use App\Http\Controllers\ProjectGalleryController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
@@ -27,31 +24,7 @@ Route::get('/about', [AboutController::class, 'index']);
 
 Route::get('/projects/{slug}', [ProjectController::class, 'show'])->name('detail');
 
-// Route::get('/contact', function () {
-//     return view('contact');
-// })->name('contact.form');
-
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
-
-// Route::get('/test-add-to-cart', function () {
-//     $userData = (new UserData())
-//         ->setEmail('test@example.com') // Gantilah dengan email user
-//         ->setClientIpAddress(request()->ip())
-//         ->setClientUserAgent(request()->userAgent());
-
-//     $event = (new Event())
-//         ->setEventName('AddToCart')
-//         ->setEventTime(time())
-//         ->setEventSourceUrl(request()->fullUrl())
-//         ->setUserData($userData);
-
-//     ConversionsApi::addEvent($event);
-//     ConversionsApi::sendEvents();
-
-//     return response()->json(['message' => 'AddToCart event sent successfully']);
-// });
-
-
 
 Route::get('/gallery', [ProjectGalleryController::class, 'index'])->name('gallery');
 
@@ -63,14 +36,15 @@ Route::get('/metri-digital', [MetriDigitalController::class, 'index']);
 Route::get('/metri-post', [MetriPostController::class, 'index']);
 Route::get('/metri-tang-ting', [MetriFilmEquipmentController::class, 'index']);
 Route::get('/metri-event', [MetriEventController::class, 'index']);
-
 Route::get('/contact_US', [ContactUsController::class, 'index'])->name('contact_US');
-
+Route::get('/gallery/{service_type}', [ProjectController::class, 'show'])->name('gallery.detail');
 
 Route::get('/detail', function() {
     return view( 'detail');
 });
 
-// Route::get('/gallery', [ProjectGalleryController::class, 'index'])->name('gallery');
-
+Route::get('/L152GD', function () {
+    return redirect('/L152GD');
+});
 Route::get('/gallery/{service_type}', [ProjectController::class, 'show'])->name('gallery.detail');
+

@@ -18,21 +18,16 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
- 
-
-
 class AdminPanelProvider extends PanelProvider
 {
-
     public function panel(Panel $panel): Panel
     {
         return $panel
             ->darkModeBrandLogo(asset('images/logo-putih.png'))
             ->brandLogo(asset('images/logo-gelap.png'))
             ->brandLogoHeight('2rem')
-            ->default()
-            ->id('admin')
-            ->path('admin')
+            ->id('filament') // Ganti ID untuk menghindari bentrok dengan admin
+            ->path('L152GD') // Ganti route admin menjadi L152GD
             ->login()
             ->colors([
                 'primary' => Color::Amber,
@@ -61,6 +56,11 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ]);
-            
+    }
+
+    // Fix redirect after login
+    public function getLoginRedirect(): string
+    {
+        return '/L152GD';
     }
 }

@@ -3,7 +3,7 @@
     <div class="container">
         <header class="flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4">
             <!-- Logo -->
-            <a href="/" class="logo">
+            <a wire:navigate href="/" target="_self" class="logo">
                 <img src="{{ asset('images/logo/logo-putih-baru.webp') }}" alt="Logo" class="w-24 sm:w-32 md:w-40">
             </a>
 
@@ -15,7 +15,7 @@
             </div>
 
             <!-- Contact Us Button -->
-            <a href="/contact"
+            <a wire:navigate href="/contact" target="_self"
                 class="text-sm sm:text-lg md:text-xl font-normal text-white bg-transparent rounded-full py-1 px-5 sm:px-7 border border-white outline-none hover:bg-white hover:text-black transition-all duration-300">
                 CONTACT US
             </a>
@@ -30,7 +30,7 @@
         <!-- Header dalam Menu -->
         <div class="absolute top-0 left-0 w-full flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4 z-50">
             <!-- Logo -->
-            <a href="/" class="w-24 sm:w-32">
+            <a wire:navigate href="/" target="_self" class="w-24 sm:w-32">
                 <img src="{{ asset('images/logo/logo-putih-baru.webp') }}" alt="Logo" class="w-full">
             </a>
 
@@ -44,7 +44,7 @@
             </button>
 
             <!-- Contact Us di kanan -->
-            <a href="/contact"
+            <a wire:navigate href="/contact" target="_self"
                 class="text-white border-2 border-white px-4 sm:px-6 py-1 sm:py-2 rounded-full transition-all duration-300 hover:bg-white hover:text-black">
                 CONTACT US
             </a>
@@ -56,18 +56,18 @@
             <div id="mainMenu"
                 class="absolute flex flex-col justify-center items-center w-full h-full transition-all duration-500 ease-in-out text-center gap-4 sm:gap-6">
 
-                <a href="/"
+                <a wire:navigate href="/" target="_self"
                     class="text-white hover:text-orange-200 font-bold text-4xl sm:text-5xl md:text-8xl">HOME</a>
-                <a href="/about"
+                <a wire:navigate href="/about" target="_self"
                     class="text-white hover:text-orange-200 font-bold text-4xl sm:text-5xl md:text-8xl">ABOUT
                     US</a>
                 <button id="servicesBtn"
                     class="text-white hover:text-orange-200 font-bold text-4xl sm:text-5xl md:text-8xl focus:outline-none">
                     OUR SERVICES
                 </button>
-                <a href="/contact"
+                <a wire:navigate href="/contact" target="_self"
                     class="text-white hover:text-orange-200 font-bold text-4xl sm:text-5xl md:text-8xl">CONTACT</a>
-                <a href="/gallery"
+                <a wire:navigate href="/gallery" target="_self"
                     class="text-white hover:text-orange-200 font-bold text-4xl sm:text-5xl md:text-8xl">GALLERY</a>
             </div>
 
@@ -76,13 +76,13 @@
 
                 <div
                     class="grid grid-cols-1 sm:grid-cols-2  md:mx-3 md:grid-cols-3 gap-x-8 gap-y-4 sm:gap-y-10 text-center text-white text-base sm:text-lg md:text-2xl font-light">
-                    <a href="/metri-entertainment" class="hover:text-orange-200 transition">metri entertainment</a>
-                    <a href="/metri-film" class="hover:text-orange-200 transition">metri film</a>
-                    <a href="/metri-post" class="hover:text-orange-200 transition">metri post</a>
-                    <a href="/metri-tang-ting" class="hover:text-orange-200 transition">tang ting</a>
-                    <a href="/metri-event" class="hover:text-orange-200 transition">metri event</a>
-                    <a href="/metri-digital" class="hover:text-orange-200 transition">metri digital</a>
-                    <a href="/metri-design" class="hover:text-orange-200 transition">metri design</a>
+                    <a wire:navigate href="/metri-entertainment" target="_self" class="hover:text-orange-200 transition">metri entertainment</a>
+                    <a wire:navigate href="/metri-film" target="_self" class="hover:text-orange-200 transition">metri film</a>
+                    <a wire:navigate href="/metri-post" target="_self" class="hover:text-orange-200 transition">metri post</a>
+                    <a wire:navigate href="/metri-tang-ting" target="_self" class="hover:text-orange-200 transition">tang ting</a>
+                    <a wire:navigate href="/metri-event" target="_self" class="hover:text-orange-200 transition">metri event</a>
+                    <a wire:navigate href="/metri-digital" target="_self" class="hover:text-orange-200 transition">metri digital</a>
+                    <a wire:navigate href="/metri-design" target="_self" class="hover:text-orange-200 transition">metri design</a>
                 </div>
 
                 <!-- Tombol Back to Menu -->
@@ -101,11 +101,11 @@
                 <div class="absolute bottom-6 w-full text-center text-white text-xs sm:text-sm font-light">
                     <p>©2025 METRI DESIGN</p>
                     <div class="mt-2 flex justify-center space-x-4">
-                        <a href="https://www.instagram.com/metri_id/" class="hover:text-orange-200 transition">INSTAGRAM
+                        <a wire:navigate href="https://www.instagram.com/metri_id/" class="hover:text-orange-200 transition">INSTAGRAM
                             ↗</a>
-                        <a href="https://www.linkedin.com/company/pt-media-tren-idea-metri-id/"
+                        <a wire:navigate href="https://www.linkedin.com/company/pt-media-tren-idea-metri-id/"
                             class="hover:text-orange-200 transition">LINKEDIN ↗</a>
-                        <a href="https://x.com/metri_id/" class="hover:text-orange-200 transition">X ↗</a>
+                        <a wire:navigate href="https://x.com/metri_id/" class="hover:text-orange-200 transition">X ↗</a>
                     </div>
                 </div>
             </div>
@@ -116,8 +116,8 @@
         <div class="absolute bottom-6 w-full px-4 sm:px-6 flex justify-between text-white text-xs sm:text-sm">
             <p>&copy;2025 METRI DESIGN</p>
             <div class="flex gap-3 sm:gap-4">
-                <a href="https://www.instagram.com/metri_id/" class="hover:text-gray-300">INSTAGRAM ↗</a>
-                <a href="https://www.linkedin.com/company/pt-media-tren-idea-metri-id/"
+                <a wire:navigate href="https://www.instagram.com/metri_id/" class="hover:text-gray-300">INSTAGRAM ↗</a>
+                <a wire:navigate href="https://www.linkedin.com/company/pt-media-tren-idea-metri-id/"
                     class="hover:text-gray-300">LINKEDIN ↗</a>
                 <a href="https://x.com/metri_id/" class="hover:text-gray-300">X ↗</a>
             </div>

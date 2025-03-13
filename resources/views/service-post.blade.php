@@ -14,7 +14,7 @@
             <div class="hero min-h-screen">
                 <div class="hero-content text-center">
                     <div class="w-full flex flex-col items-center">
-                        <a href=""><img src="{{ asset('images/logo/logo-metri-post.webp') }}" alt=""
+                        <a wire:navigate href="" target="_self"><img src="{{ asset('images/logo/logo-metri-post.webp') }}" alt=""
                                 class="w-[300px] lg:w-[600px]"></a>
                         <h2 class="lg:text-5xl text-2xl md:text-3xl font-bold text-white pb-4">
                             Refining Your Audio and Visual Story to Make It Even More Stand Out
@@ -26,7 +26,7 @@
                             <div class="flex items-center">
                                 <p class="px-4">LEARN MORE</p>
                             </div>
-                            <a href="#video"
+                            <a wire:navigate href="#video"
                                 class="w-12 h-12 flex items-center justify-center border-2 border-white rounded-full text-white hover:bg-white hover:text-gray-600 transition-all duration-300 ease-in-out">
                                 <i class="fas fa-arrow-down text-lg"></i>
                             </a>
@@ -101,7 +101,7 @@
                                 <h3 class="text-white text-[10px] font-extralight">
                                     {{ Str::limit(strip_tags($project->content), 80) }}
                                 </h3>
-                                <a href="{{ route('detail', ['slug' => $project->slug]) }}"
+                                <a wire:navigate href="{{ route('detail', ['slug' => $project->slug]) }}" target="_self"
                                     class="px-4 py-2 mt-2 text-white transition-all duration-300 bg-white bg-opacity-50 rounded-lg opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 font-ibm hover:bg-gray-500">
                                     VIEW PROJECT
                                 </a>

@@ -24,7 +24,7 @@
         <header class="absolute top-0 left-0 w-full px-6 md:px-10 pt-4 flex justify-between items-center z-[100]">
             <!-- Logo -->
             <div>
-                <a href="/" class="logo" aria-label="metri.id homepage">
+                <a wire:navigate href="/" target="_self" class="logo" aria-label="metri.id homepage">
                     <img src="{{ asset('images/logo/logo-putih-baru.webp') }}" alt="metri.id - PT. MEDIA TREN IDEA Logo" 
                     loading="lazy" class="w-[150px] lg:w-[300px]" width="300" height="auto" />
                 </a>
@@ -46,7 +46,7 @@
                         IDEA</p>
                     <hr class="mx-4">
                     <li class="group">
-                        <a href="/about" title="About metri"
+                        <a wire:navigate href="/about" target="_self" title="About metri"
                             class="block px-4 py-2 hover:bg-[#359381] lg:hover:bg-[#359381] lg:hover:text-white lg:rounded-lg">ABOUT</a>
                     </li>
 
@@ -68,38 +68,38 @@
                             class="hidden lg:absolute mx-2 py-2 my-2 lg:my-0 rounded-lg lg:left-0 bg-[#359381] lg:top-full lg:bg-[#359381] lg:bg-opacity-50  lg:backdrop-blur-md lg:shadow-lg lg:rounded-lg lg:w-48 space-y-2 text-white
                             lg:group-hover:block">
 
-                            <li><a href="/metri-entertainment" title="metri entertainment services"
+                            <li><a wire:navigate href="/metri-entertainment" target="_self" title="metri entertainment services"
                                     class="block px-4 py-1 hover:bg-white hover:text-[#359381]">metri
                                     entertainment</a></li>
-                            <li><a href="/metri-design" title="metri design services"
+                            <li><a wire:navigate href="/metri-design" target="_self" title="metri design services"
                                     class="block px-4 py-1 hover:bg-white hover:text-[#359381]">metri
                                     design</a></li>
-                            <li><a href="/metri-digital" title="metri digital services"
+                            <li><a wire:navigate href="/metri-digital" target="_self" title="metri digital services"
                                     class="block px-4 py-1 hover:bg-white hover:text-[#359381]">metri
                                     digital</a></li>
-                            <li><a href="/metri-film" title="metri film services" 
+                            <li><a wire:navigate href="/metri-film" target="_self" title="metri film services" 
                                    class="block px-4 py-1 hover:bg-white hover:text-[#359381]">metri
                                     film</a></li>
-                            <li><a href="/metri-post" title="metri post-production services" 
+                            <li><a wire:navigate href="/metri-post" target="_self" title="metri post-production services" 
                                    class="block px-4 py-1 hover:bg-white hover:text-[#359381]">metri
                                     post</a></li>
-                            <li><a href="/metri-tang-ting" title="tang ting services"
+                            <li><a wire:navigate href="/metri-tang-ting" target="_self" title="tang ting services"
                                     class="block px-4 py-1 hover:bg-white hover:text-[#359381]">tang
                                     ting</a></li>
-                            <li><a href="/metri-event" title="metri event services" 
+                            <li><a wire:navigate href="/metri-event" target="_self" title="metri event services" 
                                    class="block px-4 py-1 hover:bg-white hover:text-[#359381]">metri
                                     event</a></li>
                         </ul>
                     </li>
 
-                    <li class="group"><a href="#partners" title="View our partners"
+                    <li class="group"><a wire:navigate href="#partners" title="View our partners"
                             class="block px-4 py-2 hover:bg-[#359381] lg:hover:bg-[#359381] lg:rounded-lg lg:hover:text-white">OUR
                             PARTNERS</a>
                     </li>
-                    <li class="group"><a href="#contact" title="Contact us"
+                    <li class="group"><a wire:navigate href="#contact" title="Contact us"
                             class="block px-4 py-2 hover:bg-[#359381] lg:hover:bg-[#359381] lg:rounded-lg lg:hover:text-white">CONTACT</a>
                     </li>
-                    <li class="group"><a href="/gallery" title="View our gallery"
+                    <li class="group"><a wire:navigate href="/gallery" target="_self" title="View our gallery"
                             class="block px-4 py-2 hover:bg-[#359381] lg:hover:bg-[#359381] rounded-b-lg lg:rounded-lg lg:hover:text-white">GALLERY</a>
                     </li>
                 </ul>
@@ -166,7 +166,7 @@
                     ['link' => '/metri-tang-ting', 'image' => 'service6.webp', 'alt' => 'metri tang ting services', 'title' => 'Tang Ting Services'],
                     ['link' => '/metri-event', 'image' => 'service7.webp', 'alt' => 'metri event services', 'title' => 'Event Services']
                 ] as $service)
-                    <a href="{{ $service['link'] }}" title="{{ $service['title'] }}">
+                    <a wire:navigate href="{{ $service['link'] }}" target="_self" title="{{ $service['title'] }}">
                         <div
                             class="card absolute w-[80vw] sm:w-[300px] md:w-[400px] lg:w-[500px] h-[450px] md:h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
                             <div class="flex-1 overflow-hidden rounded-md card-img h-[50vh] md:h-[60vh]">
@@ -206,7 +206,7 @@
                     <h2
                         class="pt-8 lg:text-4xl md:text-2xl text-center lg:font-semibold font-extralight text-lg text-white block md:w-3/4 w-3/4">
                         Contact us at
-                        <a href="mailto:hello@metri.id" title="Email metri">hello@metri.id</a>
+                        <a wire:navigate href="mailto:hello@metri.id" title="Email metri">hello@metri.id</a>
                         for
                         any inquiry
                         regarding our 360 services.
@@ -353,11 +353,11 @@
                 </div>
                 <div class="flex w-full md:w-1/2 lg:w-full justify-center md:justify-end">
                     <div class="flex w-full md:w-full lg:w-3/5 gap-3 ">
-                        <a href="/contact" title="Contact metri for services"
+                        <a wire:navigate href="/contact" target="_self" title="Contact metri for services"
                             class="flex items-center justify-center w-1/2 md:w-1/2 text-base md:text-lg font-normal text-white transition-all duration-300 ease-in-out bg-transparent rounded-full btn outline-white outline font-ibm outline-2 hover:text-black hover:border-white hover:bg-white">
                             CONTACT US
                         </a>
-                        <a href="https://wa.me/6287784945201" target="_blank" rel="noopener" title="Contact metri via WhatsApp"
+                        <a wire:navigate href="https://wa.me/6287784945201" target="_blank" rel="noopener" title="Contact metri via WhatsApp"
                             class="flex items-center justify-center w-1/2 md:w-1/2 text-base md:text-lg font-normal text-[#00413D] bg-white outline-white outline outline-2 rounded-full btn font-ibm hover:text-white transition-all duration-300 ease-in-out hover:border-white hover:bg-[#022C29]">
                             WHATSAPP US
                         </a>
