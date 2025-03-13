@@ -66,7 +66,7 @@ class MetriDigitalPostResource extends Resource
 
             FileUpload::make('image')
             ->directory('metri_digital_posts')
-            ->label('Headline Image')
+            ->label('Headline Image 1:1')
             ->nullable(),
 
             FileUpload::make('gambar_1')

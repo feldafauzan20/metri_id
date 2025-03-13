@@ -5,7 +5,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
-use App\Models\MetriEntertainmentPost;
 
 class ProjectGalleryController extends Controller
 {
@@ -62,6 +61,27 @@ class ProjectGalleryController extends Controller
         return view('gallery', compact('projectsPaginated', 'filter'));
     }
 
+    public function gallery()
+{
+    $services = [
+        'metri_design_posts',
+        'metri_digital_posts',
+        'metri_entertainment_posts',
+        'metri_event_posts',
+        'metri_film_equipment_posts',
+        'metri_film_posts',
+        'metri_post_posts',
+    ];
+
+    $projects = [];
+
+    foreach ($services as $service) {
+        $projects[$service] = DB::table($service)->latest()->take(3)->get();
+    }
+
+    return view('gallery', compact('projects'));
+}
+
     public function film()
     {
         $projects = DB::table('metri_film_posts')->latest()->take(3)->get();
@@ -98,7 +118,7 @@ class ProjectGalleryController extends Controller
         return view('service-tang-ting', compact('projects'));
     }
     
-    public function postProduction()
+    public function post()
     {
         $projects = DB::table('metri_post_posts')->latest()->take(3)->get();
         return view('service-post', compact('projects'));

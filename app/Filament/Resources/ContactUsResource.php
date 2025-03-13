@@ -27,11 +27,8 @@ class ContactUsResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('name')->maxLength(255),
-                TextInput::make('email')->email()->maxLength(255),
-                Textarea::make('message'),
-                TextInput::make('video_link')->url()->nullable(),
-                FileUpload::make('photo')->image()->nullable(),
+                TextInput::make(name: 'youtube_link')->url()->nullable(),
+                FileUpload::make('video')->nullable()->label('video'),
             ]);
     }
 
@@ -39,11 +36,8 @@ class ContactUsResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name')->sortable()->searchable(),
-                TextColumn::make('email')->sortable()->searchable(),
-                TextColumn::make('message')->limit(255),
-                TextColumn::make('video_link')->limit(255),
-                ImageColumn::make('photo')->rounded(),
+                TextColumn::make('youtube_link')->limit(255),
+                ImageColumn::make('video')->rounded()->label('video'),
                 TextColumn::make('created_at')->label('Submitted At')->dateTime(),
             ])
             ->filters([])

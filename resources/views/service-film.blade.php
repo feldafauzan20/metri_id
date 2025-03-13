@@ -40,25 +40,30 @@
 
         {{-- Video start --}}
         <section class="w-full" id="video">
-            <video class="object-cover w-full h-full" autoplay loop muted>
-                <source src="{{ asset('storage/' . $video) }}" type="video/mp4">
-            </video>
+            @if((is_array($video) && !empty($video)) || (is_array($youtube_link) && !empty($youtube_link)))
+                @if(is_array($youtube_link))
+                    @foreach($youtube_link as $link)
+                        {{-- Tampilkan Video YouTube --}}
+                        <iframe class="w-full h-[500px] pb-10 object-contain" src="{{ $link }}" frameborder="0" allowfullscreen></iframe>
+                    @endforeach
+                @endif
+
+                @if(is_array($video))
+                    @foreach($video as $vid)
+                        {{-- Tampilkan Video dari Database --}}
+                        <video class="object-cover w-full h-full" autoplay loop playsinline muted>
+                            <source src="{{ asset('storage/' . $vid) }}" type="video/mp4">
+                        </video>
+                    @endforeach
+                @endif
+            @else
+                {{-- Jika tidak ada video di database, tampilkan placeholder --}}
+                <p class="text-center text-gray-400">Tidak ada video tersedia.</p>
+            @endif
         </section>
         {{-- Video end --}}
 
-        {{-- TAGLINE START --}}
-        {{-- <section class="container lg:py-20 pt-5">
-            <div class="lg:w-[60%] mx-4">
-                <h2 class="lg:text-4xl md:text-2xl text-lg text-white">A Fusion of Form and Function in Customers’ Needs
-                </h2>
-                <p class="lg:pt-5 pt-2 text-white text-sm md:text-base font-extralight">We ensures products seamlessly
-                    integrate into
-                    users’
-                    needs. Form
-                    evokes emotions and aesthetic appeal, while function ensures efficiency and usability.</p>
-            </div>
-        </section> --}}
-        {{-- TAGLINE END --}}
+
 
         {{-- PORTO START --}}
         <section class="container">
@@ -83,63 +88,31 @@
         {{-- PORTO END --}}
 
         {{-- PROJECT START --}}
-        <section class="container mx-auto mt-14 px-4 md:px-7">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:auto-rows-fr">
-                <!-- Card 1 -->
-                <div class="relative group overflow-hidden rounded-lg">
-                    <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                        alt="Project Image" class="w-full h-auto object-cover rounded-lg">
-                    <div
-                        class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-white">
-                        <div
-                            class="flex flex-col items-start transition-all duration-300 translate-y-0 lg:translate-y-10 lg:group-hover:translate-y-0">
-                            <p class="text-center text-white text-xs font-medium">Brand Ipsum</p>
-                            <h3 class="text-white text-2xl font-extralight">Ipsum Ad</h3>
-                            <a href=""
-                                class="opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 bg-white bg-opacity-50 px-4 py-2 mt-2 rounded-lg font-ibm text-white hover:bg-gray-500">
-                                VIEW PROJECT
-                            </a>
+        <section class="container mx-auto my-32 px-4">
+            <div class="grid grid-cols-1 gap-6 mx-4 md:mx-8 mt-8 md:grid-cols-2 lg:grid-cols-3">
+                @forelse ($projects as $project)
+                    <div class="relative overflow-hidden rounded-lg h-96 group">
+                        <img src="{{ asset('storage/' . $project->image) }}" 
+                            alt="{{ $project->title }}" 
+                            class="object-cover w-full h-full rounded-lg">
+        
+                        <div class="absolute bottom-0 left-0 right-0 p-4 text-white bg-gradient-to-t from-black/60 to-transparent">
+                            <div class="flex flex-col items-start transition-all duration-300 translate-y-0 lg:translate-y-10 lg:group-hover:translate-y-0">
+                                <p class="text-2xl font-medium text-center text-white">{{ $project->title }}</p>
+                                <h3 class="text-white text-[10px] font-extralight">
+                                    {{ Str::limit(strip_tags($project->content), 80) }}
+                                </h3>
+                                <a href="{{ route('detail', ['slug' => $project->slug]) }}"
+                                    class="px-4 py-2 mt-2 text-white transition-all duration-300 bg-white bg-opacity-50 rounded-lg opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 font-ibm hover:bg-gray-500">
+                                    VIEW PROJECT
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="relative group overflow-hidden rounded-lg">
-                    <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                        alt="Project Image" class="w-full h-auto object-cover rounded-lg">
-                    <div
-                        class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-white">
-                        <div
-                            class="flex flex-col items-start transition-all duration-300 translate-y-0 lg:translate-y-10 lg:group-hover:translate-y-0">
-                            <p class="text-center text-white text-xs font-medium">Brand Ipsum</p>
-                            <h3 class="text-white text-2xl font-extralight">Ipsum Ad</h3>
-                            <a href=""
-                                class="opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 bg-white bg-opacity-50 px-4 py-2 mt-2 rounded-lg font-ibm text-white hover:bg-gray-500">
-                                VIEW PROJECT
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="relative group overflow-hidden rounded-lg">
-                    <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                        alt="Project Image" class="w-full h-auto object-cover rounded-lg">
-                    <div
-                        class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-white">
-                        <div
-                            class="flex flex-col items-start transition-all duration-300 translate-y-0 lg:translate-y-10 lg:group-hover:translate-y-0">
-                            <p class="text-center text-white text-xs font-medium">Brand Ipsum</p>
-                            <h3 class="text-white text-2xl font-extralight">Ipsum Ad</h3>
-                            <a href=""
-                                class="opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 bg-white bg-opacity-50 px-4 py-2 mt-2 rounded-lg font-ibm text-white hover:bg-gray-500">
-                                VIEW PROJECT
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                @empty
+                    <p class="text-white text-center col-span-3">No projects available.</p>
+                @endforelse
             </div>
-
         </section>
         {{-- PROJECT END --}}
 

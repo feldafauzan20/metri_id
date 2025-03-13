@@ -9,5 +9,6 @@ class About extends Model
     use HasFactory;
 
     protected $table = 'about';
-    protected $fillable = ['title', 'photo_1', 'photo_2'];
+    protected $fillable = ['video', 'photo_2'];
+    
 }

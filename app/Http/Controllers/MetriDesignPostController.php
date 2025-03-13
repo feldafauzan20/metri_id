@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\MetriDesignPost;
 
 class MetriDesignPostController extends Controller

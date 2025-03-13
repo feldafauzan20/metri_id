@@ -12,10 +12,7 @@ class ContactUs extends Model
     protected $table = 'contact_us';
 
     protected $fillable = [
-        'name',
-        'email',
-        'message',
-        'video_link',
-        'photo',
+        'youtube_link',
+        'video',
     ];
 }

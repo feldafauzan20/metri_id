@@ -12,10 +12,7 @@ class MetriLandingPage extends Model
     protected $table = 'metri_landing_pages'; // Pastikan ini sesuai dengan nama tabel
 
     protected $fillable = [
-        'counter_1',
-        'counter_2',
-        'counter_3',
-        'counter_4',
         'video',
+        'youtube_link',
     ];
 }

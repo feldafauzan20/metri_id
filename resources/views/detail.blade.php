@@ -1,39 +1,39 @@
 <x-layouts.layout>
     <x-slot:title>
-        metri | {{ $project->title }}
+        metri | {{ $project->title }} - {{ $project->category }} {{ $project->year }}
     </x-slot:title>
 
     <x-slot:vite>
         @vite(['resources/js/service.js', 'resources/css/app.css'])
     </x-slot:vite>
+
     <main class="overflow-x-hidden">
         <x-layouts-service.navbar-services />
 
         {{-- HERO START --}}
         <section class="relative h-full my-40 flex md:my-48 lg:min-h-[50rem] lg:my-0 items-center justify-center text-white">
             <div class="w-full h-full flex flex-col md:flex-row md:container md:mx-auto md:gap-8 mx-4">
-                <!-- Bagian Kiri -->
+                <!-- Project Title Section -->
                 <div class="md:w-1/2 h-1/2 md:h-full flex items-end md:items-center p-6">
-                    <h2 class="text-2xl font-light md:text-4xl">{{ $project->title }}</h2>
+                    <h1 class="text-2xl font-light md:text-4xl">{{ $project->title }}</h1>
                 </div>
 
-                <!-- Bagian Kanan -->
-                <div
-                    class="md:w-1/2 h-1/2 md:h-full space-y-4 justify-end text-sm md:text-base flex flex-col md:justify-center p-6">
+                <!-- Project Details Section -->
+                <div class="md:w-1/2 h-1/2 md:h-full space-y-4 justify-end text-sm md:text-base flex flex-col md:justify-center p-6">
                     <div class="flex justify-between border-b border-white pb-3">
-                        <span class="text-white">Client</span>
+                        <span class="text-white font-medium">Client</span>
                         <span>{{ $project->client_name }}</span>
                     </div>
                     <div class="flex justify-between border-b border-white pb-3">
-                        <span class="text-white">Year</span>
+                        <span class="text-white font-medium">Year</span>
                         <span>{{ $project->year }}</span>
                     </div>
                     <div class="flex justify-between border-b border-white pb-3">
-                        <span class="text-white">Category</span>
+                        <span class="text-white font-medium">Category</span>
                         <span>{{ $project->category }}</span>
                     </div>
                     <div class="flex justify-between border-b border-white pb-3">
-                        <span class="text-white">Industry</span>
+                        <span class="text-white font-medium">Industry</span>
                         <span>{{ $project->industry }}</span>
                     </div>
                 </div>
@@ -41,19 +41,43 @@
         </section>
         {{-- HERO END --}}
 
-        {{-- Video start --}}
-        @foreach ($videos as $video)
-        <section class="w-full h-full" id="video">
-            <video class="object-cover w-full px-4 lg:px-0 h-full" autoplay loop muted playsinline>
-                <source src="{{ asset('storage/' . $video) }}" type="video/mp4">
-            </video>
+        {{-- Video showcase section --}}
+        <section class="w-full" id="project-video" aria-label="Project Video Showcase">
+            @if((isset($links) && is_array($links) && !empty($links)) || (isset($videos) && is_array($videos) && !empty($videos)))
+                @foreach($links as $link)
+                    {{-- YouTube Video Embedding --}}
+                    <iframe class="w-full h-[500px] pb-10 object-contain" 
+                            src="{{ $link }}" 
+                            title="{{ $project->title }} - Project Video" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                @endforeach
+
+                @foreach($videos as $vid)
+                    {{-- Database Video Display --}}
+                    <video class="object-cover w-full h-full" 
+                           controls 
+                           autoplay 
+                           loop 
+                           playsinline 
+                           muted 
+                           aria-label="{{ $project->title }} project video">
+                        <source src="{{ asset('storage/' . $vid) }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                @endforeach
+            @else
+                {{-- Fallback message if no videos are available --}}
+                <p class="text-center text-gray-400 py-8">No video content available for this project.</p>
+            @endif
         </section>
-        @endforeach
-        {{-- Video end --}}
+        {{-- Video section end --}}
 
         {{-- Concept start --}}
         <section class="w-full h-full lg:container">
-            <div class="w-full h-full py-10 px-4">
+            <div class="w-full h-full py-20 px-4">
                 <div class="md:flex md:w-full md:justify-center">
                     <a href="#"
                         class="border border-white px-6 py-2 rounded-full md:text-center text-white mb-4 text-sm md:text-lg lg:text-xl">
@@ -73,7 +97,7 @@
 
         {{-- img1 start --}}
         @foreach ($images1 as $image1)
-        <section class="lg:container">
+        <section class="lg:mx-20">
             <div class="w-full px-4">
                 <img src="{{ asset('storage/' . $image1) }}" alt="" class="object-cover rounded-md w-full">
             </div>
@@ -84,7 +108,7 @@
 
         {{-- Objective start --}}
         <section class="w-full h-full lg:container">
-            <div class="w-full h-full md:flex py-10 px-4">
+            <div class="w-full h-full md:flex py-20 px-4">
                 <div class="md:w-1/2  md:mt-3">
                     <a href="#"
                         class="border border-white px-6 py-2 rounded-full text-white mb-4 text-sm md:text-lg lg:text-xl">
@@ -101,11 +125,11 @@
         {{-- Objective end --}}
 
 
-        <hr class="mx-2 my-5 lg:mx-8">
+        <hr class="mx-2 my-5 lg:mx-20">
 
         {{-- Challenge start --}}
         <section class="w-full h-full lg:container">
-            <div class="w-full h-full md:flex py-10 px-4">
+            <div class="w-full h-full md:flex py-20 px-4">
                 <div class="md:w-1/2  md:mt-3">
                     <a href="#"
                         class="border border-white px-6 py-2 rounded-full text-white mb-4 text-sm md:text-lg lg:text-xl">

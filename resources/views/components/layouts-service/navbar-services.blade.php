@@ -3,7 +3,7 @@
     <div class="container">
         <header class="flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4">
             <!-- Logo -->
-            <a href="#" class="logo">
+            <a href="/" class="logo">
                 <img src="{{ asset('images/logo/logo-putih-baru.webp') }}" alt="Logo" class="w-24 sm:w-32 md:w-40">
             </a>
 
@@ -30,7 +30,7 @@
         <!-- Header dalam Menu -->
         <div class="absolute top-0 left-0 w-full flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4 z-50">
             <!-- Logo -->
-            <a href="#" class="w-24 sm:w-32">
+            <a href="/" class="w-24 sm:w-32">
                 <img src="{{ asset('images/logo/logo-putih-baru.webp') }}" alt="Logo" class="w-full">
             </a>
 

@@ -56,14 +56,14 @@
                     apply!</span>
                 <div class="flex flex-wrap gap-3 mt-2">
                     @foreach ([
-        'metri entertainment' => '#F45353',
-        'metri design' => '#3C7AD3',
-        'metri digital' => '#44AC60',
-        'metri event' => '#db4d4d',
-        'metri film' => '#06B6D4',
-        'tang ting' => '#d7bd38',
-        'metri post' => '#F7931E',
-    ] as $service => $color)
+                            'metri entertainment' => '#F45353',
+                            'metri design' => '#3C7AD3',
+                            'metri digital' => '#44AC60',
+                            'metri event' => '#db4d4d',
+                            'metri film' => '#06B6D4',
+                            'tang ting' => '#d7bd38',
+                            'metri post' => '#F7931E',
+                        ] as $service => $color)
                         <label
                             class="group flex items-center space-x-2 backdrop-blur-md bg-white/20 px-4 py-2 rounded-md cursor-pointer transition-all duration-300 ease-in-out hover:bg-white/30 active:scale-95">
                             <input type="checkbox" class="hidden peer" name="services[]" value="{{ $service }}">
