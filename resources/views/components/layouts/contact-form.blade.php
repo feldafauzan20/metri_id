@@ -1,4 +1,4 @@
-<section class="container mx-auto my-20 px-4 text-white">
+<section class=" my-20 px-4 text-white">
     <div class="flex flex-col md:flex-row items-start justify-between gap-6">
         <!-- Left Side -->
         <div class="w-full md:w-2/5">
@@ -10,10 +10,10 @@
         </div>
 
         <!-- Right Side: Form -->
-        <form action="{{ route('contact.submit') }}" method="POST" class="space-y-6 w-full">
+        <form action="{{ route('contact.submit') }}" method="POST" class="w-full">
             @csrf
 
-            <h2 class="text-xl font-light">
+            <h2 class="text-xl font-light mb-6 lg:w-10/12">
                 We’d love to hear it from you. If you have any inquiry about our 360 services, don’t hesitate to reach
                 out to us.
             </h2>
@@ -28,7 +28,7 @@
 
             <!-- Email -->
             <div>
-                <label class="block uppercase text-sm tracking-wider mb-2">EMAIL</label>
+                <label class="block uppercase text-sm tracking-wider my-6">EMAIL</label>
                 <input type="email" name="email"
                     class="w-full bg-transparent border-b border-white focus:outline-none focus:border-gray-300 transition duration-300 py-2"
                     required>
@@ -36,34 +36,34 @@
 
             <!-- Phone Number -->
             <div>
-                <label class="block uppercase text-sm tracking-wider mb-2">PHONE NUMBER</label>
+                <label class="block uppercase text-sm tracking-wider my-6">PHONE NUMBER</label>
                 <input type="tel" name="phone"
                     class="w-full bg-transparent border-b border-white focus:outline-none focus:border-gray-300 transition duration-300 py-2">
             </div>
 
             <!-- Message -->
             <div>
-                <label class="block uppercase text-sm tracking-wider mb-2">MESSAGE</label>
+                <label class="block uppercase text-sm tracking-wider my-6">MESSAGE</label>
                 <textarea name="message"
                     class="w-full bg-transparent border-b border-white focus:outline-none focus:border-gray-300 transition duration-300 py-2 h-20"
                     required></textarea>
             </div>
 
             <div>
-                <label class="block uppercase text-sm tracking-wider mb-2">Which Metri service do you need assistance
+                <label class="block uppercase text-sm tracking-wider mt-6">Which Metri service do you need assistance
                     with?</label>
                 <span class="text-[#cbd5e1e3]">You can select multiple options. Feel free to choose all that
                     apply!</span>
                 <div class="flex flex-wrap gap-3 mt-2">
                     @foreach ([
-                            'metri entertainment' => '#F45353',
-                            'metri design' => '#3C7AD3',
-                            'metri digital' => '#44AC60',
-                            'metri event' => '#db4d4d',
-                            'metri film' => '#06B6D4',
-                            'tang ting' => '#d7bd38',
-                            'metri post' => '#F7931E',
-                        ] as $service => $color)
+        'metri entertainment' => '#F45353',
+        'metri design' => '#3C7AD3',
+        'metri digital' => '#44AC60',
+        'metri event' => '#db4d4d',
+        'metri film' => '#06B6D4',
+        'tang ting' => '#d7bd38',
+        'metri post' => '#F7931E',
+    ] as $service => $color)
                         <label
                             class="group flex items-center space-x-2 backdrop-blur-md bg-white/20 px-4 py-2 rounded-md cursor-pointer transition-all duration-300 ease-in-out hover:bg-white/30 active:scale-95">
                             <input type="checkbox" class="hidden peer" name="services[]" value="{{ $service }}">
@@ -78,7 +78,7 @@
             </div>
 
             <!-- Checkbox -->
-            <div class="flex items-center space-x-2">
+            <div class="flex items-center space-x-2 my-3">
                 <input type="checkbox" id="agree" class="w-4 h-4 border-gray-400 bg-transparent">
                 <label for="agree" class="text-xs md:text-sm">By submitting, you agree to the use of your
                     data</label>

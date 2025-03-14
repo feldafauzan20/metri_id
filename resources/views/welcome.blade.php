@@ -4,11 +4,14 @@
     </x-slot:title>
 
     <x-slot:meta>
-        <meta name="description" content="Transform your brand with metri's 360 creative services including entertainment, design, digital, film, post-production, and event management. PT. MEDIA TREN IDEA.">
-        <meta name="keywords" content="metri, creative agency, design services, digital marketing, film production, post-production, event management, creative services, PT. MEDIA TREN IDEA">
+        <meta name="description"
+            content="Transform your brand with metri's 360 creative services including entertainment, design, digital, film, post-production, and event management. PT. MEDIA TREN IDEA.">
+        <meta name="keywords"
+            content="metri, creative agency, design services, digital marketing, film production, post-production, event management, creative services, PT. MEDIA TREN IDEA">
         <meta name="author" content="PT. MEDIA TREN IDEA">
         <meta property="og:title" content="metri | 360 Creative Services for Your Business">
-        <meta property="og:description" content="Craft, build, grow, and develop your brand with our comprehensive 360 creative services.">
+        <meta property="og:description"
+            content="Craft, build, grow, and develop your brand with our comprehensive 360 creative services.">
         <meta property="og:image" content="{{ asset('images/logo/logo-putih-baru.webp') }}">
         <meta property="og:url" content="{{ url('/') }}">
         <meta property="og:type" content="website">
@@ -25,13 +28,14 @@
             <!-- Logo -->
             <div>
                 <a wire:navigate href="/" target="_self" class="logo" aria-label="metri.id homepage">
-                    <img src="{{ asset('images/logo/logo-putih-baru.webp') }}" alt="metri.id - PT. MEDIA TREN IDEA Logo" 
-                    loading="lazy" class="w-[150px] lg:w-[300px]" width="300" height="auto" />
+                    <img src="{{ asset('images/logo/logo-putih-baru.webp') }}" alt="metri.id - PT. MEDIA TREN IDEA Logo"
+                        loading="lazy" class="w-[150px] lg:w-[300px]" width="300" height="auto" />
                 </a>
             </div>
 
             <!-- Hamburger Button -->
-            <button id="hamburger" type="button" class="lg:hidden relative z-50" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
+            <button id="hamburger" type="button" class="lg:hidden relative z-50" aria-label="Menu"
+                aria-expanded="false" aria-controls="nav-menu">
                 <span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
                 <span class="hamburger-line transition duration-300 ease-in-out"></span>
                 <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
@@ -68,7 +72,8 @@
                             class="hidden lg:absolute mx-2 py-2 my-2 lg:my-0 rounded-lg lg:left-0 bg-[#359381] lg:top-full lg:bg-[#359381] lg:bg-opacity-50  lg:backdrop-blur-md lg:shadow-lg lg:rounded-lg lg:w-48 space-y-2 text-white
                             lg:group-hover:block">
 
-                            <li><a wire:navigate href="/metri-entertainment" target="_self" title="metri entertainment services"
+                            <li><a wire:navigate href="/metri-entertainment" target="_self"
+                                    title="metri entertainment services"
                                     class="block px-4 py-1 hover:bg-white hover:text-[#359381]">metri
                                     entertainment</a></li>
                             <li><a wire:navigate href="/metri-design" target="_self" title="metri design services"
@@ -77,17 +82,18 @@
                             <li><a wire:navigate href="/metri-digital" target="_self" title="metri digital services"
                                     class="block px-4 py-1 hover:bg-white hover:text-[#359381]">metri
                                     digital</a></li>
-                            <li><a wire:navigate href="/metri-film" target="_self" title="metri film services" 
-                                   class="block px-4 py-1 hover:bg-white hover:text-[#359381]">metri
+                            <li><a wire:navigate href="/metri-film" target="_self" title="metri film services"
+                                    class="block px-4 py-1 hover:bg-white hover:text-[#359381]">metri
                                     film</a></li>
-                            <li><a wire:navigate href="/metri-post" target="_self" title="metri post-production services" 
-                                   class="block px-4 py-1 hover:bg-white hover:text-[#359381]">metri
+                            <li><a wire:navigate href="/metri-post" target="_self"
+                                    title="metri post-production services"
+                                    class="block px-4 py-1 hover:bg-white hover:text-[#359381]">metri
                                     post</a></li>
                             <li><a wire:navigate href="/metri-tang-ting" target="_self" title="tang ting services"
                                     class="block px-4 py-1 hover:bg-white hover:text-[#359381]">tang
                                     ting</a></li>
-                            <li><a wire:navigate href="/metri-event" target="_self" title="metri event services" 
-                                   class="block px-4 py-1 hover:bg-white hover:text-[#359381]">metri
+                            <li><a wire:navigate href="/metri-event" target="_self" title="metri event services"
+                                    class="block px-4 py-1 hover:bg-white hover:text-[#359381]">metri
                                     event</a></li>
                         </ul>
                     </li>
@@ -114,8 +120,8 @@
 
         <section
             class="relative flex items-center justify-center min-h-screen overflow-hidden bg-hero parallax-container will-change-transform">
-            <img src="{{ asset('images/sun.webp') }}" alt="Sun in metri landscape" id="sun" class="img-parallax"
-                loading="eager" width="700" height="700" />
+            <img src="{{ asset('images/sun.webp') }}" alt="Sun in metri landscape" id="sun"
+                class="img-parallax" loading="eager" width="700" height="700" />
             <img src="{{ asset('images/bg-showcase.webp') }}" alt="metri background showcase" id=""
                 class="img-parallax h-[105%]" loading="eager" width="1920" height="1080" />
             <img src="{{ asset('images/bird2.webp') }}" alt="Flying bird" id="bird2" class="img-parallax"
@@ -157,21 +163,14 @@
             <!-- Tambah margin top agar kartu tidak bertumpuk dengan teks -->
             <div
                 class="cards absolute top-[25%] md:top-[10%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[150vw] h-fit will-change-transform mt-[300px] md:mt-[400px]">
-                @foreach ([
-                    ['link' => '/metri-entertainment', 'image' => 'service1.webp', 'alt' => 'metri entertainment services', 'title' => 'Entertainment Services'],
-                    ['link' => '/metri-design', 'image' => 'service2.webp', 'alt' => 'metri design services', 'title' => 'Design Services'],
-                    ['link' => '/metri-digital', 'image' => 'service3.webp', 'alt' => 'metri digital services', 'title' => 'Digital Services'],
-                    ['link' => '/metri-film', 'image' => 'service4.webp', 'alt' => 'metri film services', 'title' => 'Film Services'],
-                    ['link' => '/metri-post', 'image' => 'service5.webp', 'alt' => 'metri post-production services', 'title' => 'Post-Production Services'],
-                    ['link' => '/metri-tang-ting', 'image' => 'service6.webp', 'alt' => 'metri tang ting services', 'title' => 'Tang Ting Services'],
-                    ['link' => '/metri-event', 'image' => 'service7.webp', 'alt' => 'metri event services', 'title' => 'Event Services']
-                ] as $service)
+                @foreach ([['link' => '/metri-entertainment', 'image' => 'service1.webp', 'alt' => 'metri entertainment services', 'title' => 'Entertainment Services'], ['link' => '/metri-design', 'image' => 'service2.webp', 'alt' => 'metri design services', 'title' => 'Design Services'], ['link' => '/metri-digital', 'image' => 'service3.webp', 'alt' => 'metri digital services', 'title' => 'Digital Services'], ['link' => '/metri-film', 'image' => 'service4.webp', 'alt' => 'metri film services', 'title' => 'Film Services'], ['link' => '/metri-post', 'image' => 'service5.webp', 'alt' => 'metri post-production services', 'title' => 'Post-Production Services'], ['link' => '/metri-tang-ting', 'image' => 'service6.webp', 'alt' => 'metri tang ting services', 'title' => 'Tang Ting Services'], ['link' => '/metri-event', 'image' => 'service7.webp', 'alt' => 'metri event services', 'title' => 'Event Services']] as $service)
                     <a wire:navigate href="{{ $service['link'] }}" target="_self" title="{{ $service['title'] }}">
                         <div
                             class="card absolute w-[80vw] sm:w-[300px] md:w-[400px] lg:w-[500px] h-[450px] md:h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
                             <div class="flex-1 overflow-hidden rounded-md card-img h-[50vh] md:h-[60vh]">
-                                <img src="{{ asset('images/' . $service['image']) }}" loading="lazy" alt="{{ $service['alt'] }}"
-                                    class="object-contain w-full h-full img-card" width="500" height="500" />
+                                <img src="{{ asset('images/' . $service['image']) }}" loading="lazy"
+                                    alt="{{ $service['alt'] }}" class="object-contain w-full h-full img-card"
+                                    width="500" height="500" />
                             </div>
                             <div class="card-content w-full h-[60px]">
                                 <p
@@ -218,23 +217,25 @@
 
         {{-- Video start --}}
         <section class="w-full" id="video">
-            @if(!empty($youtube_links) || !empty($videos))
-            @foreach($youtube_links as $link)
-                <iframe class="w-full h-[500px] pb-10 object-contain" src="{{ $link }}" frameborder="0" allowfullscreen></iframe>
-            @endforeach
-        
-            @foreach($videos as $vid)
-                <video class="object-cover w-full h-full" autoplay loop playsinline muted>
-                    <source src="{{ asset('storage/' . $vid) }}" type="video/mp4">
-                </video>
-            @endforeach
-        @else
-            <p class="text-center text-gray-400">Tidak ada video tersedia.</p>
-        @endif        
+            @if (!empty($youtube_links) || !empty($videos))
+                @foreach ($youtube_links as $link)
+                    <iframe class="w-full h-[500px] pb-10 object-contain" src="{{ $link }}" frameborder="0"
+                        allowfullscreen></iframe>
+                @endforeach
+
+                @foreach ($videos as $vid)
+                    <video class="object-cover w-full h-full" autoplay loop playsinline muted>
+                        <source src="{{ asset('storage/' . $vid) }}" type="video/mp4">
+                    </video>
+                @endforeach
+            @else
+                <p class="text-center text-gray-400">Tidak ada video tersedia.</p>
+            @endif
         </section>
         {{-- Video end --}}
 
-        <div class="flex flex-row items-center w-full bg-[#056251] overflow-hidden" id="partners" aria-label="Our Partners">
+        <div class="flex flex-row items-center w-full bg-[#056251] overflow-hidden" id="partners"
+            aria-label="Our Partners">
             <p class="px-4 md:px-10 text-base md:text-lg font-thin text-white whitespace-nowrap">
                 Our Partners
             </p>
@@ -242,59 +243,85 @@
                 <div class="flex flex-row items-center animate-scroll w-max gap-4 md:gap-6 py-2 md:py-3">
                     <!-- 12 gambar unik -->
                     <img src="{{ asset('images/partners/partner1.webp') }}"
-                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208" height="96">
+                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208"
+                        height="96">
                     <img src="{{ asset('images/partners/partner2.webp') }}"
-                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208" height="96">
+                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208"
+                        height="96">
                     <img src="{{ asset('images/partners/partner3.webp') }}"
-                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208" height="96">
+                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208"
+                        height="96">
                     <img src="{{ asset('images/partners/partner4.webp') }}"
-                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208" height="96">
+                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208"
+                        height="96">
                     <img src="{{ asset('images/partners/partner5.webp') }}"
-                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208" height="96">
+                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208"
+                        height="96">
                     <img src="{{ asset('images/partners/partner6.webp') }}"
-                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208" height="96">
+                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208"
+                        height="96">
                     <img src="{{ asset('images/partners/partner7.webp') }}"
-                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208" height="96">
+                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208"
+                        height="96">
                     <img src="{{ asset('images/partners/partner8.webp') }}"
-                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208" height="96">
+                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208"
+                        height="96">
                     <img src="{{ asset('images/partners/partner9.webp') }}"
-                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208" height="96">
+                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208"
+                        height="96">
                     <img src="{{ asset('images/partners/partner10.webp') }}"
-                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208" height="96">
+                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208"
+                        height="96">
                     <img src="{{ asset('images/partners/partner11.webp') }}"
-                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208" height="96">
+                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208"
+                        height="96">
                     <img src="{{ asset('images/partners/partner12.webp') }}"
-                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208" height="96">
+                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208"
+                        height="96">
                     <img src="{{ asset('images/partners/logo-vnc.webp') }}"
-                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="VNC partner logo" width="208" height="96">
+                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="VNC partner logo" width="208"
+                        height="96">
 
                     <!-- Duplikat untuk efek loop -->
                     <img src="{{ asset('images/partners/partner1.webp') }}"
-                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208" height="96">
+                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208"
+                        height="96">
                     <img src="{{ asset('images/partners/partner2.webp') }}"
-                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208" height="96">
+                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208"
+                        height="96">
                     <img src="{{ asset('images/partners/partner3.webp') }}"
-                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208" height="96">
+                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208"
+                        height="96">
                     <img src="{{ asset('images/partners/partner4.webp') }}"
-                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208" height="96">
+                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208"
+                        height="96">
                     <img src="{{ asset('images/partners/partner5.webp') }}"
-                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208" height="96">
+                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208"
+                        height="96">
                     <img src="{{ asset('images/partners/partner6.webp') }}"
-                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208" height="96">
+                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208"
+                        height="96">
                     <img src="{{ asset('images/partners/partner7.webp') }}"
-                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208" height="96">
+                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208"
+                        height="96">
                     <img src="{{ asset('images/partners/partner8.webp') }}"
-                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208" height="96">
+                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208"
+                        height="96">
                     <img src="{{ asset('images/partners/partner9.webp') }}"
-                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208" height="96">
+                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208"
+                        height="96">
                     <img src="{{ asset('images/partners/partner10.webp') }}"
-                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208" height="96">
+                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208"
+                        height="96">
                     <img src="{{ asset('images/partners/partner11.webp') }}"
-                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208" height="96">
+                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208"
+                        height="96">
                     <img src="{{ asset('images/partners/partner12.webp') }}"
-                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208" height="96">
+                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="Partner logo" width="208"
+                        height="96">
                     <img src="{{ asset('images/partners/logo-vnc.webp') }}"
-                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="VNC partner logo" width="208" height="96">
+                        class="w-32 h-16 md:w-52 md:h-24 object-contain" alt="VNC partner logo" width="208"
+                        height="96">
                 </div>
             </div>
         </div>
@@ -309,16 +336,19 @@
                         </h2>
                     </div>
                     <div class="flex flex-row items-center justify-end w-full overflow-hidden gap-x-2 md:gap-x-3">
-                        <button class="btn btn-circle btn-outline button-prev w-12 h-12" aria-label="Previous clients">
+                        <button class="btn btn-circle btn-outline button-prev w-12 h-12"
+                            aria-label="Previous clients">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" md:width="16"
-                                md:height="16" fill="white" class="bi bi-chevron-left" viewBox="0 0 16 16" aria-hidden="true">
+                                md:height="16" fill="white" class="bi bi-chevron-left" viewBox="0 0 16 16"
+                                aria-hidden="true">
                                 <path fill-rule="evenodd"
                                     d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
                             </svg>
                         </button>
                         <button class="btn btn-circle btn-outline button-next w-12 h-12" aria-label="Next clients">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" md:width="16"
-                                md:height="16" fill="white" class="bi bi-chevron-right" viewBox="0 0 16 16" aria-hidden="true">
+                                md:height="16" fill="white" class="bi bi-chevron-right" viewBox="0 0 16 16"
+                                aria-hidden="true">
                                 <path fill-rule="evenodd"
                                     d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
                             </svg>
@@ -330,7 +360,7 @@
                         @foreach (array_chunk(range(1, 21), 11) as $group)
                             <div class="swiper-slide flex justify-center items-center h-[250px] md:h-[300px]">
                                 <div
-                                    class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-3 gap-4 md:gap-6 place-items-center">
+                                    class="grid grid-cols-3 lg:grid-cols-5 sm:grid-cols-4 md:grid-cols-3 gap-4 md:gap-6 place-items-center">
                                     @foreach ($group as $i)
                                         <img src="{{ asset('images/clients/client-' . $i . '.webp') }}"
                                             class="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 object-contain"
@@ -357,7 +387,8 @@
                             class="flex items-center justify-center w-1/2 md:w-1/2 text-base md:text-lg font-normal text-white transition-all duration-300 ease-in-out bg-transparent rounded-full btn outline-white outline font-ibm outline-2 hover:text-black hover:border-white hover:bg-white">
                             CONTACT US
                         </a>
-                        <a wire:navigate href="https://wa.me/6287784945201" target="_blank" rel="noopener" title="Contact metri via WhatsApp"
+                        <a wire:navigate href="https://wa.me/6287784945201" target="_blank" rel="noopener"
+                            title="Contact metri via WhatsApp"
                             class="flex items-center justify-center w-1/2 md:w-1/2 text-base md:text-lg font-normal text-[#00413D] bg-white outline-white outline outline-2 rounded-full btn font-ibm hover:text-white transition-all duration-300 ease-in-out hover:border-white hover:bg-[#022C29]">
                             WHATSAPP US
                         </a>
