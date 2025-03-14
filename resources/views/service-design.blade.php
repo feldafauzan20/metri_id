@@ -1,38 +1,55 @@
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XXXXXX');
+</script>
+
 <x-layouts.layout>
     <x-slot:title>
-        metri | design
+        metri design | Crafting Brand Identity Through Design
     </x-slot:title>
+
+    <x-slot:meta>
+        <meta name="description" content="Metri Design crafts unique brand identities through meticulous design. Explore our portfolio & video showcases. Learn how we can elevate your brand's communication.">
+        <meta name="keywords" content="Metri Design, brand identity, graphic design, design portfolio, video design, creative design, logo design, visual communication">
+        <meta property="og:title" content="Metri Design | Crafting Brand Identity Through Design">
+        <meta property="og:description" content="Metri Design crafts unique brand identities through meticulous design. Explore our portfolio & video showcases. Learn how we can elevate your brand's communication.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ request()->url() }}">
+        <meta property="og:image" content="{{ asset('images/logo/logo-metri-design.webp') }}">
+    </x-slot:meta>
 
     <x-slot:vite>
         @vite(['resources/js/service.js', 'resources/css/app.css'])
     </x-slot:vite>
+
     <main>
         <x-layouts-service.navbar-services />
 
         {{-- HERO START --}}
-        <section>
-            <div class="hero min-h-screen">
-                <div class="hero-content text-center">
-                    <div class="w-full flex flex-col items-center">
-                        <a wire:navigate href="" target="_self"><img
-                                src="{{ asset('images/logo/logo-metri-design.webp') }}" alt=""
-                                class="w-[300px] lg:w-[600px]"></a>
-                        <h2 class="lg:text-5xl text-2xl md:text-3xl font-bold text-white pb-4">
-                            Throughly Crafting Design to Fit Your Brand Identity
-                        </h2>
-                        <div class="w-full md:w-11/12 text-sm md:text-base text-white">
-                            <p>We design thoroughly and in detail so that your brand's identity and communication are
-                                conveyed effectively</p>
+        <section class="hero min-h-screen">
+            <div class="hero-content text-center">
+                <div class="w-full flex flex-col items-center">
+                    <a wire:navigate href="/" target="_self">
+                        <img src="{{ asset('images/logo/logo-metri-design.webp') }}" alt="Metri Design Logo" class="w-[300px] lg:w-[600px]">
+                    </a>
+                    <h1 class="lg:text-5xl text-2xl md:text-3xl font-bold text-white pb-4" itemprop="headline">
+                        Throughly Crafting Design to Fit Your Brand Identity
+                    </h1>
+                    <div class="w-full md:w-11/12 text-sm md:text-base text-white" itemprop="description">
+                        <p>We design thoroughly and in detail so that your brand's identity and communication are conveyed effectively.</p>
+                    </div>
+                    <div class="w-full justify-center text-base flex text-white py-6 font-ibm font-medium">
+                        <div class="flex items-center">
+                            <p class="px-4">LEARN MORE</p>
                         </div>
-                        <div class="w-full justify-center text-base flex text-white py-6 font-ibm font-medium">
-                            <div class="flex items-center">
-                                <p class="px-4">LEARN MORE</p>
-                            </div>
-                            <a wire:navigate href="#video"
-                                class="w-12 h-12 flex items-center justify-center border-2 border-white rounded-full text-white hover:bg-white hover:text-gray-600 transition-all duration-300 ease-in-out">
-                                <i class="fas fa-arrow-down text-lg"></i>
-                            </a>
-                        </div>
+                        <a wire:navigate href="#video" class="w-12 h-12 flex items-center justify-center border-2 border-white rounded-full text-white hover:bg-white hover:text-gray-600 transition-all duration-300 ease-in-out">
+                            <i class="fas fa-arrow-down text-lg"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -45,59 +62,55 @@
                 @if (is_array($youtube_link))
                     @foreach ($youtube_link as $link)
                         {{-- Tampilkan Video YouTube --}}
-                        <iframe class="w-full h-[500px] pb-10 object-contain" src="{{ $link }}" frameborder="0"
-                            allowfullscreen></iframe>
+                        <div itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+                            <meta itemprop="name" content="Metri Design Showcase Video">
+                            <meta itemprop="description" content="Showcase of Metri Design's creative design videos.">
+                            <meta itemprop="uploadDate" content="{{ now()->toIso8601String() }}">
+                            <meta itemprop="embedUrl" content="{{ $link }}">
+                            <iframe class="w-full h-[500px] pb-10 object-contain" src="{{ $link }}" frameborder="0" allowfullscreen></iframe>
+                        </div>
                     @endforeach
                 @endif
 
                 @if (is_array($video))
                     @foreach ($video as $vid)
                         {{-- Tampilkan Video dari Database --}}
-                        <video class="object-cover w-full h-full" autoplay loop playsinline muted>
-                            <source src="{{ asset('storage/' . $vid) }}" type="video/mp4">
-                        </video>
+                        <div itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+                            <meta itemprop="name" content="Metri Design Showcase Video">
+                            <meta itemprop="description" content="Showcase of Metri Design's creative design videos.">
+                            <meta itemprop="uploadDate" content="{{ now()->toIso8601String() }}">
+                            <meta itemprop="contentUrl" content="{{ asset('storage/' . $vid) }}">
+                            <video class="object-cover w-full h-full" controls autoplay loop playsinline muted>
+                                <source src="{{ asset('storage/' . $vid) }}" type="video/mp4">
+                            </video>
+                        </div>
                     @endforeach
                 @endif
             @else
                 {{-- Jika tidak ada video di database, tampilkan placeholder --}}
-                <p class="text-center text-gray-400">Tidak ada video tersedia.</p>
+                <p class="text-center text-gray-400">No video available.</p>
             @endif
         </section>
         {{-- Video end --}}
 
-
-
         {{-- PORTO START --}}
-        <section class="lg:mx-4">
+        <section class="lg:mx-4" itemprop="image" itemscope itemtype="http://schema.org/ImageGallery">
             <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-4 lg:mx-auto mx-4 lg:py-20 py-10">
-                <img src="{{ asset('storage/' . $photo_1) }}" alt="Airplane"
-                    class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg">
-
-                <img src="{{ asset('storage/' . $photo_2) }}" alt="Mountain"
-                    class="col-span-1 row-span-1 w-full h-full object-cover rounded-lg">
-
-                <img src="{{ asset('storage/' . $photo_3) }}" alt="Piano"
-                    class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg">
-
-                <img src="{{ asset('storage/' . $photo_4) }}" alt="Sunset"
-                    class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg">
-
-                <img src="{{ asset('storage/' . $photo_5) }}" alt="Portrait"
-                    class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg">
+                <img src="{{ asset('storage/' . $photo_1) }}" alt="Metri Design Portfolio: Airplane" class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg" itemprop="contentUrl">
+                <img src="{{ asset('storage/' . $photo_2) }}" alt="Metri Design Portfolio: Mountain" class="col-span-1 row-span-1 w-full h-full object-cover rounded-lg" itemprop="contentUrl">
+                <img src="{{ asset('storage/' . $photo_3) }}" alt="Metri Design Portfolio: Piano" class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg" itemprop="contentUrl">
+                <img src="{{ asset('storage/' . $photo_4) }}" alt="Metri Design Portfolio: Sunset" class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg" itemprop="contentUrl">
+                <img src="{{ asset('storage/' . $photo_5) }}" alt="Metri Design Portfolio: Portrait" class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg" itemprop="contentUrl">
             </div>
-
         </section>
         {{-- PORTO END --}}
 
         {{-- PROJECT START --}}
         <section class="my-32 px-4">
             <div class="w-full px-4 md:px-8 lg:flex lg:justify-end">
-
                 <a wire:navigate href="/gallery" target="_self" class="flex items-center space-x-2 group text-white">
                     <span class=" group-hover:border-gray-300 transition duration-300">See more...</span>
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        class="w-4 h-4 group-hover:translate-x-1 transition duration-300" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover:translate-x-1 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
                 </a>
@@ -105,25 +118,20 @@
 
             <div class="grid grid-cols-1 gap-6 mx-4 md:mx-8 mt-8 md:grid-cols-2 lg:grid-cols-3">
                 @forelse ($projects as $project)
-                    <div class="relative overflow-hidden rounded-lg h-96 group">
-                        <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}"
-                            class="object-cover w-full h-full rounded-lg">
-
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-4 text-white bg-gradient-to-t from-black/60 to-transparent">
-                            <div
-                                class="flex flex-col items-start transition-all duration-300 translate-y-0 lg:translate-y-10 lg:group-hover:translate-y-0">
-                                <p class="text-2xl font-medium text-center text-white">{{ $project->title }}</p>
-                                <h3 class="text-white text-[10px] font-extralight">
+                    <div class="relative overflow-hidden rounded-lg h-96 group" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                        <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}" class="object-cover w-full h-full rounded-lg" itemprop="image">
+                        <div class="absolute bottom-0 left-0 right-0 p-4 text-white bg-gradient-to-t from-black/60 to-transparent">
+                            <div class="flex flex-col items-start transition-all duration-300 translate-y-0 lg:translate-y-10 lg:group-hover:translate-y-0">
+                                <p class="text-2xl font-medium text-center text-white" itemprop="name">{{ $project->title }}</p>
+                                <h3 class="text-white text-[10px] font-extralight" itemprop="description">
                                     {{ Str::limit(strip_tags($project->content), 80) }}
                                 </h3>
-                                <a wire:navigate href="{{ route('detail', ['slug' => $project->slug]) }}"
-                                    target="_self"
-                                    class="px-4 py-2 mt-2 text-white transition-all duration-300 bg-white bg-opacity-50 rounded-lg opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 font-ibm hover:bg-gray-500">
+                                <a wire:navigate href="{{ route('detail', ['slug' => $project->slug]) }}" target="_self" class="px-4 py-2 mt-2 text-white transition-all duration-300 bg-white bg-opacity-50 rounded-lg opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 font-ibm hover:bg-gray-500" itemprop="url">
                                     VIEW PROJECT
                                 </a>
                             </div>
                         </div>
+                        <meta itemprop="position" content="{{ $loop->iteration }}" />
                     </div>
                 @empty
                     <p class="text-white text-center col-span-3">No projects available.</p>
@@ -132,16 +140,9 @@
         </section>
         {{-- PROJECT END --}}
 
-
         {{-- CONTACT FORM START --}}
         <x-layouts.contact-form />
-
         {{-- CONTACT FORM END --}}
-
-
-
-
-
 
     </main>
 </x-layouts.layout>

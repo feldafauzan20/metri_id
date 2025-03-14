@@ -1,25 +1,37 @@
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XXXXXX');
+</script>
+
 <x-layouts.layout>
     <x-slot:title>
-        metri | film
+        Metri Films | Crafting Cinematic Stories for Every Audience
     </x-slot:title>
 
     <x-slot:vite>
         @vite(['resources/js/service.js', 'resources/css/app.css'])
     </x-slot:vite>
+
     <main>
         <x-layouts-service.navbar-services />
 
         {{-- HERO START --}}
-        <section>
+        <section aria-label="Main Section: Film Production and Storytelling">
             <div class="hero min-h-screen">
                 <div class="hero-content text-center">
                     <div class="w-full flex flex-col items-center">
-                        <a wire:navigate href="" target="_self"><img
-                                src="{{ asset('images/logo/logo-metri-film.webp') }}" alt=""
-                                class="w-[300px] lg:w-[600px]"></a>
-                        <h2 class="lg:text-5xl text-2xl md:text-3xl font-bold text-white pb-4">
+                        <a wire:navigate href="/" target="_self" aria-label="Metri Films Logo">
+                            <img src="{{ asset('images/logo/logo-metri-film.webp') }}"
+                                alt="Metri Films Logo - Professional Film Production Services" class="w-[300px] lg:w-[600px]">
+                        </a>
+                        <h1 class="lg:text-5xl text-2xl md:text-3xl font-bold text-white pb-4">
                             Every Frame is A Painting; We Meticulously Build Stories for Wide genres and Audiences
-                        </h2>
+                        </h1>
                         <div class="w-full md:w-11/12 text-sm md:text-base lg:text-lg text-white">
                             <p>We don’t just write stories; we build stories into their own worlds, loved by a wide
                                 audience.</p>
@@ -29,7 +41,8 @@
                                 <p class="px-4">LEARN MORE</p>
                             </div>
                             <a wire:navigate href="#video"
-                                class="w-12 h-12 flex items-center justify-center border-2 border-white rounded-full text-white hover:bg-white hover:text-gray-600 transition-all duration-300 ease-in-out">
+                                class="w-12 h-12 flex items-center justify-center border-2 border-white rounded-full text-white hover:bg-white hover:text-gray-600 transition-all duration-300 ease-in-out"
+                                aria-label="Scroll to Film Showcase Video">
                                 <i class="fas fa-arrow-down text-lg"></i>
                             </a>
                         </div>
@@ -40,60 +53,60 @@
         {{-- HERO END --}}
 
         {{-- Video start --}}
-        <section class="w-full" id="video">
+        <section class="w-full" id="video" aria-label="Film Showcase Video Section">
             @if ((is_array($video) && !empty($video)) || (is_array($youtube_link) && !empty($youtube_link)))
                 @if (is_array($youtube_link))
                     @foreach ($youtube_link as $link)
-                        {{-- Tampilkan Video YouTube --}}
-                        <iframe class="w-full h-[500px] pb-10 object-contain" src="{{ $link }}" frameborder="0"
-                            allowfullscreen></iframe>
+                        {{-- Display YouTube Video --}}
+                        <div class="w-full h-[500px] pb-10">
+                            <iframe class="w-full h-full object-contain" src="{{ $link }}" title="Metri Film Production Video" frameborder="0"
+                                allowfullscreen></iframe>
+                        </div>
                     @endforeach
                 @endif
 
                 @if (is_array($video))
                     @foreach ($video as $vid)
-                        {{-- Tampilkan Video dari Database --}}
-                        <video class="object-cover w-full h-full" autoplay loop playsinline muted>
+                        {{-- Display Video from Database --}}
+                        <video class="object-cover w-full h-full" autoplay loop playsinline muted
+                            title="Metri Film Storytelling Video">
                             <source src="{{ asset('storage/' . $vid) }}" type="video/mp4">
                         </video>
                     @endforeach
                 @endif
             @else
-                {{-- Jika tidak ada video di database, tampilkan placeholder --}}
-                <p class="text-center text-gray-400">Tidak ada video tersedia.</p>
+                {{-- If no video in database, display placeholder --}}
+                <p class="text-center text-gray-400">No film showcase video available.</p>
             @endif
         </section>
         {{-- Video end --}}
 
-
-
         {{-- PORTO START --}}
-        <section class="lg:mx-4">
+        <section class="lg:mx-4" id="portfolio" aria-label="Film Portfolio Section">
             <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-4 lg:mx-auto mx-4 lg:py-20 py-10">
-                <img src="{{ asset('storage/' . $photo_1) }}" alt="Airplane"
-                    class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg">
+                <img src="{{ asset('storage/' . $photo_1) }}" alt="Film Portfolio: Project 1"
+                    class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg" loading="lazy">
 
-                <img src="{{ asset('storage/' . $photo_2) }}" alt="Mountain"
-                    class="col-span-1 row-span-1 w-full h-full object-cover rounded-lg">
+                <img src="{{ asset('storage/' . $photo_2) }}" alt="Film Portfolio: Project 2"
+                    class="col-span-1 row-span-1 w-full h-full object-cover rounded-lg" loading="lazy">
 
-                <img src="{{ asset('storage/' . $photo_3) }}" alt="Piano"
-                    class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg">
+                <img src="{{ asset('storage/' . $photo_3) }}" alt="Film Portfolio: Project 3"
+                    class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg" loading="lazy">
 
-                <img src="{{ asset('storage/' . $photo_4) }}" alt="Sunset"
-                    class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg">
+                <img src="{{ asset('storage/' . $photo_4) }}" alt="Film Portfolio: Project 4"
+                    class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg" loading="lazy">
 
-                <img src="{{ asset('storage/' . $photo_5) }}" alt="Portrait"
-                    class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg">
+                <img src="{{ asset('storage/' . $photo_5) }}" alt="Film Portfolio: Project 5"
+                    class="col-span-1 row-span-2 w-full h-full object-cover rounded-lg" loading="lazy">
             </div>
-
         </section>
         {{-- PORTO END --}}
 
         {{-- PROJECT START --}}
-        <section class=" my-32 px-4">
+        <section class="my-32 px-4" id="proyek" aria-label="Recent Film Projects Section">
             <div class="w-full px-4 md:px-8 lg:flex lg:justify-end">
-
-                <a wire:navigate href="/gallery" target="_self" class="flex items-center space-x-2 group text-white">
+                <a wire:navigate href="/gallery" target="_self" class="flex items-center space-x-2 group text-white"
+                    aria-label="View More Film Projects">
                     <span class=" group-hover:border-gray-300 transition duration-300">See more...</span>
                     <svg xmlns="http://www.w3.org/2000/svg"
                         class="w-4 h-4 group-hover:translate-x-1 transition duration-300" fill="none"
@@ -105,7 +118,8 @@
 
             <div class="grid grid-cols-1 gap-6 mx-4 md:mx-8 mt-8 md:grid-cols-2 lg:grid-cols-3">
                 @forelse ($projects as $project)
-                    <div class="relative overflow-hidden rounded-lg h-96 group">
+                    <div class="relative overflow-hidden rounded-lg h-96 group"
+                        aria-label="Film Project: {{ $project->title }}">
                         <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}"
                             class="object-cover w-full h-full rounded-lg">
 
@@ -119,14 +133,15 @@
                                 </h3>
                                 <a wire:navigate href="{{ route('detail', ['slug' => $project->slug]) }}"
                                     target="_self"
-                                    class="px-4 py-2 mt-2 text-white transition-all duration-300 bg-white bg-opacity-50 rounded-lg opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 font-ibm hover:bg-gray-500">
+                                    class="px-4 py-2 mt-2 text-white transition-all duration-300 bg-white bg-opacity-50 rounded-lg opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 font-ibm hover:bg-gray-500"
+                                    aria-label="View Film Project: {{ $project->title }}">
                                     VIEW PROJECT
                                 </a>
                             </div>
                         </div>
                     </div>
                 @empty
-                    <p class="text-white text-center col-span-3">No projects available.</p>
+                    <p class="text-white text-center col-span-3">No film projects available.</p>
                 @endforelse
             </div>
         </section>
@@ -134,13 +149,7 @@
 
         {{-- CONTACT FORM START --}}
         <x-layouts.contact-form />
-
         {{-- CONTACT FORM END --}}
 
-
-
-
-
-
-    </main>
-</x-layouts.layout>
+        </main>
+        </x-layouts.layout>

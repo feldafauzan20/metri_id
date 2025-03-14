@@ -6,11 +6,10 @@
             <a class="border border-white px-6 py-2 rounded-full text-white mb-4">
                 Contact Form
             </a>
-            <!-- Title -->
         </div>
 
         <!-- Right Side: Form -->
-        <form action="{{ route('contact.submit') }}" method="POST" class="w-full">
+        <form id="contactForm" action="{{ route('contact.submit') }}" method="POST" class="w-full">
             @csrf
 
             <h2 class="text-xl font-light mb-6 lg:w-10/12">
@@ -49,11 +48,10 @@
                     required></textarea>
             </div>
 
+            <!-- Services -->
             <div>
-                <label class="block uppercase text-sm tracking-wider mt-6">Which Metri service do you need assistance
-                    with?</label>
-                <span class="text-[#cbd5e1e3]">You can select multiple options. Feel free to choose all that
-                    apply!</span>
+                <label class="block uppercase text-sm tracking-wider mt-6">Which Metri service do you need assistance with?</label>
+                <span class="text-[#cbd5e1e3]">You can select multiple options. Feel free to choose all that apply!</span>
                 <div class="flex flex-wrap gap-3 mt-2">
                     @foreach ([
         'metri entertainment' => '#F45353',
@@ -77,11 +75,10 @@
                 </div>
             </div>
 
-            <!-- Checkbox -->
+            <!-- Agreement -->
             <div class="flex items-center space-x-2 my-3">
                 <input type="checkbox" id="agree" class="w-4 h-4 border-gray-400 bg-transparent">
-                <label for="agree" class="text-xs md:text-sm">By submitting, you agree to the use of your
-                    data</label>
+                <label for="agree" class="text-xs md:text-sm">By submitting, you agree to the use of your data</label>
             </div>
 
             <!-- Submit Button -->
@@ -96,8 +93,8 @@
                 </svg>
             </button>
 
-            <!-- Notifikasi sukses -->
-            <div role="alert" id="successMessage" class="alert alert-success hidden">
+            <!-- Success Notification -->
+            <div role="alert" id="successMessage" class="hidden my-5">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current text-white"
                     fill="none" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -109,55 +106,38 @@
     </div>
 </section>
 
-
-
-{{-- script padding services --}}
+<!-- Meta Pixel -->
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        document.querySelectorAll("input[type='checkbox']").forEach((checkbox) => {
-            checkbox.addEventListener("change", function() {
-                let label = this.closest("label").querySelector("span");
-                if (this.checked) {
-                    label.style.backgroundColor = label.getAttribute("data-color");
-                } else {
-                    label.style.backgroundColor = "transparent";
-                }
-            });
-        });
-    });
-</script>
-
-{{-- script checkbox dan Notifikasi email sent successfully --}}
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const agreeCheckbox = document.getElementById("agree");
-        const submitBtn = document.getElementById("submitBtn");
-        const form = document.querySelector("form");
+        const form = document.getElementById("contactForm");
         const successMessage = document.getElementById("successMessage");
 
-        // Enable/disable submit button based on checkbox state
-        agreeCheckbox.addEventListener("change", function() {
-            if (agreeCheckbox.checked) {
-                submitBtn.disabled = false;
-                submitBtn.classList.remove("cursor-not-allowed", "opacity-50", "text-gray-400");
-                submitBtn.classList.add("cursor-pointer", "text-white");
-            } else {
-                submitBtn.disabled = true;
-                submitBtn.classList.add("cursor-not-allowed", "opacity-50", "text-gray-400");
-                submitBtn.classList.remove("cursor-pointer", "text-white");
-            }
-        });
+        form.addEventListener("submit", async function(e) {
+            e.preventDefault();
 
-        // Handle form submission
-        form.addEventListener("submit", function() {
-            submitBtn.disabled = true; // Mencegah double submit
-            submitBtn.classList.add("cursor-not-allowed", "opacity-50");
+            const formData = new FormData(form);
 
-            // Tampilkan notifikasi sukses setelah submit berhasil
-            setTimeout(() => {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                },
+                body: formData
+            });
+
+            if (response.ok) {
                 successMessage.classList.remove("hidden");
-                successMessage.classList.add("block");
-            }, 500);
+
+                // Facebook Pixel Event
+                fbq('track', 'Lead');
+
+                // Google Analytics Event
+                gtag('event', 'contact_form_submission', {
+                    'email': formData.get('email'),
+                    'services': formData.getAll('services[]').join(", "),
+                    'message': formData.get('message')
+                });
+            }
         });
     });
 </script>

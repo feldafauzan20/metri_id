@@ -1,82 +1,85 @@
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XXXXXX');
+</script>
+
+
 <x-layouts.layout>
     <x-slot:title>
-        metri | About us
+        metri | About Us - Transform Your Brand Experience
     </x-slot:title>
 
     <x-slot:vite>
         @vite(['resources/js/service.js', 'resources/css/app.css'])
     </x-slot:vite>
+
     <main class="overflow-x-hidden">
         <x-layouts-service.navbar-services />
 
         {{-- HERO START --}}
         @foreach ($videos as $video)
-        <section class="relative min-h-screen w-full flex flex-col justify-center">
-        <!-- Video Background -->
-            <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover">
-                <source src="{{ asset('storage/' . $video) }}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-    
-   <!-- Overlay (Opsional, untuk efek gelap) -->
-            <div class="absolute top-0 left-0 w-full h-full bg-black/40"></div>
+            <section class="relative min-h-screen w-full flex flex-col justify-center">
+                <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover"
+                    title="Metri Background Video - Brand Transformation">
+                    <source src="{{ asset('storage/' . $video) }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
 
-            <div class="relative flex justify-center">
-                <div class="w-fit md:w-3/4  h-fit mx-6 flex flex-col justify-center items-center">
-                    <h2 class="self-stretch mb-2 text-white text-2xl md:text-4xl lg:text-5xl font-normal text-center">
-                        Hello, we are metri
-                    </h2>
-                    <div class="lg:w-2/4">
-                        <p class="text-white text-[10px] font-light block md:text-base lg:text-lg text-center">
-                            We bring ideas to life with our 360 services. We craft, build, grow, and develop your brand
-                            and
-                            business.
-                        </p>
+                <div class="absolute top-0 left-0 w-full h-full bg-black/40"></div>
+
+                <div class="relative flex justify-center">
+                    <div class="w-fit md:w-3/4 h-fit mx-6 flex flex-col justify-center items-center">
+                        <h1 class="self-stretch mb-2 text-white text-2xl md:text-4xl lg:text-5xl font-normal text-center">
+                            Hello, we are Metri - Brand Transformation Experts
+                        </h1>
+                        <div class="lg:w-2/4">
+                            <p class="text-white text-[10px] font-light block md:text-base lg:text-lg text-center">
+                                We bring ideas to life with our 360 services. We craft, build, grow, and develop your brand and business.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Scroll Indicator -->
-            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-                <span class="text-white text-[10px] md:text-xs lg:text-xl font-medium font-ibm animate-bounce">
-                    SCROLL
-                </span>
-                <div data-svg-wrapper class="relative">
-                    <svg width="24" class="md:w-12 md:h-12" height="24" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M6 9C6 7.4087 6.63214 5.88258 7.75736 4.75736C8.88258 3.63214 10.4087 3 12 3C13.5913 3 15.1174 3.63214 16.2426 4.75736C17.3679 5.88258 18 7.4087 18 9V15C18 16.5913 17.3679 18.1174 16.2426 19.2426C15.1174 20.3679 13.5913 21 12 21C10.4087 21 8.88258 20.3679 7.75736 19.2426C6.63214 18.1174 6 16.5913 6 15V9Z"
-                            stroke="white" stroke-width="2" stroke-linejoin="round" />
-                        <path d="M12 7V11" stroke="white" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
+                <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+                    <span class="text-white text-[10px] md:text-xs lg:text-xl font-medium font-ibm animate-bounce">
+                        SCROLL
+                    </span>
+                    <div data-svg-wrapper class="relative">
+                        <svg width="24" class="md:w-12 md:h-12" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" aria-label="Scroll Down Indicator">
+                            <path
+                                d="M6 9C6 7.4087 6.63214 5.88258 7.75736 4.75736C8.88258 3.63214 10.4087 3 12 3C13.5913 3 15.1174 3.63214 16.2426 4.75736C17.3679 5.88258 18 7.4087 18 9V15C18 16.5913 17.3679 18.1174 16.2426 19.2426C15.1174 20.3679 13.5913 21 12 21C10.4087 21 8.88258 20.3679 7.75736 19.2426C6.63214 18.1174 6 16.5913 6 15V9Z"
+                                stroke="white" stroke-width="2" stroke-linejoin="round" />
+                            <path d="M12 7V11" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
         @endforeach
         {{-- HERO END --}}
 
-
         {{-- Who are we start --}}
         @foreach ($photos_2 as $photo)
-        <section class="w-full h-full mx-4 lg:px-4 lg:container">
-            <div class="w-full h-full pt-10 pb-4">
-                <p
-                    class="text-white w-fit h-full font-jakarta font-normal text-lg text-center rounded-[50px] outline outline-2 outline-[#E1E1E1] py-2 px-5">
-                    Who Are We?
-                </p>
-            </div>
-            <div class="w-full md:w-4/5 pr-6 lg:w-1/2">
-                <p class="text-white text-[10px] font-normal md:text-base lg:text-lg pb-5">We are people with experience in
-                    the creative
-                    field,
-                    production house, post-production, and media for over a decade. Now, we are forming Metri to turn
-                    your ideas into reality.</p>
-            </div>
-                <img src="{{ asset('storage/' . $photo) }}" alt="About Image" class="object-cover rounded-sm w-full pr-8">
-            @endforeach
-        
-        </section>
+            <section class="w-full h-full mx-4 lg:px-4 lg:container" id="about-us">
+                <div class="w-full h-full pt-10 pb-4">
+                    <h2
+                        class="text-white w-fit h-full font-jakarta font-normal text-lg text-center rounded-[50px] outline outline-2 outline-[#E1E1E1] py-2 px-5">
+                        Who Are We?
+                    </h2>
+                </div>
+                <div class="w-full md:w-4/5 pr-6 lg:w-1/2">
+                    <p class="text-white text-[10px] font-normal md:text-base lg:text-lg pb-5">We are people with experience in the creative field, production house, post-production, and media for over a decade. Now, we are forming Metri to turn your ideas into reality.</p>
+                </div>
+                <img src="{{ asset('storage/' . $photo) }}" alt="Metri Creative Team"
+                    class="object-cover rounded-sm w-full pr-8">
+            </section>
+        @endforeach
         {{-- Who are we end --}}
 
         <div class="lg:hidden">
@@ -192,3 +195,5 @@
 
     </main>
 </x-layouts.layout>
+
+

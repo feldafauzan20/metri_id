@@ -1,3 +1,13 @@
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XXXXXX');
+</script>
+
 <x-layouts.layout>
     <x-slot:title>
         metri | contact
@@ -58,7 +68,7 @@
                 @endforeach
             @else
                 {{-- Jika tidak ada video di database, tampilkan placeholder --}}
-                <p class="text-center text-gray-400">Tidak ada video tersedia.</p>
+                <p class="text-center text-gray-400">No video available.</p>
             @endif
         </section>
         {{-- Video end --}}

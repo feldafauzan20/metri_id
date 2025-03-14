@@ -1,3 +1,13 @@
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XXXXXX');
+</script>
+
 <x-layouts.layout>
     <x-slot:title>
         metri | Home
@@ -5,7 +15,7 @@
 
     <x-slot:meta>
         <meta name="description"
-            content="Transform your brand with metri's 360 creative services including entertainment, design, digital, film, post-production, and event management. PT. MEDIA TREN IDEA.">
+            content="Transform your brand with metri's 360 creative services including entertainment, design, digital, film, media post, and event management. PT. MEDIA TREN IDEA.">
         <meta name="keywords"
             content="metri, creative agency, design services, digital marketing, film production, post-production, event management, creative services, PT. MEDIA TREN IDEA">
         <meta name="author" content="PT. MEDIA TREN IDEA">
@@ -86,7 +96,7 @@
                                     class="block px-4 py-1 hover:bg-white hover:text-[#359381]">metri
                                     film</a></li>
                             <li><a wire:navigate href="/metri-post" target="_self"
-                                    title="metri post-production services"
+                                    title="metri media post services"
                                     class="block px-4 py-1 hover:bg-white hover:text-[#359381]">metri
                                     post</a></li>
                             <li><a wire:navigate href="/metri-tang-ting" target="_self" title="tang ting services"
@@ -163,7 +173,7 @@
             <!-- Tambah margin top agar kartu tidak bertumpuk dengan teks -->
             <div
                 class="cards absolute top-[25%] md:top-[10%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[150vw] h-fit will-change-transform mt-[300px] md:mt-[400px]">
-                @foreach ([['link' => '/metri-entertainment', 'image' => 'service1.webp', 'alt' => 'metri entertainment services', 'title' => 'Entertainment Services'], ['link' => '/metri-design', 'image' => 'service2.webp', 'alt' => 'metri design services', 'title' => 'Design Services'], ['link' => '/metri-digital', 'image' => 'service3.webp', 'alt' => 'metri digital services', 'title' => 'Digital Services'], ['link' => '/metri-film', 'image' => 'service4.webp', 'alt' => 'metri film services', 'title' => 'Film Services'], ['link' => '/metri-post', 'image' => 'service5.webp', 'alt' => 'metri post-production services', 'title' => 'Post-Production Services'], ['link' => '/metri-tang-ting', 'image' => 'service6.webp', 'alt' => 'metri tang ting services', 'title' => 'Tang Ting Services'], ['link' => '/metri-event', 'image' => 'service7.webp', 'alt' => 'metri event services', 'title' => 'Event Services']] as $service)
+                @foreach ([['link' => '/metri-entertainment', 'image' => 'service1.webp', 'alt' => 'metri entertainment services', 'title' => 'Entertainment Services'], ['link' => '/metri-design', 'image' => 'service2.webp', 'alt' => 'metri design services', 'title' => 'Design Services'], ['link' => '/metri-digital', 'image' => 'service3.webp', 'alt' => 'metri digital services', 'title' => 'Digital Services'], ['link' => '/metri-film', 'image' => 'service4.webp', 'alt' => 'metri film services', 'title' => 'Film Services'], ['link' => '/metri-post', 'image' => 'service5.webp', 'alt' => 'metri media post services', 'title' => 'Media Post Services'], ['link' => '/metri-tang-ting', 'image' => 'service6.webp', 'alt' => 'metri tang ting services', 'title' => 'Tang Ting Services'], ['link' => '/metri-event', 'image' => 'service7.webp', 'alt' => 'metri event services', 'title' => 'Event Services']] as $service)
                     <a wire:navigate href="{{ $service['link'] }}" target="_self" title="{{ $service['title'] }}">
                         <div
                             class="card absolute w-[80vw] sm:w-[300px] md:w-[400px] lg:w-[500px] h-[450px] md:h-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center flex flex-col gap-4 will-change-transform">
@@ -229,7 +239,7 @@
                     </video>
                 @endforeach
             @else
-                <p class="text-center text-gray-400">Tidak ada video tersedia.</p>
+                <p class="text-center text-gray-400">No video available.</p>
             @endif
         </section>
         {{-- Video end --}}
@@ -405,66 +415,120 @@
 
     <x-slot:structured-data>
         <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "PT. MEDIA TREN IDEA",
-            "alternateName": "metri",
-            "url": "{{ url('/') }}",
-            "logo": "{{ asset('images/logo/logo-putih-baru.webp') }}",
-            "sameAs": [
-                "https://www.instagram.com/metri.id/",
-                "https://www.youtube.com/channel/metri"
-            ],
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+6287784945201",
-                "contactType": "customer service",
-                "email": "hello@metri.id"
-            },
-            "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "ID"
-            },
-            "description": "metri provides 360 creative services including entertainment, design, digital marketing, film production, post, and event management for businesses and brands.",
-            "service": [
-                {
-                    "@type": "Service",
-                    "name": "Entertainment Services",
-                    "url": "{{ url('/metri-entertainment') }}"
+            {
+                "@context": "https://schema.org",
+                "@type": ["Organization", "LocalBusiness"],
+                "name": "PT. MEDIA TREN IDEA",
+                "alternateName": "metri",
+                "url": "{{ url('/') }}",
+                "logo": "{{ asset('images/logo/logo-putih-baru.webp') }}",
+                "sameAs": [
+                    "https://www.instagram.com/metri.id/",
+                    "https://www.youtube.com/channel/metri.id"
+                ],
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+6287784945201",
+                    "contactType": "customer service",
+                    "email": "hello@metri.id",
+                    "availableLanguage": ["en", "id"]
                 },
-                {
-                    "@type": "Service",
-                    "name": "Design Services",
-                    "url": "{{ url('/metri-design') }}"
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Your Street Address",
+                    "addressLocality": "Jakarta",
+                    "addressRegion": "DKI Jakarta",
+                    "postalCode": "Your Postal Code",
+                    "addressCountry": "ID"
                 },
-                {
-                    "@type": "Service",
-                    "name": "Digital Marketing",
-                    "url": "{{ url('/metri-digital') }}"
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "-6.2088",
+                    "longitude": "106.8456"
                 },
-                {
-                    "@type": "Service",
-                    "name": "Film Production",
-                    "url": "{{ url('/metri-film') }}"
+                "openingHoursSpecification": {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": [
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday"
+                    ],
+                    "opens": "09:00",
+                    "closes": "17:00"
                 },
-                {
-                    "@type": "Service",
-                    "name": "Post Production",
-                    "url": "{{ url('/metri-post') }}"
+                "priceRange": "$$",
+                "currenciesAccepted": "IDR",
+                "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+                "description": "metri provides 360 creative services in Jakarta, Indonesia including entertainment, design, digital marketing, film production, media post, and event management for businesses and brands.",
+                "areaServed": {
+                    "@type": "GeoCircle",
+                    "geoMidpoint": {
+                        "@type": "GeoCoordinates",
+                        "latitude": "-6.2088",
+                        "longitude": "106.8456"
+                    },
+                    "geoRadius": "50000"
                 },
-                {
-                    "@type": "Service",
-                    "name": "Event Management",
-                    "url": "{{ url('/metri-event') }}"
-                },
-                {
-                    "@type": "Service",
-                    "name": "Film Equipment Rental",
-                    "url": "{{ url('/metri-tang-ting') }}"
-                }
-            ]
-        }
-        </script>
+                "service": [
+                    {
+                        "@type": "Service",
+                        "name": "Entertainment Services",
+                        "url": "{{ url('/metri-entertainment') }}",
+                        "description": "Comprehensive entertainment solutions including talent management, event entertainment, and creative performances."
+                    },
+                    {
+                        "@type": "Service",
+                        "name": "Design Services",
+                        "url": "{{ url('/metri-design') }}",
+                        "description": "Professional graphic design, branding, packaging, and visual identity development for businesses of all sizes."
+                    },
+                    {
+                        "@type": "Service",
+                        "name": "Digital Marketing",
+                        "url": "{{ url('/metri-digital') }}",
+                        "description": "Strategic digital marketing services including social media management, content creation, and online advertising campaigns."
+                    },
+                    {
+                        "@type": "Service",
+                        "name": "Film Production",
+                        "url": "{{ url('/metri-film') }}",
+                        "description": "End-to-end film and video production services for commercials, corporate videos, and creative content."
+                    },
+                    {
+                        "@type": "Service",
+                        "name": "Post Production",
+                        "url": "{{ url('/metri-post') }}",
+                        "description": "Professional video editing, color grading, visual effects, and audio post-production services."
+                    },
+                    {
+                        "@type": "Service",
+                        "name": "Event Management",
+                        "url": "{{ url('/metri-event') }}",
+                        "description": "Full-service event planning, management, and execution for corporate, private, and public events."
+                    },
+                    {
+                        "@type": "Service",
+                        "name": "Film Equipment Rental",
+                        "url": "{{ url('/metri-tang-ting') }}",
+                        "description": "Professional film and video equipment rental services for productions of any size."
+                    }
+                ]
+            }
+            </script>
+            
+            <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [{
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "{{ url('/') }}"
+                }]
+            }
+            </script>
     </x-slot:structured-data>
 </x-layouts.layout>

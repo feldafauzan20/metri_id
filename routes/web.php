@@ -15,17 +15,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\AboutController;
 
-
 Route::get('/gallery', [ProjectGalleryController::class, 'index'])->name('gallery.index');
-
 Route::get('/contact', [ContactUsController::class, 'index'])->name('contact.index');
-
 Route::get('/about', [AboutController::class, 'index']);
-
 Route::get('/projects/{slug}', [ProjectController::class, 'show'])->name('detail');
-
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
-
 Route::get('/gallery', [ProjectGalleryController::class, 'index'])->name('gallery');
 
 Route::get('/', [MetriLandingPageController::class, 'index']);
@@ -46,5 +40,6 @@ Route::get('/detail', function() {
 Route::get('/L152GD', function () {
     return redirect('/L152GD');
 });
+
 Route::get('/gallery/{service_type}', [ProjectController::class, 'show'])->name('gallery.detail');
 
