@@ -44,21 +44,25 @@
 
         {{-- Video start --}}
         <section class="w-full" id="video">
-            @if (!empty($video) || !empty($youtube_link))
+            @if (!empty($youtube_link) || !empty($video))
                 @foreach ($youtube_link as $link)
-                    {{-- Tampilkan Video YouTube --}}
-                    <iframe class="w-full h-[500px] pb-10 object-contain" src="{{ $link }}" frameborder="0"
-                        allowfullscreen></iframe>
+                    <div class="pb-10">
+                        <iframe class="w-full h-[50rem] object-contain" src="{{ $link }}" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
                 @endforeach
 
                 @foreach ($video as $vid)
-                    {{-- Tampilkan Video dari Database --}}
-                    <video class="object-cover w-full h-full" autoplay loop playsinline muted>
-                        <source src="{{ asset('storage/' . $vid) }}" type="video/mp4">
-                    </video>
+                    <div class="pb-10">
+                        <video class="object-cover w-full h-full" autoplay loop playsinline muted>
+                            <source src="{{ asset('storage/' . $vid) }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                 @endforeach
             @else
-                {{-- Jika tidak ada video di database, tampilkan placeholder --}}
                 <p class="text-center text-gray-400">No video available.</p>
             @endif
         </section>
@@ -187,8 +191,9 @@
     </main>
 </x-layouts.layout>
 
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MTPPE6EK3F"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -197,5 +202,5 @@
     }
     gtag('js', new Date());
 
-    gtag('config', 'G-XXXXXX');
+    gtag('config', 'G-MTPPE6EK3F');
 </script>

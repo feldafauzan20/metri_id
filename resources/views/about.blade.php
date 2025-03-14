@@ -25,7 +25,7 @@
                     <div class="w-fit md:w-3/4 h-fit mx-6 flex flex-col justify-center items-center">
                         <h1
                             class="self-stretch mb-2 text-white text-2xl md:text-4xl lg:text-5xl font-normal text-center">
-                            Hello, we are Metri - Brand Transformation Experts
+                            Hello, we are metri
                         </h1>
                         <div class="lg:w-2/4">
                             <p class="text-white text-[10px] font-light block md:text-base lg:text-lg text-center">
@@ -57,7 +57,7 @@
 
         {{-- Who are we start --}}
         @foreach ($photos_2 as $photo)
-            <section class="w-full h-full mx-4 lg:px-4 lg:container" id="about-us">
+            <section class="w-full h-full mx-4 lg:px-4" id="about-us">
                 <div class="w-full h-full pt-10 pb-4">
                     <h2
                         class="text-white w-fit h-full font-jakarta font-normal text-lg text-center rounded-[50px] outline outline-2 outline-[#E1E1E1] py-2 px-5">
@@ -81,7 +81,7 @@
         </div>
 
         {{-- Brand Values start --}}
-        <section class="md:mx-4 lg:px-4 lg:container lg:mx-auto lg:mt-9 lg:w-full lg:h-full">
+        <section class="md:mx-4 lg:px-4 lg:mx-auto lg:mt-9 lg:w-full lg:h-full">
             <div class="w-full lg:h-full py-4 flex justify-center md:justify-start ">
                 <p
                     class="text-white w-fit h-full font-jakarta font-normal text-lg lg:text-xl text-center rounded-[50px] outline outline-2 outline-[#E1E1E1] py-[5px] px-[14px]">
@@ -169,8 +169,7 @@
         {{-- Brand Values end --}}
 
         {{-- Start your brand start --}}
-        <section
-            class="mx-4 md:flex my-5 md:my-0 md:mt-5 lg:px-4 lg:container h-full mt-14 items-center justify-between">
+        <section class="mx-4 md:flex my-5 md:my-0 md:mt-5 lg:px-4 h-full mt-14 items-center justify-between">
             <div class="w-3/4 md:w-1/2 lg:overflow-hidden  text-white font-medium">
                 <h2 class="md:text-xl lg:text-4xl">Start your brand experience transformation now</h2>
             </div>
@@ -189,8 +188,9 @@
 
     </main>
 </x-layouts.layout>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MTPPE6EK3F"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -199,5 +199,5 @@
     }
     gtag('js', new Date());
 
-    gtag('config', 'G-XXXXXX');
+    gtag('config', 'G-MTPPE6EK3F');
 </script>

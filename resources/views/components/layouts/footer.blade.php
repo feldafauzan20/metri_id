@@ -28,13 +28,20 @@
                 <div class="text-left md:w-1/3">
                     <h4 class="text-lg font-semibold mb-3">SUB COMPANY</h4>
                     <ul class="text-gray-400 flex gap-6 flex-wrap lg:grid lg:grid-cols-2">
-                        <li><a wire:navigate href="/metri-entertainment" target="_self" class="hover:text-white">metri entertainment</a></li>
-                        <li><a wire:navigate href="/metri-film" target="_self" class="hover:text-white">metri film</a></li>
-                        <li><a wire:navigate href="/metri-post" target="_self" class="hover:text-white">metri post</a></li>
-                        <li><a wire:navigate href="/metri-tang-ting" target="_self" class="hover:text-white">tang ting</a></li>
-                        <li><a wire:navigate href="/metri-event" target="_self" class="hover:text-white">metri event</a></li>
-                        <li><a wire:navigate href="/metri-digital" target="_self" class="hover:text-white">metri digital</a></li>
-                        <li><a wire:navigate href="/metri-design" target="_self" class="hover:text-white">metri design</a></li>
+                        <li><a wire:navigate href="/metri-entertainment" target="_self" class="hover:text-white">metri
+                                entertainment</a></li>
+                        <li><a wire:navigate href="/metri-film" target="_self" class="hover:text-white">metri film</a>
+                        </li>
+                        <li><a wire:navigate href="/metri-post" target="_self" class="hover:text-white">metri post</a>
+                        </li>
+                        <li><a wire:navigate href="/metri-tang-ting" target="_self" class="hover:text-white">tang
+                                ting</a></li>
+                        <li><a wire:navigate href="/metri-event" target="_self" class="hover:text-white">metri event</a>
+                        </li>
+                        <li><a wire:navigate href="/metri-digital" target="_self" class="hover:text-white">metri
+                                digital</a></li>
+                        <li><a wire:navigate href="/metri-design" target="_self" class="hover:text-white">metri
+                                design</a></li>
                     </ul>
                     <ul>
 
@@ -45,7 +52,10 @@
 
         <!-- Copyright & Social Icons -->
         <div class="w-full flex items-center mt-10 border-t border-white pt-6">
-            <p class="text-gray-400 text-sm block w-full text-start">© 2025 metri All Rights Reserved.</p>
+            <p class="text-gray-400 text-sm block w-full text-start">© 2025 metri All Rights Reserved <span
+                    class="text-white"> <span class="hidden md:inline">|</span> powered by verta<span
+                        class="text-blue-400">code</span></span>
+            </p>
             <div class="flex space-x-4 justify-end w-fit">
                 <!-- Facebook -->
                 <a wire:navigate href="https://web.facebook.com/metri.id/" target="_blank"
@@ -82,7 +92,8 @@
 
 
                 <!-- LinkedIn -->
-                <a wire:navigate href="https://www.linkedin.com/company/pt-media-tren-idea-metri-id/?originalSubdomain=id"
+                <a wire:navigate
+                    href="https://www.linkedin.com/company/pt-media-tren-idea-metri-id/?originalSubdomain=id"
                     target="_blank"
                     class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-500 hover:border-white">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 hover:text-white"

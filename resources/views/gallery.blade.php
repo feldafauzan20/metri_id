@@ -23,7 +23,7 @@
     <main class="overflow-x-hidden">
         <x-layouts-service.navbar-services />
 
-        <section class="flex flex-col justify-center w-full h-full my-40 lg:container">
+        <section class="flex flex-col justify-center w-full h-full my-40">
             <div class="mx-4 md:mx-8 h-full">
                 <div class="flex flex-col gap-4">
                     <h1 class="text-3xl md:text-4xl text-white" itemprop="headline">Gallery</h1>
@@ -33,7 +33,7 @@
             </div>
         </section>
 
-        <section class="flex flex-col w-full lg:container">
+        <section class="flex flex-col w-full">
             <div class="mx-4 md:mx-8">
                 <div class="flex flex-row mb-4 flex-wrap gap-2">
                     @php
@@ -119,8 +119,9 @@
     </main>
 </x-layouts.layout>
 
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MTPPE6EK3F"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -129,5 +130,5 @@
     }
     gtag('js', new Date());
 
-    gtag('config', 'G-XXXXXX');
+    gtag('config', 'G-MTPPE6EK3F');
 </script>

@@ -66,7 +66,7 @@ class MetriFilmPostResource extends Resource
 
             FileUpload::make('image')
             ->directory('metri_film_posts')
-            ->label('Headline Image 1:1')
+            ->label('Headline Image 4:3')
             ->nullable(),
 
             FileUpload::make('gambar_1')

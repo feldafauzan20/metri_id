@@ -22,7 +22,7 @@ class ContactController extends Controller
         $data = $request->all();
     
         // Kirim Email
-        Mail::to('hello@metri.com')->send(new ContactMail($data));
+        Mail::to('hello@metri.id')->send(new ContactMail($data));
     
         // Kirim Event ke Facebook Conversion API
         $this->sendToFacebookCAPI($data);

@@ -55,46 +55,39 @@
         </section>
         {{-- HERO END --}}
 
-        {{-- Video showcase section --}}
-        <section class="w-full" id="project-video" aria-label="Project Video Showcase">
-            @if ((isset($links) && is_array($links) && !empty($links)) || (isset($videos) && is_array($videos) && !empty($videos)))
-                @foreach ($links as $link)
-                    {{-- YouTube Video Embedding --}}
-                    <div itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
-                        <meta itemprop="name" content="{{ $project->title }} - Project Video">
-                        <meta itemprop="description"
-                            content="Video showcase of the {{ $project->title }} project by Metri.">
-                        <meta itemprop="uploadDate" content="{{ $project->created_at->toIso8601String() }}">
-                        <meta itemprop="embedUrl" content="{{ $link }}">
-                        <iframe class="w-full h-[500px] pb-10 object-contain" src="{{ $link }}"
-                            title="{{ $project->title }} - Project Video" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                @endforeach
+        {{-- Video start --}}
+        <section class="w-full" id="video">
+            @if (!empty($youtube_links) || !empty($videos))
+                {{-- Embed YouTube Links --}}
+                @if (!empty($youtube_links))
+                    @foreach ($youtube_links as $link)
+                        <div class="pb-10">
+                            <iframe class="w-full h-[50rem] object-contain" src="{{ $link }}" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    @endforeach
+                @endif
 
-                @foreach ($videos as $vid)
-                    {{-- Database Video Display --}}
-                    <div itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
-                        <meta itemprop="name" content="{{ $project->title }} - Project Video">
-                        <meta itemprop="description"
-                            content="Video showcase of the {{ $project->title }} project by Metri.">
-                        <meta itemprop="uploadDate" content="{{ $project->created_at->toIso8601String() }}">
-                        <meta itemprop="contentUrl" content="{{ asset('storage/' . $vid) }}">
-                        <video class="object-cover w-full h-full" controls autoplay loop playsinline muted
-                            aria-label="{{ $project->title }} project video">
-                            <source src="{{ asset('storage/' . $vid) }}" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                @endforeach
+                {{-- Local Video Files --}}
+                @if (!empty($videos))
+                    @foreach ($videos as $vid)
+                        <div class="pb-10">
+                            <video class="object-cover w-full h-full" autoplay loop playsinline muted>
+                                <source src="{{ asset('storage/' . $vid) }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    @endforeach
+                @endif
             @else
-                {{-- Fallback message if no videos are available --}}
-                <p class="text-center text-gray-400 py-8">No video content available for this project.</p>
+                {{-- Fallback if no videos are available --}}
+                <p class="text-center text-gray-400">No video available.</p>
             @endif
         </section>
-        {{-- Video section end --}}
+        {{-- Video end --}}
+
 
         {{-- Concept start --}}
         <section class="w-full h-full lg:container">
@@ -227,8 +220,9 @@
 
     </main>
 </x-layouts.layout>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MTPPE6EK3F"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -237,5 +231,5 @@
     }
     gtag('js', new Date());
 
-    gtag('config', 'G-XXXXXX');
+    gtag('config', 'G-MTPPE6EK3F');
 </script>

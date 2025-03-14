@@ -43,30 +43,49 @@
         {{-- HERO END --}}
 
         {{-- Video start --}}
-        <section class="w-full" id="video" aria-label="Social Media Posting Showcase Video Section">
+        <section class="w-full" id="video">
             @if ((is_array($video) && !empty($video)) || (is_array($youtube_link) && !empty($youtube_link)))
+                {{-- YouTube Embed Videos --}}
                 @if (is_array($youtube_link))
                     @foreach ($youtube_link as $link)
-                        {{-- Display YouTube Video --}}
-                        <div class="w-full h-[500px] pb-10">
-                            <iframe class="w-full h-full object-contain" src="{{ $link }}"
-                                title="Metri Social Media Posting Showcase" frameborder="0" allowfullscreen></iframe>
+                        {{-- Tampilkan Video YouTube --}}
+                        <div itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+                            <meta itemprop="name" content="Metri Post Showcase Video">
+                            <meta itemprop="description" content="Showcase of Metri Post's creative design videos.">
+                            <meta itemprop="uploadDate" content="{{ now()->toIso8601String() }}">
+                            <meta itemprop="embedUrl" content="{{ $link }}">
+
+                            {{-- Add autoplay to YouTube embed link --}}
+                            <iframe class="w-full h-[50rem] pb-10 object-contain"
+                                src="{{ $link }}?autoplay=1&modestbranding=1&rel=0&mute=1&playsinline=1"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
                         </div>
                     @endforeach
                 @endif
 
+                {{-- Local Videos from Database --}}
                 @if (is_array($video))
                     @foreach ($video as $vid)
-                        {{-- Display Video from Database --}}
-                        <video class="object-cover w-full h-full" autoplay loop playsinline muted
-                            title="Metri Social Media Content Refinement Video">
-                            <source src="{{ asset('storage/' . $vid) }}" type="video/mp4">
-                        </video>
+                        {{-- Tampilkan Video dari Database --}}
+                        <div itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+                            <meta itemprop="name" content="Metri Post Showcase Video">
+                            <meta itemprop="description" content="Showcase of Metri Post's creative design videos.">
+                            <meta itemprop="uploadDate" content="{{ now()->toIso8601String() }}">
+                            <meta itemprop="contentUrl" content="{{ asset('storage/' . $vid) }}">
+
+                            <video class="object-cover w-full h-full" autoplay loop playsinline muted>
+                                <source src="{{ asset('storage/' . $vid) }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
                     @endforeach
                 @endif
             @else
-                {{-- If no video in database, display placeholder --}}
-                <p class="text-center text-gray-400">No social media posting showcase video available.</p>
+                {{-- Jika tidak ada video di database, tampilkan placeholder --}}
+                <p class="text-center text-gray-400">No video available.</p>
             @endif
         </section>
         {{-- Video end --}}
@@ -119,7 +138,7 @@
                         </div>
                     </div>
                 @empty
-                    <p class="text-white text-center col-span-3">No social media posting projects available.</p>
+                    <p class="text-white text-center col-span-3">No projects available.</p>
                 @endforelse
             </div>
         </section>
@@ -130,8 +149,9 @@
         {{-- CONTACT FORM END --}}
     </main>
 </x-layouts.layout>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MTPPE6EK3F"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -140,5 +160,5 @@
     }
     gtag('js', new Date());
 
-    gtag('config', 'G-XXXXXX');
+    gtag('config', 'G-MTPPE6EK3F');
 </script>

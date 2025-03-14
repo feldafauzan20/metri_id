@@ -50,8 +50,10 @@
 
             <!-- Services -->
             <div>
-                <label class="block uppercase text-sm tracking-wider mt-6">Which Metri service do you need assistance with?</label>
-                <span class="text-[#cbd5e1e3]">You can select multiple options. Feel free to choose all that apply!</span>
+                <label class="block uppercase text-sm tracking-wider mt-6">Which Metri service do you need assistance
+                    with?</label>
+                <span class="text-[#cbd5e1e3]">You can select multiple options. Feel free to choose all that
+                    apply!</span>
                 <div class="flex flex-wrap gap-3 mt-2">
                     @foreach ([
         'metri entertainment' => '#F45353',
@@ -78,7 +80,8 @@
             <!-- Agreement -->
             <div class="flex items-center space-x-2 my-3">
                 <input type="checkbox" id="agree" class="w-4 h-4 border-gray-400 bg-transparent">
-                <label for="agree" class="text-xs md:text-sm">By submitting, you agree to the use of your data</label>
+                <label for="agree" class="text-xs md:text-sm">By submitting, you agree to the use of your
+                    data</label>
             </div>
 
             <!-- Submit Button -->
@@ -93,8 +96,8 @@
                 </svg>
             </button>
 
-            <!-- Success Notification -->
-            <div role="alert" id="successMessage" class="hidden my-5">
+            <!-- Notifikasi sukses -->
+            <div role="alert" id="successMessage" class="alert alert-success my-5 hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current text-white"
                     fill="none" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -138,6 +141,57 @@
                     'message': formData.get('message')
                 });
             }
+        });
+    });
+</script>
+
+{{-- script padding services --}}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll("input[type='checkbox']").forEach((checkbox) => {
+            checkbox.addEventListener("change", function() {
+                let label = this.closest("label").querySelector("span");
+                if (this.checked) {
+                    label.style.backgroundColor = label.getAttribute("data-color");
+                } else {
+                    label.style.backgroundColor = "transparent";
+                }
+            });
+        });
+    });
+</script>
+
+{{-- script checkbox dan Notifikasi email sent successfully --}}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const agreeCheckbox = document.getElementById("agree");
+        const submitBtn = document.getElementById("submitBtn");
+        const form = document.querySelector("form");
+        const successMessage = document.getElementById("successMessage");
+
+        // Enable/disable submit button based on checkbox state
+        agreeCheckbox.addEventListener("change", function() {
+            if (agreeCheckbox.checked) {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove("cursor-not-allowed", "opacity-50", "text-gray-400");
+                submitBtn.classList.add("cursor-pointer", "text-white");
+            } else {
+                submitBtn.disabled = true;
+                submitBtn.classList.add("cursor-not-allowed", "opacity-50", "text-gray-400");
+                submitBtn.classList.remove("cursor-pointer", "text-white");
+            }
+        });
+
+        // Handle form submission
+        form.addEventListener("submit", function() {
+            submitBtn.disabled = true; // Mencegah double submit
+            submitBtn.classList.add("cursor-not-allowed", "opacity-50");
+
+            // Tampilkan notifikasi sukses setelah submit berhasil
+            setTimeout(() => {
+                successMessage.classList.remove("hidden");
+                successMessage.classList.add("block");
+            }, 500);
         });
     });
 </script>
