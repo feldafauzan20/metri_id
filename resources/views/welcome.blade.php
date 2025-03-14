@@ -1,13 +1,3 @@
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XXXXXX');
-</script>
-
 <x-layouts.layout>
     <x-slot:title>
         metri | Home
@@ -95,8 +85,7 @@
                             <li><a wire:navigate href="/metri-film" target="_self" title="metri film services"
                                     class="block px-4 py-1 hover:bg-white hover:text-[#359381]">metri
                                     film</a></li>
-                            <li><a wire:navigate href="/metri-post" target="_self"
-                                    title="metri media post services"
+                            <li><a wire:navigate href="/metri-post" target="_self" title="metri media post services"
                                     class="block px-4 py-1 hover:bg-white hover:text-[#359381]">metri
                                     post</a></li>
                             <li><a wire:navigate href="/metri-tang-ting" target="_self" title="tang ting services"
@@ -517,8 +506,8 @@
                 ]
             }
             </script>
-            
-            <script type="application/ld+json">
+
+        <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@type": "BreadcrumbList",
@@ -532,3 +521,15 @@
             </script>
     </x-slot:structured-data>
 </x-layouts.layout>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXX');
+</script>

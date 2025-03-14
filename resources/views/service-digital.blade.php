@@ -1,13 +1,3 @@
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XXXXXX');
-</script>
-
 <x-layouts.layout>
     <x-slot:title>
         Metri Digital | Grow Your Brand Visibility & Digital Presence
@@ -25,7 +15,8 @@
             <div class="hero min-h-screen">
                 <div class="hero-content text-center">
                     <div class="w-full flex flex-col items-center">
-                        <a wire:navigate href="/" target="_self" aria-label="Metri Digital Logo - Digital Marketing Agency">
+                        <a wire:navigate href="/" target="_self"
+                            aria-label="Metri Digital Logo - Digital Marketing Agency">
                             <img src="{{ asset('images/logo/logo-metri-digital.webp') }}"
                                 alt="Metri Digital Logo - Digital Marketing Agency" class="w-[300px] lg:w-[600px]">
                         </a>
@@ -59,8 +50,8 @@
                     @foreach ($youtube_link as $link)
                         {{-- Display YouTube Video --}}
                         <div class="w-full h-[500px] pb-10">
-                            <iframe class="w-full h-full object-contain" src="{{ $link }}" title="Metri Digital Marketing Video" frameborder="0"
-                                allowfullscreen></iframe>
+                            <iframe class="w-full h-full object-contain" src="{{ $link }}"
+                                title="Metri Digital Marketing Video" frameborder="0" allowfullscreen></iframe>
                         </div>
                     @endforeach
                 @endif
@@ -153,3 +144,15 @@
 
     </main>
 </x-layouts.layout>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXX');
+</script>

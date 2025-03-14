@@ -1,13 +1,3 @@
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XXXXXX');
-</script>
-
 <x-layouts.layout>
     <x-slot:title>
         Tang-Ting | Audio & Visual Production Equipment Rentals
@@ -27,7 +17,8 @@
                     <div class="w-full flex flex-col items-center">
                         <a wire:navigate href="/" target="_self" aria-label="Metri Tang-Ting Logo">
                             <img src="{{ asset('images/logo/logo-tang-ting.webp') }}"
-                                alt="Metri Tang-Ting Logo - Audio and Visual Production Equipment Rentals" class="w-[300px] lg:w-[600px]">
+                                alt="Metri Tang-Ting Logo - Audio and Visual Production Equipment Rentals"
+                                class="w-[300px] lg:w-[600px]">
                         </a>
                         <h1 class="lg:text-5xl text-2xl md:text-3xl font-bold text-white pb-4">
                             Providing “Armor” and “Weaponry” for Your Audio and Visual Production
@@ -58,8 +49,8 @@
                     @foreach ($youtube_link as $link)
                         {{-- Display YouTube Video --}}
                         <div class="w-full h-[500px] pb-10">
-                            <iframe class="w-full h-full object-contain" src="{{ $link }}" title="Tang-Ting Equipment Showcase" frameborder="0"
-                                allowfullscreen></iframe>
+                            <iframe class="w-full h-full object-contain" src="{{ $link }}"
+                                title="Tang-Ting Equipment Showcase" frameborder="0" allowfullscreen></iframe>
                         </div>
                     @endforeach
                 @endif
@@ -104,7 +95,8 @@
         {{-- PROJECT START --}}
         <section class="my-32 px-4" id="proyek" aria-label="Tang-Ting Equipment Gallery Section">
             <div class="w-full px-4 md:px-8 lg:flex lg:justify-end">
-                <a wire:navigate href="/gallery" target="_self" class="flex items-center space-x-2 group text-white" aria-label="View Tang-Ting Equipment Gallery">
+                <a wire:navigate href="/gallery" target="_self" class="flex items-center space-x-2 group text-white"
+                    aria-label="View Tang-Ting Equipment Gallery">
                     <span class=" group-hover:border-gray-300 transition duration-300">See more...</span>
                     <svg xmlns="http://www.w3.org/2000/svg"
                         class="w-4 h-4 group-hover:translate-x-1 transition duration-300" fill="none"
@@ -150,4 +142,15 @@
         {{-- CONTACT FORM END --}}
     </main>
 </x-layouts.layout>
-                        
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXX');
+</script>

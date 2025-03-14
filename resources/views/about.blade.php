@@ -1,14 +1,3 @@
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XXXXXX');
-</script>
-
-
 <x-layouts.layout>
     <x-slot:title>
         metri | About Us - Transform Your Brand Experience
@@ -34,12 +23,14 @@
 
                 <div class="relative flex justify-center">
                     <div class="w-fit md:w-3/4 h-fit mx-6 flex flex-col justify-center items-center">
-                        <h1 class="self-stretch mb-2 text-white text-2xl md:text-4xl lg:text-5xl font-normal text-center">
+                        <h1
+                            class="self-stretch mb-2 text-white text-2xl md:text-4xl lg:text-5xl font-normal text-center">
                             Hello, we are Metri - Brand Transformation Experts
                         </h1>
                         <div class="lg:w-2/4">
                             <p class="text-white text-[10px] font-light block md:text-base lg:text-lg text-center">
-                                We bring ideas to life with our 360 services. We craft, build, grow, and develop your brand and business.
+                                We bring ideas to life with our 360 services. We craft, build, grow, and develop your
+                                brand and business.
                             </p>
                         </div>
                     </div>
@@ -74,7 +65,9 @@
                     </h2>
                 </div>
                 <div class="w-full md:w-4/5 pr-6 lg:w-1/2">
-                    <p class="text-white text-[10px] font-normal md:text-base lg:text-lg pb-5">We are people with experience in the creative field, production house, post-production, and media for over a decade. Now, we are forming Metri to turn your ideas into reality.</p>
+                    <p class="text-white text-[10px] font-normal md:text-base lg:text-lg pb-5">We are people with
+                        experience in the creative field, production house, post-production, and media for over a
+                        decade. Now, we are forming Metri to turn your ideas into reality.</p>
                 </div>
                 <img src="{{ asset('storage/' . $photo) }}" alt="Metri Creative Team"
                     class="object-cover rounded-sm w-full pr-8">
@@ -176,7 +169,8 @@
         {{-- Brand Values end --}}
 
         {{-- Start your brand start --}}
-        <section class="mx-4 md:flex my-5 md:my-0 md:mt-5 lg:px-4 lg:container h-full mt-14 items-center justify-between">
+        <section
+            class="mx-4 md:flex my-5 md:my-0 md:mt-5 lg:px-4 lg:container h-full mt-14 items-center justify-between">
             <div class="w-3/4 md:w-1/2 lg:overflow-hidden  text-white font-medium">
                 <h2 class="md:text-xl lg:text-4xl">Start your brand experience transformation now</h2>
             </div>
@@ -195,5 +189,15 @@
 
     </main>
 </x-layouts.layout>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
 
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
+    gtag('config', 'G-XXXXXX');
+</script>

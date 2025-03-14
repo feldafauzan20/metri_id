@@ -1,13 +1,3 @@
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XXXXXX');
-</script>
-
 <x-layouts.layout>
     <x-slot:title>
         metri events | Craft Memorable Events with a Clear Message
@@ -27,7 +17,8 @@
                     <div class="w-full flex flex-col items-center">
                         <a wire:navigate href="/" target="_self" aria-label="Metri Events Logo">
                             <img src="{{ asset('images/logo/logo-metri-event.webp') }}"
-                                alt="Metri Events Logo - Professional Event Planning Services" class="w-[300px] lg:w-[600px]">
+                                alt="Metri Events Logo - Professional Event Planning Services"
+                                class="w-[300px] lg:w-[600px]">
                         </a>
                         <h1 class="lg:text-5xl text-2xl md:text-3xl font-bold text-white pb-4">
                             Craft and Build Your Event Whilst Focusing on The Message of the Event
@@ -59,8 +50,8 @@
                     @foreach ($youtube_link as $link)
                         {{-- Display YouTube Video --}}
                         <div class="w-full h-[500px] pb-10">
-                            <iframe class="w-full h-full object-contain" src="{{ $link }}" title="Metri Events Planning Video" frameborder="0"
-                                allowfullscreen></iframe>
+                            <iframe class="w-full h-full object-contain" src="{{ $link }}"
+                                title="Metri Events Planning Video" frameborder="0" allowfullscreen></iframe>
                         </div>
                     @endforeach
                 @endif
@@ -151,5 +142,17 @@
         <x-layouts.contact-form />
         {{-- CONTACT FORM END --}}
 
-        </main>
-        </x-layouts.layout>
+    </main>
+</x-layouts.layout>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXX');
+</script>

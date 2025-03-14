@@ -1,13 +1,3 @@
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XXXXXX');
-</script>
-
 <x-layouts.layout>
     <x-slot:title>
         metri | contact
@@ -54,13 +44,14 @@
 
         {{-- Video start --}}
         <section class="w-full" id="video">
-            @if(!empty($video) || !empty($youtube_link))
-                @foreach($youtube_link as $link)
+            @if (!empty($video) || !empty($youtube_link))
+                @foreach ($youtube_link as $link)
                     {{-- Tampilkan Video YouTube --}}
-                    <iframe class="w-full h-[500px] pb-10 object-contain" src="{{ $link }}" frameborder="0" allowfullscreen></iframe>
+                    <iframe class="w-full h-[500px] pb-10 object-contain" src="{{ $link }}" frameborder="0"
+                        allowfullscreen></iframe>
                 @endforeach
 
-                @foreach($video as $vid)
+                @foreach ($video as $vid)
                     {{-- Tampilkan Video dari Database --}}
                     <video class="object-cover w-full h-full" autoplay loop playsinline muted>
                         <source src="{{ asset('storage/' . $vid) }}" type="video/mp4">
@@ -81,7 +72,8 @@
                     <div class=" flex-col justify-start items-start gap-2 inline-flex">
                         <a wire:navigate target="_self" href="https://www.instagram.com/metri_id/" target="_blank"
                             class="self-stretch text-white text-[10px] lg:text-sm font-normal font-['Plus Jakarta Sans']">INSTAGRAM</a>
-                        <a wire:navigate target="_self" href="https://www.linkedin.com/company/pt-media-tren-idea-metri-id/" target="_blank"
+                        <a wire:navigate target="_self"
+                            href="https://www.linkedin.com/company/pt-media-tren-idea-metri-id/" target="_blank"
                             class="self-stretch text-white text-[10px] lg:text-sm font-normal font-['Plus Jakarta Sans']">LINKEDIN</a>
                         <a wire:navigate target="_self" href="https://x.com/metri_id/" target="_blank"
                             class="self-stretch text-white text-[10px] lg:text-sm font-normal font-['Plus Jakarta Sans']">X</a>
@@ -121,7 +113,9 @@
             <section class="w-full mx-4 lg:mx-0 pb-6 pt-12 lg:pt-8">
                 <div class=" flex flex-col">
                     <h2 class="text-white text-2xl lg:text-4xl font-semibold pb-3">E-MAIL</h2>
-                    <p class="text-white text-[10px] lg:text-sm font-medium font-['Plus Jakarta Sans'] uppercase leading-snug">hello@metri.id</p>
+                    <p
+                        class="text-white text-[10px] lg:text-sm font-medium font-['Plus Jakarta Sans'] uppercase leading-snug">
+                        hello@metri.id</p>
 
                 </div>
             </section>
@@ -141,8 +135,8 @@
             <div class="grid grid-cols-1 md:flex md:justify-center gap-6">
                 <!-- Card 1 -->
                 <div class="relative group overflow-hidden rounded-lg">
-                    <img src="{{ asset('images/Group-131.png') }}"
-                        alt="Project Image" class="w-full h-full relative object-cover rounded-lg">
+                    <img src="{{ asset('images/Group-131.png') }}" alt="Project Image"
+                        class="w-full h-full relative object-cover rounded-lg">
 
                     <!-- Overlay -->
                     <div
@@ -150,7 +144,8 @@
                         <div
                             class="flex flex-col items-start transition-all duration-300 translate-y-0 lg:translate-y-10 lg:group-hover:translate-y-0">
                             <p class="text-center text-white text-2xl font-medium">BEHIND THE STUDIO</p>
-                            <h3 class="text-white text-[10px] md:text-sm font-extralight">A dynamic space where imagination knows
+                            <h3 class="text-white text-[10px] md:text-sm font-extralight">A dynamic space where
+                                imagination knows
                                 no
                                 bounds and experimentation is celebrated.</h3>
 
@@ -164,8 +159,8 @@
 
                 <!-- Card 2 -->
                 <div class="relative group overflow-hidden rounded-lg">
-                    <img src="{{ asset('images/Group-132.png') }}"
-                        alt="Project Image" class="w-full h-full object-cover rounded-lg">
+                    <img src="{{ asset('images/Group-132.png') }}" alt="Project Image"
+                        class="w-full h-full object-cover rounded-lg">
 
                     <!-- Overlay -->
                     <div
@@ -173,7 +168,8 @@
                         <div
                             class="flex flex-col items-start transition-all duration-300 translate-y-0 lg:translate-y-10 lg:group-hover:translate-y-0">
                             <p class="text-center text-white text-2xl font-medium">CASE STUDIES</p>
-                            <h3 class="text-white text-[10px] md:text-sm font-extralight">A collective of visionary creators
+                            <h3 class="text-white text-[10px] md:text-sm font-extralight">A collective of visionary
+                                creators
                                 dedicated to shaping the future through design.</h3>
 
                             <a wire:navigate target="_self" href="/#services"
@@ -190,3 +186,16 @@
 
     </main>
 </x-layouts.layout>
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXX');
+</script>
