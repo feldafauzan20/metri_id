@@ -8,6 +8,8 @@ import Lenis from "lenis";
 
 gsap.registerPlugin(ScrollTrigger);
 
+ScrollTrigger.normalizeScroll(true);
+
 // Lenis smooth scroll setup
 const lenis = new Lenis();
 lenis.on("scroll", ScrollTrigger.update);
@@ -15,48 +17,145 @@ gsap.ticker.add((time) => lenis.raf(time * 1000));
 gsap.ticker.lagSmoothing(0);
 
 // Parallax animation
-if (window.innerWidth >= 1024) {
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".parallax-container",
-            start: "top top",
-            end: "500% top",
-            scrub: 3,
-            pin: true,
-        },
-    })
-        .to("#scroll", { opacity: 0, duration: 0.5, ease: "power1.out" })
-        .fromTo(
-            "#sun",
-            { y: "20vh" },
-            { y: "-3vh", duration: 0.5, ease: "power1.out" }
-        )
-        .to("#plant1", { duration: 1, left: "70vw" }, "<")
-        .to("#plant2", { duration: 2, left: "-50vw" }, "<")
-        .to("#bird1", { duration: 3, left: "50vw" }, "<")
-        .to("#bird2", { duration: 4, left: "-50vw" }, "<")
-        .to("#tree", { scale: 5, duration: 5, ease: "power1.inOut" })
-        .to("#overlay", { opacity: 1, duration: 1, ease: "power2.inOut" }) // Fade Out
-        .to(".parallax-container", { opacity: 0, duration: 0.5 }, "-=0.5") // Hilangkan parallax
-        .to("#overlay", { opacity: 0, duration: 1, ease: "power2.inOut" }) // Fade In ke section berikutnya
-        .to(
-            ".mysteps",
-            { opacity: 1, duration: 1.5, ease: "power2.out" },
-            "-=1"
+const handleParallax = () => {
+    const parallaxContainer = document.querySelector(".parallax-container");
+
+    if (window.innerWidth >= 1024) {
+        console.log("Parallax mode aktif");
+
+        // Pastikan parallax hanya di-inisialisasi sekali
+        if (!parallaxContainer.dataset.parallaxInitialized) {
+            parallaxContainer.dataset.parallaxInitialized = true;
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".parallax-container",
+                    start: "top top",
+                    end: "500% top",
+                    scrub: 1.5, // Ubah scrub jadi lebih kecil agar lebih smooth
+                    pin: true,
+                },
+            })
+                .to("#scroll", {
+                    opacity: 0,
+                    duration: 0.5,
+                    ease: "power2.inOut",
+                })
+                .fromTo(
+                    "#sun",
+                    { y: "20vh" },
+                    { y: "-3vh", duration: 3, ease: "power2.inOut" }
+                )
+                .to(
+                    "#plant1",
+                    { duration: 5, left: "70vw", ease: "power2.inOut" },
+                    "<"
+                )
+                .to(
+                    "#plant2",
+                    { duration: 5, left: "-50vw", ease: "power2.inOut" },
+                    "<"
+                )
+                .to(
+                    "#bird1",
+                    { duration: 5, left: "50vw", ease: "power2.inOut" },
+                    "<"
+                )
+                .to(
+                    "#bird2",
+                    { duration: 5, left: "-50vw", ease: "power2.inOut" },
+                    "<"
+                )
+                .to("#tree", { scale: 5, duration: 6, ease: "power2.inOut" })
+                .to("#overlay", {
+                    opacity: 1,
+                    duration: 1,
+                    ease: "power2.inOut",
+                }) // Fade Out
+                .to(
+                    ".parallax-container",
+                    { opacity: 0, duration: 0.5 },
+                    "-=0.5"
+                ) // Hilangkan parallax
+                .to("#overlay", {
+                    opacity: 0,
+                    duration: 1,
+                    ease: "power2.inOut",
+                }) // Fade In ke section berikutnya
+                .to(
+                    ".mysteps",
+                    { opacity: 1, duration: 1.5, ease: "power2.out" },
+                    "-=1"
+                );
+
+            // Pastikan gambar terlihat kembali di mode desktop
+            document
+                .querySelectorAll(".parallax-container img")
+                .forEach((img) => {
+                    img.style.display = "block";
+                });
+        }
+    } else {
+        console.log("Mobile mode aktif");
+
+        // Hapus animasi dan reset parallax
+        ScrollTrigger.getAll().forEach((trigger) => {
+            if (
+                trigger.trigger &&
+                trigger.trigger.classList.contains("parallax-container")
+            ) {
+                trigger.kill(); // Hentikan ScrollTrigger pada parallax-container
+            }
+        });
+
+        gsap.globalTimeline.getChildren().forEach((animation) => {
+            if (
+                animation.vars.scrollTrigger &&
+                animation.vars.scrollTrigger.trigger === ".parallax-container"
+            ) {
+                animation.kill(); // Hentikan animasi yang terhubung ke parallax-container
+            }
+        });
+
+        gsap.set(".parallax-container", { clearProps: "all" }); // Hapus properti GSAP yang diterapkan sebelumnya
+        gsap.set(
+            [
+                "#scroll",
+                "#sun",
+                "#plant1",
+                "#plant2",
+                "#bird1",
+                "#bird2",
+                "#tree",
+                "#overlay",
+            ],
+            { clearProps: "all" }
         );
-} else {
-    // Ambil elemen dengan class bg-hero
-    const bgHero = document.querySelector(".bg-hero");
 
-    if (bgHero) {
-        bgHero.classList.remove("bg-hero");
-
-        const imgParallax = bgHero.querySelectorAll("img");
-        imgParallax.forEach((img) => img.remove());
-
-        bgHero.classList.add("bg-hero1");
+        // Hapus inisialisasi parallax saat kembali ke mobile
+        if (parallaxContainer.dataset.parallaxInitialized) {
+            delete parallaxContainer.dataset.parallaxInitialized;
+        }
     }
-}
+};
+
+// Jalankan saat halaman pertama kali dimuat
+handleParallax();
+
+let previousWidth = window.innerWidth;
+
+// Jalankan ulang ketika layar di-resize
+window.addEventListener("resize", () => {
+    const currentWidth = window.innerWidth;
+
+    if (previousWidth < 1024 && currentWidth >= 1024) {
+        console.log("Berpindah ke mode desktop, reset parallax");
+        location.reload(); // Paksa reload halaman agar parallax dimuat ulang
+    }
+
+    previousWidth = currentWidth;
+    handleParallax();
+});
 
 // mysteps cards animation
 gsap.from(".mysteps div", {
@@ -129,6 +228,8 @@ function positionCards(progress = 0) {
             scale: 1,
         });
     });
+
+    adjustCardsMargin();
 }
 
 // Inisialisasi posisi kartu
@@ -137,38 +238,37 @@ positionCards(0);
 // Update saat window diresize
 window.addEventListener("resize", () => positionCards(0));
 
-// Animation counter
-const counterConfig = {
-    scrollTrigger: {
-        trigger: ".customer-support",
-        start: "top center",
-        once: true,
-    },
-    duration: 3,
-};
+/**
+ * Fungsi untuk menyesuaikan margin-top kartu di berbagai layar landscape
+ */
+function adjustCardsMargin() {
+    const cardsContainer = document.querySelector(".cards");
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+    const isLandscape = screenWidth > screenHeight;
 
-function animateCounter(selector) {
-    const element = document.querySelector(selector);
-    if (!element) return;
-
-    const finalValue = parseInt(element.dataset.value) || 0; // Pastikan angka bulat
-    const value = { value: 0 };
-
-    gsap.to(value, {
-        duration: 2,
-        ease: "power1.out",
-        value: finalValue,
-        onUpdate: () => {
-            element.textContent = Math.round(value.value); // Hanya angka bulat
-        },
-    });
+    if (isLandscape) {
+        if (screenWidth >= 768 && screenWidth <= 1024) {
+            // Medium landscape (tablet)
+            cardsContainer.style.marginTop = "50%";
+        } else if (screenWidth < 768) {
+            // Mobile landscape
+            cardsContainer.style.marginTop = "25%";
+        } else {
+            // Default landscape (di atas 1024px)
+            cardsContainer.style.marginTop = "30%";
+        }
+    } else {
+        // Normal portrait mode
+        cardsContainer.style.marginTop = "70%";
+    }
 }
 
-// Panggil fungsi untuk setiap counter
-animateCounter(".cs-text1");
-animateCounter(".cs-text2");
-animateCounter(".cs-text3");
-animateCounter(".cs-text4");
+// Panggil saat pertama kali halaman dimuat
+adjustCardsMargin();
+
+// Update saat window diresize
+window.addEventListener("resize", adjustCardsMargin);
 
 // Swiper slider setup
 const swiper = new Swiper(".swiper", {
